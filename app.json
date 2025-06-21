@@ -1,22 +1,34 @@
 {
   "expo": {
-    "name": "meu-app-clima",
-    "slug": "meu-app-clima",
+    "name": "Wear by Weather",
+    "slug": "Wear by Weather",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/animated-welcome.gif",
     "scheme": "meuappclima",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Precisamos da sua localização para sugerir roupas com base no clima da sua cidade."
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "com.seuprojeto.weatherwear",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": ["ACCESS_FINE_LOCATION"],
+      "package": "com.seuprojeto.weatherwear",
+      "versionCode": 1
     },
     "web": {
       "bundler": "metro",
@@ -28,7 +40,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/animated-welcome.gif",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
