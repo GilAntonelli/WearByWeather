@@ -38,6 +38,11 @@ export default function HomeScreen() {
   const [weatherData, setWeatherData] = useState<{
     temperatura: number;
     sensacaoTermica: number;
+      condicao?: string;
+        chuva?: boolean;
+  vento?: number;
+
+
   } | null>(null);
 
   const [isCityReady, setIsCityReady] = useState(false);
@@ -160,6 +165,10 @@ export default function HomeScreen() {
         setWeatherData({
           temperatura: weather.temperatura,
           sensacaoTermica: weather.sensacaoTermica,
+        condicao: weather.condicao,
+
+chuva: weather.chuva,
+  vento: weather.vento
         });
 
         const clima = {
@@ -288,15 +297,22 @@ export default function HomeScreen() {
                 </View>
                 <View style={{ alignItems: 'center' }}>
                   <Feather name="sun" size={32} color="#FFC300" />
-                  <Text style={globalStyles.weatherLabel}>Ensolarado</Text>
+                  <Text style={globalStyles.weatherLabel}>  {weatherData?.condicao || 'Clima indefinido'}
+</Text>
                 </View>
               </View>
 
               <View style={globalStyles.weatherInfoRow}>
                 <Ionicons name="cloud-outline" size={16} color={theme.colors.textLight} />
                 <Text style={globalStyles.weatherInfo}>
-                  Céu limpo pela manhã, chance de chuva à noite
+ {weatherData?.chuva
+    ? 'Pode chover hoje. Leve um guarda-chuva.'
+    : 'Sem previsão de chuva por enquanto.'}
                 </Text>
+<Text style={globalStyles.weatherInfo}>
+  Vento: {weatherData?.vento ? `${weatherData.vento} km/h` : '–'}
+</Text>
+
               </View>
             </View>
 

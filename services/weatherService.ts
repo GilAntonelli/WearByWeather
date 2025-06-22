@@ -22,7 +22,11 @@ console.log('Resposta bruta da API:', data);
       temperatura: Math.round(data.main.temp),
       sensacaoTermica: Math.round(data.main.feels_like),
       chuva: data.weather[0].main.toLowerCase().includes('rain'),
-      vento: Math.round(data.wind.speed * 3.6), // m/s → km/h
+      vento: Math.round(data.wind.speed * 3.6), 
+        condicao: data.weather[0].description,
+          descricao: data.weather[0].main 
+
+
     };
   } catch (error) {
     console.error('Erro ao buscar clima:', error);
