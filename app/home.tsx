@@ -1,8 +1,9 @@
-import { getWeatherByCity } from '../services/weatherService';
 
+import { getWeatherByCity } from '../services/weatherService';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
+import { getFraseClimatica } from '../services/weatherPhrases';
 import { useEffect, useState } from 'react';
 import {
   Alert,
@@ -38,9 +39,9 @@ export default function HomeScreen() {
   const [weatherData, setWeatherData] = useState<{
     temperatura: number;
     sensacaoTermica: number;
-      condicao?: string;
-        chuva?: boolean;
-  vento?: number;
+    condicao?: string;
+    chuva?: boolean;
+    vento?: number;
 
 
   } | null>(null);
@@ -165,10 +166,10 @@ export default function HomeScreen() {
         setWeatherData({
           temperatura: weather.temperatura,
           sensacaoTermica: weather.sensacaoTermica,
-        condicao: weather.condicao,
+          condicao: weather.condicao,
 
-chuva: weather.chuva,
-  vento: weather.vento
+          chuva: weather.chuva,
+          vento: weather.vento
         });
 
         const clima = {
@@ -298,22 +299,19 @@ chuva: weather.chuva,
                 <View style={{ alignItems: 'center' }}>
                   <Feather name="sun" size={32} color="#FFC300" />
                   <Text style={globalStyles.weatherLabel}>  {weatherData?.condicao || 'Clima indefinido'}
-</Text>
+                  </Text>
                 </View>
               </View>
 
               <View style={globalStyles.weatherInfoRow}>
-                <Ionicons name="cloud-outline" size={16} color={theme.colors.textLight} />
-                <Text style={globalStyles.weatherInfo}>
- {weatherData?.chuva
-    ? 'Pode chover hoje. Leve um guarda-chuva.'
-    : 'Sem previsão de chuva por enquanto.'}
-                </Text>
-<Text style={globalStyles.weatherInfo}>
-  Vento: {weatherData?.vento ? `${weatherData.vento} km/h` : '–'}
-</Text>
-
-              </View>
+  <Ionicons name="cloud-outline" size={16} color={theme.colors.textLight} />
+  <Text style={globalStyles.weatherInfo}>
+    {weatherData ? getFraseClimatica(weatherData) : 'Carregando...'}
+  </Text>
+  <Text style={globalStyles.weatherInfo}>
+    Vento: {weatherData?.vento ? `${weatherData.vento} km/h` : '–'}
+  </Text>
+</View>
             </View>
 
             <Text style={globalStyles.cardTitle}>Look Sugerido do Dia</Text>

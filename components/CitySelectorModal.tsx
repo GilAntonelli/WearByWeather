@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Modal,
   View,
@@ -8,12 +8,47 @@ import {
   FlatList,
   StyleSheet,
   Pressable,
+  ActivityIndicator,
+  KeyboardAvoidingView,
+  Platform,
+  Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
-import { KeyboardAvoidingView, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { getWeatherByCity } from '../services/weatherService';
+import { API_KEY, GEO_URL } from '../config/apiConfig';
+
+
+const cityApiNames: Record<string, string> = {
+  'Amsterdã': 'Amsterdam',
+  'Londres': 'London',
+  'Berlim': 'Berlin',
+  'Bruxelas': 'Brussels',
+  'Roma': 'Rome',
+  'São Paulo': 'Sao Paulo',
+};
+interface CitySelectorModalProps {
+  visible: boolean;
+  onClose: () => void;
+  onSelect: (city: string) => void;
+}
+
+interface Suggestion {
+  name: string;
+  country?: string;
+  state?: string;
+}
+
+export const CitySelectorModal = ({
+  visible,
+  onClose,
+  onSelect,
+}: CitySelectorModalProps) => {
+  const [search, setSearch] = useState('');
+  const [results, setResults] = useState<Suggestion[]>([]);
+  const [loading, setLoading] = useState(false);
 
 const cityList = [
   'Lisboa',
@@ -26,38 +61,66 @@ const cityList = [
   'Roma',
   'Bruxelas',
   'Amsterdã',
+  'São Paulo',
+  'Rio de Janeiro',
 ];
 
-interface CitySelectorModalProps {
-  visible: boolean;
-  onClose: () => void;
-  onSelect: (city: string) => void;
-}
 
-export const CitySelectorModal = ({
-  visible,
-  onClose,
-  onSelect,
-}: CitySelectorModalProps) => {
-  const [search, setSearch] = useState('');
+  useEffect(() => {
+    const fetchSuggestions = async () => {
+      if (search.length < 3) {
+        setResults([]);
+        return;
+      }
 
-  const filteredCities = cityList.filter((city) =>
-    city.toLowerCase().includes(search.toLowerCase())
-  );
+      setLoading(true);
+      try {
+        const response = await fetch(
+          `${GEO_URL}/direct?q=${encodeURIComponent(search)}&limit=5&appid=${API_KEY}`
+        );
+        const data = await response.json();
+        setResults(data);
+      } catch (err) {
+        console.error('Erro ao buscar sugestões:', err);
+        setResults([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const debounce = setTimeout(fetchSuggestions, 500);
+    return () => clearTimeout(debounce);
+  }, [search]);
+
+  const handleSelectCity = async (cityName: string) => {
+    setLoading(true);
+
+  // Substitui por nome da API se estiver mapeado
+  const nomeParaApi = cityApiNames[cityName] ?? cityName;
+
+    const clima = await getWeatherByCity(cityName);
+    setLoading(false);
+
+    if (!clima) {
+      Alert.alert('Cidade inválida', 'Não foi possível obter dados climáticos para esta cidade.');
+      return;
+    }
+  // Salva o nome exibido (ex: "Amsterdã", não "Amsterdam")
+
+    await AsyncStorage.setItem('lastCity', cityName);
+    onSelect(cityName);
+    onClose();
+  };
 
   return (
-    <Modal
-      animationType="slide"
-      transparent
-      visible={visible}
-      onRequestClose={onClose}
-    >
+    <Modal animationType="slide" transparent visible={visible} onRequestClose={onClose}>
       <Pressable style={globalStyles.overlay} onPress={onClose} />
-      <KeyboardAvoidingView 
+      <KeyboardAvoidingView
         style={globalStyles.modalContainer}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
         <Text style={globalStyles.title}>Escolha uma cidade</Text>
+
         <TextInput
           placeholder="Buscar cidade"
           value={search}
@@ -65,23 +128,34 @@ export const CitySelectorModal = ({
           style={globalStyles.searchInput}
           placeholderTextColor={theme.colors.textLight}
         />
-        <FlatList
-          data={filteredCities}
-          keyExtractor={(item) => item}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              style={globalStyles.cityItem}
-              onPress={async () => {
-                await AsyncStorage.setItem('lastCity', item);
-                onSelect(item);
-                onClose();
-              }}
-            >
-              <Ionicons name="location-outline" size={20} color={theme.colors.primary} />
-              <Text style={globalStyles.cityName}>{item}</Text>
-            </TouchableOpacity>
-          )}
-        />
+
+        {loading ? (
+          <ActivityIndicator color={theme.colors.primary} style={{ marginTop: 16 }} />
+        ) : (
+          <FlatList
+            data={search.length < 3
+              ? cityList.map((name) => ({ name }))
+              : results}
+            keyExtractor={(item, index) => {
+              const city = item as Suggestion;
+              return `${city.name}-${city.state ?? ''}-${city.country ?? ''}-${index}`;
+            }}
+            renderItem={({ item }) => {
+              const city = item as Suggestion;
+              const label = `${city.name}${city.state ? ', ' + city.state : ''}${city.country ? ', ' + city.country : ''}`;
+
+              return (
+                <TouchableOpacity
+                  style={globalStyles.cityItem}
+                  onPress={() => handleSelectCity(city.name)}
+                >
+                  <Ionicons name="location-outline" size={20} color={theme.colors.primary} />
+                  <Text style={globalStyles.cityName}>{label}</Text>
+                </TouchableOpacity>
+              );
+            }}
+          />
+        )}
       </KeyboardAvoidingView>
     </Modal>
   );

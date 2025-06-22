@@ -1,9 +1,6 @@
-// /src/services/weatherService.ts
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-const API_KEY = 'd194bf6b1ee21e75acd3b22816fada11';
-const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
+import { API_KEY, BASE_URL, GEO_URL } from '../config/apiConfig';
 
 const WEATHER_CACHE_KEY = 'cached_weather';
 const WEATHER_CACHE_TTL = 15 * 60 * 1000; // 15 minutos
@@ -12,7 +9,6 @@ export async function getWeatherByCity(city: string) {
   const now = Date.now();
 
   try {
-    // Tenta usar cache
     const cached = await AsyncStorage.getItem(WEATHER_CACHE_KEY);
     if (cached) {
       const parsed = JSON.parse(cached);
@@ -23,9 +19,8 @@ export async function getWeatherByCity(city: string) {
         return parsed.data;
       }
     }
-
-    // Busca dados atualizados da API
-    const response = await axios.get(BASE_URL, {
+   // Busca dados atualizados da API
+    const response = await axios.get(`${BASE_URL}/weather`, {
       params: {
         q: city,
         units: 'metric',
@@ -35,18 +30,20 @@ export async function getWeatherByCity(city: string) {
     });
 
     const data = response.data;
-    console.log('Resposta bruta da API:', data);
+      console.log('Resposta bruta da API:', data);
 
     const result = {
       temperatura: Math.round(data.main.temp),
       sensacaoTermica: Math.round(data.main.feels_like),
+      tempMin: Math.round(data.main.temp_min),
+      tempMax: Math.round(data.main.temp_max),
+      umidade: data.main.humidity,
       chuva: data.weather[0].main.toLowerCase().includes('rain'),
-      vento: Math.round(data.wind.speed * 3.6), // m/s → km/h
+      vento: Math.round(data.wind.speed * 3.6),
       condicao: data.weather[0].description,
       descricao: data.weather[0].main,
     };
 
-    // Salva no cache
     await AsyncStorage.setItem(
       WEATHER_CACHE_KEY,
       JSON.stringify({ city, timestamp: now, data: result })
@@ -56,5 +53,58 @@ export async function getWeatherByCity(city: string) {
   } catch (error) {
     console.error('Erro ao buscar clima:', error);
     return null;
+  }
+}
+// ✅ Função de previsão por hora
+
+export async function getHourlyForecastByCity(city: string) {
+  try {
+    const response = await axios.get(`${BASE_URL}/forecast`, {
+      params: {
+        q: city,
+        units: 'metric',
+        lang: 'pt',
+        appid: API_KEY,
+      },
+    });
+
+    const data = response.data;
+
+    const horas = data.list.slice(0, 8).map((item: any) => ({
+      hora: new Date(item.dt_txt).getHours() + 'h',
+      temperatura: Math.round(item.main.temp) + '°C',
+      condicao: item.weather[0].description,
+      icon: item.weather[0].icon,
+      vento: Math.round(item.wind.speed * 3.6),
+      chuva: item.weather[0].main.toLowerCase().includes('rain'),
+    }));
+
+    return horas;
+  } catch (error) {
+    console.error('Erro ao buscar previsão por hora:', error);
+    return [];
+  }
+}
+
+export async function searchCitiesByName(name: string) {
+  try {
+    const response = await axios.get(`${GEO_URL}/direct`, {
+      params: {
+        q: name,
+        limit: 10,
+        appid: API_KEY,
+      },
+    });
+
+    return response.data.map((item: any) => ({
+      name: item.name,
+      country: item.country,
+      state: item.state,
+      lat: item.lat,
+      lon: item.lon,
+    }));
+  } catch (error) {
+    console.error('Erro ao buscar cidades:', error);
+    return [];
   }
 }
