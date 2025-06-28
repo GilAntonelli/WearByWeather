@@ -6,7 +6,6 @@ import {
   TextInput,
   TouchableOpacity,
   FlatList,
-  StyleSheet,
   Pressable,
   ActivityIndicator,
   KeyboardAvoidingView,
@@ -19,16 +18,8 @@ import { theme } from '../styles/theme';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getWeatherByCity } from '../services/weatherService';
 import { API_KEY, GEO_URL } from '../config/apiConfig';
+import { normalizeCityName } from '../utils/normalizeCity'; // ✅ Importado corretamente
 
-
-const cityApiNames: Record<string, string> = {
-  'Amsterdã': 'Amsterdam',
-  'Londres': 'London',
-  'Berlim': 'Berlin',
-  'Bruxelas': 'Brussels',
-  'Roma': 'Rome',
-  'São Paulo': 'Sao Paulo',
-};
 interface CitySelectorModalProps {
   visible: boolean;
   onClose: () => void;
@@ -50,21 +41,20 @@ export const CitySelectorModal = ({
   const [results, setResults] = useState<Suggestion[]>([]);
   const [loading, setLoading] = useState(false);
 
-const cityList = [
-  'Lisboa',
-  'Porto',
-  'Madrid',
-  'Barcelona',
-  'Paris',
-  'Londres',
-  'Berlim',
-  'Roma',
-  'Bruxelas',
-  'Amsterdã',
-  'São Paulo',
-  'Rio de Janeiro',
-];
-
+  const cityList = [
+    'Lisboa',
+    'Porto',
+    'Madrid',
+    'Barcelona',
+    'Paris',
+    'Londres',
+    'Berlim',
+    'Roma',
+    'Bruxelas',
+    'Amsterdã',
+    'São Paulo',
+    'Rio de Janeiro',
+  ];
 
   useEffect(() => {
     const fetchSuggestions = async () => {
@@ -95,19 +85,17 @@ const cityList = [
   const handleSelectCity = async (cityName: string) => {
     setLoading(true);
 
-  // Substitui por nome da API se estiver mapeado
-  const nomeParaApi = cityApiNames[cityName] ?? cityName;
+    const nomeParaApi = normalizeCityName(cityName); // ✅ Uso correto da função centralizada
 
-    const clima = await getWeatherByCity(cityName);
+    const clima = await getWeatherByCity(nomeParaApi);
     setLoading(false);
 
     if (!clima) {
       Alert.alert('Cidade inválida', 'Não foi possível obter dados climáticos para esta cidade.');
       return;
     }
-  // Salva o nome exibido (ex: "Amsterdã", não "Amsterdam")
 
-    await AsyncStorage.setItem('lastCity', cityName);
+    await AsyncStorage.setItem('lastCity', cityName); // Salva o nome exibido original
     onSelect(cityName);
     onClose();
   };
@@ -133,16 +121,16 @@ const cityList = [
           <ActivityIndicator color={theme.colors.primary} style={{ marginTop: 16 }} />
         ) : (
           <FlatList
-            data={search.length < 3
-              ? cityList.map((name) => ({ name }))
-              : results}
+            data={search.length < 3 ? cityList.map((name) => ({ name })) : results}
             keyExtractor={(item, index) => {
               const city = item as Suggestion;
               return `${city.name}-${city.state ?? ''}-${city.country ?? ''}-${index}`;
             }}
             renderItem={({ item }) => {
               const city = item as Suggestion;
-              const label = `${city.name}${city.state ? ', ' + city.state : ''}${city.country ? ', ' + city.country : ''}`;
+              const label = `${city.name}${city.state ? ', ' + city.state : ''}${
+                city.country ? ', ' + city.country : ''
+              }`;
 
               return (
                 <TouchableOpacity

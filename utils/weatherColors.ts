@@ -3,6 +3,7 @@
 
 const conditionColorMap: Record<string, string> = {
   'céu limpo': '#A4D4FF',
+  'céu pouco nublado': '#abb4bc',
   'poucas nuvens': '#C3D9F3',
   'nuvens dispersas': '#D6E0EB',
   'nuvens encobertas': '#BFC8D1',
