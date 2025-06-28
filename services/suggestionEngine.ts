@@ -32,7 +32,7 @@ export function getSuggestionByWeather({
         : genero === 'unissex'
         ? 'Calça ou legging térmica'
         : 'Calça jeans ou forrada';
-    acessórios.push('Cachecol', 'Gorro', 'Luvas');
+    acessórios.push('Cachecol', 'Touca', 'Luvas');
     recomendação = 'Muito frio! Use roupas térmicas.';
     image = getAvatar('frio', genero);
   } else if (tempAjustada <= 16) {
@@ -43,7 +43,7 @@ export function getSuggestionByWeather({
         : genero === 'unissex'
         ? 'Calça leve ou sarja'
         : 'Calça jeans ou sarja';
-    acessórios.push('Tênis ou sapato fechado');
+    acessórios.push('Touca');
     recomendação = 'Clima fresco. Leve um agasalho.';
     image = getAvatar('fresco', genero);
   } else if (tempAjustada <= 22) {
@@ -54,6 +54,7 @@ export function getSuggestionByWeather({
         : genero === 'unissex'
         ? 'Calça ou bermuda'
         : 'Calça leve ou jeans';
+    acessórios.push('Tênis leve ou sapato fechado');
     recomendação = 'Clima ameno. Conforto é a chave.';
     image = getAvatar('ameno', genero);
   } else if (tempAjustada <= 28) {
@@ -64,7 +65,7 @@ export function getSuggestionByWeather({
         : genero === 'unissex'
         ? 'Bermuda ou short'
         : 'Bermuda ou calça de linho';
-    acessórios.push('Tênis leve ou sandália');
+    acessórios.push('Óculos escuros');
     recomendação = 'Quente. Prefira roupas frescas.';
     image = getAvatar('quente', genero);
   } else {
@@ -80,13 +81,15 @@ export function getSuggestionByWeather({
     image = getAvatar('calor', genero);
   }
 
+  // ☔ Chuva
   if (chuva) {
-    acessórios.push('Guarda-chuva', 'Capa de chuva');
+    acessórios.push('Guarda-chuva', 'Capa de chuva', 'Bota impermeável');
     recomendação += ' Possibilidade de chuva.';
   }
 
+  // 💨 Vento
   if (vento > 25) {
-    acessórios.push('Corta-vento');
+    acessórios.push('Jaqueta corta-vento', 'Gorro ajustado', 'Elástico de cabelo');
     recomendação += ' Ventos intensos previstos.';
   }
 
@@ -98,6 +101,7 @@ export function getSuggestionByWeather({
     image,
   };
 }
+
 
 // Map estático para evitar erro no Metro bundler
 const avatarMap: Record<string, any> = {

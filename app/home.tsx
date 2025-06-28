@@ -3,7 +3,7 @@ import { getWeatherByCity } from '../services/weatherService';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { router, useRouter } from 'expo-router';
- 
+
 
 import { getFraseClimatica } from '../services/weatherPhrases';
 import { useEffect, useState } from 'react';
@@ -369,7 +369,7 @@ export default function HomeScreen() {
                   <View style={globalStyles.accessoryColumn}>
                     <Text style={globalStyles.accessoryTitle}>Acessórios</Text>
                     {suggestion.acessórios?.map((item, i) => {
-                      const icon = accessoryImages[item];
+                      const icon = accessoryImages[item as keyof typeof accessoryImages];
                       if (!icon) return null;
                       return (
                         <View key={i} style={globalStyles.accessoryIconWrapper}>

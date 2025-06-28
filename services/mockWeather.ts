@@ -23,11 +23,11 @@
 
 // 👇 Preset selecionado manualmente (caso não use painel dinâmico):
 export const mockWeather = {
-  temperatura: 40,
+  temperatura: 5,
   tempMax: 45,
   tempMin: 30,
   sensacaoTermica: 21,
-  condicao: 'céu limpo', //descrição 
+  condicao: 'nublado', //descrição 
   descricao: 'Clear', // main
   icon: '01d',
   chuva: false,
