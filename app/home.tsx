@@ -347,7 +347,7 @@ export default function HomeScreen() {
               </View>
 
               <View style={globalStyles.weatherInfoRow}>
-                <Ionicons name="cloud-outline" size={16} color={theme.colors.textLight} />
+ 
                 <Text style={globalStyles.weatherInfo}>
                   {weatherData ? getFraseClimatica(weatherData) : 'Carregando...'}
                 </Text>
@@ -363,15 +363,17 @@ export default function HomeScreen() {
               <View style={globalStyles.cardhome}>
                 <View style={globalStyles.suggestionWrapper}>
                   <View style={{ flex: 1 }}>
+                    <Text style={globalStyles.lookText}>{suggestion.recomendação}</Text>
                     <Image
                       source={suggestion.image}
                       style={globalStyles.avatar}
                       resizeMode="contain"
                     />
-                    <Text style={globalStyles.lookText}>{suggestion.recomendação}</Text>
+                    
                     <View style={globalStyles.tagRow}>
                       <View style={globalStyles.tag}>
                         <Text style={globalStyles.tagText}>{suggestion.roupaSuperior}</Text>
+                        
                       </View>
                       <View style={globalStyles.tag}>
                         <Text style={globalStyles.tagText}>{suggestion.roupaInferior}</Text>

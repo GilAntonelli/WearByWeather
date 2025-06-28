@@ -34,8 +34,7 @@
 */
 
 // Nublado
-/*
-  export const mockWeather = {
+/* export const mockWeather = {
   temperatura: 20,
   sensacaoTermica: 19,
   tempMin: 17,
@@ -48,10 +47,10 @@
   icon: '04d',
   iconUrl: 'https://openweathermap.org/img/wn/04d@2x.png',
 };
- */
+*/
 
 // Chuva moderada
- export const mockWeather = {
+/* export const mockWeather = {
   temperatura: 18,
   sensacaoTermica: 17,
   tempMin: 16,
@@ -64,7 +63,7 @@
   icon: '10d',
   iconUrl: 'https://openweathermap.org/img/wn/10d@2x.png',
 };
-
+*/
 
 // Trovoada
 /* export const mockWeather = {
@@ -75,19 +74,27 @@
   umidade: 90,
   chuva: true,
   vento: 25,
-  condicao
-
-
+  condicao: 'trovoada',
+  descricao: 'Thunderstorm',
+  icon: '11d',
+  iconUrl: 'https://openweathermap.org/img/wn/11d@2x.png',
+};
 */
 
-
-
-
-
-
-
-
-
+// Nevoeiro
+export const mockWeather = {
+  temperatura: 15,
+  sensacaoTermica: 14,
+  tempMin: 13,
+  tempMax: 17,
+  umidade: 95,
+  chuva: false,
+  vento: 5,
+  condicao: 'nevoeiro',
+  descricao: 'Fog',
+  icon: '50d',
+  iconUrl: 'https://openweathermap.org/img/wn/50d@2x.png',
+};
 
 
 
