@@ -1,12 +1,20 @@
-import { normalizeCityName } from '../utils/normalizeCity';
 import axios from 'axios';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { API_KEY, BASE_URL, GEO_URL } from '../config/apiConfig';
+import { mockWeather, mockHourlyForecast } from './mockWeather'; // ✅ mock importado
+import { normalizeCityName } from '../utils/normalizeCity';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const WEATHER_CACHE_KEY = 'cached_weather';
 const WEATHER_CACHE_TTL = 15 * 60 * 1000; // 15 minutos
+const USE_MOCK = true; // ✅ Altere para false para usar a API real
+
 
 export async function getWeatherByCity(city: string) {
+    if (USE_MOCK) {
+    return mockWeather;
+  }
+  
   const now = Date.now();
 
   try {

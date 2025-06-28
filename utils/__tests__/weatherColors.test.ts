@@ -1,3 +1,7 @@
+
+
+
+
 import { getWeatherBackgroundColor } from '../weatherColors';
 
 describe('getWeatherBackgroundColor', () => {
