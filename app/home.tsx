@@ -2,7 +2,9 @@
 import { getWeatherByCity } from '../services/weatherService';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useRouter } from 'expo-router';
+import { router, useRouter } from 'expo-router';
+ 
+
 import { getFraseClimatica } from '../services/weatherPhrases';
 import { useEffect, useState } from 'react';
 import {
@@ -27,6 +29,11 @@ import { UserPreferences } from '../types/preferences';
 import { LookSuggestion } from '../types/suggestion';
 import { accessoryImages } from '../constants/accessoryImages';
 import * as Location from 'expo-location';
+
+const resetApp = async () => {
+  await AsyncStorage.clear();
+  router.replace('/'); // volta para a WelcomeScreen
+};
 
 const screenHeight = Dimensions.get('window').height;
 
@@ -238,34 +245,58 @@ export default function HomeScreen() {
               <Text style={globalStyles.homeTitle}>
                 {userPreferences.name ? `Olá, ${userPreferences.name}!` : 'Olá!'}
               </Text>
-              <Menu
-                visible={menuVisible}
-                onDismiss={() => setMenuVisible(false)}
-                anchor={
-                  <TouchableOpacity
-                    style={{ backgroundColor: 'transparent' }}
-                    onPress={() => setMenuVisible(true)}
-                  >
-                    <Ionicons name="settings-outline" size={24} color={theme.colors.textDark} />
-                  </TouchableOpacity>
-                }
-              >
-                <Menu.Item
-                  onPress={() => {
-                    setMenuVisible(false);
-                    router.push('/preferences');
-                  }}
-                  title="Preferências"
-                />
-                <Divider />
-                <Menu.Item
-                  onPress={() => {
-                    setMenuVisible(false);
-                    router.push('/');
-                  }}
-                  title="Início"
-                />
-              </Menu>
+         <Menu
+  visible={menuVisible}
+  onDismiss={() => setMenuVisible(false)}
+  anchor={
+    <TouchableOpacity onPress={() => setMenuVisible(true)}>
+      <Ionicons name="settings-outline" size={24} color={theme.colors.textDark} />
+    </TouchableOpacity>
+  }
+>
+  <Menu.Item
+    onPress={() => {
+      setMenuVisible(false);
+      router.push('/preferences');
+    }}
+    title="Preferências"
+    leadingIcon="tune"
+  />
+  <Divider />
+  <Menu.Item
+    onPress={() => {
+      setMenuVisible(false);
+      router.push('/');
+    }}
+    title="Início"
+    leadingIcon="home-outline"
+  />
+  <Divider />
+  <Menu.Item
+    onPress={() => {
+      setMenuVisible(false);
+      Alert.alert(
+        'Redefinir app',
+        'Tem certeza que deseja apagar suas preferências e reiniciar o app?',
+        [
+          { text: 'Cancelar', style: 'cancel' },
+          {
+            text: 'Redefinir',
+            style: 'destructive',
+            onPress: async () => {
+              await AsyncStorage.clear();
+              router.replace('/');
+            },
+          },
+        ]
+      );
+    }}
+    title="Redefinir app"
+    leadingIcon="restart"
+  />
+</Menu>
+
+
             </View>
 
             <View style={globalStyles.locationBox}>
@@ -304,14 +335,14 @@ export default function HomeScreen() {
               </View>
 
               <View style={globalStyles.weatherInfoRow}>
-  <Ionicons name="cloud-outline" size={16} color={theme.colors.textLight} />
-  <Text style={globalStyles.weatherInfo}>
-    {weatherData ? getFraseClimatica(weatherData) : 'Carregando...'}
-  </Text>
-  <Text style={globalStyles.weatherInfo}>
-    Vento: {weatherData?.vento ? `${weatherData.vento} km/h` : '–'}
-  </Text>
-</View>
+                <Ionicons name="cloud-outline" size={16} color={theme.colors.textLight} />
+                <Text style={globalStyles.weatherInfo}>
+                  {weatherData ? getFraseClimatica(weatherData) : 'Carregando...'}
+                </Text>
+                <Text style={globalStyles.weatherInfo}>
+                  Vento: {weatherData?.vento ? `${weatherData.vento} km/h` : '–'}
+                </Text>
+              </View>
             </View>
 
             <Text style={globalStyles.cardTitle}>Look Sugerido do Dia</Text>

@@ -1,4 +1,8 @@
+
+import { Menu, Divider } from 'react-native-paper';
 import { Feather, Ionicons } from '@expo/vector-icons';
+import { Alert } from 'react-native';
+
 import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import {
@@ -22,6 +26,13 @@ import {
 
 export default function ForecastScreen() {
   const router = useRouter();
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const resetApp = async () => {
+    await AsyncStorage.clear();
+    router.replace('/');
+  };
+
   const [city, setCity] = useState<string>('Carregando...');
   const [weather, setWeather] = useState<any>(null);
   const [hourlyData, setHourlyData] = useState<any[]>([]);
@@ -55,7 +66,64 @@ export default function ForecastScreen() {
     <>
       <ScrollView style={{ backgroundColor: theme.colors.background }}>
         {/* Cabeçalho com clima atual */}
+
         <View style={globalStyles.forecastHeader}>
+          {/* Ícone de engrenagem com menu flutuante */}
+    <View style={{ position: 'absolute', top: 48, right: 16, zIndex: 10 }}>
+
+      <Menu
+  visible={menuVisible}
+  onDismiss={() => setMenuVisible(false)}
+  anchor={
+    <TouchableOpacity onPress={() => setMenuVisible(true)}>
+      <Ionicons name="settings-outline" size={24} color={theme.colors.textDark} />
+    </TouchableOpacity>
+  }
+>
+  <Menu.Item
+    onPress={() => {
+      setMenuVisible(false);
+      router.push('/preferences');
+    }}
+    title="Preferências"
+    leadingIcon="tune"
+  />
+  <Divider />
+  <Menu.Item
+    onPress={() => {
+      setMenuVisible(false);
+      router.push('/');
+    }}
+    title="Início"
+    leadingIcon="home-outline"
+  />
+  <Divider />
+  <Menu.Item
+    onPress={() => {
+      setMenuVisible(false);
+      Alert.alert(
+        'Redefinir app',
+        'Tem certeza que deseja apagar suas preferências e reiniciar o app?',
+        [
+          { text: 'Cancelar', style: 'cancel' },
+          {
+            text: 'Redefinir',
+            style: 'destructive',
+            onPress: async () => {
+              await AsyncStorage.clear();
+              router.replace('/');
+            },
+          },
+        ]
+      );
+    }}
+    title="Redefinir app"
+    leadingIcon="restart"
+  />
+</Menu>
+  
+          </View>
+
           <Ionicons name="location-outline" size={16} color={theme.colors.textDark} />
           <Text style={globalStyles.forecastHeaderCity}>
             {city} - Hoje
@@ -78,6 +146,9 @@ export default function ForecastScreen() {
             <Text style={globalStyles.weatherInfo}>"{frase}"</Text>
           )}
         </View>
+
+
+
 
         <View style={globalStyles.container}>
           {/* Previsão por hora */}
