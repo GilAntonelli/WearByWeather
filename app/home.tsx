@@ -49,6 +49,7 @@ export default function HomeScreen() {
     condicao?: string;
     chuva?: boolean;
     vento?: number;
+  icon?: string;
 
 
   } | null>(null);
@@ -176,7 +177,8 @@ export default function HomeScreen() {
           condicao: weather.condicao,
 
           chuva: weather.chuva,
-          vento: weather.vento
+          vento: weather.vento,
+            icon: weather.icon, // <- ADICIONE ESSA LINHA
         });
 
         const clima = {
@@ -327,11 +329,21 @@ export default function HomeScreen() {
                     </View>
                   )}
                 </View>
-                <View style={{ alignItems: 'center' }}>
-                  <Feather name="sun" size={32} color="#FFC300" />
-                  <Text style={globalStyles.weatherLabel}>  {weatherData?.condicao || 'Clima indefinido'}
-                  </Text>
-                </View>
+         <View style={{ alignItems: 'center' }}>
+  {weatherData?.icon ? (
+    <Image
+      source={{ uri: `https://openweathermap.org/img/wn/${weatherData.icon}@2x.png` }}
+      style={{ width: 48, height: 48 }}
+      resizeMode="contain"
+    />
+  ) : (
+    <Feather name="sun" size={32} color="#FFC300" />
+  )}
+  <Text style={globalStyles.weatherLabel}>
+    {weatherData?.condicao || 'Clima indefinido'}
+  </Text>
+</View>
+
               </View>
 
               <View style={globalStyles.weatherInfoRow}>

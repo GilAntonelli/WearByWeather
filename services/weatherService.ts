@@ -44,6 +44,8 @@ export async function getWeatherByCity(city: string) {
 
     const data = response.data;
     console.log('Resposta bruta da API:', data);
+    
+    const iconCode = data.weather[0].icon; // <-- DECLARADA aqui corretamente
 
     const result = {
       temperatura: Math.round(data.main.temp),
@@ -55,6 +57,9 @@ export async function getWeatherByCity(city: string) {
       vento: Math.round(data.wind.speed * 3.6),
       condicao: data.weather[0].description,
       descricao: data.weather[0].main,
+      icon: iconCode,
+      iconUrl: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
+      
     };
 
     await AsyncStorage.setItem(
@@ -68,6 +73,10 @@ export async function getWeatherByCity(city: string) {
     return null;
   }
 }
+
+
+
+
 
 // ✅ Função de previsão por hora
 export async function getHourlyForecastByCity(city: string) {
@@ -101,6 +110,7 @@ export async function getHourlyForecastByCity(city: string) {
   }
 }
 
+
 export async function searchCitiesByName(name: string) {
   try {
     const response = await axios.get(`${GEO_URL}/direct`, {
@@ -118,6 +128,10 @@ export async function searchCitiesByName(name: string) {
       lat: item.lat,
       lon: item.lon,
     }));
+
+
+
+
   } catch (error) {
     console.error('Erro ao buscar cidades:', error);
     return [];

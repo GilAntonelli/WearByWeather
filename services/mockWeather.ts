@@ -17,23 +17,86 @@
 
 */
 
-
-
-
-
-// 👇 Preset selecionado manualmente (caso não use painel dinâmico):
-export const mockWeather = {
-  temperatura: 5,
-  tempMax: 45,
-  tempMin: 30,
-  sensacaoTermica: 21,
-  condicao: 'nublado', //descrição 
-  descricao: 'Clear', // main
-  icon: '01d',
+// Céu limpo
+/* export const mockWeather = {
+  temperatura: 27,
+  sensacaoTermica: 28,
+  tempMin: 22,
+  tempMax: 30,
+  umidade: 40,
   chuva: false,
   vento: 10,
-  umidade: 60,
+  condicao: 'céu limpo',
+  descricao: 'Clear',
+  icon: '01d',
+  iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
 };
+*/
+
+// Nublado
+/*
+  export const mockWeather = {
+  temperatura: 20,
+  sensacaoTermica: 19,
+  tempMin: 17,
+  tempMax: 22,
+  umidade: 65,
+  chuva: false,
+  vento: 15,
+  condicao: 'nublado',
+  descricao: 'Clouds',
+  icon: '04d',
+  iconUrl: 'https://openweathermap.org/img/wn/04d@2x.png',
+};
+ */
+
+// Chuva moderada
+ export const mockWeather = {
+  temperatura: 18,
+  sensacaoTermica: 17,
+  tempMin: 16,
+  tempMax: 20,
+  umidade: 85,
+  chuva: true,
+  vento: 20,
+  condicao: 'chuva moderada',
+  descricao: 'Rain',
+  icon: '10d',
+  iconUrl: 'https://openweathermap.org/img/wn/10d@2x.png',
+};
+
+
+// Trovoada
+/* export const mockWeather = {
+  temperatura: 23,
+  sensacaoTermica: 22,
+  tempMin: 20,
+  tempMax: 26,
+  umidade: 90,
+  chuva: true,
+  vento: 25,
+  condicao
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+******************
+ Forecast 
+******************
+
+*/
 
 export const mockHourlyForecast = [
   {
