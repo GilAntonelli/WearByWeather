@@ -1,5 +1,8 @@
+import CurrentWeatherBlock from '../components/CurrentWeatherBlock';
 
 import { Menu, Divider } from 'react-native-paper';
+import ForecastHeader from '../components/ForecastHeader';
+
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { Alert } from 'react-native';
 
@@ -124,27 +127,23 @@ export default function ForecastScreen() {
   
           </View>
 
-          <Ionicons name="location-outline" size={16} color={theme.colors.textDark} />
-          <Text style={globalStyles.forecastHeaderCity}>
-            {city} - Hoje
-          </Text>
-          <Text style={globalStyles.forecastHeaderDate}>
-            {new Date().toLocaleDateString('pt-PT', {
-              weekday: 'long',
-              day: '2-digit',
-              month: 'long',
-            })}
-          </Text>
-          <Feather name="sun" size={48} color="#FFC300" style={{ marginVertical: 8 }} />
-          <Text style={globalStyles.forecastMainTemp}>
-            {weather?.temperatura ?? '--'}°C
-          </Text>
-          <Text style={globalStyles.forecastWeatherLabel}>
-            {weather?.condicao ?? 'Carregando...'}
-          </Text>
-          {frase && (
-            <Text style={globalStyles.weatherInfo}>"{frase}"</Text>
-          )}
+     <ForecastHeader
+  city={city}
+  date={new Date().toLocaleDateString('pt-PT', {
+    weekday: 'long',
+    day: '2-digit',
+    month: 'long',
+  })}
+/>
+     
+
+<CurrentWeatherBlock
+  temperatura={weather?.temperatura ?? '--'}
+  condicao={weather?.condicao ?? 'Carregando...'}
+  frase={frase}
+/>
+
+
         </View>
 
 

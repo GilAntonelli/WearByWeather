@@ -1,6 +1,9 @@
 export const theme = {
   colors: {
     primary: '#FFD700',
+     //   primaryLight: '#F1F5FE', // <-- adicionado aqui
+forecastBackground: '#A4D4FF',
+
     background: '#F6F6F6',
 
     // Adicionada compatibilidade

@@ -259,11 +259,7 @@ export const globalStyles = StyleSheet.create({
     marginTop: 12,
     gap: 6,
   },
-  weatherInfo: {
-    fontSize: 13,
-    color: theme.colors.textLight,
-    flex: 1,
-  },
+  
   lookRow: {
     flexDirection: 'row',
     gap: 12,
@@ -327,34 +323,11 @@ export const globalStyles = StyleSheet.create({
     color: theme.colors.textDark,
     marginTop: 2,
   },
-  forecastHeader: {
-    backgroundColor: '#a3d5ff',
-    alignItems: 'center',
-    paddingVertical: 20,
-    paddingHorizontal: 16,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-    gap: 4,
-  },
-  forecastHeaderCity: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: theme.colors.textDark,
-    marginTop: 4,
-  },
-  forecastHeaderDate: {
-    fontSize: 13,
-    color: theme.colors.textLight,
-  },
-  forecastMainTemp: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: theme.colors.textDark,
-  },
-  forecastWeatherLabel: {
-    fontSize: 14,
-    color: theme.colors.textDark,
-  },
+  
+  
+  
+  
+  
   hourlyRow: {
   flexDirection: 'row',
   gap: 8,
@@ -566,4 +539,76 @@ hourCard: {
     color: theme.colors.textMedium,
     marginBottom: 4,
   },
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  forecastHeader: {
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingTop: 24,
+    paddingBottom: 16,
+    backgroundColor: theme.colors.forecastBackground,
+  },
+
+  forecastHeaderLocation: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    columnGap: 6,
+  },
+
+  forecastHeaderCity: {
+    fontSize: 16,
+    color: theme.colors.textDark,
+    fontWeight: 'bold',
+  },
+
+  forecastHeaderDate: {
+    fontSize: 14,
+    color: theme.colors.textDark,
+    marginTop: 4,
+  },
+
+  forecastMainTemp: {
+    fontSize: 36,
+    fontWeight: 'bold',
+    color: theme.colors.textDark,
+    marginTop: 8,
+  },
+
+  forecastWeatherLabel: {
+    fontSize: 16,
+    color: theme.colors.textDark,
+    marginTop: 4,
+  },
+
+  weatherInfo: {
+    fontSize: 14,
+    fontStyle: 'italic',
+    color: theme.colors.textLight,
+    marginTop: 8,
+    textAlign: 'center',
+    paddingHorizontal: 16,
+  },
+
+  currentWeatherBlock: {
+    alignItems: 'center',
+    marginTop: 8,
+    marginBottom: 24,
+  },
+
 });
