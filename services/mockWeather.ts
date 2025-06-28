@@ -23,12 +23,12 @@
 
 // 👇 Preset selecionado manualmente (caso não use painel dinâmico):
 export const mockWeather = {
-  temperatura: 0,
+  temperatura: 15,
   tempMax: 25,
   tempMin: 18,
   sensacaoTermica: 21,
-  condicao: 'nevoeiro',
-  descricao: 'Clear', // ✅ adicionado
+  condicao: 'nevoeiro', //descrição 
+  descricao: 'Clear', // main
   icon: '01d',
   chuva: false,
   vento: 10,
