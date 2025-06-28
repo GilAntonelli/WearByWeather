@@ -611,4 +611,32 @@ hourCard: {
     marginBottom: 24,
   },
 
+forecastHeaderIcon: {
+  marginTop: 16,
+  marginBottom: 8,
+},
+
+forecastHeaderTemperature: {
+  fontSize: 40,
+  fontWeight: 'bold',
+  color: theme.colors.textDark,
+  marginBottom: 8,
+},
+
+forecastHeaderCondition: {
+  fontSize: 16,
+  color: theme.colors.textDark,
+},
+
+forecastHeaderSmartPhrase: {
+  fontSize: 14,
+  fontStyle: 'italic',
+  color: theme.colors.textDark,
+  textAlign: 'center',
+  marginTop: 8,
+  paddingHorizontal: 16,
+},
+
+
+
 });

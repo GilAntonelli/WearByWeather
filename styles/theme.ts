@@ -1,8 +1,39 @@
+type WeatherBackgroundKeys =
+  | 'clear'
+  | 'partlyCloudy'
+  | 'scattered'
+  | 'cloudy'
+  | 'lightRain'
+  | 'rain'
+  | 'heavyRain'
+  | 'storm'
+  | 'snow'
+  | 'mist';
+
+type Theme = {
+  colors: {
+    primary: string;
+    forecastBackground: string;
+    background: string;
+    text: string;
+    textDark: string;
+    textLight: string;
+    textMedium: string;
+    white: string;
+    border: string;
+    disabled: string;
+    focusOutline: string;
+    shadow: string;
+    weatherBackgrounds: Record<WeatherBackgroundKeys, string>;
+  };
+};
+
+
 export const theme = {
   colors: {
     primary: '#FFD700',
-     //   primaryLight: '#F1F5FE', // <-- adicionado aqui
-forecastBackground: '#A4D4FF',
+    //   primaryLight: '#F1F5FE', // <-- adicionado aqui
+    forecastBackground: '#A4D4FF',
 
     background: '#F6F6F6',
 
@@ -59,4 +90,20 @@ forecastBackground: '#A4D4FF',
     medium: 0.7,
     high: 1,
   },
+
+  weatherBackgrounds: {
+    clear: '#A4D4FF',
+    partlyCloudy: '#C3D9F3',
+    scattered: '#D6E0EB',
+    cloudy: '#BFC8D1',
+    lightRain: '#A1BBD4',
+    rain: '#7FA1BF',
+    heavyRain: '#5F7C99',
+    storm: '#495866',
+    snow: '#E0F7FA',
+    mist: '#E8ECEF',
+  },
+
+
+
 };
