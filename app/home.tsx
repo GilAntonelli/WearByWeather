@@ -1,11 +1,10 @@
 
-import { getWeatherByCity } from '../services/weatherService';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { router, useRouter } from 'expo-router';
+import { getWeatherByCity } from '../services/weatherService';
 
 
-import { getFraseClimatica } from '../services/weatherPhrases';
 import { useEffect, useState } from 'react';
 import {
   Alert,
@@ -19,16 +18,18 @@ import {
 } from 'react-native';
 import { Divider, Menu } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { getFraseClimatica } from '../services/weatherPhrases';
 
+import * as Location from 'expo-location';
 import { CitySelectorModal } from '../components/CitySelectorModal';
 import { PrimaryButton } from '../components/PrimaryButton';
+import { accessoryImages } from '../constants/accessoryImages';
 import { getSuggestionByWeather } from '../services/suggestionEngine';
 import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
 import { UserPreferences } from '../types/preferences';
 import { LookSuggestion } from '../types/suggestion';
-import { accessoryImages } from '../constants/accessoryImages';
-import * as Location from 'expo-location';
+import { getdetectedCity } from '../services/LocationService';
 
 const resetApp = async () => {
   await AsyncStorage.clear();
@@ -49,7 +50,7 @@ export default function HomeScreen() {
     condicao?: string;
     chuva?: boolean;
     vento?: number;
-  icon?: string;
+    icon?: string;
 
 
   } | null>(null);
@@ -64,28 +65,22 @@ export default function HomeScreen() {
   const detectCityFromLocation = async (): Promise<boolean> => {
     try {
       const { status } = await Location.requestForegroundPermissionsAsync();
+      const savedCity = await AsyncStorage.getItem('lastCity');
+      
+      if (savedCity) {
+        setSelectedCity(savedCity);
+        return true;
+      }
 
       if (status !== 'granted') {
         console.log('Permissão de localização negada');
         return false;
       }
-
-      const location = await Location.getCurrentPositionAsync({});
-      const geocode = await Location.reverseGeocodeAsync({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-      });
-
-      const savedCity = await AsyncStorage.getItem('lastCity');
-
-      if (geocode.length > 0) {
-        const detectedCity = geocode[0].city || geocode[0].subregion || 'Cidade não identificada';
-        if (!savedCity || savedCity != detectedCity) {
-          setSelectedCity(detectedCity);
-          await AsyncStorage.setItem('lastCity', detectedCity);
-        } else {
-          setSelectedCity(savedCity);
-        }
+      
+      const detectedCity = await getdetectedCity();  
+      if (detectedCity) {
+        setSelectedCity(detectedCity);
+        await AsyncStorage.setItem('lastCity', detectedCity);
         return true;
       }
 
@@ -178,7 +173,7 @@ export default function HomeScreen() {
 
           chuva: weather.chuva,
           vento: weather.vento,
-            icon: weather.icon, // <- ADICIONE ESSA LINHA
+          icon: weather.icon, // <- ADICIONE ESSA LINHA
         });
 
         const clima = {
@@ -247,56 +242,56 @@ export default function HomeScreen() {
               <Text style={globalStyles.homeTitle}>
                 {userPreferences.name ? `Olá, ${userPreferences.name}!` : 'Olá!'}
               </Text>
-         <Menu
-  visible={menuVisible}
-  onDismiss={() => setMenuVisible(false)}
-  anchor={
-    <TouchableOpacity onPress={() => setMenuVisible(true)}>
-      <Ionicons name="settings-outline" size={24} color={theme.colors.textDark} />
-    </TouchableOpacity>
-  }
->
-  <Menu.Item
-    onPress={() => {
-      setMenuVisible(false);
-      router.push('/preferences');
-    }}
-    title="Preferências"
-    leadingIcon="tune"
-  />
-  <Divider />
-  <Menu.Item
-    onPress={() => {
-      setMenuVisible(false);
-      router.push('/');
-    }}
-    title="Início"
-    leadingIcon="home-outline"
-  />
-  <Divider />
-  <Menu.Item
-    onPress={() => {
-      setMenuVisible(false);
-      Alert.alert(
-        'Redefinir app',
-        'Tem certeza que deseja apagar suas preferências e reiniciar o app?',
-        [
-          { text: 'Cancelar', style: 'cancel' },
-          {
-            text: 'Redefinir',
-            style: 'destructive',
-            onPress: async () => {
-              await AsyncStorage.clear();
-              router.replace('/');
-            },
-          },
-        ]
-      );
-    }}
-    title="Redefinir app"
-    leadingIcon="restart"
-  />
-</Menu>
+              <Menu
+                visible={menuVisible}
+                onDismiss={() => setMenuVisible(false)}
+                anchor={
+                  <TouchableOpacity onPress={() => setMenuVisible(true)}>
+                    <Ionicons name="settings-outline" size={24} color={theme.colors.textDark} />
+                  </TouchableOpacity>
+                }
+              >
+                <Menu.Item
+                  onPress={() => {
+                    setMenuVisible(false);
+                    router.push('/preferences');
+                  }}
+                  title="Preferências"
+                  leadingIcon="tune"
+                />
+                <Divider />
+                <Menu.Item
+                  onPress={() => {
+                    setMenuVisible(false);
+                    router.push('/');
+                  }}
+                  title="Início"
+                  leadingIcon="home-outline"
+                />
+                <Divider />
+                <Menu.Item
+                  onPress={() => {
+                    setMenuVisible(false);
+                    Alert.alert(
+                      'Redefinir app',
+                      'Tem certeza que deseja apagar suas preferências e reiniciar o app?',
+                      [
+                        { text: 'Cancelar', style: 'cancel' },
+                        {
+                          text: 'Redefinir',
+                          style: 'destructive',
+                          onPress: async () => {
+                            await AsyncStorage.clear();
+                            router.replace('/');
+                          },
+                        },
+                      ]
+                    );
+                  }}
+                  title="Redefinir app"
+                  leadingIcon="restart"
+                />
+              </Menu>
 
 
             </View>
@@ -329,25 +324,25 @@ export default function HomeScreen() {
                     </View>
                   )}
                 </View>
-         <View style={{ alignItems: 'center' }}>
-  {weatherData?.icon ? (
-    <Image
-      source={{ uri: `https://openweathermap.org/img/wn/${weatherData.icon}@2x.png` }}
-      style={{ width: 48, height: 48 }}
-      resizeMode="contain"
-    />
-  ) : (
-    <Feather name="sun" size={32} color="#FFC300" />
-  )}
-  <Text style={globalStyles.weatherLabel}>
-    {weatherData?.condicao || 'Clima indefinido'}
-  </Text>
-</View>
+                <View style={{ alignItems: 'center' }}>
+                  {weatherData?.icon ? (
+                    <Image
+                      source={{ uri: `https://openweathermap.org/img/wn/${weatherData.icon}@2x.png` }}
+                      style={{ width: 48, height: 48 }}
+                      resizeMode="contain"
+                    />
+                  ) : (
+                    <Feather name="sun" size={32} color="#FFC300" />
+                  )}
+                  <Text style={globalStyles.weatherLabel}>
+                    {weatherData?.condicao || 'Clima indefinido'}
+                  </Text>
+                </View>
 
               </View>
 
               <View style={globalStyles.weatherInfoRow}>
- 
+
                 <Text style={globalStyles.weatherInfo}>
                   {weatherData ? getFraseClimatica(weatherData) : 'Carregando...'}
                 </Text>
@@ -369,11 +364,11 @@ export default function HomeScreen() {
                       style={globalStyles.avatar}
                       resizeMode="contain"
                     />
-                    
+
                     <View style={globalStyles.tagRow}>
                       <View style={globalStyles.tag}>
                         <Text style={globalStyles.tagText}>{suggestion.roupaSuperior}</Text>
-                        
+
                       </View>
                       <View style={globalStyles.tag}>
                         <Text style={globalStyles.tagText}>{suggestion.roupaInferior}</Text>
