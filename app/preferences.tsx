@@ -80,7 +80,13 @@ export default function PreferencesScreen() {
   };
 
   return (
-<SafeAreaView style={[{ flex: 1, backgroundColor: theme.colors.background }, { paddingHorizontal: 20 }]}>
+<SafeAreaView
+  style={{
+    flex: 1,
+    backgroundColor: theme.colors.background,
+    position: 'relative', // chave para o botão absoluto funcionar
+  }}
+>
   <KeyboardAvoidingView
     style={{ flex: 1 }}
     behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -89,15 +95,16 @@ export default function PreferencesScreen() {
       <ScrollView
         contentContainerStyle={{
           paddingTop: 24,
-          paddingBottom: 48,
-          minHeight: screenHeight + 100,
+          paddingBottom: 160, // espaço reservado para o botão fixo
           backgroundColor: theme.colors.background,
         }}
         keyboardShouldPersistTaps="handled"
       >
         <BackButton />
 
-        <Text style={[globalStyles.title, { marginBottom: 16 }]}>Suas Preferências</Text>
+        <Text style={[globalStyles.title, { marginBottom: 16 }]}>
+          Suas Preferências
+        </Text>
 
         <Text style={globalStyles.descriptionWithSpacing}>
           Vamos personalizar sua experiência!
@@ -107,133 +114,146 @@ export default function PreferencesScreen() {
           Essas informações nos ajudarão a recomendar roupas que combinam com seu estilo.
         </Text>
 
-            <View style={globalStyles.infoRow}>
-              <TouchableOpacity onPress={handleInfoPress}>
-                <Ionicons
-                  name="information-circle-outline"
-                  size={18}
-                  color={theme.colors.textLight}
-                  style={{ marginRight: 5 }}
-                />
-              </TouchableOpacity>
-              <Text style={globalStyles.subtext}>
-                Você poderá editar essas preferências mais tarde.
-              </Text>
-            </View>
+        <View style={globalStyles.infoRow}>
+          <TouchableOpacity onPress={handleInfoPress}>
+            <Ionicons
+              name="information-circle-outline"
+              size={18}
+              color={theme.colors.textLight}
+              style={{ marginRight: 5 }}
+            />
+          </TouchableOpacity>
+          <Text style={globalStyles.subtext}>
+            Você poderá editar essas preferências mais tarde.
+          </Text>
+        </View>
 
-            {/* Nome */}
-<View style={globalStyles.section}>
-  <Text style={globalStyles.sectionTitle}>Nome ou apelido (opcional)</Text>
-  <View style={{ position: 'relative' }}>
-    <TextInput
-      placeholder="Como prefere ser chamado(a)?"
-      placeholderTextColor={theme.colors.textLight}
-      style={[
-        globalStyles.input,
-        isFocused && globalStyles.inputFocused,
-        { paddingRight: 40 },
-      ]}
-      value={name}
-      onChangeText={(text) => {
-        setName(text);
-        if (!touchedName) setTouchedName(true);
+        {/* Nome */}
+        <View style={globalStyles.section}>
+          <Text style={globalStyles.sectionTitle}>Nome ou apelido (opcional)</Text>
+          <View style={{ position: 'relative' }}>
+            <TextInput
+              placeholder="Como prefere ser chamado(a)?"
+              placeholderTextColor={theme.colors.textLight}
+              style={[
+                globalStyles.input,
+                isFocused && globalStyles.inputFocused,
+                { paddingRight: 40 },
+              ]}
+              value={name}
+              onChangeText={(text) => {
+                setName(text);
+                if (!touchedName) setTouchedName(true);
+              }}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => {
+                setIsFocused(false);
+                setTouchedName(true);
+              }}
+            />
+            {isFocused && (
+              <Ionicons
+                name="pencil"
+                size={18}
+                color={theme.colors.primary}
+                style={{
+                  position: 'absolute',
+                  right: 12,
+                  top: '50%',
+                  marginTop: -9,
+                }}
+              />
+            )}
+          </View>
+          {touchedName && name.trim() === '' && (
+            <Text style={[globalStyles.validationText]}>
+              Por favor, preencha seu nome ou deixe em branco intencionalmente.
+            </Text>
+          )}
+        </View>
+
+        {/* Gênero */}
+        <View style={globalStyles.section}>
+          <Text style={globalStyles.sectionTitle}>O que prefere?</Text>
+          <View style={globalStyles.preferenceCardContainer}>
+            <OptionCard
+              label="Moda Masculina"
+              selected={gender === 'masculino'}
+              icon={<FontAwesome5 name="male" style={globalStyles.preferenceCardIcon} />}
+              onPress={() => setGender('masculino')}
+            />
+            <OptionCard
+              label="Moda Feminina"
+              selected={gender === 'feminino'}
+              icon={<FontAwesome5 name="female" style={globalStyles.preferenceCardIcon} />}
+              onPress={() => setGender('feminino')}
+            />
+            <OptionCard
+              label="Moda Unissex"
+              selected={gender === 'unissex'}
+              icon={<FontAwesome5 name="genderless" style={globalStyles.preferenceCardIcon} />}
+              onPress={() => setGender('unissex')}
+            />
+          </View>
+          <View style={globalStyles.infoRow}>
+            <Ionicons
+              name="information-circle-outline"
+              size={14}
+              color={theme.colors.textLight}
+              style={{ marginRight: 5 }}
+            />
+            <Text style={globalStyles.subtext}>
+              Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo.
+            </Text>
+          </View>
+        </View>
+
+        {/* Temperatura de conforto */}
+        <View style={globalStyles.section}>
+          <Text style={globalStyles.sectionTitle}>Temperatura de conforto</Text>
+          <View style={{ gap: 12 }}>
+            <OptionBlock
+              label="Prefiro me agasalhar mais"
+              description="Você geralmente sente frio com facilidade"
+              selected={comfort === 'frio'}
+              icon={<Ionicons name="snow" size={18} />}
+              onPress={() => setComfort('frio')}
+            />
+            <OptionBlock
+              label="Sinto muito calor"
+              description="Você prefere roupas mais leves e frescas"
+              selected={comfort === 'calor'}
+              icon={<Ionicons name="sunny" size={18} />}
+              onPress={() => setComfort('calor')}
+            />
+          </View>
+        </View>
+      </ScrollView>
+    </TouchableWithoutFeedback>
+
+    {/* Botão fixo posicionado */}
+    <View
+      style={{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        paddingHorizontal: 20,
+        paddingVertical: 20,
+        backgroundColor: theme.colors.background,
       }}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => {
-        setIsFocused(false);
-        setTouchedName(true);
-      }}
-    />
-    {isFocused && (
-      <Ionicons
-        name="pencil"
-        size={18}
-        color={theme.colors.primary}
-        style={{
-          position: 'absolute',
-          right: 12,
-          top: '50%',
-          marginTop: -9,
-        }}
+    >
+      <PrimaryButton
+        title="Salvar preferências e continuar"
+        onPress={handleSave}
+        accessibilityLabel="Salvar preferências"
+        accessibilityRole="button"
       />
-    )}
-  </View>
-  {touchedName && name.trim() === '' && (
-    <Text style={[globalStyles.validationText]}>
-      Por favor, preencha seu nome ou deixe em branco intencionalmente.
-    </Text>
-  )}
-</View>
-
-
-            {/* Gênero */}
-            <View style={globalStyles.section}>
-              <Text style={globalStyles.sectionTitle}>O que prefere?</Text>
-              <View style={globalStyles.preferenceCardContainer}>
-                <OptionCard
-                  label="Moda Masculina"
-                  selected={gender === 'masculino'}
-                  icon={<FontAwesome5 name="male" style={globalStyles.preferenceCardIcon} />}
-                  onPress={() => setGender('masculino')}
-                />
-                <OptionCard
-                  label="Moda Feminina"
-                  selected={gender === 'feminino'}
-                  icon={<FontAwesome5 name="female" style={globalStyles.preferenceCardIcon} />}
-                  onPress={() => setGender('feminino')}
-                />
-                <OptionCard
-                  label="Moda Unissex"
-                  selected={gender === 'unissex'}
-                  icon={<FontAwesome5 name="genderless" style={globalStyles.preferenceCardIcon} />}
-                  onPress={() => setGender('unissex')}
-                />
-              </View>
-              <View style={globalStyles.infoRow}>
-                <Ionicons
-                  name="information-circle-outline"
-                  size={14}
-                  color={theme.colors.textLight}
-                  style={{ marginRight: 5 }}
-                />
-                <Text style={globalStyles.subtext}>
-                  Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo.
-                </Text>
-              </View>
-            </View>
-
-            {/* Temperatura de conforto */}
-            <View style={globalStyles.section}>
-              <Text style={globalStyles.sectionTitle}>Temperatura de conforto</Text>
-              <View style={{ gap: 12 }}>
-                <OptionBlock
-                  label="Prefiro me agasalhar mais"
-                  description="Você geralmente sente frio com facilidade"
-                  selected={comfort === 'frio'}
-                  icon={<Ionicons name="snow" size={18} />}
-                  onPress={() => setComfort('frio')}
-                />
-                <OptionBlock
-                  label="Sinto muito calor"
-                  description="Você prefere roupas mais leves e frescas"
-                  selected={comfort === 'calor'}
-                  icon={<Ionicons name="sunny" size={18} />}
-                  onPress={() => setComfort('calor')}
-                />
-              </View>
-            </View>
-
-            {/* Botão ao final */}
-            <View style={{ marginTop: 40 }}>
-              <PrimaryButton title="Salvar e Continuar" onPress={handleSave} />
-            </View>
-          </ScrollView>
-        </TouchableWithoutFeedback>
-      </KeyboardAvoidingView>
-    </SafeAreaView>
-  );
-}
-
+    </View>
+  </KeyboardAvoidingView>
+</SafeAreaView>
+);
+}  
 function OptionCard({ label, selected, icon, onPress }: any) {
   return (
     <TouchableOpacity
