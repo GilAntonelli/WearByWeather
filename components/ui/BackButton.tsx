@@ -1,48 +1,41 @@
-import { Feather } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
 import React from 'react';
-import { Text, TouchableOpacity, ViewStyle } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { theme } from '../../styles/theme';
 
-interface BackButtonProps {
-  label?: string;
-  style?: ViewStyle;
-  onPress?: () => void; // ✅ novo prop opcional
-}
-
-export function BackButton({ label = 'Voltar', style, onPress }: BackButtonProps) {
+export function BackButton() {
   const router = useRouter();
 
-  const handlePress = () => {
-    if (onPress) {
-      onPress(); // ✅ usa a função personalizada, se existir
-    } else {
-      router.back(); // comportamento padrão
-    }
-  };
-
   return (
-    <TouchableOpacity
-      onPress={handlePress}
-      style={[
-        {
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginBottom: 24,
-        },
-        style,
-      ]}
+    <Pressable
+      onPress={() => router.back()}
+      hitSlop={{ top: 16, bottom: 16, left: 16, right: 16 }}
+      accessibilityLabel="Voltar"
+      accessibilityRole="button"
+      style={styles.container}
     >
-      <Feather name="chevron-left" size={20} color={theme.colors.primary} />
-      <Text
-        style={{
-          color: theme.colors.primary,
-          fontSize: 16,
-          marginLeft: 8,
-        }}
-      >
-        {label}
-      </Text>
-    </TouchableOpacity>
+      <View style={styles.inner}>
+        <Ionicons name="arrow-back" size={24} color={theme.colors.textDark} />
+        <Text style={styles.text}>Voltar</Text>
+      </View>
+    </Pressable>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginBottom: 16,
+    alignSelf: 'flex-start',
+  },
+  inner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  text: {
+    fontSize: 16,
+    color: theme.colors.textDark,
+    fontWeight: '500',
+  },
+});

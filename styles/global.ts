@@ -1,5 +1,6 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import { theme } from './theme';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 const screenWidth = Dimensions.get('window').width;
 const cardSpacing = 12;
@@ -79,7 +80,7 @@ export const globalStyles = StyleSheet.create({
     marginBottom: theme.spacing.lg,
     maxWidth: 280,
     alignSelf: 'center',
-    opacity: 11,
+    opacity: 1,
   },
   description: {
     color: theme.colors.textDark,
@@ -109,6 +110,17 @@ export const globalStyles = StyleSheet.create({
     shadowRadius: 6,
     elevation: 3,
   },
+validationText: {
+  color: 'red',
+  //fontSize: theme.fontSize.small,
+  fontSize: 12,
+
+  marginTop: 4,
+  marginBottom: 8,
+  fontWeight: '500',
+},
+
+
   section: {
     marginBottom: theme.spacing.xxl,
   },
@@ -155,7 +167,9 @@ export const globalStyles = StyleSheet.create({
     color: theme.colors.textDark,
   },
   blockDesc: {
+  //fontSize: theme.fontSize.small,
     fontSize: 12,
+
     color: theme.colors.textLight,
     marginTop: 4,
   },
@@ -342,7 +356,9 @@ hourCard: {
   padding: 8,
 },
   hourLabel: {
-    fontSize: 13,
+   fontSize: 13,
+  //fontSize: theme.fontSize.small,
+
     fontWeight: 'bold',
     marginBottom: 4,
     color: theme.colors.textDark,
@@ -504,7 +520,8 @@ hourCard: {
     lineHeight: 24,
   },
 
-  // ✅ AJUSTES FINAIS PARA RESPONSIVIDADE DOS BOTÕES DE GÊNERO
+ // Cards do bloco de moda
+
   preferenceCardContainer: {
     flexDirection: 'row',
     flexWrap: 'nowrap',
@@ -512,35 +529,46 @@ hourCard: {
     marginBottom: theme.spacing.lg,
   },
 
-  preferenceCard: {
-    flexGrow: 1,
-    flexBasis: '33%',
-    maxWidth: '33%',
-    paddingVertical: screenWidth < 390 ? 10 : 14,
-    paddingHorizontal: 4,
-    minHeight: screenWidth < 390 ? 52 : 60,
-    borderRadius: theme.radius.md,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: theme.colors.white,
-    borderWidth: 1,
-    borderColor: theme.colors.border,
-    marginHorizontal: 4,
-  },
-
-  preferenceCardText: {
-    fontSize: screenWidth < 390 ? 13 : 15,
-    color: theme.colors.textDark,
-    textAlign: 'center',
-  },
-
-  preferenceCardIcon: {
-    fontSize: screenWidth < 390 ? 18 : 22,
-    color: theme.colors.textMedium,
-    marginBottom: 4,
-  },
-
-  
+preferenceCard: {
+  flex: 1,
+  minWidth: '30%',
+  alignItems: 'center',
+  justifyContent: 'center',
+  paddingVertical: theme.spacing.md,
+  paddingHorizontal: theme.spacing.sm,
+  borderRadius: theme.radius.md,
+  backgroundColor: '#fff',
+  borderWidth: 1,
+  borderColor: theme.colors.border,
+  shadowColor: '#000',
+  shadowOpacity: 0.08,
+  shadowOffset: { width: 0, height: 2 },
+  shadowRadius: 6,
+  elevation: 2,
+  margin: 4,
+  flexDirection: 'column', // garante empilhamento vertical correto
+ 
+},
+preferenceCardSelected: {
+  borderColor: theme.colors.primary,
+  backgroundColor: '#fff9e5',
+  shadowColor: theme.colors.primary,
+  shadowOpacity: 0.12,
+  shadowRadius: 8,
+  elevation: 4,
+},
+preferenceCardText: {
+  fontSize: theme.fontSize.cardText,
+  color: theme.colors.textDark,
+  textAlign: 'center',
+},
+preferenceCardIcon: {
+  fontSize: theme.fontSize.cardText,
+  marginBottom: 4, // ↓ diminuir para reduzir o "vão" entre ícone e texto
+  marginTop: 2, // ↑ acrescentar para centralizar melhor verticalmente
+  color: theme.colors.textMedium,
+  textAlign: 'center',
+},
 
 
 

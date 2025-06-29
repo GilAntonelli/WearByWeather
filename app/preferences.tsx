@@ -1,6 +1,7 @@
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState, useEffect } from 'react';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   Alert,
@@ -34,6 +35,8 @@ export default function PreferencesScreen() {
   const [gender, setGender] = useState<'masculino' | 'feminino' | 'unissex' | null>(null);
   const [comfort, setComfort] = useState<'frio' | 'calor' | null>(null);
   const [isFocused, setIsFocused] = useState(false);
+  const [touchedName, setTouchedName] = useState(false); // ← aqui
+
 
   useEffect(() => {
     const loadPreferences = async () => {
@@ -77,30 +80,32 @@ export default function PreferencesScreen() {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
-      <KeyboardAvoidingView
-        style={{ flex: 1 }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+<SafeAreaView style={[{ flex: 1, backgroundColor: theme.colors.background }, { paddingHorizontal: 20 }]}>
+  <KeyboardAvoidingView
+    style={{ flex: 1 }}
+    behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+  >
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <ScrollView
+        contentContainerStyle={{
+          paddingTop: 24,
+          paddingBottom: 48,
+          minHeight: screenHeight + 100,
+          backgroundColor: theme.colors.background,
+        }}
+        keyboardShouldPersistTaps="handled"
       >
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <ScrollView
-            contentContainerStyle={{
-              paddingHorizontal: 24,
-              paddingTop: 24,
-              paddingBottom: 48,
-              minHeight: screenHeight + 100,
-              backgroundColor: theme.colors.background,
-            }}
-            keyboardShouldPersistTaps="handled"
-          >
-            <BackButton />
-            <Text style={globalStyles.title}>Suas Preferências</Text>
-            <Text style={globalStyles.descriptionWithSpacing}>
-              Vamos personalizar sua experiência!
-            </Text>
-            <Text style={[globalStyles.description, globalStyles.subtitleWelcomeStrong]}>
-              Essas informações nos ajudarão a recomendar roupas que combinam com seu estilo.
-            </Text>
+        <BackButton />
+
+        <Text style={[globalStyles.title, { marginBottom: 16 }]}>Suas Preferências</Text>
+
+        <Text style={globalStyles.descriptionWithSpacing}>
+          Vamos personalizar sua experiência!
+        </Text>
+
+        <Text style={[globalStyles.description, globalStyles.subtitleWelcomeStrong]}>
+          Essas informações nos ajudarão a recomendar roupas que combinam com seu estilo.
+        </Text>
 
             <View style={globalStyles.infoRow}>
               <TouchableOpacity onPress={handleInfoPress}>
@@ -117,37 +122,49 @@ export default function PreferencesScreen() {
             </View>
 
             {/* Nome */}
-            <View style={globalStyles.section}>
-              <Text style={globalStyles.sectionTitle}>Nome ou apelido (opcional)</Text>
-              <View style={{ position: 'relative' }}>
-                <TextInput
-                  placeholder="Ex: Ana, João, Paty..."
-                  placeholderTextColor={theme.colors.textLight}
-                  style={[
-                    globalStyles.input,
-                    isFocused && globalStyles.inputFocused,
-                    { paddingRight: 40 },
-                  ]}
-                  value={name}
-                  onChangeText={setName}
-                  onFocus={() => setIsFocused(true)}
-                  onBlur={() => setIsFocused(false)}
-                />
-                {isFocused && (
-                  <Ionicons
-                    name="pencil"
-                    size={18}
-                    color={theme.colors.primary}
-                    style={{
-                      position: 'absolute',
-                      right: 12,
-                      top: '50%',
-                      marginTop: -9,
-                    }}
-                  />
-                )}
-              </View>
-            </View>
+<View style={globalStyles.section}>
+  <Text style={globalStyles.sectionTitle}>Nome ou apelido (opcional)</Text>
+  <View style={{ position: 'relative' }}>
+    <TextInput
+      placeholder="Como prefere ser chamado(a)?"
+      placeholderTextColor={theme.colors.textLight}
+      style={[
+        globalStyles.input,
+        isFocused && globalStyles.inputFocused,
+        { paddingRight: 40 },
+      ]}
+      value={name}
+      onChangeText={(text) => {
+        setName(text);
+        if (!touchedName) setTouchedName(true);
+      }}
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => {
+        setIsFocused(false);
+        setTouchedName(true);
+      }}
+    />
+    {isFocused && (
+      <Ionicons
+        name="pencil"
+        size={18}
+        color={theme.colors.primary}
+        style={{
+          position: 'absolute',
+          right: 12,
+          top: '50%',
+          marginTop: -9,
+        }}
+      />
+    )}
+  </View>
+  {touchedName && name.trim() === '' && (
+    <Text style={[globalStyles.validationText]}>
+      Por favor, preencha seu nome ou deixe em branco intencionalmente.
+    </Text>
+  )}
+</View>
+
 
             {/* Gênero */}
             <View style={globalStyles.section}>
