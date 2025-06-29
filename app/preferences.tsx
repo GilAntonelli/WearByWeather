@@ -253,32 +253,46 @@ function OptionCard({ label, selected, icon, onPress }: any) {
   );
 }
 
-function OptionBlock({ label, description, selected, icon, onPress }: any) {
+ function OptionBlock({ label, description, selected, icon, onPress }: any) {
   return (
     <Pressable
       onPress={onPress}
+      accessibilityRole="button"
+      accessibilityState={{ selected }}
       style={[
         globalStyles.block,
-        selected && {
-          borderColor: theme.colors.primary,
-          backgroundColor: '#fff9e5',
-        },
+        selected && globalStyles.comfortBlockSelected,
       ]}
     >
       <View style={globalStyles.blockHeader}>
         <Ionicons
           name={selected ? 'checkbox' : 'checkbox-outline'}
           size={20}
-          color={selected ? '#fff' : '#999'}
+          color={selected ? theme.colors.background : theme.colors.textLight}
           style={{
             backgroundColor: selected ? theme.colors.primary : 'transparent',
             borderRadius: 4,
             padding: 2,
           }}
         />
-        <Text style={globalStyles.blockLabel}>{label}</Text>
+        <Text
+          style={[
+            globalStyles.blockLabel,
+            selected && { color: theme.colors.textDark },
+          ]}
+        >
+          {label}
+        </Text>
       </View>
-      <Text style={globalStyles.blockDesc}>{description}</Text>
+      <Text
+        style={[
+          globalStyles.blockDesc,
+          selected && { color: theme.colors.text },
+        ]}
+      >
+        {description}
+      </Text>
     </Pressable>
   );
 }
+

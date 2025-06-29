@@ -153,6 +153,8 @@ validationText: {
     fontSize: theme.fontSize.medium,
     color: theme.colors.textDark,
   },
+
+   //cards do bloco conforto
   block: {
     borderWidth: 1,
     borderColor: '#ccc',
@@ -173,6 +175,12 @@ validationText: {
     color: theme.colors.textLight,
     marginTop: 4,
   },
+
+ 
+comfortBlockSelected: {
+  borderColor: theme.colors.primary,
+  backgroundColor: '#fff9e5',
+},
   subtextRow: {
     flexDirection: 'row',
     alignItems: 'center',
