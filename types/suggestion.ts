@@ -3,10 +3,13 @@ import { Image, ImageSourcePropType } from 'react-native';
 export interface WeatherContext {
   temperatura: number;
   sensacaoTermica: number;
-  chuva: boolean;
   vento: number;
+  umidade: number;        // ← precisa adicionar
+  visibilidade: number;   // ← precisa adicionar
+  chuva: boolean;
+  clima: string;
   genero: 'masculino' | 'feminino' | 'unissex';
-  conforto: 'frio' | 'neutro' | 'calor';
+  conforto: 'frio' | 'calor' | 'neutro';
 }
 
 export interface LookSuggestion {

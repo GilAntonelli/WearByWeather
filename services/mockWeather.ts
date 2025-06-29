@@ -18,7 +18,8 @@
 */
 
 // Céu limpo
-/* export const mockWeather = {
+ /*
+export const mockWeather = {
   temperatura: 27,
   sensacaoTermica: 28,
   tempMin: 22,
@@ -34,7 +35,8 @@
 */
 
 // Nublado
-/* export const mockWeather = {
+
+export const mockWeather = {
   temperatura: 20,
   sensacaoTermica: 19,
   tempMin: 17,
@@ -47,10 +49,12 @@
   icon: '04d',
   iconUrl: 'https://openweathermap.org/img/wn/04d@2x.png',
 };
-*/
+
+
 
 // Chuva moderada
-/* export const mockWeather = {
+/*
+export const mockWeather = {
   temperatura: 18,
   sensacaoTermica: 17,
   tempMin: 16,
@@ -66,7 +70,8 @@
 */
 
 // Trovoada
-/* export const mockWeather = {
+/*
+ export const mockWeather = {
   temperatura: 23,
   sensacaoTermica: 22,
   tempMin: 20,
@@ -82,6 +87,7 @@
 */
 
 // Nevoeiro
+/*
 export const mockWeather = {
   temperatura: 15,
   sensacaoTermica: 14,
@@ -95,7 +101,7 @@ export const mockWeather = {
   icon: '50d',
   iconUrl: 'https://openweathermap.org/img/wn/50d@2x.png',
 };
-
+*/
 
 
 /*
