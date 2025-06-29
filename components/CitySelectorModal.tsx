@@ -19,6 +19,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getWeatherByCity } from '../services/weatherService';
 import { API_KEY, GEO_URL } from '../config/apiConfig';
 import { normalizeCityName } from '../utils/normalizeCity'; // ✅ Importado corretamente
+import * as Location from 'expo-location';
+import { getdetectedCity } from '../services/LocationService';
 
 interface CitySelectorModalProps {
   visible: boolean;
@@ -40,6 +42,16 @@ export const CitySelectorModal = ({
   const [search, setSearch] = useState('');
   const [results, setResults] = useState<Suggestion[]>([]);
   const [loading, setLoading] = useState(false);
+  const [hasLocationPermission, setHasLocationPermission] = useState(false);
+
+  useEffect(() => {
+    const checkPermission = async () => {
+      const { status } = await Location.getForegroundPermissionsAsync();
+      setHasLocationPermission(status === 'granted');
+    };
+
+    checkPermission();
+  }, [visible]);
 
   const cityList = [
     'Lisboa',
@@ -55,6 +67,8 @@ export const CitySelectorModal = ({
     'São Paulo',
     'Rio de Janeiro',
   ];
+
+  const fullCityList = hasLocationPermission ? ['Localização atual', ...cityList] : cityList;
 
   useEffect(() => {
     const fetchSuggestions = async () => {
@@ -84,6 +98,13 @@ export const CitySelectorModal = ({
 
   const handleSelectCity = async (cityName: string) => {
     setLoading(true);
+
+    if (cityName === 'Localização atual') {
+      const detectedCity = await getdetectedCity();     
+      if (detectedCity) {
+        cityName = detectedCity;
+      }
+    }
 
     const nomeParaApi = normalizeCityName(cityName); // ✅ Uso correto da função centralizada
 
@@ -121,16 +142,15 @@ export const CitySelectorModal = ({
           <ActivityIndicator color={theme.colors.primary} style={{ marginTop: 16 }} />
         ) : (
           <FlatList
-            data={search.length < 3 ? cityList.map((name) => ({ name })) : results}
+            data={search.length < 3 ? fullCityList.map((name) => ({ name })) : results}
             keyExtractor={(item, index) => {
               const city = item as Suggestion;
               return `${city.name}-${city.state ?? ''}-${city.country ?? ''}-${index}`;
             }}
             renderItem={({ item }) => {
               const city = item as Suggestion;
-              const label = `${city.name}${city.state ? ', ' + city.state : ''}${
-                city.country ? ', ' + city.country : ''
-              }`;
+              const label = `${city.name}${city.state ? ', ' + city.state : ''}${city.country ? ', ' + city.country : ''
+                }`;
 
               return (
                 <TouchableOpacity
