@@ -147,4 +147,5 @@ const styles = StyleSheet.create({
     color: theme.colors.textDark,
     textAlign: 'center',
   },
+  
 });

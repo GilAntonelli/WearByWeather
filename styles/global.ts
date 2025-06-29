@@ -176,7 +176,13 @@ validationText: {
     marginTop: 4,
   },
 
- 
+ contentWrapper: {
+  paddingHorizontal: 24,
+  width: '100%',
+  maxWidth: 480,
+  alignSelf: 'center',
+},
+
 comfortBlockSelected: {
   borderColor: theme.colors.primary,
   backgroundColor: '#fff9e5',
