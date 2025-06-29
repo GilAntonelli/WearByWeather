@@ -1,3 +1,4 @@
+import InfoIconText from '../components/ui/InfoIconText';
 
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -114,19 +115,8 @@ export default function PreferencesScreen() {
                 Essas informações nos ajudarão a recomendar roupas que combinam com seu estilo.
               </Text>
 
-              <View style={globalStyles.infoRow}>
-                <TouchableOpacity onPress={handleInfoPress}>
-                  <Ionicons
-                    name="information-circle-outline"
-                    size={18}
-                    color={theme.colors.textLight}
-                    style={{ marginRight: 5 }}
-                  />
-                </TouchableOpacity>
-                <Text style={globalStyles.subtext}>
-                  Você poderá editar essas preferências mais tarde.
-                </Text>
-              </View>
+  <InfoIconText text="Você poderá editar essas preferências mais tarde." />
+
 
               {/* Nome */}
               <View style={[globalStyles.section, { marginBottom: 16 }]}>
@@ -195,17 +185,12 @@ export default function PreferencesScreen() {
                     onPress={() => setGender('unissex')}
                   />
                 </View>
-                <View style={globalStyles.infoRow}>
-                  <Ionicons
-                    name="information-circle-outline"
-                    size={14}
-                    color={theme.colors.textLight}
-                    style={{ marginRight: 5 }}
-                  />
-                  <Text style={globalStyles.subtext}>
-                    Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo.
-                  </Text>
-                </View>
+          <InfoIconText
+            text="Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo."
+            marginTop={0}
+            marginBottom={20}
+          />
+
               </View>
 
               {/* Temperatura de conforto */}

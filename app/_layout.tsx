@@ -1,4 +1,4 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { DarkTheme, DefaultTheme as NavigationTheme, ThemeProvider as NavigationThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Slot } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -7,6 +7,7 @@ import { PaperProvider } from 'react-native-paper';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components/native'; // ✅ IMPORT CORRETA
 import { theme } from '../styles/theme';
 
 export default function RootLayout() {
@@ -26,10 +27,12 @@ export default function RootLayout() {
 
   return (
     <PaperProvider>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Slot />
-        <StatusBar style="auto" />
-      </ThemeProvider>
+      <NavigationThemeProvider value={colorScheme === 'dark' ? DarkTheme : NavigationTheme}>
+        <StyledThemeProvider theme={theme}> {/* ✅ Envolve tudo aqui */}
+          <Slot />
+          <StatusBar style="auto" />
+        </StyledThemeProvider>
+      </NavigationThemeProvider>
     </PaperProvider>
   );
 }
