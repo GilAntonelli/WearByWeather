@@ -1,3 +1,5 @@
+import { RFValue } from 'react-native-responsive-fontsize';
+
 type WeatherBackgroundKeys =
   | 'clear'
   | 'partlyCloudy'
@@ -66,13 +68,15 @@ export const theme = {
     full: 999,
   },
 
-  fontSize: {
-    small: 14,
-    medium: 16,
-    large: 25,
-    extralarge: 35,
-    title: 28,
-  },
+fontSize: {
+  small: 13,                   // fixo
+  medium: 15,                  // fixo
+  large: 22,                   // fixo
+  extralarge: RFValue(34),     // responsivo (p/ títulos maiores)
+  title: RFValue(28),          // responsivo (p/ grandes destaques)
+  icon: 22,                    // fixo (ideal para cards)
+  cardText: 14,                // fixo (para texto dentro de botão/card)
+},
 
   fontWeight: {
     regular: '400',
