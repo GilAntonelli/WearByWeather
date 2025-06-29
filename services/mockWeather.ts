@@ -17,51 +17,63 @@
 
 */
 
-// Céu limpo
- /*
+/*
+Como usar:
+- Descomente apenas UM bloco `mockWeather` por vez para testar.
+- Cada bloco é nomeado com o clima, temperatura e objetivo visual.
+*/
+
+
+// services/mockWeather.ts
+
+/*
+Como usar:
+- Descomente apenas UM bloco `mockWeather` por vez para testar.
+- Cada bloco é nomeado com o clima, temperatura e objetivo visual.
+*/
+
+// 🔥 MUITO QUENTE – Look de verão, acessórios de sol (óculos, boné, protetor)
 export const mockWeather = {
-  temperatura: 27,
-  sensacaoTermica: 28,
-  tempMin: 22,
-  tempMax: 30,
-  umidade: 40,
+  temperatura: 35,
+  sensacaoTermica: 38,
+  tempMin: 30,
+  tempMax: 39,
+  umidade: 35,
   chuva: false,
-  vento: 10,
+  vento: 5,
   condicao: 'céu limpo',
   descricao: 'Clear',
   icon: '01d',
   iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
 };
-*/
 
-// Nublado
-
+// ☁️ NUBLADO AMENO – Look meia-estação, sem acessórios específicos
+/*
 export const mockWeather = {
-  temperatura: 20,
-  sensacaoTermica: 19,
-  tempMin: 17,
-  tempMax: 22,
-  umidade: 65,
+  temperatura: 21,
+  sensacaoTermica: 20,
+  tempMin: 18,
+  tempMax: 23,
+  umidade: 60,
   chuva: false,
-  vento: 15,
+  vento: 10,
   condicao: 'nublado',
   descricao: 'Clouds',
   icon: '04d',
   iconUrl: 'https://openweathermap.org/img/wn/04d@2x.png',
 };
+*/
 
-
-
-// Chuva moderada
+// ☔ CHUVA MODERADA – Look com guarda-chuva, capa e bota
 /*
 export const mockWeather = {
-  temperatura: 18,
-  sensacaoTermica: 17,
-  tempMin: 16,
-  tempMax: 20,
+  temperatura: 17,
+  sensacaoTermica: 16,
+  tempMin: 15,
+  tempMax: 19,
   umidade: 85,
   chuva: true,
-  vento: 20,
+  vento: 15,
   condicao: 'chuva moderada',
   descricao: 'Rain',
   icon: '10d',
@@ -69,16 +81,16 @@ export const mockWeather = {
 };
 */
 
-// Trovoada
+// 🌩️ TROVOADA – Look com capa e proteção, acessórios de chuva + vento
 /*
- export const mockWeather = {
-  temperatura: 23,
-  sensacaoTermica: 22,
+export const mockWeather = {
+  temperatura: 22,
+  sensacaoTermica: 21,
   tempMin: 20,
-  tempMax: 26,
+  tempMax: 24,
   umidade: 90,
   chuva: true,
-  vento: 25,
+  vento: 20,
   condicao: 'trovoada',
   descricao: 'Thunderstorm',
   icon: '11d',
@@ -86,16 +98,50 @@ export const mockWeather = {
 };
 */
 
-// Nevoeiro
+// ❄️ FRIO – Look com casaco, cachecol, luvas, gorro
 /*
 export const mockWeather = {
-  temperatura: 15,
-  sensacaoTermica: 14,
-  tempMin: 13,
-  tempMax: 17,
+  temperatura: 10,
+  sensacaoTermica: 7,
+  tempMin: 8,
+  tempMax: 12,
+  umidade: 70,
+  chuva: false,
+  vento: 18,
+  condicao: 'céu limpo',
+  descricao: 'Clear',
+  icon: '01d',
+  iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
+};
+*/
+
+// 💨 VENTO – Look com corta-vento, gorro ajustado, elástico de cabelo
+/*
+export const mockWeather = {
+  temperatura: 19,
+  sensacaoTermica: 18,
+  tempMin: 17,
+  tempMax: 21,
+  umidade: 60,
+  chuva: false,
+  vento: 30,
+  condicao: 'nublado',
+  descricao: 'Clouds',
+  icon: '04d',
+  iconUrl: 'https://openweathermap.org/img/wn/04d@2x.png',
+};
+*/
+
+// 🌫️ NEVOEIRO – Look com jaqueta leve, sem muitos acessórios
+/*
+export const mockWeather = {
+  temperatura: 14,
+  sensacaoTermica: 13,
+  tempMin: 12,
+  tempMax: 15,
   umidade: 95,
   chuva: false,
-  vento: 5,
+  vento: 6,
   condicao: 'nevoeiro',
   descricao: 'Fog',
   icon: '50d',
