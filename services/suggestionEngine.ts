@@ -132,6 +132,9 @@ function getAvatar(faixa: string, genero: string): any {
 }
 
 
+
+
+
 /*import { WeatherContext, LookSuggestion } from '../types/suggestion';
 
 export function getSuggestionByWeather({
