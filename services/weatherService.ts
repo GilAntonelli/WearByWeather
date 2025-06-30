@@ -1,24 +1,23 @@
-import axios from 'axios';
+ import axios from 'axios';
 import { API_KEY, BASE_URL, GEO_URL } from '../config/apiConfig';
 import { mockWeather, mockHourlyForecast } from './mockWeather'; // ✅ mock importado
-import { normalizeCityName } from '../utils/normalizeCity';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const WEATHER_CACHE_KEY = 'cached_weather';
 const WEATHER_CACHE_TTL = 15 * 60 * 1000; // 15 minutos
-const USE_MOCK = true; // ✅ Altere para false para usar a API real
+const USE_MOCK = false; // ✅ Altere para false para usar a API real
 
 
 export async function getWeatherByCity(city: string) {
-    if (USE_MOCK) {
+  if (USE_MOCK) {
     return mockWeather;
   }
-  
+
   const now = Date.now();
 
   try {
-    const nomeParaApi = normalizeCityName(city);
+    const nomeParaApi = city;
 
     const cached = await AsyncStorage.getItem(WEATHER_CACHE_KEY);
     if (cached) {
@@ -32,10 +31,30 @@ export async function getWeatherByCity(city: string) {
       }
     }
 
-    // Busca dados atualizados da API
+    // 🌍 Buscar lat/lon via API de geocodificação
+    const geoResponse = await axios.get(
+      `https://api.openweathermap.org/geo/1.0/direct`,
+      {
+        params: {
+          q: nomeParaApi,
+          limit: 1,
+          appid: API_KEY,
+        },
+      }
+    );
+
+    const geoData = geoResponse.data;
+    if (!geoData || geoData.length === 0) {
+      throw new Error('Cidade não encontrada');
+    }
+
+    const { lat, lon } = geoData[0];
+
+    // 🌡️ Buscar clima atual com lat/lon
     const response = await axios.get(`${BASE_URL}/weather`, {
       params: {
-        q: nomeParaApi,
+        lat,
+        lon,
         units: 'metric',
         lang: 'pt',
         appid: API_KEY,
@@ -44,8 +63,8 @@ export async function getWeatherByCity(city: string) {
 
     const data = response.data;
     console.log('Resposta bruta da API:', data);
-    
-    const iconCode = data.weather[0].icon; // <-- DECLARADA aqui corretamente
+
+    const iconCode = data.weather[0].icon;
 
     const result = {
       temperatura: Math.round(data.main.temp),
@@ -59,18 +78,21 @@ export async function getWeatherByCity(city: string) {
       descricao: data.weather[0].main,
       icon: iconCode,
       iconUrl: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
-      
     };
 
     await AsyncStorage.setItem(
       WEATHER_CACHE_KEY,
-      JSON.stringify({ city, timestamp: now, data: result })
+      JSON.stringify({
+        timestamp: now,
+        city,
+        data: result,
+      })
     );
 
     return result;
   } catch (error) {
-    console.error('Erro ao buscar clima:', error);
-    return null;
+    console.error('Erro ao obter dados do clima:', error);
+    throw error;
   }
 }
 
@@ -80,12 +102,37 @@ export async function getWeatherByCity(city: string) {
 
 // ✅ Função de previsão por hora
 export async function getHourlyForecastByCity(city: string) {
-  try {
-    const nomeParaApi = normalizeCityName(city);
+  if (USE_MOCK) {
+    return mockHourlyForecast;
+  }
 
+  try {
+    const nomeParaApi = city;
+
+    // 1. Buscar lat/lon
+    const geoResponse = await axios.get(
+      'https://api.openweathermap.org/geo/1.0/direct',
+      {
+        params: {
+          q: nomeParaApi,
+          limit: 1,
+          appid: API_KEY,
+        },
+      }
+    );
+
+    const geoData = geoResponse.data;
+    if (!geoData || geoData.length === 0) {
+      throw new Error('Cidade não encontrada');
+    }
+
+    const { lat, lon } = geoData[0];
+
+    // 2. Buscar previsão com lat/lon
     const response = await axios.get(`${BASE_URL}/forecast`, {
       params: {
-        q: nomeParaApi,
+        lat,
+        lon,
         units: 'metric',
         lang: 'pt',
         appid: API_KEY,
@@ -94,19 +141,21 @@ export async function getHourlyForecastByCity(city: string) {
 
     const data = response.data;
 
-    const horas = data.list.slice(0, 8).map((item: any) => ({
-      hora: new Date(item.dt_txt).getHours() + 'h',
-      temperatura: Math.round(item.main.temp) + '°C',
-      condicao: item.weather[0].description,
-      icon: item.weather[0].icon,
-      vento: Math.round(item.wind.speed * 3.6),
-      chuva: item.weather[0].main.toLowerCase().includes('rain'),
-    }));
+    const forecast = data.list.slice(0, 9).map((entry: any) => {
+      const iconCode = entry.weather[0].icon;
+      return {
+        hora: entry.dt_txt.split(' ')[1].slice(0, 5),
+        temperatura: Math.round(entry.main.temp),
+        condicao: entry.weather[0].description,
+        icon: iconCode,
+        iconUrl: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
+      };
+    });
 
-    return horas;
+    return forecast;
   } catch (error) {
-    console.error('Erro ao buscar previsão por hora:', error);
-    return [];
+    console.error('Erro ao obter previsão por hora:', error);
+    throw error;
   }
 }
 
@@ -139,8 +188,7 @@ export async function searchCitiesByName(name: string) {
 }
 
 
-/*import { normalizeCityName } from '../utils/normalizeCity';
-import axios from 'axios';
+/*import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { API_KEY, BASE_URL, GEO_URL } from '../config/apiConfig';
 
@@ -148,26 +196,51 @@ const WEATHER_CACHE_KEY = 'cached_weather';
 const WEATHER_CACHE_TTL = 15 * 60 * 1000; // 15 minutos
 
 export async function getWeatherByCity(city: string) {
+  if (USE_MOCK) {
+    return mockWeather;
+  }
 
   const now = Date.now();
 
-
-
   try {
+    const nomeParaApi = city;
+
     const cached = await AsyncStorage.getItem(WEATHER_CACHE_KEY);
     if (cached) {
       const parsed = JSON.parse(cached);
-      const isFresh = now - parsed.timestamp < WEATHER_CACHE_TTL && parsed.city === city;
+      const isFresh =
+        now - parsed.timestamp < WEATHER_CACHE_TTL && parsed.city === city;
 
       if (isFresh) {
         console.log('Usando clima do cache');
         return parsed.data;
       }
     }
-   // Busca dados atualizados da API
+
+    // 🌍 Buscar lat/lon via API de geocodificação
+    const geoResponse = await axios.get(
+      `https://api.openweathermap.org/geo/1.0/direct`,
+      {
+        params: {
+          q: nomeParaApi,
+          limit: 1,
+          appid: API_KEY,
+        },
+      }
+    );
+
+    const geoData = geoResponse.data;
+    if (!geoData || geoData.length === 0) {
+      throw new Error('Cidade não encontrada');
+    }
+
+    const { lat, lon } = geoData[0];
+
+    // 🌡️ Buscar clima atual com lat/lon
     const response = await axios.get(`${BASE_URL}/weather`, {
       params: {
-        q: city,
+        lat,
+        lon,
         units: 'metric',
         lang: 'pt',
         appid: API_KEY,
@@ -175,7 +248,9 @@ export async function getWeatherByCity(city: string) {
     });
 
     const data = response.data;
-      console.log('Resposta bruta da API:', data);
+    console.log('Resposta bruta da API:', data);
+
+    const iconCode = data.weather[0].icon;
 
     const result = {
       temperatura: Math.round(data.main.temp),
@@ -187,26 +262,59 @@ export async function getWeatherByCity(city: string) {
       vento: Math.round(data.wind.speed * 3.6),
       condicao: data.weather[0].description,
       descricao: data.weather[0].main,
+      icon: iconCode,
+      iconUrl: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
     };
 
     await AsyncStorage.setItem(
       WEATHER_CACHE_KEY,
-      JSON.stringify({ city, timestamp: now, data: result })
+      JSON.stringify({
+        timestamp: now,
+        city,
+        data: result,
+      })
     );
 
     return result;
   } catch (error) {
-    console.error('Erro ao buscar clima:', error);
-    return null;
+    console.error('Erro ao obter dados do clima:', error);
+    throw error;
   }
 }
 // ✅ Função de previsão por hora
 
 export async function getHourlyForecastByCity(city: string) {
+  if (USE_MOCK) {
+    return mockHourlyForecast;
+  }
+
   try {
+    const nomeParaApi = city;
+
+    // 1. Buscar lat/lon
+    const geoResponse = await axios.get(
+      'https://api.openweathermap.org/geo/1.0/direct',
+      {
+        params: {
+          q: nomeParaApi,
+          limit: 1,
+          appid: API_KEY,
+        },
+      }
+    );
+
+    const geoData = geoResponse.data;
+    if (!geoData || geoData.length === 0) {
+      throw new Error('Cidade não encontrada');
+    }
+
+    const { lat, lon } = geoData[0];
+
+    // 2. Buscar previsão com lat/lon
     const response = await axios.get(`${BASE_URL}/forecast`, {
       params: {
-        q: city,
+        lat,
+        lon,
         units: 'metric',
         lang: 'pt',
         appid: API_KEY,
@@ -215,19 +323,21 @@ export async function getHourlyForecastByCity(city: string) {
 
     const data = response.data;
 
-    const horas = data.list.slice(0, 8).map((item: any) => ({
-      hora: new Date(item.dt_txt).getHours() + 'h',
-      temperatura: Math.round(item.main.temp) + '°C',
-      condicao: item.weather[0].description,
-      icon: item.weather[0].icon,
-      vento: Math.round(item.wind.speed * 3.6),
-      chuva: item.weather[0].main.toLowerCase().includes('rain'),
-    }));
+    const forecast = data.list.slice(0, 9).map((entry: any) => {
+      const iconCode = entry.weather[0].icon;
+      return {
+        hora: entry.dt_txt.split(' ')[1].slice(0, 5),
+        temperatura: Math.round(entry.main.temp),
+        condicao: entry.weather[0].description,
+        icon: iconCode,
+        iconUrl: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
+      };
+    });
 
-    return horas;
+    return forecast;
   } catch (error) {
-    console.error('Erro ao buscar previsão por hora:', error);
-    return [];
+    console.error('Erro ao obter previsão por hora:', error);
+    throw error;
   }
 }
 

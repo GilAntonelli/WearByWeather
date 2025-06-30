@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import {
   Modal,
@@ -18,9 +19,10 @@ import { theme } from '../styles/theme';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getWeatherByCity } from '../services/weatherService';
 import { API_KEY, GEO_URL } from '../config/apiConfig';
-import { normalizeCityName } from '../utils/normalizeCity'; // ✅ Importado corretamente
+import { getPreferredCityName } from '../utils/getPreferredCityName';
 import * as Location from 'expo-location';
 import { getdetectedCity } from '../services/LocationService';
+import { formatLocationName } from '../utils/formatLocation';
 
 interface CitySelectorModalProps {
   visible: boolean;
@@ -53,22 +55,24 @@ export const CitySelectorModal = ({
     checkPermission();
   }, [visible]);
 
-  const cityList = [
-    'Lisboa',
-    'Porto',
-    'Madrid',
-    'Barcelona',
-    'Paris',
-    'Londres',
-    'Berlim',
-    'Roma',
-    'Bruxelas',
-    'Amsterdã',
-    'São Paulo',
-    'Rio de Janeiro',
+  const cityList: Suggestion[] = [
+    { name: 'Lisboa', state: 'Lisboa', country: 'Portugal' },
+    { name: 'Porto', state: 'Porto', country: 'Portugal' },
+    { name: 'Madrid', state: 'Comunidad de Madrid', country: 'Espanha' },
+    { name: 'Barcelona', state: 'Catalunha', country: 'Espanha' },
+    { name: 'Paris', state: 'Île-de-France', country: 'França' },
+    { name: 'Londres', state: 'Inglaterra', country: 'Reino Unido' },
+    { name: 'Berlim', state: 'Berlim', country: 'Alemanha' },
+    { name: 'Roma', state: 'Lácio', country: 'Itália' },
+    { name: 'Bruxelas', state: 'Bruxelas', country: 'Bélgica' },
+    { name: 'Amsterdã', state: 'Holanda do Norte', country: 'Países Baixos' },
+    { name: 'São Paulo', state: 'SP', country: 'Brasil' },
+    { name: 'Rio de Janeiro', state: 'RJ', country: 'Brasil' },
   ];
 
-  const fullCityList = hasLocationPermission ? ['Localização atual', ...cityList] : cityList;
+  const fullCityList: Suggestion[] = hasLocationPermission
+    ? [{ name: 'Localização atual' }, ...cityList]
+    : cityList;
 
   useEffect(() => {
     const fetchSuggestions = async () => {
@@ -93,20 +97,57 @@ export const CitySelectorModal = ({
     };
 
     const debounce = setTimeout(fetchSuggestions, 500);
-    return () => clearTimeout(debounce);
-  }, [search]);
+    function getFormattedLabel(item: Suggestion, isFromSearch: boolean): string {
+    const name = getPreferredCityName(item);
+    const state = item.state || '';
+    const country = item.country?.toUpperCase() || '';
 
-  const handleSelectCity = async (cityName: string) => {
-    setLoading(true);
+    if (item.name === 'Localização atual') return item.name;
 
-    if (cityName === 'Localização atual') {
-      const detectedCity = await getdetectedCity();     
-      if (detectedCity) {
-        cityName = detectedCity;
-      }
+    if (isFromSearch) {
+      return `${name}, ${state}, ${country}`;
     }
 
-    const nomeParaApi = normalizeCityName(cityName); // ✅ Uso correto da função centralizada
+    return `${name}, ${country}`;
+  }
+
+  return () => clearTimeout(debounce);
+  }, [search]);
+
+  const handleSelectCity = async (selectedItem: Suggestion) => {
+    setLoading(true);
+
+    let label = '';
+    let nomeParaApi = '';
+
+    if (selectedItem.name === 'Localização atual') {
+      const detectedCity = await getdetectedCity();
+      if (!detectedCity) {
+        Alert.alert('Erro', 'Não foi possível detectar sua localização.');
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const response = await fetch(
+          `${GEO_URL}/direct?q=${encodeURIComponent(detectedCity)}&limit=1&appid=${API_KEY}`
+        );
+        const data = await response.json();
+        const full = data[0];
+
+        const displayName = getPreferredCityName(full);
+        label = formatLocationName(displayName, full.state, full.country);
+        nomeParaApi = full.name;
+      } catch (err) {
+        console.error('Erro ao obter info da localização atual:', err);
+        label = detectedCity;
+        nomeParaApi = detectedCity;
+      }
+    } else {
+      const displayName = getPreferredCityName(selectedItem);
+      label = formatLocationName(displayName, selectedItem.state, selectedItem.country);
+      nomeParaApi = selectedItem.name; // ← apenas nome base
+    }
 
     const clima = await getWeatherByCity(nomeParaApi);
     setLoading(false);
@@ -116,10 +157,24 @@ export const CitySelectorModal = ({
       return;
     }
 
-    await AsyncStorage.setItem('lastCity', cityName); // Salva o nome exibido original
-    onSelect(cityName);
+    await AsyncStorage.setItem('lastCity', JSON.stringify({ label, raw: nomeParaApi }));
+    onSelect(label);
     onClose();
   };
+
+  function getFormattedLabel(item: Suggestion, isFromSearch: boolean): string {
+    const name = getPreferredCityName(item);
+    const state = item.state || '';
+    const country = item.country?.toUpperCase() || '';
+
+    if (item.name === 'Localização atual') return item.name;
+
+    if (isFromSearch) {
+      return `${name}, ${state}, ${country}`;
+    }
+
+    return `${name}, ${country}`;
+  }
 
   return (
     <Modal animationType="slide" transparent visible={visible} onRequestClose={onClose}>
@@ -142,20 +197,36 @@ export const CitySelectorModal = ({
           <ActivityIndicator color={theme.colors.primary} style={{ marginTop: 16 }} />
         ) : (
           <FlatList
-            data={search.length < 3 ? fullCityList.map((name) => ({ name })) : results}
-            keyExtractor={(item, index) => {
-              const city = item as Suggestion;
-              return `${city.name}-${city.state ?? ''}-${city.country ?? ''}-${index}`;
-            }}
+            data={search.length < 3 ? fullCityList : results}
+            keyExtractor={(item, index) =>
+              `${item.name}-${item.state ?? ''}-${item.country ?? ''}-${index}`
+            }
             renderItem={({ item }) => {
-              const city = item as Suggestion;
-              const label = `${city.name}${city.state ? ', ' + city.state : ''}${city.country ? ', ' + city.country : ''
-                }`;
+              const isFromSearch = search.length >= 3;
+const label = item.name === 'Localização atual'
+  ? item.name
+  : isFromSearch
+    ? `${getPreferredCityName(item)}, ${item.state ?? ''}, ${item.country ?? ''}`
+    : formatLocationName(getPreferredCityName(item), item.state, item.country);
 
-              return (
+              function getFormattedLabel(item: Suggestion, isFromSearch: boolean): string {
+    const name = getPreferredCityName(item);
+    const state = item.state || '';
+    const country = item.country?.toUpperCase() || '';
+
+    if (item.name === 'Localização atual') return item.name;
+
+    if (isFromSearch) {
+      return `${name}, ${state}, ${country}`;
+    }
+
+    return `${name}, ${country}`;
+  }
+
+  return (
                 <TouchableOpacity
                   style={globalStyles.cityItem}
-                  onPress={() => handleSelectCity(city.name)}
+                  onPress={() => handleSelectCity(item)}
                 >
                   <Ionicons name="location-outline" size={20} color={theme.colors.primary} />
                   <Text style={globalStyles.cityName}>{label}</Text>

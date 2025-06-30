@@ -3,9 +3,10 @@ import { Feather, Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { router, useRouter } from 'expo-router';
 import { getWeatherByCity } from '../services/weatherService';
+import { getPreferredCityName } from '../utils/getPreferredCityName';
 
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {
   Alert,
   Dimensions,
@@ -39,6 +40,7 @@ const resetApp = async () => {
 const screenHeight = Dimensions.get('window').height;
 
 export default function HomeScreen() {
+  const isLoadingRef = useRef<boolean>(false);
   const router = useRouter();
   const [menuVisible, setMenuVisible] = useState(false);
   const [city, setSelectedCity] = useState<string>('Lisboa');
@@ -63,6 +65,16 @@ export default function HomeScreen() {
   });
 
   const detectCityFromLocation = async (): Promise<boolean> => {
+    const savedCity = await AsyncStorage.getItem('lastCity');
+    if (savedCity) {
+      try {
+        const parsed = JSON.parse(savedCity);
+        const label = parsed.label || parsed;
+        setSelectedCity(label);
+      } catch {
+        setSelectedCity(savedCity);
+      }
+    }
     try {
       const { status } = await Location.requestForegroundPermissionsAsync();
       const savedCity = await AsyncStorage.getItem('lastCity');
@@ -149,6 +161,9 @@ export default function HomeScreen() {
 
   useEffect(() => {
     const loadSuggestion = async () => {
+  if (isLoadingRef.current) return;
+  isLoadingRef.current = true;
+
       try {
         const prefsString = await AsyncStorage.getItem('@user_preferences');
         if (!prefsString) return;
@@ -156,8 +171,22 @@ export default function HomeScreen() {
         const prefs: UserPreferences = JSON.parse(prefsString);
         setUserPreferences(prefs);
 
-        console.log('Cidade usada na API:', city);
-        const weather = await getWeatherByCity(city);
+        const savedCity = await AsyncStorage.getItem('lastCity');
+        let raw = city;
+        let label = city;
+        if (savedCity) {
+          try {
+            const parsed = JSON.parse(savedCity);
+            raw = parsed.raw || parsed;
+            label = parsed.label || parsed;
+          } catch {
+            raw = savedCity;
+            label = savedCity;
+          }
+        }
+        setSelectedCity(label);
+        console.log('Cidade usada na API:', raw);
+        const weather = await getWeatherByCity(raw);
         console.log('Dados de clima recebidos:', weather);
 
         if (!weather) {
@@ -184,12 +213,14 @@ export default function HomeScreen() {
 
         const result = getSuggestionByWeather(clima);
         setSuggestion(result);
-      } catch (e) {
+            } catch (e) {
         console.error('Erro ao carregar sugestão com clima real:', e);
-      }
-    };
+      } finally {
+      isLoadingRef.current = false;
+    }
+  };
 
-    if (isCityReady && city) {
+  if (isCityReady && city) {
       loadSuggestion();
     }
   }, [isCityReady, city]);
@@ -206,6 +237,15 @@ export default function HomeScreen() {
 
     loadCity();
   }, []);
+
+  
+  function formatCompactLabel(name: string, state?: string, country?: string): string {
+    const parts = [name];
+    if (state) parts.push(state.toUpperCase());
+    if (country) parts.push(country.toUpperCase());
+    return parts.join(', ');
+  }
+
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
@@ -380,7 +420,16 @@ export default function HomeScreen() {
                     {suggestion.acessórios?.map((item, i) => {
                       const icon = accessoryImages[item as keyof typeof accessoryImages];
                       if (!icon) return null;
-                      return (
+                      
+  function formatCompactLabel(name: string, state?: string, country?: string): string {
+    const parts = [name];
+    if (state) parts.push(state.toUpperCase());
+    if (country) parts.push(country.toUpperCase());
+    return parts.join(', ');
+  }
+
+
+  return (
                         <View key={i} style={globalStyles.accessoryIconWrapper}>
                           <Image source={icon} style={globalStyles.accessoryIcon} resizeMode="contain" />
                         </View>
@@ -403,7 +452,6 @@ export default function HomeScreen() {
           onClose={() => setModalVisible(false)}
           onSelect={(newCity) => {
             setSelectedCity(newCity);
-            AsyncStorage.setItem('lastCity', newCity);
             setModalVisible(false);
             setIsCityReady(true);
           }}

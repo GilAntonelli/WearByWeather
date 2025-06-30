@@ -22,6 +22,7 @@ import {
   getWeatherByCity,
   getHourlyForecastByCity,
 } from '../services/weatherService';
+import { getPreferredCityName } from '../utils/getPreferredCityName';
 
 
 
@@ -40,12 +41,22 @@ export default function ForecastScreen() {
 
   useEffect(() => {
     const load = async () => {
-      const savedCity = await AsyncStorage.getItem('lastCity');
-      const selectedCity = savedCity || 'Lisboa';
-      setCity(selectedCity);
-
-      const clima = await getWeatherByCity(selectedCity);
-      const horas = await getHourlyForecastByCity(selectedCity);
+      const saved = await AsyncStorage.getItem('lastCity');
+      let raw = 'Lisboa';
+      let label = 'Lisboa';
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          raw = parsed.raw || parsed;
+          label = parsed.label || parsed;
+        } catch {
+          raw = saved;
+          label = saved;
+        }
+      }
+      setCity(label);
+      const clima = await getWeatherByCity(raw);
+      const horas = await getHourlyForecastByCity(raw);
 
       setWeather(clima);
       setHourlyData(horas);
@@ -62,6 +73,15 @@ export default function ForecastScreen() {
       chuva: weather.chuva,
       vento: weather.vento,
     });
+
+  
+  function formatCompactLabel(name: string, state?: string, country?: string): string {
+    const parts = [name];
+    if (state) parts.push(state.toUpperCase());
+    if (country) parts.push(country.toUpperCase());
+    return parts.join(', ');
+  }
+
 
   return (
     <>
@@ -120,26 +140,26 @@ export default function ForecastScreen() {
             </Menu>
           </View>
 
-<ForecastHeader
-  city={city}
-  date={new Date().toLocaleDateString('pt-PT', {
-    weekday: 'long',
-    day: '2-digit',
-    month: 'long',
-  })}
-  backgroundColor={getWeatherBackgroundColor(weather?.condicao ?? '')}
-  temperature={`${weather?.temperatura ?? '--'}°C`}
-  condition={weather?.condicao ?? 'Carregando...'}
-  smartPhrase={frase ?? ''}
-  icon={
-    <Image
-      source={{
-        uri: `https://openweathermap.org/img/wn/${weather?.icon ?? '01d'}@2x.png`,
-      }}
-      style={{ width: 64, height: 64 }}
-    />
-  }
-/>
+          <ForecastHeader
+            city={city}
+            date={new Date().toLocaleDateString('pt-PT', {
+              weekday: 'long',
+              day: '2-digit',
+              month: 'long',
+            })}
+            backgroundColor={getWeatherBackgroundColor(weather?.condicao ?? '')}
+            temperature={`${weather?.temperatura ?? '--'}°C`}
+            condition={weather?.condicao ?? 'Carregando...'}
+            smartPhrase={frase ?? ''}
+            icon={
+              <Image
+                source={{
+                  uri: `https://openweathermap.org/img/wn/${weather?.icon ?? '01d'}@2x.png`,
+                }}
+                style={{ width: 64, height: 64 }}
+              />
+            }
+          />
 
 
 
@@ -162,7 +182,7 @@ export default function ForecastScreen() {
                   }}
                   style={{ width: 40, height: 40 }}
                 />
-                <Text style={globalStyles.hourTemp}>{item.temperatura}</Text>
+                <Text style={globalStyles.hourTemp}>{item.temperatura}°C</Text>
               </View>
             ))}
           </ScrollView>
