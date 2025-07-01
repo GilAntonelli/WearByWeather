@@ -182,7 +182,7 @@ export default function ForecastScreen() {
                   }}
                   style={{ width: 40, height: 40 }}
                 />
-                <Text style={globalStyles.hourTemp}>{item.temperatura}°C</Text>
+                <Text style={globalStyles.hourTemp}>{typeof item.temperatura === 'number' ? `${item.temperatura}°C` : `${item.temperatura}`.replace('°C', '') + '°C'}</Text>
               </View>
             ))}
           </ScrollView>

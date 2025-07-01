@@ -33,6 +33,7 @@ Como usar:
 */
 
 // 🔥 MUITO QUENTE – Look de verão, acessórios de sol (óculos, boné, protetor)
+/*
 export const mockWeather = {
   temperatura: 35,
   sensacaoTermica: 38,
@@ -46,6 +47,7 @@ export const mockWeather = {
   icon: '01d',
   iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
 };
+*/
 
 // ☁️ NUBLADO AMENO – Look meia-estação, sem acessórios específicos
 /*
@@ -82,7 +84,7 @@ export const mockWeather = {
 */
 
 // 🌩️ TROVOADA – Look com capa e proteção, acessórios de chuva + vento
-/*
+ 
 export const mockWeather = {
   temperatura: 22,
   sensacaoTermica: 21,
@@ -96,7 +98,6 @@ export const mockWeather = {
   icon: '11d',
   iconUrl: 'https://openweathermap.org/img/wn/11d@2x.png',
 };
-*/
 
 // ❄️ FRIO – Look com casaco, cachecol, luvas, gorro
 /*

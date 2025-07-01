@@ -28,7 +28,7 @@ export default function ForecastHeader({
     <View style={[globalStyles.forecastHeader, { backgroundColor }]}>
       <View style={globalStyles.forecastHeaderLocation}>
         <Ionicons name="location-outline" size={16} color={theme.colors.textDark} />
-        <Text style={globalStyles.forecastHeaderCity}>{city} - Hoje</Text>
+        <Text style={globalStyles.forecastHeaderCity}>{city}</Text>
       </View>
 
       <Text style={globalStyles.forecastHeaderDate}>{date}</Text>
