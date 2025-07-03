@@ -18,6 +18,9 @@ export const globalStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  sectionIntro: {
+  marginBottom: 24,
+},
   imageWelcome: {
     width: 200,
     height: 200,
@@ -679,6 +682,29 @@ forecastHeaderSmartPhrase: {
   paddingHorizontal: 16,
 },
 
+ // Espaçamentos verticais padronizados
+sectionSpacing: {
+  marginBottom: 24,
+},
+
+inputGap: {
+  marginBottom: 16,
+},
+
+blockGap: {
+  marginTop: 8,
+  marginBottom: 8,
+},
+
+cardGroupSpacing: {
+  marginTop: 12,
+  marginBottom: 20,
+},
+
+infoTextSpacing: {
+  marginTop: 4,
+  marginBottom: 20,
+},
 
 
 });

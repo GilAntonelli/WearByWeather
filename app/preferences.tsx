@@ -36,7 +36,8 @@ export default function PreferencesScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const [name, setName] = useState('');
-  const [gender, setGender] = useState<'masculino' | 'feminino' | 'unissex' | null>(null);
+const [stylePreference, setStylePreference] = useState<'feminino' | 'masculino' | 'unissex' | null>(null);
+
   const [comfort, setComfort] = useState<'frio' | 'calor' | null>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [touchedName, setTouchedName] = useState(false);
@@ -48,7 +49,7 @@ export default function PreferencesScreen() {
         if (saved) {
           const prefs = JSON.parse(saved);
           setName(prefs.name);
-          setGender(prefs.gender);
+          setStylePreference(prefs.stylePreference);
           setComfort(prefs.comfort);
         }
       } catch (e) {
@@ -67,12 +68,12 @@ export default function PreferencesScreen() {
   };
 
   const handleSave = async () => {
-    if (!gender || !comfort) {
+    if (!stylePreference || !comfort) {
       alert('Por favor, selecione o estilo e a temperatura de conforto.');
       return;
     }
 
-    const prefs = { name, gender, comfort };
+    const prefs = { name, stylePreference, comfort };
 
     try {
       await AsyncStorage.setItem('@user_preferences', JSON.stringify(prefs));
@@ -108,14 +109,21 @@ export default function PreferencesScreen() {
               <Text style={[globalStyles.title, { marginBottom: 16 }]}>
                 Suas Preferências
               </Text>
-              <Text style={globalStyles.descriptionWithSpacing}>
-                Vamos personalizar sua experiência!
-              </Text>
-              <Text style={[globalStyles.description, globalStyles.subtitleWelcomeStrong]}>
-                Essas informações nos ajudarão a recomendar roupas que combinam com seu estilo.
-              </Text>
+             <Text style={globalStyles.description}>
+  Vamos personalizar sua experiência!
+</Text>
 
-  <InfoIconText text="Você poderá editar essas preferências mais tarde." />
+<Text style={[globalStyles.description, globalStyles.subtitleWelcomeStrong, { marginTop: 4 }]}>
+  Essas informações nos ajudarão a recomendar roupas que combinam com seu estilo.
+</Text>
+
+
+<InfoIconText
+  text="Você poderá editar essas preferências mais tarde."
+  marginTop={0}
+  marginBottom={24}
+/>
+
 
 
               {/* Nome */}
@@ -125,11 +133,12 @@ export default function PreferencesScreen() {
                   <TextInput
                     placeholder="Como prefere ser chamado(a)?"
                     placeholderTextColor={theme.colors.textLight}
-                    style={[
-                      globalStyles.input,
-                      isFocused && globalStyles.inputFocused,
-                      { paddingRight: 40 },
-                    ]}
+style={[
+      globalStyles.input,
+      isFocused && globalStyles.inputFocused,
+      globalStyles.inputGap, // novo
+      { paddingRight: 40 }
+    ]}
                     value={name}
                     onChangeText={(text) => {
                       setName(text);
@@ -163,56 +172,115 @@ export default function PreferencesScreen() {
               </View>
 
               {/* Gênero */}
-              <View style={[globalStyles.section, { marginBottom: 16 }]}>
-                <Text style={globalStyles.sectionTitle}>O que prefere?</Text>
-                <View style={globalStyles.preferenceCardContainer}>
+<View style={[globalStyles.section, globalStyles.sectionSpacing]}>
+                <Text style={globalStyles.sectionTitle}>Estilo de vestuário preferido</Text>
+  <View style={[globalStyles.preferenceCardContainer, globalStyles.cardGroupSpacing]}>
                   <OptionCard
-                    label="Moda Masculina"
-                    selected={gender === 'masculino'}
+                    label="Masculino"
+                    selected={stylePreference === 'masculino'}
                     icon={<FontAwesome5 name="male" style={globalStyles.preferenceCardIcon} />}
-                    onPress={() => setGender('masculino')}
+                    onPress={() => setStylePreference('masculino')}
                   />
                   <OptionCard
-                    label="Moda Feminina"
-                    selected={gender === 'feminino'}
+                    label="Feminino"
+                    selected={stylePreference === 'feminino'}
                     icon={<FontAwesome5 name="female" style={globalStyles.preferenceCardIcon} />}
-                    onPress={() => setGender('feminino')}
+                    onPress={() => setStylePreference('feminino')}
                   />
                   <OptionCard
-                    label="Moda Unissex"
-                    selected={gender === 'unissex'}
-                    icon={<FontAwesome5 name="genderless" style={globalStyles.preferenceCardIcon} />}
-                    onPress={() => setGender('unissex')}
+                    label="Unissex"
+                    selected={stylePreference === 'unissex'}
+                    icon={<FontAwesome5 name="user-friends" style={globalStyles.preferenceCardIcon} />}
+                    onPress={() => setStylePreference('unissex')}
                   />
                 </View>
-          <InfoIconText
-            text="Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo."
-            marginTop={0}
-            marginBottom={20}
-          />
+          {stylePreference === null && (
+  <InfoIconText
+    text="Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo."
+  marginTop={globalStyles.infoTextSpacing.marginTop}
+  marginBottom={globalStyles.infoTextSpacing.marginBottom}
+  />
+)}
+{!stylePreference && (
+  <InfoIconText
+    text="Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo."
+  marginTop={globalStyles.infoTextSpacing.marginTop}
+  marginBottom={globalStyles.infoTextSpacing.marginBottom}
+  />
+)}
+
+{stylePreference === 'masculino' && (
+  <InfoIconText
+    text="Sugestões com bermuda, camisa polo, etc."
+  marginTop={globalStyles.infoTextSpacing.marginTop}
+
+  marginBottom={globalStyles.infoTextSpacing.marginBottom}
+  />
+)}
+
+{stylePreference === 'feminino' && (
+  <InfoIconText
+    text="Sugestões com vestidos, saias, etc."
+    marginTop={0}
+    marginBottom={20}
+  />
+)}
+
+{stylePreference === 'unissex' && (
+  <InfoIconText
+    text="Roupas neutras como jeans, t-shirt, etc."
+    marginTop={0}
+    marginBottom={20}
+  />
+)}
+
+
 
               </View>
 
-              {/* Temperatura de conforto */}
-              <View style={globalStyles.section}>
-                <Text style={globalStyles.sectionTitle}>Temperatura de conforto</Text>
-                <View style={{ gap: 8 }}>
-                  <OptionBlock
-                    label="Prefiro me agasalhar mais"
-                    description="Você geralmente sente frio com facilidade"
-                    selected={comfort === 'frio'}
-                    icon={<Ionicons name="snow" size={18} />}
-                    onPress={() => setComfort('frio')}
-                  />
-                  <OptionBlock
-                    label="Sinto muito calor"
-                    description="Você prefere roupas mais leves e frescas"
-                    selected={comfort === 'calor'}
-                    icon={<Ionicons name="sunny" size={18} />}
-                    onPress={() => setComfort('calor')}
-                  />
-                </View>
-              </View>
+{/* Temperatura de conforto */}
+<View style={globalStyles.section}>
+  <Text style={globalStyles.sectionTitle}>Temperatura de conforto</Text>
+
+  <View style={globalStyles.preferenceCardContainer}>
+    <OptionCard
+      label="Prefiro me agasalhar mais"
+      selected={comfort === 'frio'}
+      icon={<Ionicons name="snow" style={globalStyles.preferenceCardIcon} />}
+      onPress={() => setComfort('frio')}
+    />
+    <OptionCard
+      label="Sinto muito calor"
+      selected={comfort === 'calor'}
+      icon={<Ionicons name="sunny" style={globalStyles.preferenceCardIcon} />}
+      onPress={() => setComfort('calor')}
+    />
+  </View>
+
+  {comfort === null && (
+    <InfoIconText
+      text="Essa informação nos ajuda a ajustar as roupas conforme sua sensibilidade térmica."
+      marginTop={0}
+      marginBottom={20}
+    />
+  )}
+  {comfort === 'frio' && (
+    <InfoIconText
+      text="Você geralmente sente frio com facilidade."
+      marginTop={0}
+      marginBottom={20}
+    />
+  )}
+  {comfort === 'calor' && (
+    <InfoIconText
+      text="Você prefere roupas mais leves e frescas."
+      marginTop={0}
+      marginBottom={20}
+    />
+  )}
+</View>
+
+
             </View>
           </ScrollView>
         </TouchableWithoutFeedback>
