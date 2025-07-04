@@ -36,7 +36,7 @@ export default function PreferencesScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const [name, setName] = useState('');
-const [stylePreference, setStylePreference] = useState<'feminino' | 'masculino' | 'unissex' | null>(null);
+  const [stylePreference, setStylePreference] = useState<'feminino' | 'masculino' | 'unissex' | null>(null);
 
   const [comfort, setComfort] = useState<'frio' | 'calor' | null>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -109,20 +109,20 @@ const [stylePreference, setStylePreference] = useState<'feminino' | 'masculino' 
               <Text style={[globalStyles.title, { marginBottom: 16 }]}>
                 Suas Preferências
               </Text>
-             <Text style={globalStyles.description}>
-  Vamos personalizar sua experiência!
-</Text>
+              <Text style={globalStyles.description}>
+                Vamos personalizar sua experiência!
+              </Text>
 
-<Text style={[globalStyles.description, globalStyles.subtitleWelcomeStrong, { marginTop: 4 }]}>
-  Essas informações nos ajudarão a recomendar roupas que combinam com seu estilo.
-</Text>
+              <Text style={[globalStyles.description, globalStyles.subtitleWelcomeStrong, { marginTop: 4 }]}>
+                Essas informações nos ajudarão a recomendar roupas que combinam com seu estilo.
+              </Text>
 
 
-<InfoIconText
-  text="Você poderá editar essas preferências mais tarde."
-  marginTop={0}
-  marginBottom={24}
-/>
+              <InfoIconText
+                text="Você poderá editar essas preferências mais tarde."
+                marginTop={0}
+                marginBottom={24}
+              />
 
 
 
@@ -133,12 +133,12 @@ const [stylePreference, setStylePreference] = useState<'feminino' | 'masculino' 
                   <TextInput
                     placeholder="Como prefere ser chamado(a)?"
                     placeholderTextColor={theme.colors.textLight}
-style={[
-      globalStyles.input,
-      isFocused && globalStyles.inputFocused,
-      globalStyles.inputGap, // novo
-      { paddingRight: 40 }
-    ]}
+                    style={[
+                      globalStyles.input,
+                      isFocused && globalStyles.inputFocused,
+                      globalStyles.inputGap, // novo
+                      { paddingRight: 40 }
+                    ]}
                     value={name}
                     onChangeText={(text) => {
                       setName(text);
@@ -153,28 +153,32 @@ style={[
                   {isFocused && (
                     <Ionicons
                       name="pencil"
-                      size={18}
-                      color={theme.colors.primary}
+                      size={16}
+                      color={theme.colors.textLight}
                       style={{
                         position: 'absolute',
                         right: 12,
                         top: '50%',
-                        marginTop: -9,
+                        marginTop: -8,
                       }}
                     />
+
                   )}
                 </View>
-                {touchedName && name.trim() === '' && (
-                  <Text style={[globalStyles.validationText]}>
-                    Por favor, preencha seu nome ou deixe em branco intencionalmente.
-                  </Text>
-                )}
+
+
+           <InfoIconText
+  text="Você pode deixar esse campo em branco se preferir não ser chamado pelo nome."
+  marginTop={globalStyles.infoTextSpacing.marginTop}
+  marginBottom={globalStyles.infoTextSpacing.marginBottom}
+/>
+
               </View>
 
               {/* Gênero */}
-<View style={[globalStyles.section, globalStyles.sectionSpacing]}>
+              <View style={[globalStyles.section, globalStyles.sectionSpacing]}>
                 <Text style={globalStyles.sectionTitle}>Estilo de vestuário preferido</Text>
-  <View style={[globalStyles.preferenceCardContainer, globalStyles.cardGroupSpacing]}>
+                <View style={[globalStyles.preferenceCardContainer, globalStyles.cardGroupSpacing]}>
                   <OptionCard
                     label="Masculino"
                     selected={stylePreference === 'masculino'}
@@ -194,91 +198,91 @@ style={[
                     onPress={() => setStylePreference('unissex')}
                   />
                 </View>
-          {stylePreference === null && (
-  <InfoIconText
-    text="Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo."
-  marginTop={globalStyles.infoTextSpacing.marginTop}
-  marginBottom={globalStyles.infoTextSpacing.marginBottom}
-  />
-)}
-{!stylePreference && (
-  <InfoIconText
-    text="Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo."
-  marginTop={globalStyles.infoTextSpacing.marginTop}
-  marginBottom={globalStyles.infoTextSpacing.marginBottom}
-  />
-)}
+                {stylePreference === null && (
+                  <InfoIconText
+                    text="Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo."
+                    marginTop={globalStyles.infoTextSpacing.marginTop}
+                    marginBottom={globalStyles.infoTextSpacing.marginBottom}
+                  />
+                )}
+                {!stylePreference && (
+                  <InfoIconText
+                    text="Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo."
+                    marginTop={globalStyles.infoTextSpacing.marginTop}
+                    marginBottom={globalStyles.infoTextSpacing.marginBottom}
+                  />
+                )}
 
-{stylePreference === 'masculino' && (
-  <InfoIconText
-    text="Sugestões com bermuda, camisa polo, etc."
-  marginTop={globalStyles.infoTextSpacing.marginTop}
+                {stylePreference === 'masculino' && (
+                  <InfoIconText
+                    text="Sugestões com bermuda, camisa polo, etc."
+                    marginTop={globalStyles.infoTextSpacing.marginTop}
 
-  marginBottom={globalStyles.infoTextSpacing.marginBottom}
-  />
-)}
+                    marginBottom={globalStyles.infoTextSpacing.marginBottom}
+                  />
+                )}
 
-{stylePreference === 'feminino' && (
-  <InfoIconText
-    text="Sugestões com vestidos, saias, etc."
-    marginTop={0}
-    marginBottom={20}
-  />
-)}
+                {stylePreference === 'feminino' && (
+                  <InfoIconText
+                    text="Sugestões com vestidos, saias, etc."
+                    marginTop={0}
+                    marginBottom={20}
+                  />
+                )}
 
-{stylePreference === 'unissex' && (
-  <InfoIconText
-    text="Roupas neutras como jeans, t-shirt, etc."
-    marginTop={0}
-    marginBottom={20}
-  />
-)}
+                {stylePreference === 'unissex' && (
+                  <InfoIconText
+                    text="Roupas neutras como jeans, t-shirt, etc."
+                    marginTop={0}
+                    marginBottom={20}
+                  />
+                )}
 
 
 
               </View>
 
-{/* Temperatura de conforto */}
-<View style={globalStyles.section}>
-  <Text style={globalStyles.sectionTitle}>Temperatura de conforto</Text>
+              {/* Temperatura de conforto */}
+              <View style={globalStyles.section}>
+                <Text style={globalStyles.sectionTitle}>Temperatura de conforto</Text>
 
-  <View style={globalStyles.preferenceCardContainer}>
-    <OptionCard
-      label="Prefiro me agasalhar mais"
-      selected={comfort === 'frio'}
-      icon={<Ionicons name="snow" style={globalStyles.preferenceCardIcon} />}
-      onPress={() => setComfort('frio')}
-    />
-    <OptionCard
-      label="Sinto muito calor"
-      selected={comfort === 'calor'}
-      icon={<Ionicons name="sunny" style={globalStyles.preferenceCardIcon} />}
-      onPress={() => setComfort('calor')}
-    />
-  </View>
+                <View style={globalStyles.preferenceCardContainer}>
+                  <OptionCard
+                    label="Prefiro me agasalhar mais"
+                    selected={comfort === 'frio'}
+                    icon={<Ionicons name="snow" style={globalStyles.preferenceCardIcon} />}
+                    onPress={() => setComfort('frio')}
+                  />
+                  <OptionCard
+                    label="Sinto muito calor"
+                    selected={comfort === 'calor'}
+                    icon={<Ionicons name="sunny" style={globalStyles.preferenceCardIcon} />}
+                    onPress={() => setComfort('calor')}
+                  />
+                </View>
 
-  {comfort === null && (
-    <InfoIconText
-      text="Essa informação nos ajuda a ajustar as roupas conforme sua sensibilidade térmica."
-      marginTop={0}
-      marginBottom={20}
-    />
-  )}
-  {comfort === 'frio' && (
-    <InfoIconText
-      text="Você geralmente sente frio com facilidade."
-      marginTop={0}
-      marginBottom={20}
-    />
-  )}
-  {comfort === 'calor' && (
-    <InfoIconText
-      text="Você prefere roupas mais leves e frescas."
-      marginTop={0}
-      marginBottom={20}
-    />
-  )}
-</View>
+                {comfort === null && (
+                  <InfoIconText
+                    text="Essa informação nos ajuda a ajustar as roupas conforme sua sensibilidade térmica."
+                    marginTop={0}
+                    marginBottom={20}
+                  />
+                )}
+                {comfort === 'frio' && (
+                  <InfoIconText
+                    text="Você geralmente sente frio com facilidade."
+                    marginTop={0}
+                    marginBottom={20}
+                  />
+                )}
+                {comfort === 'calor' && (
+                  <InfoIconText
+                    text="Você prefere roupas mais leves e frescas."
+                    marginTop={0}
+                    marginBottom={20}
+                  />
+                )}
+              </View>
 
 
             </View>

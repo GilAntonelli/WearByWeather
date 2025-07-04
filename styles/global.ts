@@ -104,14 +104,17 @@ export const globalStyles = StyleSheet.create({
     marginBottom: theme.spacing.lg,
     color: theme.colors.textDark,
   },
-  inputFocused: {
-    borderColor: theme.colors.primary,
-    shadowColor: theme.colors.primary,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.35,
-    shadowRadius: 6,
-    elevation: 3,
-  },
+inputFocused: {
+  borderColor: theme.colors.primary, // amarelo
+  borderWidth: 1,
+  backgroundColor: '#fff9e5',        // mesmo fundo dos cards selecionados
+  borderRadius: theme.radius.md,     // igual aos cards
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 2 },
+  shadowOpacity: 0.08,
+  shadowRadius: 4,
+  elevation: 2,
+},
   validationText: {
     color: 'red',
     //fontSize: theme.fontSize.small,
