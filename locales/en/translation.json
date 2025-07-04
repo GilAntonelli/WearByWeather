@@ -1,0 +1,49 @@
+{
+  "intro": {
+    "title": "Weather Wear",
+    "description": "The weather changes. Your style adapts. Get outfit suggestions based on real-time weather.",
+    "button": "See Today’s Suggestion"
+  },
+   "preferences": {
+    "title": "Your Preferences",
+    "subtitle": "Let’s personalize your experience!",
+    "description": "This information helps us recommend clothes that match your style.",
+    "editLater": "You can edit these preferences later.",
+    "nameLabel": "Name or nickname (optional)",
+    "namePlaceholder": "How do you want to be called?",
+    "genderQuestion": "What do you prefer?",
+    "optionMale": "Masculine Style",
+    "optionFemale": "Feminine Style",
+    "optionUnisex": "Unisex Style",
+    "genderNote": "We’ll use this information to suggest looks that best fit your style.",
+    "comfortQuestion": "Comfort Temperature",
+    "comfortColdTitle": "I prefer to bundle up",
+    "comfortColdDesc": "You usually feel cold easily",
+    "comfortHotTitle": "I feel too hot",
+    "comfortHotDesc": "You prefer light and breezy clothes",
+    "button": "Save preferences and continue"
+  },
+   "home": {
+    "greeting": "Hello!",
+    "cityLabel": "Lisbon",
+    "changeButton": "Change",
+    "temperatureLabel": "{{temp}}°C",
+    "feelsLike": "Feels like {{value}}°C",
+    "weatherDescription": "Clear sky",
+    "commentary": "Stable weather today. Keep an eye on changes throughout the day.",
+    "wind": "Wind: {{value}} km/h",
+    "suggestionTitle": "Suggested Look of the Day",
+    "suggestionText": "Warm. Prefer fresh and light clothes.",
+    "accessories": "Accessories",
+    "forecastButton": "See detailed forecast"
+  },
+  "cityModal": {
+    "title": "Choose a city",
+    "searchPlaceholder": "Search city",
+    "currentLocation": "Current location"
+  },
+  "language": {
+  "auto": "Detect automatically",
+  "title": "Choose your language"
+  }
+}

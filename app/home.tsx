@@ -78,7 +78,7 @@ export default function HomeScreen() {
     try {
       const { status } = await Location.requestForegroundPermissionsAsync();
       const savedCity = await AsyncStorage.getItem('lastCity');
-      
+
       if (savedCity) {
         setSelectedCity(savedCity);
         return true;
@@ -88,8 +88,8 @@ export default function HomeScreen() {
         console.log('Permissão de localização negada');
         return false;
       }
-      
-      const detectedCity = await getdetectedCity();  
+
+      const detectedCity = await getdetectedCity();
       if (detectedCity) {
         setSelectedCity(detectedCity);
         await AsyncStorage.setItem('lastCity', detectedCity);
@@ -161,8 +161,8 @@ export default function HomeScreen() {
 
   useEffect(() => {
     const loadSuggestion = async () => {
-  if (isLoadingRef.current) return;
-  isLoadingRef.current = true;
+      if (isLoadingRef.current) return;
+      isLoadingRef.current = true;
 
       try {
         const prefsString = await AsyncStorage.getItem('@user_preferences');
@@ -213,14 +213,14 @@ export default function HomeScreen() {
 
         const result = getSuggestionByWeather(clima);
         setSuggestion(result);
-            } catch (e) {
+      } catch (e) {
         console.error('Erro ao carregar sugestão com clima real:', e);
       } finally {
-      isLoadingRef.current = false;
-    }
-  };
+        isLoadingRef.current = false;
+      }
+    };
 
-  if (isCityReady && city) {
+    if (isCityReady && city) {
       loadSuggestion();
     }
   }, [isCityReady, city]);
@@ -238,7 +238,7 @@ export default function HomeScreen() {
     loadCity();
   }, []);
 
-  
+
   function formatCompactLabel(name: string, state?: string, country?: string): string {
     const parts = [name];
     if (state) parts.push(state.toUpperCase());
@@ -307,6 +307,15 @@ export default function HomeScreen() {
                   }}
                   title="Início"
                   leadingIcon="home-outline"
+                />
+                <Divider />
+                <Menu.Item
+                  onPress={() => {
+                    setMenuVisible(false);
+                    router.push('/language-selector');
+                  }}
+                  title="Linguagem"
+                  leadingIcon="globe-outline"
                 />
                 <Divider />
                 <Menu.Item
@@ -420,16 +429,16 @@ export default function HomeScreen() {
                     {suggestion.acessórios?.map((item, i) => {
                       const icon = accessoryImages[item as keyof typeof accessoryImages];
                       if (!icon) return null;
-                      
-  function formatCompactLabel(name: string, state?: string, country?: string): string {
-    const parts = [name];
-    if (state) parts.push(state.toUpperCase());
-    if (country) parts.push(country.toUpperCase());
-    return parts.join(', ');
-  }
+
+                      function formatCompactLabel(name: string, state?: string, country?: string): string {
+                        const parts = [name];
+                        if (state) parts.push(state.toUpperCase());
+                        if (country) parts.push(country.toUpperCase());
+                        return parts.join(', ');
+                      }
 
 
-  return (
+                      return (
                         <View key={i} style={globalStyles.accessoryIconWrapper}>
                           <Image source={icon} style={globalStyles.accessoryIcon} resizeMode="contain" />
                         </View>

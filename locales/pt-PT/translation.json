@@ -1,0 +1,49 @@
+{
+  "intro": {
+    "title": "Weather Wear",
+    "description": "O clima muda. O seu estilo adapta-se. Receba sugestões de looks com base no clima em tempo real.",
+    "button": "Ver Sugestão do Dia"
+  },
+  "preferences": {
+    "title": "As Suas Preferências",
+    "subtitle": "Vamos personalizar a sua experiência!",
+    "description": "Estas informações vão ajudar-nos a recomendar roupas que combinam com o seu estilo.",
+    "editLater": "Poderá editar estas preferências mais tarde.",
+    "nameLabel": "Nome ou apelido (opcional)",
+    "namePlaceholder": "Como deseja ser chamado(a)?",
+    "genderQuestion": "O que prefere?",
+    "optionMale": "Moda Masculina",
+    "optionFemale": "Moda Feminina",
+    "optionUnisex": "Moda Unissexo",
+    "genderNote": "Vamos usar esta informação para sugerir looks adequados ao seu estilo.",
+    "comfortQuestion": "Temperatura de conforto",
+    "comfortColdTitle": "Prefiro agasalhar-me mais",
+    "comfortColdDesc": "Costuma sentir frio com facilidade",
+    "comfortHotTitle": "Tenho muito calor",
+    "comfortHotDesc": "Prefere roupas mais leves e frescas",
+    "button": "Guardar preferências e continuar"
+  },
+  "home": {
+    "greeting": "Olá!",
+    "cityLabel": "Lisboa",
+    "changeButton": "Alterar",
+    "temperatureLabel": "{{temp}}°C",
+    "feelsLike": "Sensação de {{value}}°C",
+    "weatherDescription": "Céu limpo",
+    "commentary": "Clima estável hoje. Fique atento às variações ao longo do dia.",
+    "wind": "Vento: {{value}} km/h",
+    "suggestionTitle": "Look Sugerido do Dia",
+    "suggestionText": "Quente. Prefira roupas frescas.",
+    "accessories": "Acessórios",
+    "forecastButton": "Ver previsão detalhada"
+  },
+  "cityModal": {
+    "title": "Escolha uma cidade",
+    "searchPlaceholder": "Procurar cidade",
+   "currentLocation": "Localização atual"
+  },
+  "language": {
+  "auto": "Detetar automaticamente",
+  "title": "Escolha o seu idioma"
+  }
+}

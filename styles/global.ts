@@ -1,6 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import { theme } from './theme';
-import { RFValue } from 'react-native-responsive-fontsize';
 
 const screenWidth = Dimensions.get('window').width;
 const cardSpacing = 12;
@@ -19,8 +18,8 @@ export const globalStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   sectionIntro: {
-  marginBottom: 24,
-},
+    marginBottom: 24,
+  },
   imageWelcome: {
     width: 200,
     height: 200,
@@ -113,15 +112,15 @@ export const globalStyles = StyleSheet.create({
     shadowRadius: 6,
     elevation: 3,
   },
-validationText: {
-  color: 'red',
-  //fontSize: theme.fontSize.small,
-  fontSize: 12,
+  validationText: {
+    color: 'red',
+    //fontSize: theme.fontSize.small,
+    fontSize: 12,
 
-  marginTop: 4,
-  marginBottom: 8,
-  fontWeight: '500',
-},
+    marginTop: 4,
+    marginBottom: 8,
+    fontWeight: '500',
+  },
 
 
   section: {
@@ -157,7 +156,7 @@ validationText: {
     color: theme.colors.textDark,
   },
 
-   //cards do bloco conforto
+  //cards do bloco conforto
   block: {
     borderWidth: 1,
     borderColor: '#ccc',
@@ -172,24 +171,24 @@ validationText: {
     color: theme.colors.textDark,
   },
   blockDesc: {
-  //fontSize: theme.fontSize.small,
+    //fontSize: theme.fontSize.small,
     fontSize: 12,
 
     color: theme.colors.textLight,
     marginTop: 4,
   },
 
- contentWrapper: {
-  paddingHorizontal: 24,
-  width: '100%',
-  maxWidth: 480,
-  alignSelf: 'center',
-},
+  contentWrapper: {
+    paddingHorizontal: 24,
+    width: '100%',
+    maxWidth: 480,
+    alignSelf: 'center',
+  },
 
-comfortBlockSelected: {
-  borderColor: theme.colors.primary,
-  backgroundColor: '#fff9e5',
-},
+  comfortBlockSelected: {
+    borderColor: theme.colors.primary,
+    backgroundColor: '#fff9e5',
+  },
   subtextRow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -290,7 +289,7 @@ comfortBlockSelected: {
     marginTop: 12,
     gap: 6,
   },
-  
+
   lookRow: {
     flexDirection: 'row',
     gap: 12,
@@ -354,27 +353,27 @@ comfortBlockSelected: {
     color: theme.colors.textDark,
     marginTop: 2,
   },
-  
-  
-  
-  
-  
+
+
+
+
+
   hourlyRow: {
-  flexDirection: 'row',
-  gap: 8,
-},
-hourCard: {
-  width: 70,
-  height: 100,
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderRadius: 12,
-  backgroundColor: '#fff',
-  padding: 8,
-},
+    flexDirection: 'row',
+    gap: 8,
+  },
+  hourCard: {
+    width: 70,
+    height: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 12,
+    backgroundColor: '#fff',
+    padding: 8,
+  },
   hourLabel: {
-   fontSize: 13,
-  //fontSize: theme.fontSize.small,
+    fontSize: 13,
+    //fontSize: theme.fontSize.small,
 
     fontWeight: 'bold',
     marginBottom: 4,
@@ -537,7 +536,7 @@ hourCard: {
     lineHeight: 24,
   },
 
- // Cards do bloco de moda
+  // Cards do bloco de moda
 
   preferenceCardContainer: {
     flexDirection: 'row',
@@ -546,46 +545,46 @@ hourCard: {
     marginBottom: theme.spacing.lg,
   },
 
-preferenceCard: {
-  flex: 1,
-  minWidth: '30%',
-  alignItems: 'center',
-  justifyContent: 'center',
-  paddingVertical: theme.spacing.md,
-  paddingHorizontal: theme.spacing.sm,
-  borderRadius: theme.radius.md,
-  backgroundColor: '#fff',
-  borderWidth: 1,
-  borderColor: theme.colors.border,
-  shadowColor: '#000',
-  shadowOpacity: 0.08,
-  shadowOffset: { width: 0, height: 2 },
-  shadowRadius: 6,
-  elevation: 2,
-  margin: 4,
-  flexDirection: 'column', // garante empilhamento vertical correto
- 
-},
-preferenceCardSelected: {
-  borderColor: theme.colors.primary,
-  backgroundColor: '#fff9e5',
-  shadowColor: theme.colors.primary,
-  shadowOpacity: 0.12,
-  shadowRadius: 8,
-  elevation: 4,
-},
-preferenceCardText: {
-  fontSize: theme.fontSize.cardText,
-  color: theme.colors.textDark,
-  textAlign: 'center',
-},
-preferenceCardIcon: {
-  fontSize: theme.fontSize.cardText,
-  marginBottom: 4, // ↓ diminuir para reduzir o "vão" entre ícone e texto
-  marginTop: 2, // ↑ acrescentar para centralizar melhor verticalmente
-  color: theme.colors.textMedium,
-  textAlign: 'center',
-},
+  preferenceCard: {
+    flex: 1,
+    minWidth: '30%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: theme.spacing.md,
+    paddingHorizontal: theme.spacing.sm,
+    borderRadius: theme.radius.md,
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+    shadowColor: '#000',
+    shadowOpacity: 0.08,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    elevation: 2,
+    margin: 4,
+    flexDirection: 'column', // garante empilhamento vertical correto
+
+  },
+  preferenceCardSelected: {
+    borderColor: theme.colors.primary,
+    backgroundColor: '#fff9e5',
+    shadowColor: theme.colors.primary,
+    shadowOpacity: 0.12,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  preferenceCardText: {
+    fontSize: theme.fontSize.cardText,
+    color: theme.colors.textDark,
+    textAlign: 'center',
+  },
+  preferenceCardIcon: {
+    fontSize: theme.fontSize.cardText,
+    marginBottom: 4, // ↓ diminuir para reduzir o "vão" entre ícone e texto
+    marginTop: 2, // ↑ acrescentar para centralizar melhor verticalmente
+    color: theme.colors.textMedium,
+    textAlign: 'center',
+  },
 
 
 
@@ -656,55 +655,99 @@ preferenceCardIcon: {
     marginBottom: 24,
   },
 
-forecastHeaderIcon: {
-  marginTop: 16,
-  marginBottom: 8,
-},
+  forecastHeaderIcon: {
+    marginTop: 16,
+    marginBottom: 8,
+  },
 
-forecastHeaderTemperature: {
-  fontSize: 40,
-  fontWeight: 'bold',
-  color: theme.colors.textDark,
-  marginBottom: 8,
-},
+  forecastHeaderTemperature: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: theme.colors.textDark,
+    marginBottom: 8,
+  },
 
-forecastHeaderCondition: {
-  fontSize: 16,
-  color: theme.colors.textDark,
-},
+  forecastHeaderCondition: {
+    fontSize: 16,
+    color: theme.colors.textDark,
+  },
 
-forecastHeaderSmartPhrase: {
-  fontSize: 14,
-  fontStyle: 'italic',
-  color: theme.colors.textDark,
-  textAlign: 'center',
-  marginTop: 8,
-  paddingHorizontal: 16,
-},
+  forecastHeaderSmartPhrase: {
+    fontSize: 14,
+    fontStyle: 'italic',
+    color: theme.colors.textDark,
+    textAlign: 'center',
+    marginTop: 8,
+    paddingHorizontal: 16,
+  },
+  active: {
+    backgroundColor: '#F9C700'
+  },
+  activeText: {
+    fontWeight: 'bold',
+    color: '#000'
+  },
+  wrapper: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 16,
+    paddingHorizontal: 24,
+  },
+  activeButton: {
+    backgroundColor: theme.colors.primary,
+  },
+  activeButtonText: {
+    color: theme.colors.textDark,
+  },
+  langButton: {
+    backgroundColor: theme.colors.background,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 12,
+    width: '100%',
+    alignItems: 'center',
+    marginVertical: 4,
+  },
+  langButtonActive: {
+    backgroundColor: theme.colors.primary,
+  },
+  langText: {
+    color: theme.colors.textLight,
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  langTextActive: {
+    color: theme.colors.textDark,
+  },
+  emoji: {
+    fontSize: 48,
+    marginBottom: 12,
+  },
 
- // Espaçamentos verticais padronizados
-sectionSpacing: {
-  marginBottom: 24,
-},
+  // Espaçamentos verticais padronizados
+  sectionSpacing: {
+    marginBottom: 24,
+  },
 
-inputGap: {
-  marginBottom: 16,
-},
+  inputGap: {
+    marginBottom: 16,
+  },
 
-blockGap: {
-  marginTop: 8,
-  marginBottom: 8,
-},
+  blockGap: {
+    marginTop: 8,
+    marginBottom: 8,
+  },
 
-cardGroupSpacing: {
-  marginTop: 12,
-  marginBottom: 20,
-},
+  cardGroupSpacing: {
+    marginTop: 12,
+    marginBottom: 20,
+  },
 
-infoTextSpacing: {
-  marginTop: 4,
-  marginBottom: 20,
-},
+  infoTextSpacing: {
+    marginTop: 4,
+    marginBottom: 20,
+  },
 
 
 });

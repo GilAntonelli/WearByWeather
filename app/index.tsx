@@ -12,12 +12,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
+import { useTranslation } from 'react-i18next';
 
 const { width } = Dimensions.get('window');
 
 export default function WelcomeScreen() {
   const router = useRouter();
   const [checkingInit, setCheckingInit] = useState(true);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const checkIfInitialized = async () => {
@@ -57,8 +59,7 @@ export default function WelcomeScreen() {
 
         {/* Subtítulo mais leve e elegante */}
         <Text style={globalStyles.subtitleWelcome}>
-          O clima muda. Seu estilo se adapta.{"\n"}
-          Receba sugestões de looks com base no clima em tempo real.
+          {t('intro.description')}
         </Text>
 
         {/* Ilustração */}
@@ -69,7 +70,7 @@ export default function WelcomeScreen() {
 
         {/* Botão principal com ícone */}
         <PrimaryButton
-          title="Ver Sugestão do Dia"
+          title={t('intro.button')}
           iconLeft="sunny-outline"
           onPress={() => router.push('/preferences')}
         />
