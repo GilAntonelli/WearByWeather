@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import {
   Modal,
@@ -97,21 +96,7 @@ export const CitySelectorModal = ({
     };
 
     const debounce = setTimeout(fetchSuggestions, 500);
-    function getFormattedLabel(item: Suggestion, isFromSearch: boolean): string {
-    const name = getPreferredCityName(item);
-    const state = item.state || '';
-    const country = item.country?.toUpperCase() || '';
-
-    if (item.name === 'Localização atual') return item.name;
-
-    if (isFromSearch) {
-      return `${name}, ${state}, ${country}`;
-    }
-
-    return `${name}, ${country}`;
-  }
-
-  return () => clearTimeout(debounce);
+    return () => clearTimeout(debounce);
   }, [search]);
 
   const handleSelectCity = async (selectedItem: Suggestion) => {
@@ -146,7 +131,7 @@ export const CitySelectorModal = ({
     } else {
       const displayName = getPreferredCityName(selectedItem);
       label = formatLocationName(displayName, selectedItem.state, selectedItem.country);
-      nomeParaApi = selectedItem.name; // ← apenas nome base
+      nomeParaApi = selectedItem.name;
     }
 
     const clima = await getWeatherByCity(nomeParaApi);
@@ -162,26 +147,22 @@ export const CitySelectorModal = ({
     onClose();
   };
 
-  function getFormattedLabel(item: Suggestion, isFromSearch: boolean): string {
-    const name = getPreferredCityName(item);
-    const state = item.state || '';
-    const country = item.country?.toUpperCase() || '';
-
-    if (item.name === 'Localização atual') return item.name;
-
-    if (isFromSearch) {
-      return `${name}, ${state}, ${country}`;
-    }
-
-    return `${name}, ${country}`;
-  }
-
   return (
-    <Modal animationType="slide" transparent visible={visible} onRequestClose={onClose}>
+    <Modal animationType="fade" transparent visible={visible} onRequestClose={onClose}>
       <Pressable style={globalStyles.overlay} onPress={onClose} />
       <KeyboardAvoidingView
-        style={globalStyles.modalContainer}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          backgroundColor: 'white',
+          borderTopLeftRadius: 16,
+          borderTopRightRadius: 16,
+          padding: 16,
+          maxHeight: '90%',
+        }}
       >
         <Text style={globalStyles.title}>Escolha uma cidade</Text>
 
@@ -203,27 +184,14 @@ export const CitySelectorModal = ({
             }
             renderItem={({ item }) => {
               const isFromSearch = search.length >= 3;
-const label = item.name === 'Localização atual'
-  ? item.name
-  : isFromSearch
-    ? `${getPreferredCityName(item)}, ${item.state ?? ''}, ${item.country ?? ''}`
-    : formatLocationName(getPreferredCityName(item), item.state, item.country);
+              const label =
+                item.name === 'Localização atual'
+                  ? item.name
+                  : isFromSearch
+                  ? `${getPreferredCityName(item)}, ${item.state ?? ''}, ${item.country ?? ''}`
+                  : formatLocationName(getPreferredCityName(item), item.state, item.country);
 
-              function getFormattedLabel(item: Suggestion, isFromSearch: boolean): string {
-    const name = getPreferredCityName(item);
-    const state = item.state || '';
-    const country = item.country?.toUpperCase() || '';
-
-    if (item.name === 'Localização atual') return item.name;
-
-    if (isFromSearch) {
-      return `${name}, ${state}, ${country}`;
-    }
-
-    return `${name}, ${country}`;
-  }
-
-  return (
+              return (
                 <TouchableOpacity
                   style={globalStyles.cityItem}
                   onPress={() => handleSelectCity(item)}

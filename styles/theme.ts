@@ -26,6 +26,7 @@ type Theme = {
     disabled: string;
     focusOutline: string;
     shadow: string;
+    
     weatherBackgrounds: Record<WeatherBackgroundKeys, string>;
   };
 };

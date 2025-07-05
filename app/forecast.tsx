@@ -74,7 +74,7 @@ export default function ForecastScreen() {
       vento: weather.vento,
     });
 
-  
+
   function formatCompactLabel(name: string, state?: string, country?: string): string {
     const parts = [name];
     if (state) parts.push(state.toUpperCase());
@@ -86,7 +86,8 @@ export default function ForecastScreen() {
   return (
     <>
       <ScrollView style={{ backgroundColor: theme.colors.background }}>
-        <View style={{ paddingTop: 0 }}>
+      <View style={{ paddingTop: 24 }}>
+
           <View style={{ position: 'absolute', top: 48, right: 16, zIndex: 10 }}>
             <Menu
               visible={menuVisible}
@@ -147,7 +148,6 @@ export default function ForecastScreen() {
               day: '2-digit',
               month: 'long',
             })}
-            backgroundColor={getWeatherBackgroundColor(weather?.condicao ?? '')}
             temperature={`${weather?.temperatura ?? '--'}°C`}
             condition={weather?.condicao ?? 'Carregando...'}
             smartPhrase={frase ?? ''}
@@ -160,6 +160,7 @@ export default function ForecastScreen() {
               />
             }
           />
+
 
 
 

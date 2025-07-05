@@ -1,12 +1,13 @@
 
-import { Feather, Ionicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { router, useRouter } from 'expo-router';
+import WeatherSummaryCard from '../components/WeatherSummaryCard';
 import { getWeatherByCity } from '../services/weatherService';
-import { getPreferredCityName } from '../utils/getPreferredCityName';
+import { TopHeader } from '../components/TopHeader'; // certifique-se de adicionar no topo
 
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Alert,
   Dimensions,
@@ -19,18 +20,17 @@ import {
 } from 'react-native';
 import { Divider, Menu } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { getFraseClimatica } from '../services/weatherPhrases';
 
 import * as Location from 'expo-location';
 import { CitySelectorModal } from '../components/CitySelectorModal';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { accessoryImages } from '../constants/accessoryImages';
+import { getdetectedCity } from '../services/LocationService';
 import { getSuggestionByWeather } from '../services/suggestionEngine';
 import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
 import { UserPreferences } from '../types/preferences';
 import { LookSuggestion } from '../types/suggestion';
-import { getdetectedCity } from '../services/LocationService';
 
 const resetApp = async () => {
   await AsyncStorage.clear();
@@ -53,11 +53,13 @@ export default function HomeScreen() {
     chuva?: boolean;
     vento?: number;
     icon?: string;
-
+    tempMin?: number;
+    tempMax?: number;
 
   } | null>(null);
 
   const [isCityReady, setIsCityReady] = useState(false);
+  const [isDetectedLocation, setIsDetectedLocation] = useState(false);
   const [userPreferences, setUserPreferences] = useState<UserPreferences>({
     name: '',
     gender: 'masculino',
@@ -91,6 +93,7 @@ export default function HomeScreen() {
 
       const detectedCity = await getdetectedCity();
       if (detectedCity) {
+        setIsDetectedLocation(true);
         setSelectedCity(detectedCity);
         await AsyncStorage.setItem('lastCity', detectedCity);
         return true;
@@ -199,10 +202,11 @@ export default function HomeScreen() {
           temperatura: weather.temperatura,
           sensacaoTermica: weather.sensacaoTermica,
           condicao: weather.condicao,
-
+          tempMin: weather.tempMin,
+          tempMax: weather.tempMax,
           chuva: weather.chuva,
           vento: weather.vento,
-          icon: weather.icon, // <- ADICIONE ESSA LINHA
+          icon: weather.icon,
         });
 
         const clima = {
@@ -345,63 +349,29 @@ export default function HomeScreen() {
 
             </View>
 
-            <View style={globalStyles.locationBox}>
-              <Ionicons name="location-outline" size={18} color={theme.colors.textDark} />
-              <Text style={globalStyles.locationText}>{city}</Text>
-              <TouchableOpacity
-                style={globalStyles.changeButton}
-                onPress={() => setModalVisible(true)}
-              >
-                <Text style={globalStyles.changeButtonText}>Alterar</Text>
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity
+              style={globalStyles.fakeSearchInput}
+              onPress={() => setModalVisible(true)}
+            >
+              <Ionicons name="search" size={18} color="#999" style={{ marginRight: 8 }} />
+              <Text style={globalStyles.fakeSearchText}>Buscar cidade</Text>
+            </TouchableOpacity>
 
-            <View style={globalStyles.cardhome}>
-              <View style={globalStyles.weatherRow}>
-                <View>
-                  {weatherData ? (
-                    <View>
-                      <Text style={globalStyles.weatherMain}>{weatherData.temperatura}°C</Text>
-                      <Text style={globalStyles.weatherSecondary}>
-                        Sensação de {weatherData.sensacaoTermica}°C
-                      </Text>
-                    </View>
-                  ) : (
-                    <View>
-                      <Text style={globalStyles.weatherMain}>–</Text>
-                      <Text style={globalStyles.weatherSecondary}>Carregando...</Text>
-                    </View>
-                  )}
-                </View>
-                <View style={{ alignItems: 'center' }}>
-                  {weatherData?.icon ? (
-                    <Image
-                      source={{ uri: `https://openweathermap.org/img/wn/${weatherData.icon}@2x.png` }}
-                      style={{ width: 48, height: 48 }}
-                      resizeMode="contain"
-                    />
-                  ) : (
-                    <Feather name="sun" size={32} color="#FFC300" />
-                  )}
-                  <Text style={globalStyles.weatherLabel}>
-                    {weatherData?.condicao || 'Clima indefinido'}
-                  </Text>
-                </View>
 
-              </View>
 
-              <View style={globalStyles.weatherInfoRow}>
-
-                <Text style={globalStyles.weatherInfo}>
-                  {weatherData ? getFraseClimatica(weatherData) : 'Carregando...'}
-                </Text>
-                <Text style={globalStyles.weatherInfo}>
-                  Vento: {weatherData?.vento ? `${weatherData.vento} km/h` : '–'}
-                </Text>
-              </View>
-            </View>
-
+            {weatherData && (
+              <WeatherSummaryCard
+                city={city}
+                isUsingLocation={isDetectedLocation}
+                temperatura={weatherData.temperatura}
+                sensacaoTermica={weatherData.sensacaoTermica}
+                tempMin={weatherData.tempMin ?? 0}
+                tempMax={weatherData.tempMax ?? 0}
+                condicao={weatherData.condicao || ''}
+              />
+            )}
             <Text style={globalStyles.cardTitle}>Look Sugerido do Dia</Text>
+
 
             {suggestion && (
               <View style={globalStyles.cardhome}>
@@ -460,6 +430,7 @@ export default function HomeScreen() {
           visible={modalVisible}
           onClose={() => setModalVisible(false)}
           onSelect={(newCity) => {
+            setIsDetectedLocation(false);
             setSelectedCity(newCity);
             setModalVisible(false);
             setIsCityReady(true);

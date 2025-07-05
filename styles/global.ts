@@ -262,11 +262,16 @@ inputFocused: {
     elevation: 2,
   },
   cardTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 12,
-    color: theme.colors.textDark,
-  },
+fontSize: 20,
+  fontWeight: 'bold',
+  color: theme.colors.textDark,
+  marginTop: 32,
+  marginBottom: 12,
+  }, weatherInfoItem: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: 6,
+},
   weatherRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -358,6 +363,20 @@ inputFocused: {
   },
 
 
+fakeSearchInput: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  backgroundColor: '#F0F0F0',
+  borderRadius: 12,
+  paddingVertical: 10,
+  paddingHorizontal: 16,
+  marginTop: 12,
+},
+fakeSearchText: {
+  fontSize: 14,
+  color: '#999',
+  flex: 1,
+},
 
 
 
