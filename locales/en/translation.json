@@ -25,6 +25,8 @@
     "comfortColdDesc": "You tend to feel cold easily",
     "comfortHotTitle": "I feel very hot",
     "comfortHotDesc": "You prefer lighter, cooler clothing",
+    "comfortNeutralTitle": "I prefer balanced temperature",
+    "comfortNeutralDesc": "You usually adapt well to the weather and choose outfits according to the temperature",
     "button": "Save preferences and continue"
   },
   "home": {

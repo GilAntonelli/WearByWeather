@@ -39,7 +39,7 @@ export default function PreferencesScreen() {
   const [name, setName] = useState('');
   const [stylePreference, setStylePreference] = useState<'feminino' | 'masculino' | 'unissex' | null>(null);
   const { t } = useTranslation();
-  const [comfort, setComfort] = useState<'frio' | 'calor' | null>(null);
+  const [comfort, setComfort] = useState<'feel_cold' | 'feel_hotter' | 'feel_neutral' | null>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [touchedName, setTouchedName] = useState(false);
 
@@ -240,16 +240,26 @@ export default function PreferencesScreen() {
                 <View style={globalStyles.preferenceCardContainer}>
                   <OptionCard
                     label={t('preferences.comfortColdTitle')}
-                    selected={comfort === 'frio'}
-                    icon={<Ionicons name="snow" style={globalStyles.preferenceCardIcon} />}
-                    onPress={() => setComfort('frio')}
+                    selected={comfort === 'feel_cold'}
+                    //   icon={<Ionicons name="snow" style={globalStyles.preferenceCardIcon} />}
+                    onPress={() => setComfort('feel_cold')}
                   />
                   <OptionCard
                     label={t('preferences.comfortHotTitle')}
-                    selected={comfort === 'calor'}
-                    icon={<Ionicons name="sunny" style={globalStyles.preferenceCardIcon} />}
-                    onPress={() => setComfort('calor')}
+                    selected={comfort === 'feel_hotter'}
+                    //icon={<Ionicons name="sunny" style={globalStyles.preferenceCardIcon} />}
+                    onPress={() => setComfort('feel_hotter')}
                   />
+                  <OptionCard
+                    label={t('preferences.comfortNeutralTitle')}
+                    selected={comfort === 'feel_neutral'}
+                    //     icon={<Ionicons name="sunny" style={globalStyles.preferenceCardIcon} />}
+                    onPress={() => setComfort('feel_neutral')}
+                  />
+
+
+
+
                 </View>
 
                 {comfort === null && (
@@ -259,16 +269,23 @@ export default function PreferencesScreen() {
                     marginBottom={20}
                   />
                 )}
-                {comfort === 'frio' && (
+                {comfort === 'feel_cold' && (
                   <InfoIconText
                     text={t('preferences.comfortColdDesc')}
                     marginTop={0}
                     marginBottom={20}
                   />
                 )}
-                {comfort === 'calor' && (
+                {comfort === 'feel_hotter' && (
                   <InfoIconText
                     text={t('preferences.comfortHotDesc')}
+                    marginTop={0}
+                    marginBottom={20}
+                  />
+                )}
+                {comfort === 'feel_neutral' && (
+                  <InfoIconText
+                    text={t('preferences.comfortNeutralDesc')}
                     marginTop={0}
                     marginBottom={20}
                   />

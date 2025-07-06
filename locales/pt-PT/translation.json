@@ -25,6 +25,8 @@
     "comfortColdDesc": "Tende a sentir frio com facilidade",
     "comfortHotTitle": "Tenho muito calor",
     "comfortHotDesc": "Prefere roupas mais leves e frescas",
+    "comfortNeutralTitle": "Prefiro equilíbrio térmico",
+    "comfortNeutralDesc": "Você costuma adaptar-se bem ao clima e prefere roupas de acordo com a temperatura",
     "button": "Guardar preferências e continuar"
   },
   "home": {
