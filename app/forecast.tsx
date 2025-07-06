@@ -1,30 +1,24 @@
-import { getWeatherBackgroundColor } from '../utils/weatherColors';
 
-import CurrentWeatherBlock from '../components/CurrentWeatherBlock';
-import { Menu, Divider } from 'react-native-paper';
-import ForecastHeader from '../components/ForecastHeader';
 import { Feather, Ionicons } from '@expo/vector-icons';
-import { Alert } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
+  Image,
   ScrollView,
   Text,
   TouchableOpacity,
   View,
-  Image,
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { globalStyles } from '../styles/global';
-import { theme } from '../styles/theme';
+import ForecastHeader from '../components/ForecastHeader';
 import { getFraseClimatica } from '../services/weatherPhrases';
 import {
-  getWeatherByCity,
   getHourlyForecastByCity,
+  getWeatherByCity,
 } from '../services/weatherService';
-import { getPreferredCityName } from '../utils/getPreferredCityName';
-
-
+import { globalStyles } from '../styles/global';
+import { theme } from '../styles/theme';
 
 export default function ForecastScreen() {
   const router = useRouter();
@@ -38,6 +32,7 @@ export default function ForecastScreen() {
   const [city, setCity] = useState<string>('Carregando...');
   const [weather, setWeather] = useState<any>(null);
   const [hourlyData, setHourlyData] = useState<any[]>([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const load = async () => {
@@ -82,65 +77,10 @@ export default function ForecastScreen() {
     return parts.join(', ');
   }
 
-
   return (
     <>
       <ScrollView style={{ backgroundColor: theme.colors.background }}>
-      <View style={{ paddingTop: 24 }}>
-
-          <View style={{ position: 'absolute', top: 48, right: 16, zIndex: 10 }}>
-            <Menu
-              visible={menuVisible}
-              onDismiss={() => setMenuVisible(false)}
-              anchor={
-                <TouchableOpacity onPress={() => setMenuVisible(true)}>
-                  <Ionicons name="settings-outline" size={24} color={theme.colors.textDark} />
-                </TouchableOpacity>
-              }
-            >
-              <Menu.Item
-                onPress={() => {
-                  setMenuVisible(false);
-                  router.push('/preferences');
-                }}
-                title="Preferências"
-                leadingIcon="tune"
-              />
-              <Divider />
-              <Menu.Item
-                onPress={() => {
-                  setMenuVisible(false);
-                  router.push('/');
-                }}
-                title="Início"
-                leadingIcon="home-outline"
-              />
-              <Divider />
-              <Menu.Item
-                onPress={() => {
-                  setMenuVisible(false);
-                  Alert.alert(
-                    'Redefinir app',
-                    'Tem certeza que deseja apagar suas preferências e reiniciar o app?',
-                    [
-                      { text: 'Cancelar', style: 'cancel' },
-                      {
-                        text: 'Redefinir',
-                        style: 'destructive',
-                        onPress: async () => {
-                          await AsyncStorage.clear();
-                          router.replace('/');
-                        },
-                      },
-                    ]
-                  );
-                }}
-                title="Redefinir app"
-                leadingIcon="restart"
-              />
-            </Menu>
-          </View>
-
+        <View style={{ paddingTop: 24 }}>
           <ForecastHeader
             city={city}
             date={new Date().toLocaleDateString('pt-PT', {
@@ -149,7 +89,7 @@ export default function ForecastScreen() {
               month: 'long',
             })}
             temperature={`${weather?.temperatura ?? '--'}°C`}
-            condition={weather?.condicao ?? 'Carregando...'}
+            condition={weather?.condicao ?? t('Forecast.condition')}
             smartPhrase={frase ?? ''}
             icon={
               <Image
@@ -160,15 +100,9 @@ export default function ForecastScreen() {
               />
             }
           />
-
-
-
-
         </View>
-
         <View style={globalStyles.container}>
-          <Text style={globalStyles.sectionTitle}>Próximas 24h (intervalos de 3h)</Text>
-
+          <Text style={globalStyles.sectionTitle}>{t('Forecast.sectionTitle')}</Text>
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -188,27 +122,27 @@ export default function ForecastScreen() {
             ))}
           </ScrollView>
 
-          <Text style={globalStyles.sectionTitle}>Detalhes Climáticos</Text>
+          <Text style={globalStyles.sectionTitle}>{t('Forecast.sectionTitleDetais')}</Text>
           <View style={globalStyles.detailGrid}>
             <View style={globalStyles.detailCard}>
               <Ionicons name="thermometer-outline" size={20} color={theme.colors.primary} />
-              <Text style={globalStyles.detailTitle}>Temperatura</Text>
+              <Text style={globalStyles.detailTitle}>{t('Forecast.detailTitle')}</Text>
               <Text style={globalStyles.detailValue}>
-                Máx: {weather?.tempMax ?? '--'}°C{" "}Min: {weather?.tempMin ?? '--'}°C
+                {t('Forecast.temperatureMax')}: {weather?.tempMax ?? '--'}°C{" "}{t('Forecast.temperatureMin')}: {weather?.tempMin ?? '--'}°C
               </Text>
             </View>
 
             <View style={globalStyles.detailCard}>
               <Ionicons name="rainy-outline" size={20} color={theme.colors.primary} />
-              <Text style={globalStyles.detailTitle}>Chuva</Text>
+              <Text style={globalStyles.detailTitle}>{t('Forecast.rainDetail')}</Text>
               <Text style={globalStyles.detailValue}>
-                {weather?.chuva ? 'Possível chuva' : 'Sem chuva'}{" "}(estimativa)
+                {weather?.chuva ? t('Forecast.possibleRain') : t('Forecast.withoutRain')}{" "}(estimativa)
               </Text>
             </View>
 
             <View style={globalStyles.detailCard}>
               <Feather name="wind" size={20} color={theme.colors.primary} />
-              <Text style={globalStyles.detailTitle}>Vento</Text>
+              <Text style={globalStyles.detailTitle}>{t('Forecast.windDetail')}</Text>
               <Text style={globalStyles.detailValue}>
                 {weather?.vento ?? '--'} km/h
               </Text>
@@ -216,15 +150,15 @@ export default function ForecastScreen() {
 
             <View style={globalStyles.detailCard}>
               <Ionicons name="water-outline" size={20} color={theme.colors.primary} />
-              <Text style={globalStyles.detailTitle}>Umidade</Text>
+              <Text style={globalStyles.detailTitle}>{t('Forecast.humidityDetail')}</Text>
               <Text style={globalStyles.detailValue}>
-                {weather?.umidade ?? '--'}%{" "}Umidade relativa do ar
+                {weather?.umidade ?? '--'}%{" "}{t('Forecast.humidityAir')}
               </Text>
             </View>
 
             <View style={globalStyles.detailCardFull}>
               <Ionicons name="thermometer" size={20} color={theme.colors.primary} />
-              <Text style={globalStyles.detailTitle}>Sensação Térmica</Text>
+              <Text style={globalStyles.detailTitle}>{t('Forecast.ThermalSenation')}</Text>
               <Text style={globalStyles.detailValue}>
                 {weather?.sensacaoTermica ?? '--'}°C
               </Text>
@@ -238,7 +172,7 @@ export default function ForecastScreen() {
         onPress={() => router.push('/home')}
       >
         <Ionicons name="arrow-back" size={16} color={theme.colors.textDark} />
-        <Text style={globalStyles.bottomButtonText}>Voltar para o look do dia</Text>
+        <Text style={globalStyles.bottomButtonText}>{t('Forecast.backButton')}</Text>
       </TouchableOpacity>
     </>
   );

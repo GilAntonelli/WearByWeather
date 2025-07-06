@@ -29,16 +29,7 @@
   },
   "home": {
     "greeting": "Hello!",
-    "cityLabel": "Lisbon",
-    "changeButton": "Change",
-    "temperatureLabel": "{{temp}}°C",
-    "feelsLike": "Feels like {{value}}°C",
-    "weatherDescription": "Clear sky",
-    "commentary": "Stable weather today. Keep an eye on changes throughout the day.",
-    "wind": "Wind: {{value}} km/h",
     "suggestionTitle": "Suggested Look of the Day",
-    "suggestionText": "Warm. Prefer fresh and light clothes.",
-    "accessories": "Accessories",
     "forecastButton": "See detailed forecast"
   },
   "cityModal": {
@@ -52,5 +43,27 @@
   },
   "BackButton": {
     "label": "Back"
+  },
+  "SettingsMenu": {
+    "preferences": "Preferences",
+    "begin": "Home",
+    "language": "Language",
+    "reset": "Reset"
+  },
+  "Forecast": {
+    "condition": "Loading...",
+    "sectionTitle": "Next 24h (3h intervals)",
+    "sectionTitleDetais": "Weather Details",
+    "detailTitle": "Temperature",
+    "temperatureMax": "Max",
+    "temperatureMin": "Min",
+    "rainDetail": "Rain",
+    "possibleRain": "Possible rain",
+    "withoutRain": "No rain",
+    "windDetail": "Wind",
+    "humidityDetail": "Humidity",
+    "humidityAir": "Relative humidity",
+    "ThermalSenation": "Feels like",
+    "backButton": "Back to today's look"
   }
 }

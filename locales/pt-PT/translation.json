@@ -29,16 +29,7 @@
   },
   "home": {
     "greeting": "Olá!",
-    "cityLabel": "Lisboa",
-    "changeButton": "Alterar",
-    "temperatureLabel": "{{temp}}°C",
-    "feelsLike": "Sensação de {{value}}°C",
-    "weatherDescription": "Céu limpo",
-    "commentary": "Clima estável hoje. Fique atento às variações ao longo do dia.",
-    "wind": "Vento: {{value}} km/h",
     "suggestionTitle": "Look Sugerido do Dia",
-    "suggestionText": "Quente. Prefira roupas frescas.",
-    "accessories": "Acessórios",
     "forecastButton": "Ver previsão detalhada"
   },
   "cityModal": {
@@ -52,5 +43,27 @@
   },
   "BackButton": {
     "label": "Voltar"
+  },
+  "SettingsMenu": {
+    "preferences": "Preferências",
+    "begin": "Início",
+    "language": "Idioma",
+    "reset": "Repor"
+  },
+  "Forecast": {
+    "condition": "A carregar...",
+    "sectionTitle": "Próximas 24h (intervalos de 3h)",
+    "sectionTitleDetais": "Detalhes Climáticos",
+    "detailTitle": "Temperatura",
+    "temperatureMax": "Máx",
+    "temperatureMin": "Mín",
+    "rainDetail": "Chuva",
+    "possibleRain": "Possível chuva",
+    "withoutRain": "Sem chuva",
+    "windDetail": "Vento",
+    "humidityDetail": "Humidade",
+    "humidityAir": "Humidade relativa do ar",
+    "ThermalSenation": "Sensação térmica",
+    "backButton": "Voltar ao look do dia"
   }
 }

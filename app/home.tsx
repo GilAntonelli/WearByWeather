@@ -30,6 +30,7 @@ import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
 import { UserPreferences } from '../types/preferences';
 import { LookSuggestion } from '../types/suggestion';
+import { useTranslation } from 'react-i18next';
 
 const resetApp = async () => {
   await AsyncStorage.clear();
@@ -65,6 +66,7 @@ export default function HomeScreen() {
     gender: 'masculino',
     comfort: 'neutro',
   });
+  const { t } = useTranslation();
 
   const detectCityFromLocation = async (): Promise<boolean> => {
     const savedCity = await AsyncStorage.getItem('lastCity');
@@ -267,7 +269,11 @@ export default function HomeScreen() {
         ) : (
           <>
             <TopHeader
-              title={userPreferences.name ? `Olá, ${userPreferences.name}!` : 'Olá!'}
+              title={
+                userPreferences.name
+                  ? `${t('home.greeting')}, ${userPreferences.name}!`
+                  : t('home.greeting')
+              }
               renderAnchor={() => (
                 <Menu
                   visible={menuVisible}
@@ -284,7 +290,7 @@ export default function HomeScreen() {
                       setMenuVisible(false);
                       router.push('/preferences');
                     }}
-                    title="Preferências"
+                    title={t('SettingsMenu.preferences')}
                     leadingIcon="tune"
                   />
                   <Divider />
@@ -293,7 +299,7 @@ export default function HomeScreen() {
                       setMenuVisible(false);
                       router.push('/');
                     }}
-                    title="Início"
+                    title={t('SettingsMenu.begin')}
                     leadingIcon="home-outline"
                   />
                   <Divider />
@@ -302,7 +308,7 @@ export default function HomeScreen() {
                       setMenuVisible(false);
                       router.push('/language-selector');
                     }}
-                    title="Linguagem"
+                    title={t('SettingsMenu.language')}
                     leadingIcon="globe-outline"
                   />
                   <Divider />
@@ -310,7 +316,7 @@ export default function HomeScreen() {
                     onPress={() => {
                       setMenuVisible(false);
                       Alert.alert(
-                        'Redefinir app',
+                        t('SettingsMenu.reset'),
                         'Tem certeza que deseja apagar suas preferências e reiniciar o app?',
                         [
                           { text: 'Cancelar', style: 'cancel' },
@@ -325,7 +331,7 @@ export default function HomeScreen() {
                         ]
                       );
                     }}
-                    title="Redefinir app"
+                    title={t('SettingsMenu.reset')}
                     leadingIcon="restart"
                   />
                 </Menu>
@@ -338,7 +344,7 @@ export default function HomeScreen() {
               onPress={() => setModalVisible(true)}
             >
               <Ionicons name="search" size={18} color="#999" style={{ marginRight: 8 }} />
-              <Text style={globalStyles.fakeSearchText}>Buscar cidade</Text>
+              <Text style={globalStyles.fakeSearchText}>{t('cityModal.searchPlaceholder')}</Text>
             </TouchableOpacity>
 
 
@@ -357,12 +363,12 @@ export default function HomeScreen() {
             <Text style={[globalStyles.cardTitle, {
               marginTop: spacing.section
             }]}>
-              Look Sugerido do Dia
+              {t('home.suggestionTitle')}
             </Text>
 
-{suggestion && <LookSuggestionCard suggestion={suggestion} />}
+            {suggestion && <LookSuggestionCard suggestion={suggestion} />}
 
-{/*
+            {/*
             {suggestion && (
               <View style={[globalStyles.cardhome, {
                 marginTop: spacing.section
@@ -413,9 +419,9 @@ export default function HomeScreen() {
 */}
 
             <PrimaryButton
-              title="Ver previsão detalhada"
+              title={t('home.forecastButton')}
               onPress={() => router.push('/forecast')}
-  style={{ marginTop: spacing.bottomButton }}
+              style={{ marginTop: spacing.bottomButton }}
             />
           </>
         )}

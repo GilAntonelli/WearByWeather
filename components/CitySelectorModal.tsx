@@ -22,6 +22,7 @@ import { getPreferredCityName } from '../utils/getPreferredCityName';
 import * as Location from 'expo-location';
 import { getdetectedCity } from '../services/LocationService';
 import { formatLocationName } from '../utils/formatLocation';
+import { useTranslation } from 'react-i18next';
 
 interface CitySelectorModalProps {
   visible: boolean;
@@ -44,6 +45,7 @@ export const CitySelectorModal = ({
   const [results, setResults] = useState<Suggestion[]>([]);
   const [loading, setLoading] = useState(false);
   const [hasLocationPermission, setHasLocationPermission] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const checkPermission = async () => {
@@ -70,7 +72,7 @@ export const CitySelectorModal = ({
   ];
 
   const fullCityList: Suggestion[] = hasLocationPermission
-    ? [{ name: 'Localização atual' }, ...cityList]
+    ? [{ name:  t('cityModal.currentLocation') }, ...cityList]
     : cityList;
 
   useEffect(() => {
@@ -105,7 +107,7 @@ export const CitySelectorModal = ({
     let label = '';
     let nomeParaApi = '';
 
-    if (selectedItem.name === 'Localização atual') {
+    if (selectedItem.name === t('cityModal.currentLocation')) {
       const detectedCity = await getdetectedCity();
       if (!detectedCity) {
         Alert.alert('Erro', 'Não foi possível detectar sua localização.');
@@ -164,10 +166,10 @@ export const CitySelectorModal = ({
           maxHeight: '90%',
         }}
       >
-        <Text style={globalStyles.title}>Escolha uma cidade</Text>
+        <Text style={globalStyles.title}>{t('cityModal.currentLocation')}</Text>
 
         <TextInput
-          placeholder="Buscar cidade"
+          placeholder={t('cityModal.searchPlaceholder')}
           value={search}
           onChangeText={setSearch}
           style={globalStyles.searchInput}
@@ -185,7 +187,7 @@ export const CitySelectorModal = ({
             renderItem={({ item }) => {
               const isFromSearch = search.length >= 3;
               const label =
-                item.name === 'Localização atual'
+                item.name === t('cityModal.currentLocation')
                   ? item.name
                   : isFromSearch
                   ? `${getPreferredCityName(item)}, ${item.state ?? ''}, ${item.country ?? ''}`
