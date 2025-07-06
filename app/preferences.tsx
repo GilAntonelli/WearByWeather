@@ -73,7 +73,8 @@ export default function PreferencesScreen() {
       return;
     }
 
-    const prefs = { name, stylePreference, comfort };
+    const prefs = { name, gender: stylePreference, comfort };
+
 
     try {
       await AsyncStorage.setItem('@user_preferences', JSON.stringify(prefs));
@@ -167,11 +168,11 @@ export default function PreferencesScreen() {
                 </View>
 
 
-           <InfoIconText
-  text="Você pode deixar esse campo em branco se preferir não ser chamado pelo nome."
-  marginTop={globalStyles.infoTextSpacing.marginTop}
-  marginBottom={globalStyles.infoTextSpacing.marginBottom}
-/>
+                <InfoIconText
+                  text="Você pode deixar esse campo em branco se preferir não ser chamado pelo nome."
+                  marginTop={globalStyles.infoTextSpacing.marginTop}
+                  marginBottom={globalStyles.infoTextSpacing.marginBottom}
+                />
 
               </View>
 

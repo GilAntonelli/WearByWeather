@@ -67,7 +67,7 @@ export const mockWeather = {
 */
 
 // ☔ CHUVA MODERADA – Look com guarda-chuva, capa e bota
-/*
+ 
 export const mockWeather = {
   temperatura: 17,
   sensacaoTermica: 16,
@@ -81,11 +81,11 @@ export const mockWeather = {
   icon: '10d',
   iconUrl: 'https://openweathermap.org/img/wn/10d@2x.png',
 };
-*/
+ 
 
 // 🌩️ TROVOADA – Look com capa e proteção, acessórios de chuva + vento
- 
-export const mockWeather = {
+ /* 
+ export const mockWeather = {
   temperatura: 22,
   sensacaoTermica: 21,
   tempMin: 20,
@@ -93,12 +93,12 @@ export const mockWeather = {
   umidade: 90,
   chuva: true,
   vento: 20,
-  condicao: 'trovoada',
+  condicao: 'trovoadas',
   descricao: 'Thunderstorm',
   icon: '11d',
   iconUrl: 'https://openweathermap.org/img/wn/11d@2x.png',
 };
-
+*/ 
 // ❄️ FRIO – Look com casaco, cachecol, luvas, gorro
 /*
 export const mockWeather = {
@@ -117,7 +117,7 @@ export const mockWeather = {
 */
 
 // 💨 VENTO – Look com corta-vento, gorro ajustado, elástico de cabelo
-/*
+ /*
 export const mockWeather = {
   temperatura: 19,
   sensacaoTermica: 18,
@@ -131,8 +131,8 @@ export const mockWeather = {
   icon: '04d',
   iconUrl: 'https://openweathermap.org/img/wn/04d@2x.png',
 };
+ 
 */
-
 // 🌫️ NEVOEIRO – Look com jaqueta leve, sem muitos acessórios
 /*
 export const mockWeather = {

@@ -104,17 +104,17 @@ export const globalStyles = StyleSheet.create({
     marginBottom: theme.spacing.lg,
     color: theme.colors.textDark,
   },
-inputFocused: {
-  borderColor: theme.colors.primary, // amarelo
-  borderWidth: 1,
-  backgroundColor: '#fff9e5',        // mesmo fundo dos cards selecionados
-  borderRadius: theme.radius.md,     // igual aos cards
-  shadowColor: '#000',
-  shadowOffset: { width: 0, height: 2 },
-  shadowOpacity: 0.08,
-  shadowRadius: 4,
-  elevation: 2,
-},
+  inputFocused: {
+    borderColor: theme.colors.primary, // amarelo
+    borderWidth: 1,
+    backgroundColor: '#fff9e5',        // mesmo fundo dos cards selecionados
+    borderRadius: theme.radius.md,     // igual aos cards
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    elevation: 2,
+  },
   validationText: {
     color: 'red',
     //fontSize: theme.fontSize.small,
@@ -262,16 +262,16 @@ inputFocused: {
     elevation: 2,
   },
   cardTitle: {
-fontSize: 20,
-  fontWeight: 'bold',
-  color: theme.colors.textDark,
-  marginTop: 32,
-  marginBottom: 12,
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: theme.colors.textDark,
+    marginTop: 32,
+    marginBottom: 12,
   }, weatherInfoItem: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  gap: 6,
-},
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
   weatherRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -363,20 +363,20 @@ fontSize: 20,
   },
 
 
-fakeSearchInput: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  backgroundColor: '#F0F0F0',
-  borderRadius: 12,
-  paddingVertical: 10,
-  paddingHorizontal: 16,
-  marginTop: 12,
-},
-fakeSearchText: {
-  fontSize: 14,
-  color: '#999',
-  flex: 1,
-},
+  fakeSearchInput: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F0F0F0',
+    borderRadius: 12,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    marginTop: 12,
+  },
+  fakeSearchText: {
+    fontSize: 14,
+    color: '#999',
+    flex: 1,
+  },
 
 
 
@@ -771,5 +771,9 @@ fakeSearchText: {
     marginBottom: 20,
   },
 
+  gearIcon: {
+    fontSize: 24,
+    color: theme.colors.textDark,
+  },
 
 });

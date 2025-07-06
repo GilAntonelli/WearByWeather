@@ -168,12 +168,6 @@ export default function HomeScreen() {
       isLoadingRef.current = true;
 
       try {
-        const prefsString = await AsyncStorage.getItem('@user_preferences');
-        if (!prefsString) return;
-
-        const prefs: UserPreferences = JSON.parse(prefsString);
-        setUserPreferences(prefs);
-
         const savedCity = await AsyncStorage.getItem('lastCity');
         let raw = city;
         let label = city;
@@ -188,16 +182,10 @@ export default function HomeScreen() {
           }
         }
         setSelectedCity(label);
-        console.log('Cidade usada na API:', raw);
+
         const weather = await getWeatherByCity(raw);
-        console.log('Dados de clima recebidos:', weather);
+        if (!weather) return;
 
-        if (!weather) {
-          console.warn('Não foi possível obter dados reais do clima.');
-          return;
-        }
-
-        // ✅ Aqui atualiza o weatherData corretamente
         setWeatherData({
           temperatura: weather.temperatura,
           sensacaoTermica: weather.sensacaoTermica,
@@ -211,34 +199,30 @@ export default function HomeScreen() {
 
         const clima = {
           ...weather,
-          genero: prefs.gender,
-          conforto: prefs.comfort,
+          genero: userPreferences.gender,
+          conforto: userPreferences.comfort,
         };
 
         const result = getSuggestionByWeather(clima);
         setSuggestion(result);
       } catch (e) {
-        console.error('Erro ao carregar sugestão com clima real:', e);
+        console.error('Erro ao carregar sugestão:', e);
       } finally {
         isLoadingRef.current = false;
       }
     };
 
-    if (isCityReady && city) {
+    if (isCityReady && city && userPreferences.gender && userPreferences.comfort) {
       loadSuggestion();
     }
-  }, [isCityReady, city]);
+  }, [isCityReady, city, userPreferences]);
 
   useEffect(() => {
     const loadCity = async () => {
       const granted = await detectCityFromLocation();
-      if (!granted) {
-        setModalVisible(true);
-      } else {
-        setIsCityReady(true);
-      }
+      if (!granted) setModalVisible(true);
+      else setIsCityReady(true);
     };
-
     loadCity();
   }, []);
 
@@ -282,72 +266,72 @@ export default function HomeScreen() {
           </>
         ) : (
           <>
-            <View style={globalStyles.homeHeader}>
-              <Text style={globalStyles.homeTitle}>
-                {userPreferences.name ? `Olá, ${userPreferences.name}!` : 'Olá!'}
-              </Text>
-              <Menu
-                visible={menuVisible}
-                onDismiss={() => setMenuVisible(false)}
-                anchor={
-                  <TouchableOpacity onPress={() => setMenuVisible(true)}>
-                    <Ionicons name="settings-outline" size={24} color={theme.colors.textDark} />
-                  </TouchableOpacity>
-                }
-              >
-                <Menu.Item
-                  onPress={() => {
-                    setMenuVisible(false);
-                    router.push('/preferences');
-                  }}
-                  title="Preferências"
-                  leadingIcon="tune"
-                />
-                <Divider />
-                <Menu.Item
-                  onPress={() => {
-                    setMenuVisible(false);
-                    router.push('/');
-                  }}
-                  title="Início"
-                  leadingIcon="home-outline"
-                />
-                <Divider />
-                <Menu.Item
-                  onPress={() => {
-                    setMenuVisible(false);
-                    router.push('/language-selector');
-                  }}
-                  title="Linguagem"
-                  leadingIcon="globe-outline"
-                />
-                <Divider />
-                <Menu.Item
-                  onPress={() => {
-                    setMenuVisible(false);
-                    Alert.alert(
-                      'Redefinir app',
-                      'Tem certeza que deseja apagar suas preferências e reiniciar o app?',
-                      [
-                        { text: 'Cancelar', style: 'cancel' },
-                        {
-                          text: 'Redefinir',
-                          style: 'destructive',
-                          onPress: async () => {
-                            await AsyncStorage.clear();
-                            router.replace('/');
+            <TopHeader
+              title={userPreferences.name ? `Olá, ${userPreferences.name}!` : 'Olá!'}
+              renderAnchor={() => (
+                <Menu
+                  visible={menuVisible}
+                  onDismiss={() => setMenuVisible(false)}
+                  anchor={
+                    <TouchableOpacity onPress={() => setMenuVisible(true)}>
+                      <Ionicons name="settings-outline" style={globalStyles.gearIcon} />
+
+                    </TouchableOpacity>
+                  }
+                >
+                  <Menu.Item
+                    onPress={() => {
+                      setMenuVisible(false);
+                      router.push('/preferences');
+                    }}
+                    title="Preferências"
+                    leadingIcon="tune"
+                  />
+                  <Divider />
+                  <Menu.Item
+                    onPress={() => {
+                      setMenuVisible(false);
+                      router.push('/');
+                    }}
+                    title="Início"
+                    leadingIcon="home-outline"
+                  />
+                  <Divider />
+                  <Menu.Item
+                    onPress={() => {
+                      setMenuVisible(false);
+                      router.push('/language-selector');
+                    }}
+                    title="Linguagem"
+                    leadingIcon="globe-outline"
+                  />
+                  <Divider />
+                  <Menu.Item
+                    onPress={() => {
+                      setMenuVisible(false);
+                      Alert.alert(
+                        'Redefinir app',
+                        'Tem certeza que deseja apagar suas preferências e reiniciar o app?',
+                        [
+                          { text: 'Cancelar', style: 'cancel' },
+                          {
+                            text: 'Redefinir',
+                            style: 'destructive',
+                            onPress: async () => {
+                              await AsyncStorage.clear();
+                              router.replace('/');
+                            },
                           },
-                        },
-                      ]
-                    );
-                  }}
-                  title="Redefinir app"
-                  leadingIcon="restart"
-                />
-              </Menu>
+                        ]
+                      );
+                    }}
+                    title="Redefinir app"
+                    leadingIcon="restart"
+                  />
+                </Menu>
+              )}
+            />
 
-
-            </View>
 
             <TouchableOpacity
               style={globalStyles.fakeSearchInput}
