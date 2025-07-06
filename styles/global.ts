@@ -21,8 +21,29 @@ export const globalStyles = StyleSheet.create({
     paddingTop: theme.spacing.xl, // ✅ ajuste aplicado para SafeArea
   },
   suggestionMain: {
+    flex: 1,
+  },
+
+concentratedCentered: {
   flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  paddingVertical: theme.spacing.lg, // Mantém espaçamento superior e inferior balanceado
+  gap: theme.spacing.md, // Espaço entre os elementos internos (requer React Native >= 0.71)
 },
+  centeredFullScreen: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+centeredEvenly: {
+  flex: 1,
+  justifyContent: 'center', // antes era 'space-evenly'
+  alignItems: 'center',
+  paddingVertical: theme.spacing.lg,
+},
+
   centered: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -30,45 +51,44 @@ export const globalStyles = StyleSheet.create({
   sectionIntro: {
     marginBottom: 24,
   },
-  imageWelcome: {
-    width: 200,
-    height: 200,
-    marginTop: theme.spacing.xl,
-    marginBottom: theme.spacing.md,
-    resizeMode: 'contain',
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  titleWelcome: {
-    fontSize: theme.fontSize.extralarge,
-    fontWeight: '600',
-    fontFamily: 'System',
-    color: theme.colors.textDark,
-    textAlign: 'center',
-    marginBottom: theme.spacing.sm,
-    letterSpacing: 0.3,
-    lineHeight: 36,
-  },
-  subtitleWelcome: {
-    fontSize: theme.fontSize.medium,
-    fontWeight: '400',
-    fontFamily: 'System',
-    color: theme.colors.textMedium,
-    textAlign: 'center',
-    lineHeight: 26,
-    marginBottom: theme.spacing.lg,
-    maxWidth: 280,
-    alignSelf: 'center',
-    letterSpacing: 0.2,
-  },
-  subtitleWelcomeStrong: {
-    color: theme.colors.textMedium,
-    fontWeight: '600',
-    fontStyle: 'italic',
-  },
+imageWelcome: {
+  width: 200, // ligeiramente menor para melhor harmonia
+  height: 200,
+  marginTop: theme.spacing.lg, // mais espaço acima
+  marginBottom: theme.spacing.xxl,
+  resizeMode: 'contain',
+  shadowColor: '#000',
+  shadowOpacity: 0.08, // mais suave
+  shadowOffset: { width: 0, height: 3 },
+  shadowRadius: 6,
+  elevation: 2,
+  alignSelf: 'center', // para garantir centralização
+},
+
+titleWelcome: {
+  fontSize: theme.fontSize.extralarge,
+  fontWeight: '700', // levemente mais pesado
+  fontFamily: 'System',
+  color: theme.colors.textDark,
+  textAlign: 'center',
+  marginBottom: theme.spacing.md, // aumento no espaçamento inferior
+  letterSpacing: 0.4,
+  lineHeight: 38,
+},
+
+subtitleWelcome: {
+  fontSize: theme.fontSize.medium,
+  fontWeight: '500',
+  fontFamily: 'System',
+  color: theme.colors.textMedium,
+  textAlign: 'center',
+  lineHeight: 26,
+  marginBottom: theme.spacing.lg,
+  maxWidth: '85%', // mais flexível e responsivo
+  alignSelf: 'center',
+  letterSpacing: 0.2,
+},
+
   descriptionWithSpacing: {
     color: theme.colors.textMedium,
     fontSize: theme.fontSize.medium,
@@ -267,9 +287,11 @@ export const globalStyles = StyleSheet.create({
     padding: 16,
     marginBottom: 20,
     shadowColor: '#000',
-    shadowOpacity: 0.05,
+    shadowOpacity: 0.08,
+  shadowOffset: { width: 0, height: 2 },
+
     shadowRadius: 6,
-    elevation: 2,
+elevation: 2,
   },
   cardTitle: {
     fontSize: 20,
@@ -786,6 +808,6 @@ export const globalStyles = StyleSheet.create({
     color: theme.colors.textDark,
   },
 
-  
+
 
 });

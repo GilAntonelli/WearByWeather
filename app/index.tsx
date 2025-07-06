@@ -2,7 +2,6 @@ import { Stack, useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
-  Dimensions,
   Image,
   StyleSheet,
   Text,
@@ -14,35 +13,34 @@ import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
 import { useTranslation } from 'react-i18next';
 
-const { width } = Dimensions.get('window');
-
 export default function WelcomeScreen() {
   const router = useRouter();
   const [checkingInit, setCheckingInit] = useState(true);
   const { t } = useTranslation();
 
   useEffect(() => {
-    const checkIfInitialized = async () => {
-      try {
-        const isInitialized = await AsyncStorage.getItem('isAppInitialized');
-
-        if (isInitialized) {
-          router.replace('/home'); // pula tela de boas-vindas se já usou
-        } else {
-          setCheckingInit(false); // libera exibição da tela de boas-vindas
-        }
-      } catch (error) {
-        console.error('Erro ao verificar inicialização:', error);
-        setCheckingInit(false); // mostra tela mesmo se falhar
-      }
-    };
-
     checkIfInitialized();
   }, []);
 
+  const checkIfInitialized = async () => {
+    try {
+      const isInitialized = await AsyncStorage.getItem('isAppInitialized');
+      if (isInitialized) {
+        router.replace('/home');
+      } else {
+        setCheckingInit(false);
+      }
+    } catch (error) {
+      console.error('Erro ao verificar inicialização:', error);
+      setCheckingInit(false);
+    }
+  };
+
+  const handleStart = () => router.push('/preferences');
+
   if (checkingInit) {
     return (
-      <View style={[globalStyles.container, { justifyContent: 'center', alignItems: 'center' }]}>
+      <View style={globalStyles.centeredFullScreen}>
         <ActivityIndicator size="large" color={theme.colors.primary} />
       </View>
     );
@@ -50,39 +48,22 @@ export default function WelcomeScreen() {
 
   return (
     <>
-      {/* Oculta o cabeçalho padrão (o "index" no topo) */}
       <Stack.Screen options={{ headerShown: false }} />
-
-      <View style={[globalStyles.container, styles.centered]}>
-        {/* Título com hierarquia visual aprimorada */}
-        <Text style={globalStyles.title}>Weather Wear</Text>
-
-        {/* Subtítulo mais leve e elegante */}
-        <Text style={globalStyles.subtitleWelcome}>
-          {t('intro.description')}
-        </Text>
-
-        {/* Ilustração */}
+      <View style={[globalStyles.container, globalStyles.centeredEvenly]}>
+        <Text style={globalStyles.titleWelcome}>Weather Wear</Text>
+        <Text style={globalStyles.subtitleWelcome}>{t('intro.description')}</Text>
         <Image
           source={require('../assets/images/clothesCloud.png')}
           style={globalStyles.imageWelcome}
         />
-
-        {/* Botão principal com ícone */}
         <PrimaryButton
           title={t('intro.button')}
           iconLeft="sunny-outline"
-          onPress={() => router.push('/preferences')}
+          onPress={handleStart}
         />
       </View>
     </>
   );
 }
 
-const styles = StyleSheet.create({
-  centered: {
-    flex: 1,
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-  },
-});
+
