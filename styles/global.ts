@@ -52,8 +52,8 @@ centeredEvenly: {
     marginBottom: 24,
   },
 imageWelcome: {
-  width: 200, // ligeiramente menor para melhor harmonia
-  height: 200,
+  width: 250, // ligeiramente menor para melhor harmonia
+  height: 250,
   marginTop: theme.spacing.lg, // mais espaço acima
   marginBottom: theme.spacing.xxl,
   resizeMode: 'contain',
