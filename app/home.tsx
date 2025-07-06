@@ -5,8 +5,8 @@ import { router, useRouter } from 'expo-router';
 import WeatherSummaryCard from '../components/WeatherSummaryCard';
 import { getWeatherByCity } from '../services/weatherService';
 import { TopHeader } from '../components/TopHeader'; // certifique-se de adicionar no topo
-
-
+import { spacing } from '../styles/global';
+import { LookSuggestionCard } from '../components/LookSuggestionCard';
 import { useEffect, useRef, useState } from 'react';
 import {
   Alert,
@@ -20,7 +20,6 @@ import {
 } from 'react-native';
 import { Divider, Menu } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
 import * as Location from 'expo-location';
 import { CitySelectorModal } from '../components/CitySelectorModal';
 import { PrimaryButton } from '../components/PrimaryButton';
@@ -38,6 +37,7 @@ const resetApp = async () => {
 };
 
 const screenHeight = Dimensions.get('window').height;
+
 
 export default function HomeScreen() {
   const isLoadingRef = useRef<boolean>(false);
@@ -354,11 +354,19 @@ export default function HomeScreen() {
                 condicao={weatherData.condicao || ''}
               />
             )}
-            <Text style={globalStyles.cardTitle}>Look Sugerido do Dia</Text>
+            <Text style={[globalStyles.cardTitle, {
+              marginTop: spacing.section
+            }]}>
+              Look Sugerido do Dia
+            </Text>
 
+{suggestion && <LookSuggestionCard suggestion={suggestion} />}
 
+{/*
             {suggestion && (
-              <View style={globalStyles.cardhome}>
+              <View style={[globalStyles.cardhome, {
+                marginTop: spacing.section
+              }]}>
                 <View style={globalStyles.suggestionWrapper}>
                   <View style={{ flex: 1 }}>
                     <Text style={globalStyles.lookText}>{suggestion.recomendação}</Text>
@@ -402,11 +410,12 @@ export default function HomeScreen() {
                 </View>
               </View>
             )}
+*/}
 
             <PrimaryButton
               title="Ver previsão detalhada"
               onPress={() => router.push('/forecast')}
-              style={{ marginTop: 32 }}
+  style={{ marginTop: spacing.bottomButton }}
             />
           </>
         )}

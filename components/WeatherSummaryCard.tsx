@@ -31,12 +31,7 @@ export default function WeatherSummaryCard({
       <View style={styles.headerRow}>
         <View style={styles.leftColumn}>
           <Text style={styles.cityText}>{city}</Text>
-          {isUsingLocation && (
-            <View style={styles.locationRow}>
-              <Ionicons name="home" size={14} color="#FFF" />
-              <Text style={styles.locationLabel}>Minha Localização</Text>
-            </View>
-          )}
+
           <Text style={styles.condicaoText}>
             {capitalizeFirstLetter(condicao)}
           </Text>

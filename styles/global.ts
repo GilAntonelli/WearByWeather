@@ -6,6 +6,13 @@ const cardSpacing = 12;
 const containerPadding = 24;
 const cardWidth = (screenWidth - containerPadding * 2 - cardSpacing * 2) / 3;
 
+export const spacing = {
+  section: 16,      // antes 24
+  betweenBlocks: 16,
+  inner: 8,         // antes 12
+  bottomButton: 24, // antes 32
+};
+
 export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
@@ -775,5 +782,7 @@ export const globalStyles = StyleSheet.create({
     fontSize: 24,
     color: theme.colors.textDark,
   },
+
+  
 
 });

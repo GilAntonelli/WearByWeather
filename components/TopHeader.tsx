@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 import { globalStyles } from '../styles/global'; // Se estiver usando estilo centralizado
+ 
 
 interface Props {
   title?: string;
@@ -20,7 +21,7 @@ export const TopHeader = ({ title, renderAnchor }: Props) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingTop: 48,
+    paddingTop: Platform.OS === 'ios' ? 48 : 32,
     paddingHorizontal: 16,
     marginBottom: 16,
   },
