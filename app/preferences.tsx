@@ -49,7 +49,7 @@ export default function PreferencesScreen() {
         if (saved) {
           const prefs = JSON.parse(saved);
           setName(prefs.name);
-          setStylePreference(prefs.stylePreference);
+          setStylePreference(prefs.gender);
           setComfort(prefs.comfort);
         }
       } catch (e) {
@@ -129,10 +129,10 @@ export default function PreferencesScreen() {
 
               {/* Nome */}
               <View style={[globalStyles.section, { marginBottom: 16 }]}>
-                <Text style={globalStyles.sectionTitle}>Nome ou apelido (opcional)</Text>
+                <Text style={globalStyles.sectionTitle}>Como prefere ser chamado(a)?</Text>
                 <View style={{ position: 'relative' }}>
                   <TextInput
-                    placeholder="Como prefere ser chamado(a)?"
+                    placeholder="Digite seu nome ou apelido (opcional)"
                     placeholderTextColor={theme.colors.textLight}
                     style={[
                       globalStyles.input,
@@ -206,13 +206,7 @@ export default function PreferencesScreen() {
                     marginBottom={globalStyles.infoTextSpacing.marginBottom}
                   />
                 )}
-                {!stylePreference && (
-                  <InfoIconText
-                    text="Usaremos essa informação para sugerir looks que mais se adequem ao seu estilo."
-                    marginTop={globalStyles.infoTextSpacing.marginTop}
-                    marginBottom={globalStyles.infoTextSpacing.marginBottom}
-                  />
-                )}
+
 
                 {stylePreference === 'masculino' && (
                   <InfoIconText
