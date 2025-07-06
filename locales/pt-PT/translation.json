@@ -9,16 +9,20 @@
     "subtitle": "Vamos personalizar a sua experiência!",
     "description": "Estas informações vão ajudar-nos a recomendar roupas que combinam com o seu estilo.",
     "editLater": "Poderá editar estas preferências mais tarde.",
-    "nameLabel": "Nome ou apelido (opcional)",
-    "namePlaceholder": "Como deseja ser chamado(a)?",
-    "genderQuestion": "O que prefere?",
-    "optionMale": "Moda Masculina",
-    "optionFemale": "Moda Feminina",
-    "optionUnisex": "Moda Unissexo",
-    "genderNote": "Vamos usar esta informação para sugerir looks adequados ao seu estilo.",
+    "nameLabel": "Escreva o seu nome ou apelido (opcional)",
+    "nameNote": "Pode deixar este campo em branco se preferir não ser tratado pelo nome.",
+    "namePlaceholder": "Como prefere ser tratado(a)?",
+    "genderQuestion": "Estilo de vestuário preferido",
+    "optionMale": "Masculino",
+    "optionFemale": "Feminino",
+    "optionUnisex": "Unissexo",
+    "genderNote": "Esta informação ajuda-nos a sugerir roupas mais adequadas ao seu estilo.",
+    "sugestionsMale": "Sugestões com calções, polo, etc.",
+    "sugestionsFemale": "Sugestões com vestidos, saias, etc.",
+    "sugestionsUnisex": "Roupas neutras como jeans, t-shirt, etc.",
     "comfortQuestion": "Temperatura de conforto",
-    "comfortColdTitle": "Prefiro agasalhar-me mais",
-    "comfortColdDesc": "Costuma sentir frio com facilidade",
+    "comfortColdTitle": "Prefiro vestir-me mais quente",
+    "comfortColdDesc": "Tende a sentir frio com facilidade",
     "comfortHotTitle": "Tenho muito calor",
     "comfortHotDesc": "Prefere roupas mais leves e frescas",
     "button": "Guardar preferências e continuar"
@@ -40,10 +44,13 @@
   "cityModal": {
     "title": "Escolha uma cidade",
     "searchPlaceholder": "Procurar cidade",
-   "currentLocation": "Localização atual"
+    "currentLocation": "Localização atual"
   },
   "language": {
-  "auto": "Detetar automaticamente",
-  "title": "Escolha o seu idioma"
+    "auto": "Detetar automaticamente",
+    "title": "Escolha o seu idioma"
+  },
+  "BackButton": {
+    "label": "Voltar"
   }
 }

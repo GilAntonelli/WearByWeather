@@ -3,9 +3,10 @@ import * as Localization from 'expo-localization';
 import { useRouter } from 'expo-router';
 import i18n from 'i18next';
 import React, { useEffect, useState } from 'react';
-import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, View, StyleSheet, SafeAreaView } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { globalStyles } from '../styles/global';
+import { BackButton } from '../components/ui/BackButton';
 import { theme } from '../styles/theme';
 
 const LANGUAGE_KEY = '@lang';
@@ -45,26 +46,31 @@ export default function LanguageSelector() {
   };
 
   return (
-    <View style={globalStyles.wrapper}>
-      <Text style={globalStyles.emoji}>🌐</Text>
-      <Text style={globalStyles.title}>{t('language.title')}</Text>
+    <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
+      <View style={{ paddingHorizontal: 20, paddingTop: 24 }}>
+        <BackButton />
+      </View>
+      <View style={globalStyles.wrapper}>
+        <Text style={globalStyles.emoji}>🌐</Text>
+        <Text style={globalStyles.title}>{t('language.title')}</Text>
 
-      {languages.map(lang => {
-        const label = lang.label || t(lang.labelKey || '');
-        const isActive = selected === lang.code;
+        {languages.map(lang => {
+          const label = lang.label || t(lang.labelKey || '');
+          const isActive = selected === lang.code;
 
-        return (
-          <TouchableOpacity
-            key={lang.code}
-            style={[globalStyles.langButton, isActive && globalStyles.langButtonActive]}
-            onPress={() => changeLanguage(lang.code)}
-          >
-            <Text style={[globalStyles.langText, isActive && globalStyles.langTextActive]}>
-              {lang.icon}  {label}
-            </Text>
-          </TouchableOpacity>
-        );
-      })}
-    </View>
+          return (
+            <TouchableOpacity
+              key={lang.code}
+              style={[globalStyles.langButton, isActive && globalStyles.langButtonActive]}
+              onPress={() => changeLanguage(lang.code)}
+            >
+              <Text style={[globalStyles.langText, isActive && globalStyles.langTextActive]}>
+                {lang.icon}  {label}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+    </SafeAreaView>
   );
 }

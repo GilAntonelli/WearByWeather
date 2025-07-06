@@ -4,26 +4,30 @@
     "description": "The weather changes. Your style adapts. Get outfit suggestions based on real-time weather.",
     "button": "See Today’s Suggestion"
   },
-   "preferences": {
+  "preferences": {
     "title": "Your Preferences",
-    "subtitle": "Let’s personalize your experience!",
-    "description": "This information helps us recommend clothes that match your style.",
+    "subtitle": "Let's personalize your experience!",
+    "description": "This information will help us recommend clothing that fits your style.",
     "editLater": "You can edit these preferences later.",
-    "nameLabel": "Name or nickname (optional)",
-    "namePlaceholder": "How do you want to be called?",
-    "genderQuestion": "What do you prefer?",
-    "optionMale": "Masculine Style",
-    "optionFemale": "Feminine Style",
-    "optionUnisex": "Unisex Style",
-    "genderNote": "We’ll use this information to suggest looks that best fit your style.",
-    "comfortQuestion": "Comfort Temperature",
-    "comfortColdTitle": "I prefer to bundle up",
-    "comfortColdDesc": "You usually feel cold easily",
-    "comfortHotTitle": "I feel too hot",
-    "comfortHotDesc": "You prefer light and breezy clothes",
+    "nameLabel": "Enter your name or nickname (optional)",
+    "nameNote": "You can leave this field blank if you prefer not to be called by name.",
+    "namePlaceholder": "How would you like to be addressed?",
+    "genderQuestion": "Preferred clothing style",
+    "optionMale": "Male",
+    "optionFemale": "Female",
+    "optionUnisex": "Unisex",
+    "genderNote": "This helps us suggest looks that best suit your style.",
+    "sugestionsMale": "Suggestions with shorts, polo shirts, etc.",
+    "sugestionsFemale": "Suggestions with dresses, skirts, etc.",
+    "sugestionsUnisex": "Neutral clothing like jeans, t-shirts, etc.",
+    "comfortQuestion": "Comfort temperature",
+    "comfortColdTitle": "I prefer to dress warmer",
+    "comfortColdDesc": "You tend to feel cold easily",
+    "comfortHotTitle": "I feel very hot",
+    "comfortHotDesc": "You prefer lighter, cooler clothing",
     "button": "Save preferences and continue"
   },
-   "home": {
+  "home": {
     "greeting": "Hello!",
     "cityLabel": "Lisbon",
     "changeButton": "Change",
@@ -43,7 +47,10 @@
     "currentLocation": "Current location"
   },
   "language": {
-  "auto": "Detect automatically",
-  "title": "Choose your language"
+    "auto": "Detect automatically",
+    "title": "Choose your language"
+  },
+  "BackButton": {
+    "label": "Back"
   }
 }

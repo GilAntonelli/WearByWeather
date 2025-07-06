@@ -711,7 +711,7 @@ export const globalStyles = StyleSheet.create({
   },
   wrapper: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     gap: 16,
     paddingHorizontal: 24,
