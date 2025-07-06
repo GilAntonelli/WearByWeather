@@ -20,6 +20,9 @@ export const globalStyles = StyleSheet.create({
     padding: theme.spacing.lg,
     paddingTop: theme.spacing.xl, // ✅ ajuste aplicado para SafeArea
   },
+  suggestionMain: {
+  flex: 1,
+},
   centered: {
     alignItems: 'center',
     justifyContent: 'center',
