@@ -108,10 +108,10 @@ export default function PreferencesScreen() {
           >
             <View style={globalStyles.contentWrapper}>
               <BackButton />
-              <Text style={[globalStyles.title, { marginBottom: 16 }]}>                
+              <Text style={[globalStyles.title, { marginBottom: 16 }]}>
                 {t('preferences.title')}
               </Text>
-              <Text style={globalStyles.description}>                
+              <Text style={globalStyles.description}>
                 {t('preferences.subtitle')}
               </Text>
 
@@ -197,7 +197,7 @@ export default function PreferencesScreen() {
                 </View>
                 {stylePreference === null && (
                   <InfoIconText
-                    text= {t('preferences.genderNote')}
+                    text={t('preferences.genderNote')}
                     marginTop={globalStyles.infoTextSpacing.marginTop}
                     marginBottom={globalStyles.infoTextSpacing.marginBottom}
                   />
