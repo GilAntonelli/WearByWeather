@@ -1,4 +1,5 @@
-import { WeatherContext, LookSuggestion } from '../types/suggestion';
+import { LookSuggestion, LookSuggestionJson, WeatherContext } from '../types/suggestion';
+import { TFunction } from 'i18next';
 
 export function getSuggestionByWeather({
   temperatura,
@@ -7,6 +8,7 @@ export function getSuggestionByWeather({
   vento,
   genero,
   conforto,
+  t
 }: WeatherContext): LookSuggestion {
   const tempBase = (temperatura + sensacaoTermica) / 2;
 
@@ -15,7 +17,6 @@ export function getSuggestionByWeather({
     calor: 2,
     neutro: 0,
   };
-
   const tempAjustada = tempBase + (confortoAjuste[conforto] ?? 0);
 
   let roupaSuperior = '';
@@ -24,14 +25,38 @@ export function getSuggestionByWeather({
   let recomendação = '';
   let image = null;
 
-  if (tempAjustada <= 10) {
+  let suggestions: LookSuggestion = {
+    roupaSuperior: '',
+    roupaInferior: '',
+    recomendação: '',
+    image: getAvatar('calor', genero), // ou uma imagem padrão
+  };
+
+  if (tempAjustada <= 5) {
+    suggestions = getSuggestions(genero, 'freezing', conforto, t);
+    roupaSuperior = suggestions.roupaSuperior;
+    roupaInferior = suggestions.roupaInferior;
+    acessórios = suggestions.acessórios || [];
+    image = getAvatar('frio', genero);
+  } else if (tempAjustada <= 10) {
     roupaSuperior = 'Casaco grosso e blusa térmica';
     roupaInferior =
       genero === 'feminino'
         ? 'Calça térmica ou legging'
         : genero === 'unissex'
-        ? 'Calça ou legging térmica'
-        : 'Calça jeans ou forrada';
+          ? 'Calça ou legging térmica'
+          : 'Calça jeans ou forrada';
+    acessórios.push('Cachecol', 'Touca', 'Luvas');
+    recomendação = 'Muito frio! Use roupas térmicas.';
+    image = getAvatar('frio', genero);
+  } else if (tempAjustada <= 13) {
+    roupaSuperior = 'Casaco grosso e blusa térmica';
+    roupaInferior =
+      genero === 'feminino'
+        ? 'Calça térmica ou legging'
+        : genero === 'unissex'
+          ? 'Calça ou legging térmica'
+          : 'Calça jeans ou forrada';
     acessórios.push('Cachecol', 'Touca', 'Luvas');
     recomendação = 'Muito frio! Use roupas térmicas.';
     image = getAvatar('frio', genero);
@@ -41,8 +66,8 @@ export function getSuggestionByWeather({
       genero === 'feminino'
         ? 'Calça ou saia longa com meia-calça'
         : genero === 'unissex'
-        ? 'Calça leve ou sarja'
-        : 'Calça jeans ou sarja';
+          ? 'Calça leve ou sarja'
+          : 'Calça jeans ou sarja';
     acessórios.push('Touca');
     recomendação = 'Clima fresco. Leve um agasalho.';
     image = getAvatar('fresco', genero);
@@ -52,8 +77,19 @@ export function getSuggestionByWeather({
       genero === 'feminino'
         ? 'Calça leve, saia midi ou vestido'
         : genero === 'unissex'
-        ? 'Calça ou bermuda'
-        : 'Calça leve ou jeans';
+          ? 'Calça ou bermuda'
+          : 'Calça leve ou jeans';
+    acessórios.push('Tênis leve ou sapato fechado');
+    recomendação = 'Clima ameno. Conforto é a chave.';
+    image = getAvatar('ameno', genero);
+  } else if (tempAjustada <= 25) {
+    roupaSuperior = 'Camisa leve ou camiseta';
+    roupaInferior =
+      genero === 'feminino'
+        ? 'Calça leve, saia midi ou vestido'
+        : genero === 'unissex'
+          ? 'Calça ou bermuda'
+          : 'Calça leve ou jeans';
     acessórios.push('Tênis leve ou sapato fechado');
     recomendação = 'Clima ameno. Conforto é a chave.';
     image = getAvatar('ameno', genero);
@@ -63,8 +99,8 @@ export function getSuggestionByWeather({
       genero === 'feminino'
         ? 'Short, saia ou vestido leve'
         : genero === 'unissex'
-        ? 'Bermuda ou short'
-        : 'Bermuda ou calça de linho';
+          ? 'Bermuda ou short'
+          : 'Bermuda ou calça de linho';
     acessórios.push('Óculos escuros');
     recomendação = 'Quente. Prefira roupas frescas.';
     image = getAvatar('quente', genero);
@@ -74,10 +110,11 @@ export function getSuggestionByWeather({
       genero === 'feminino'
         ? 'Vestido leve ou saia curta'
         : genero === 'unissex'
-        ? 'Short curto ou bermuda leve'
-        : 'Bermuda ou short leve';
+          ? 'Short curto ou bermuda leve'
+          : 'Bermuda ou short leve';
     acessórios.push('Óculos escuros', 'Chapéu ou boné', 'Protetor solar');
     recomendação = 'Muito calor! Proteja-se do sol.';
+
     image = getAvatar('calor', genero);
   }
 
@@ -98,7 +135,7 @@ export function getSuggestionByWeather({
     roupaInferior,
     acessórios,
     recomendação,
-    image,
+    image: image,
   };
 }
 
@@ -131,8 +168,24 @@ function getAvatar(faixa: string, genero: string): any {
   return avatarMap[key] || avatarMap['ameno_masculino'];
 }
 
+export function getSuggestions(
+  gender: string,
+  range: string,
+  comfort: string,
+  t: TFunction
+): LookSuggestion {
 
-
+  let suggestions = t(`suggestions.${gender}.${range}.neutral`, {
+    returnObjects: true,
+  }) as LookSuggestionJson;
+  return {
+    roupaSuperior: suggestions.top,
+    roupaInferior: suggestions.bottom,
+    acessórios: suggestions.accessories || [],
+    recomendação: '',
+    image: getAvatar(range, gender),
+  };
+}
 
 
 /*import { WeatherContext, LookSuggestion } from '../types/suggestion';

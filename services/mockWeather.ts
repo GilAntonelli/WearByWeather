@@ -69,8 +69,8 @@ export const mockWeather = {
 // ☔ CHUVA MODERADA – Look com guarda-chuva, capa e bota
  
 export const mockWeather = {
-  temperatura: 17,
-  sensacaoTermica: 16,
+  temperatura: 5,
+  sensacaoTermica: 4,
   tempMin: 15,
   tempMax: 19,
   umidade: 85,

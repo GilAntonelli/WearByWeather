@@ -67,5 +67,693 @@
     "humidityAir": "Relative humidity",
     "ThermalSenation": "Feels like",
     "backButton": "Back to today's look"
+  },
+  "LookSuggestionCard": {
+    "accessoryTitle": "Accessories"
+  },
+  "suggestions": {
+    "feminino": {
+      "freezing": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Thick coat + thermal sweater",
+          "bottom": "Thermal pants + jeans",
+          "accessories": [
+            "scarfThick",
+            "hatTight",
+            "gloves",
+            "hairTie"
+          ],
+          "shoes": "Lined waterproof boots"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Thick coat",
+          "bottom": "Jeans or heavy twill",
+          "accessories": [
+            "scarfMedium",
+            "hat",
+            "lightGloves"
+          ],
+          "shoes": "Thermal boots"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Structured coat + light blouse",
+          "bottom": "Jeans",
+          "accessories": [
+            "hatLight",
+            "lightGloves"
+          ],
+          "shoes": "Simple boots"
+        }
+      },
+      "cold": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Padded jacket + long sleeve shirt",
+          "bottom": "Lined pants or sweatpants",
+          "accessories": [
+            "scarfLight",
+            "hatFitted",
+            "hairTie"
+          ],
+          "shoes": "Leather boots"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Mid coat + sweater",
+          "bottom": "Jeans",
+          "accessories": [
+            "hatWool",
+            "earringSimple"
+          ],
+          "shoes": "Short boots"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Light sweatshirt + shirt",
+          "bottom": "Twill pants",
+          "accessories": [
+            "hairTie"
+          ],
+          "shoes": "Closed sneakers"
+        }
+      },
+      "chilly": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Sweatshirt + light jacket",
+          "bottom": "Jeans",
+          "accessories": [
+            "hatLight",
+            "scarfThin",
+            "hairTie"
+          ],
+          "shoes": "Bota leve"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Sweatshirt or cardigan",
+          "bottom": "Jeans",
+          "accessories": [
+            "earrings",
+            "watch"
+          ],
+          "shoes": "Sneakers or light boots"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Shirt + structured blazer",
+          "bottom": "Tailored trousers",
+          "accessories": [
+            "scarf",
+            "necklaceLight"
+          ],
+          "shoes": "Casual sneakers"
+        }
+      },
+      "mild": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "T-shirt + light sweater",
+          "bottom": "Jeans or midi skirt with tights",
+          "accessories": [
+            "scarf",
+            "sunglassesIfSun"
+          ],
+          "shoes": "Oxford or closed sneakers"
+        },
+        "neutral": {
+          "isSinglePiece": true,
+          "singlePiece": "Midi dress with short sleeves + light jacket",
+          "accessories": [
+            "bracelet",
+            "scarf",
+            "necklaceSimple"
+          ],
+          "shoes": "Ballet flats or loafers"
+        },
+        "feel_hot": {
+          "isSinglePiece": true,
+          "singlePiece": "Light dress with straps + light kimono",
+          "accessories": [
+            "sunglasses",
+            "brincoLeve"
+          ],
+          "shoes": "Light sneakers or closed sandals"
+        }
+      },
+      "comfortable": {
+        "feel_cold": {
+          "isSinglePiece": true,
+          "singlePiece": "Midi dress with ¾ sleeves + light blazer",
+          "accessories": [
+            "scarfNeck",
+            "watch"
+          ],
+          "shoes": "Casual sneakers or oxfords"
+        },
+        "neutral": {
+          "isSinglePiece": true,
+          "singlePiece": "Flowy dress with short sleeves",
+          "accessories": [
+            "necklace",
+            "sunglasses"
+          ],
+          "shoes": "Sapatilha ou mule"
+        },
+        "feel_hot": {
+          "isSinglePiece": true,
+          "singlePiece": "Light dress with wide straps or tank top",
+          "accessories": [
+            "hairUp",
+            "lencoNaCabecaSeVento"
+          ],
+          "shoes": "Sandals or light sneakers"
+        }
+      },
+      "warm": {
+        "feel_cold": {
+          "isSinglePiece": true,
+          "singlePiece": "Short dress with light sleeves + thin overlay",
+          "accessories": [
+            "scarfLight",
+            "sunglasses"
+          ],
+          "shoes": "Light sneakers or loafers"
+        },
+        "neutral": {
+          "isSinglePiece": true,
+          "singlePiece": "Short dress with wide straps or Japanese sleeves",
+          "accessories": [
+            "earringsLight",
+            "sunglasses"
+          ],
+          "shoes": "Flat sandals"
+        },
+        "feel_hot": {
+          "isSinglePiece": true,
+          "singlePiece": "Light dress with thin straps or halter neck",
+          "accessories": [
+            "hairTie",
+            "necklaceLight"
+          ],
+          "shoes": "Sandals or flip-flops"
+        }
+      },
+      "hot": {
+        "feel_cold": {
+          "isSinglePiece": true,
+          "singlePiece": "Light dress with wide straps",
+          "accessories": [
+            "scarfNeckLight",
+            "sunglasses"
+          ],
+          "shoes": "Flat sandals"
+        },
+        "neutral": {
+          "isSinglePiece": true,
+          "singlePiece": "Dress with thin straps and flowy fabric",
+          "accessories": [
+            "glasses",
+            "necklaceLight",
+            "hairUp"
+          ],
+          "shoes": "Flat sandals or flip-flops"
+        },
+        "feel_hot": {
+          "isSinglePiece": true,
+          "singlePiece": "Slip dress with thin straps",
+          "accessories": [
+            "ponytail",
+            "glasses",
+            "scarfHeadControl"
+          ],
+          "shoes": "Light flip-flops"
+        }
+      }
+    },
+    "masculino": {
+      "freezing": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Padded coat + thermal sweater",
+          "bottom": "Thermal pants + jeans",
+          "accessories": [
+            "scarfThick",
+            "hatTight",
+            "gloves",
+            "beanie"
+          ],
+          "shoes": "Lined waterproof boots"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Thick coat with lining",
+          "bottom": "Jeans or thick twill pants",
+          "accessories": [
+            "scarfMedium",
+            "hat",
+            "lightGloves"
+          ],
+          "shoes": "Thermal boots"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Structured coat + long sleeve blouse",
+          "bottom": "Jeans",
+          "accessories": [
+            "hatLight",
+            "lightGloves"
+          ],
+          "shoes": "Simple boots"
+        }
+      },
+      "cold": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Thermal jacket + long sleeve blouse",
+          "bottom": "Thick pants or sweatpants",
+          "accessories": [
+            "scarfLight",
+            "beanie",
+            "lightGloves"
+          ],
+          "shoes": "Leather boots"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Mid winter coat + sweater",
+          "bottom": "Jeans",
+          "accessories": [
+            "hatBasic",
+            "watch"
+          ],
+          "shoes": "Short boots"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Light sweatshirt + shirt",
+          "bottom": "Twill pants",
+          "accessories": [
+            "hatLight"
+          ],
+          "shoes": "Closed sneakers"
+        }
+      },
+      "chilly": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Sweatshirt + light jacket",
+          "bottom": "Jeans",
+          "accessories": [
+            "scarfLight",
+            "hatOrCap"
+          ],
+          "shoes": "Bota leve"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Light jacket or sweater",
+          "bottom": "Jeans or chino pants",
+          "accessories": [
+            "watch",
+            "sunglassesIfSun"
+          ],
+          "shoes": "Casual sneakers"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Long sleeve shirt + light vest",
+          "bottom": "Twill pants",
+          "accessories": [
+            "noHat",
+            "hairUpLong"
+          ],
+          "shoes": "Sport sneakers"
+        }
+      },
+      "mild": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "T-shirt + light sweater or cardigan",
+          "bottom": "Jeans or chino pants",
+          "accessories": [
+            "scarfLight",
+            "sunglassesIfSun",
+            "watch"
+          ],
+          "shoes": "Closed sneakers"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Light shirt or long sleeve polo",
+          "bottom": "Chino or light twill pants",
+          "accessories": [
+            "watch",
+            "braceletSimple"
+          ],
+          "shoes": "Loafers or sneakers"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "T-shirt or tank top + thin jacket",
+          "bottom": "Bermuda de tecido estruturado",
+          "accessories": [
+            "sunglasses"
+          ],
+          "shoes": "Light sneakers or casual sneakers"
+        }
+      },
+      "comfortable": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Long sleeve shirt + light jacket",
+          "bottom": "Jeans",
+          "accessories": [
+            "scarfLight",
+            "watch"
+          ],
+          "shoes": "Sneakers or casual shoes"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "T-shirt or polo",
+          "bottom": "Chino pants",
+          "accessories": [
+            "sunglasses",
+            "necklaceSimple"
+          ],
+          "shoes": "Casual sneakers or loafers"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Tank top or light fabric T-shirt",
+          "bottom": "Bermuda ou short de sarja",
+          "accessories": [
+            "hairTieLong",
+            "necklaceSport"
+          ],
+          "shoes": "Light sneakers or flip-flops"
+        }
+      },
+      "warm": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "T-shirt + open light shirt",
+          "bottom": "Bermuda estruturada",
+          "accessories": [
+            "sunglasses",
+            "braceletLight"
+          ],
+          "shoes": "Sneakers or espadrilles"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Structured tank top or T-shirt",
+          "bottom": "Shorts or bermuda",
+          "accessories": [
+            "glasses",
+            "necklaceSimple"
+          ],
+          "shoes": "Sandals or light sneakers"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Light tank top",
+          "bottom": "Light shorts",
+          "accessories": [
+            "hairUpLong"
+          ],
+          "shoes": "Flip-flops or sandals"
+        }
+      },
+      "hot": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Cotton light tank top or T-shirt",
+          "bottom": "Shorts de linho ou tactel",
+          "accessories": [
+            "sunglasses",
+            "scarfNeckLight"
+          ],
+          "shoes": "Light sandals"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Tank top or light top",
+          "bottom": "Shorts",
+          "accessories": [
+            "necklace",
+            "hairUpLong",
+            "glasses"
+          ],
+          "shoes": "Flip-flops or sandals"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Low cut or sleeveless tank top",
+          "bottom": "Light shorts",
+          "accessories": [
+            "ponytail",
+            "lencoNaCabecaControleCapilar"
+          ],
+          "shoes": "Light flip-flops"
+        }
+      }
+    },
+    "unissex": {
+      "freezing": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Padded jacket + thermal shirt",
+          "bottom": "Thermal pants + jeans",
+          "accessories": [
+            "scarfThick",
+            "hatTight",
+            "gloves",
+            "beanie"
+          ],
+          "shoes": "Lined waterproof boots"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Mid snow coat + sweater",
+          "bottom": "Jeans or twill pants",
+          "accessories": [
+            "scarfMedium",
+            "hat",
+            "gloves"
+          ],
+          "shoes": "Thermal boots"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Casaco leve + moletom fino",
+          "bottom": "Jeans",
+          "accessories": [
+            "hatLight",
+            "lightGloves"
+          ],
+          "shoes": "Simple boots"
+        }
+      },
+      "cold": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Moletom grosso + jaqueta corta-vento",
+          "bottom": "Sweatpants or twill pants",
+          "accessories": [
+            "scarfLight",
+            "hatTight",
+            "lightGloves"
+          ],
+          "shoes": "Mid boots"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Sweater + light coat",
+          "bottom": "Jeans",
+          "accessories": [
+            "hat",
+            "watchSimple"
+          ],
+          "shoes": "Casual sneakers"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Blusa de manga + colete leve",
+          "bottom": "Twill pants",
+          "accessories": [
+            "hatLight"
+          ],
+          "shoes": "Sneakers or light boots"
+        }
+      },
+      "chilly": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Sweatshirt + light jacket",
+          "bottom": "Jeans",
+          "accessories": [
+            "scarf",
+            "beanie",
+            "functionalAccessory"
+          ],
+          "shoes": "Bota leve"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Mid sweater or light jacket",
+          "bottom": "Chino pants",
+          "accessories": [
+            "watch",
+            "sunglassesIfSun"
+          ],
+          "shoes": "Casual sneakers"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Light shirt + short overlay",
+          "bottom": "Light twill pants",
+          "accessories": [
+            "colarSimples"
+          ],
+          "shoes": "Light sneakers"
+        }
+      },
+      "mild": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "T-shirt + light sweater",
+          "bottom": "Jeans or chino pants",
+          "accessories": [
+            "scarfLight",
+            "sunglassesIfSun",
+            "watch"
+          ],
+          "shoes": "Closed sneakers"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Loose button-up shirt or unisex polo",
+          "bottom": "Chino or light sweatpants",
+          "accessories": [
+            "bracelet",
+            "watch",
+            "necklaceSimple"
+          ],
+          "shoes": "Neutral sneakers or loafers"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Camiseta oversized + colete aberto leve",
+          "bottom": "Bermuda de sarja estruturada",
+          "accessories": [
+            "glasses",
+            "necklaceSport"
+          ],
+          "shoes": "Light sneakers or casual sneakers"
+        }
+      },
+      "comfortable": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Camisa manga longa + jaqueta jeans",
+          "bottom": "Jeans",
+          "accessories": [
+            "scarfDecorative",
+            "braceletNeutral"
+          ],
+          "shoes": "Sneakers or casual shoes"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Basic T-shirt or crew neck",
+          "bottom": "Chino or twill pants",
+          "accessories": [
+            "necklaceLight",
+            "sunglasses"
+          ],
+          "shoes": "Casual sneakers or sneakers"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Regata ou camiseta fluida",
+          "bottom": "Bermuda neutra",
+          "accessories": [
+            "glasses",
+            "hairUpLong"
+          ],
+          "shoes": "Flip-flops or light sneakers"
+        }
+      },
+      "warm": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Camiseta leve + camisa aberta",
+          "bottom": "Bermuda estruturada",
+          "accessories": [
+            "sunglasses",
+            "scarfLight"
+          ],
+          "shoes": "Sneakers or low sandals"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Regata unissex ou camiseta oversized",
+          "bottom": "Shorts or bermuda",
+          "accessories": [
+            "colarSimples",
+            "bracelet"
+          ],
+          "shoes": "Flip-flops or light sneakers"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Light cotton tank top (low cut)",
+          "bottom": "Light shorts",
+          "accessories": [
+            "ponytail",
+            "scarfHead"
+          ],
+          "shoes": "Light flip-flops"
+        }
+      },
+      "hot": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Structured sleeveless T-shirt",
+          "bottom": "Cotton shorts",
+          "accessories": [
+            "scarfNeckLight",
+            "sunglasses"
+          ],
+          "shoes": "Light sandals"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Loose tank top or T-shirt",
+          "bottom": "Short or neutral shorts",
+          "accessories": [
+            "glasses",
+            "colarSimples",
+            "hairUpLong"
+          ],
+          "shoes": "Flat sandals or flip-flops"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Low cut tank top or neutral cropped",
+          "bottom": "Light shorts",
+          "accessories": [
+            "ponytail",
+            "lencoNaCabecaControleCapilar"
+          ],
+          "shoes": "Light flip-flops"
+        }
+      }
+    }
   }
 }

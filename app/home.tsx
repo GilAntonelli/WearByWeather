@@ -203,9 +203,11 @@ export default function HomeScreen() {
           ...weather,
           genero: userPreferences.gender,
           conforto: userPreferences.comfort,
+          t: t,
         };
 
         const result = getSuggestionByWeather(clima);
+        console.log('Sugestão carregada:', result);
         setSuggestion(result);
       } catch (e) {
         console.error('Erro ao carregar sugestão:', e);

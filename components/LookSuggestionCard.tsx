@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
-import { View, Text, Image } from 'react-native';
-import { globalStyles, spacing } from '../styles/global';
+import { useTranslation } from 'react-i18next';
+import { Image, Text, View } from 'react-native';
 import { accessoryImages } from '../constants/accessoryImages';
+import { globalStyles, spacing } from '../styles/global';
 import { LookSuggestion } from '../types/suggestion';
 
 interface LookSuggestionCardProps {
@@ -9,6 +10,7 @@ interface LookSuggestionCardProps {
 }
 
 export const LookSuggestionCard: React.FC<LookSuggestionCardProps> = ({ suggestion }) => {
+  const { t } = useTranslation();
   const accessories = useMemo(() => {
     return suggestion.acessórios?.map((item, index) => {
       const icon = accessoryImages[item as keyof typeof accessoryImages];
@@ -45,7 +47,7 @@ export const LookSuggestionCard: React.FC<LookSuggestionCardProps> = ({ suggesti
         </View>
 
         <View style={globalStyles.accessoryColumn}>
-          <Text style={globalStyles.accessoryTitle}>Acessórios</Text>
+          <Text style={globalStyles.accessoryTitle}>{t('LookSuggestionCard.accessoryTitle')}</Text>
           {accessories}
         </View>
       </View>

@@ -67,5 +67,693 @@
     "humidityAir": "Umidade relativa do ar",
     "ThermalSenation": "Sensação Térmica",
     "backButton": "Voltar para o look do dia"
+  },
+  "LookSuggestionCard": {
+    "accessoryTitle": "Acessórios"
+  },
+  "suggestions": {
+    "feminino": {
+      "freezing": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Casaco grosso + suéter térmico",
+          "bottom": "Calça térmica + jeans",
+          "accessories": [
+            "scarfThick",
+            "hatTight",
+            "gloves",
+            "hairTie"
+          ],
+          "shoes": "Bota forrada impermeável"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Casaco grosso",
+          "bottom": "Jeans ou sarja grossa",
+          "accessories": [
+            "scarfMedium",
+            "hat",
+            "lightGloves"
+          ],
+          "shoes": "Bota térmica"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Casaco estruturado + blusa leve",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "hatLight",
+            "lightGloves"
+          ],
+          "shoes": "Bota simples"
+        }
+      },
+      "cold": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Jaqueta acolchoada + blusa de manga",
+          "bottom": "Calça forrada ou moletom",
+          "accessories": [
+            "scarfLight",
+            "hatFitted",
+            "hairTie"
+          ],
+          "shoes": "Bota de couro"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Casaco médio + suéter",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "hatWool",
+            "earringSimple"
+          ],
+          "shoes": "Bota cano curto"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Blusão leve + camisa",
+          "bottom": "Calça de sarja",
+          "accessories": [
+            "hairTie"
+          ],
+          "shoes": "Tênis fechado"
+        }
+      },
+      "chilly": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Moletom + jaqueta leve",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "hatLight",
+            "scarfThin",
+            "hairTie"
+          ],
+          "shoes": "Bota leve"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Moletom ou cardigan",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "earrings",
+            "watch"
+          ],
+          "shoes": "Tênis ou bota leve"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Camisa + blazer estruturado",
+          "bottom": "Calça de alfaiataria",
+          "accessories": [
+            "scarf",
+            "necklaceLight"
+          ],
+          "shoes": "Tênis casual"
+        }
+      },
+      "mild": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Camiseta + suéter fino",
+          "bottom": "Calça jeans ou saia midi com meia",
+          "accessories": [
+            "scarf",
+            "sunglassesIfSun"
+          ],
+          "shoes": "Oxford ou tênis fechado"
+        },
+        "neutral": {
+          "isSinglePiece": true,
+          "singlePiece": "Vestido midi com manga curta + jaqueta leve",
+          "accessories": [
+            "bracelet",
+            "scarf",
+            "necklaceSimple"
+          ],
+          "shoes": "Sapatilha ou mocassim"
+        },
+        "feel_hot": {
+          "isSinglePiece": true,
+          "singlePiece": "Vestido leve de alça + kimono leve",
+          "accessories": [
+            "sunglasses",
+            "brincoLeve"
+          ],
+          "shoes": "Tênis leve ou sandália fechada"
+        }
+      },
+      "comfortable": {
+        "feel_cold": {
+          "isSinglePiece": true,
+          "singlePiece": "Vestido midi de manga ¾ + blazer leve",
+          "accessories": [
+            "scarfNeck",
+            "watch"
+          ],
+          "shoes": "Tênis casual ou oxford"
+        },
+        "neutral": {
+          "isSinglePiece": true,
+          "singlePiece": "Vestido fluido com manga curta",
+          "accessories": [
+            "necklace",
+            "sunglasses"
+          ],
+          "shoes": "Sapatilha ou mule"
+        },
+        "feel_hot": {
+          "isSinglePiece": true,
+          "singlePiece": "Vestido leve de alça larga ou regata",
+          "accessories": [
+            "hairUp",
+            "lencoNaCabecaSeVento"
+          ],
+          "shoes": "Sandália ou tênis leve"
+        }
+      },
+      "warm": {
+        "feel_cold": {
+          "isSinglePiece": true,
+          "singlePiece": "Vestido curto com manga leve + sobreposição fina",
+          "accessories": [
+            "scarfLight",
+            "sunglasses"
+          ],
+          "shoes": "Tênis leve ou mocassim"
+        },
+        "neutral": {
+          "isSinglePiece": true,
+          "singlePiece": "Vestido curto com alça larga ou manga japonesa",
+          "accessories": [
+            "earringsLight",
+            "sunglasses"
+          ],
+          "shoes": "Sandália baixa"
+        },
+        "feel_hot": {
+          "isSinglePiece": true,
+          "singlePiece": "Vestido leve de alça fina ou frente única",
+          "accessories": [
+            "hairTie",
+            "necklaceLight"
+          ],
+          "shoes": "Sandália ou chinelo"
+        }
+      },
+      "hot": {
+        "feel_cold": {
+          "isSinglePiece": true,
+          "singlePiece": "Vestido leve com alça larga",
+          "accessories": [
+            "scarfNeckLight",
+            "sunglasses"
+          ],
+          "shoes": "Sandália baixa"
+        },
+        "neutral": {
+          "isSinglePiece": true,
+          "singlePiece": "Vestido com alça fina e tecido fluido",
+          "accessories": [
+            "glasses",
+            "necklaceLight",
+            "hairUp"
+          ],
+          "shoes": "Rasteira ou chinelo"
+        },
+        "feel_hot": {
+          "isSinglePiece": true,
+          "singlePiece": "Vestido tipo slip dress de alça fina",
+          "accessories": [
+            "ponytail",
+            "glasses",
+            "scarfHeadControl"
+          ],
+          "shoes": "Chinelo leve"
+        }
+      }
+    },
+    "masculino": {
+      "freezing": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Casaco acolchoado + suéter térmico",
+          "bottom": "Calça térmica + jeans",
+          "accessories": [
+            "scarfThick",
+            "hatTight",
+            "gloves",
+            "beanie"
+          ],
+          "shoes": "Bota forrada impermeável"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Casaco grosso com forro",
+          "bottom": "Calça jeans ou sarja grossa",
+          "accessories": [
+            "scarfMedium",
+            "hat",
+            "lightGloves"
+          ],
+          "shoes": "Bota térmica"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Casaco estruturado + blusa de manga",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "hatLight",
+            "lightGloves"
+          ],
+          "shoes": "Bota simples"
+        }
+      },
+      "cold": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Jaqueta térmica + blusa de manga",
+          "bottom": "Calça grossa ou moletom",
+          "accessories": [
+            "scarfLight",
+            "beanie",
+            "lightGloves"
+          ],
+          "shoes": "Bota de couro"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Casaco de inverno médio + suéter",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "hatBasic",
+            "watch"
+          ],
+          "shoes": "Bota cano curto"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Blusão leve + camisa",
+          "bottom": "Calça de sarja",
+          "accessories": [
+            "hatLight"
+          ],
+          "shoes": "Tênis fechado"
+        }
+      },
+      "chilly": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Moletom + jaqueta leve",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "scarfLight",
+            "hatOrCap"
+          ],
+          "shoes": "Bota leve"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Jaqueta leve ou suéter",
+          "bottom": "Calça jeans ou chino",
+          "accessories": [
+            "watch",
+            "sunglassesIfSun"
+          ],
+          "shoes": "Tênis casual"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Camisa de manga longa + colete leve",
+          "bottom": "Calça de sarja",
+          "accessories": [
+            "noHat",
+            "hairUpLong"
+          ],
+          "shoes": "Tênis esportivo"
+        }
+      },
+      "mild": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Camiseta + suéter leve ou cardigan",
+          "bottom": "Calça jeans ou chino",
+          "accessories": [
+            "scarfLight",
+            "sunglassesIfSun",
+            "watch"
+          ],
+          "shoes": "Tênis fechado"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Camisa leve ou polo de manga longa",
+          "bottom": "Calça chino ou sarja leve",
+          "accessories": [
+            "watch",
+            "braceletSimple"
+          ],
+          "shoes": "Mocassim ou tênis"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Camiseta ou regata + jaqueta fina",
+          "bottom": "Bermuda de tecido estruturado",
+          "accessories": [
+            "sunglasses"
+          ],
+          "shoes": "Tênis leve ou sapatênis"
+        }
+      },
+      "comfortable": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Camisa de manga + jaqueta fina",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "scarfLight",
+            "watch"
+          ],
+          "shoes": "Tênis ou sapato casual"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Camiseta ou polo",
+          "bottom": "Calça chino",
+          "accessories": [
+            "sunglasses",
+            "necklaceSimple"
+          ],
+          "shoes": "Sapatênis ou mocassim"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Regata ou camiseta de tecido leve",
+          "bottom": "Bermuda ou short de sarja",
+          "accessories": [
+            "hairTieLong",
+            "necklaceSport"
+          ],
+          "shoes": "Tênis leve ou chinelo"
+        }
+      },
+      "warm": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Camiseta + camisa aberta leve",
+          "bottom": "Bermuda estruturada",
+          "accessories": [
+            "sunglasses",
+            "braceletLight"
+          ],
+          "shoes": "Tênis ou alpargata"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Camiseta ou regata estruturada",
+          "bottom": "Shorts ou bermuda",
+          "accessories": [
+            "glasses",
+            "necklaceSimple"
+          ],
+          "shoes": "Sandália ou tênis leve"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Regata leve",
+          "bottom": "Shorts leve",
+          "accessories": [
+            "hairUpLong"
+          ],
+          "shoes": "Chinelo ou sandália"
+        }
+      },
+      "hot": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Regata ou camiseta leve de algodão",
+          "bottom": "Shorts de linho ou tactel",
+          "accessories": [
+            "sunglasses",
+            "scarfNeckLight"
+          ],
+          "shoes": "Sandália leve"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Regata ou top leve",
+          "bottom": "Shorts",
+          "accessories": [
+            "necklace",
+            "hairUpLong",
+            "glasses"
+          ],
+          "shoes": "Chinelo ou sandália"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Regata cavada ou sem mangas",
+          "bottom": "Shorts leve",
+          "accessories": [
+            "ponytail",
+            "lencoNaCabecaControleCapilar"
+          ],
+          "shoes": "Chinelo leve"
+        }
+      }
+    },
+    "unissex": {
+      "freezing": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Jaqueta acolchoada + blusa térmica",
+          "bottom": "Calça térmica + jeans",
+          "accessories": [
+            "scarfThick",
+            "hatTight",
+            "gloves",
+            "beanie"
+          ],
+          "shoes": "Bota forrada impermeável"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Casaco de neve médio + suéter",
+          "bottom": "Calça jeans ou sarja",
+          "accessories": [
+            "scarfMedium",
+            "hat",
+            "lightGloves"
+          ],
+          "shoes": "Bota térmica"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Casaco leve + moletom fino",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "hatLight",
+            "lightGloves"
+          ],
+          "shoes": "Bota simples"
+        }
+      },
+      "cold": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Moletom grosso + jaqueta corta-vento",
+          "bottom": "Calça de moletom ou sarja",
+          "accessories": [
+            "scarfLight",
+            "hatTight",
+            "lightGloves"
+          ],
+          "shoes": "Bota cano médio"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Suéter + casaco leve",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "hat",
+            "watchSimple"
+          ],
+          "shoes": "Tênis casual"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Blusa de manga + colete leve",
+          "bottom": "Calça de sarja",
+          "accessories": [
+            "hatLight"
+          ],
+          "shoes": "Tênis ou bota leve"
+        }
+      },
+      "chilly": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Moletom + jaqueta leve",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "scarf",
+            "beanie",
+            "functionalAccessory"
+          ],
+          "shoes": "Bota leve"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Suéter médio ou jaqueta leve",
+          "bottom": "Calça chino",
+          "accessories": [
+            "watch",
+            "sunglassesIfSun"
+          ],
+          "shoes": "Tênis casual"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Camisa leve + sobreposição curta",
+          "bottom": "Calça sarja leve",
+          "accessories": [
+            "colarSimples"
+          ],
+          "shoes": "Tênis leve"
+        }
+      },
+      "mild": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Camiseta + suéter leve",
+          "bottom": "Calça jeans ou chino",
+          "accessories": [
+            "scarfLight",
+            "sunglassesIfSun",
+            "watch"
+          ],
+          "shoes": "Tênis fechado"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Camisa de botão solta ou polo unissex",
+          "bottom": "Calça chino ou moletom leve",
+          "accessories": [
+            "bracelet",
+            "watch",
+            "necklaceSimple"
+          ],
+          "shoes": "Tênis neutro ou mocassim"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Camiseta oversized + colete aberto leve",
+          "bottom": "Bermuda de sarja estruturada",
+          "accessories": [
+            "glasses",
+            "necklaceSport"
+          ],
+          "shoes": "Tênis leve ou sapatênis"
+        }
+      },
+      "comfortable": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Camisa manga longa + jaqueta jeans",
+          "bottom": "Calça jeans",
+          "accessories": [
+            "scarfDecorative",
+            "braceletNeutral"
+          ],
+          "shoes": "Tênis ou sapato casual"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Camiseta básica ou gola careca",
+          "bottom": "Calça chino ou sarja",
+          "accessories": [
+            "necklaceLight",
+            "sunglasses"
+          ],
+          "shoes": "Sapatênis ou tênis"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Regata ou camiseta fluida",
+          "bottom": "Bermuda neutra",
+          "accessories": [
+            "glasses",
+            "hairUpLong"
+          ],
+          "shoes": "Chinelo ou tênis leve"
+        }
+      },
+      "warm": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Camiseta leve + camisa aberta",
+          "bottom": "Bermuda estruturada",
+          "accessories": [
+            "sunglasses",
+            "scarfLight"
+          ],
+          "shoes": "Tênis ou sandália baixa"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Regata unissex ou camiseta oversized",
+          "bottom": "Shorts ou bermuda",
+          "accessories": [
+            "colarSimples",
+            "bracelet"
+          ],
+          "shoes": "Chinelo ou tênis leve"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Regata cavada de algodão leve",
+          "bottom": "Shorts leve",
+          "accessories": [
+            "ponytail",
+            "scarfHead"
+          ],
+          "shoes": "Chinelo leve"
+        }
+      },
+      "hot": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Camiseta sem manga estruturada",
+          "bottom": "Shorts de algodão",
+          "accessories": [
+            "scarfNeckLight",
+            "sunglasses"
+          ],
+          "shoes": "Sandália leve"
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Regata ou camiseta larga",
+          "bottom": "Shorts curtos ou neutros",
+          "accessories": [
+            "glasses",
+            "colarSimples",
+            "hairUpLong"
+          ],
+          "shoes": "Rasteira ou chinelo"
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Regata cavada ou cropped neutro",
+          "bottom": "Shorts leve",
+          "accessories": [
+            "ponytail",
+            "lencoNaCabecaControleCapilar"
+          ],
+          "shoes": "Chinelo leve"
+        }
+      }
+    }
   }
 }

@@ -19,4 +19,8 @@ export const accessoryImages = {
   'Jaqueta corta-vento': require('../assets/images/acessorios/vento/windbreaker.png'),
   'Gorro ajustado': require('../assets/images/acessorios/vento/beanie.png'),
   'Elástico de cabelo': require('../assets/images/acessorios/vento/hairtie.png'),
+
+  'scarfThick': require('../assets/images/acessorios/frio/scarf.png'),
+  'hatTight': require('../assets/images/acessorios/frio/gloves.png'),
+  'lightGlooves': require('../assets/images/acessorios/frio/hat.png'),
 };
