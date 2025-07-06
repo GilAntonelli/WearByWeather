@@ -115,7 +115,7 @@ export default function PreferencesScreen() {
                 {t('preferences.subtitle')}
               </Text>
 
-              <Text style={[globalStyles.description, globalStyles.subtitleWelcomeStrong, { marginTop: 4 }]}>
+              <Text style={[globalStyles.description, globalStyles.subtitleWelcome, { marginTop: 4 }]}>
                 {t('preferences.description')}
               </Text>
               <InfoIconText
