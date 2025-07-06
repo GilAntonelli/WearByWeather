@@ -37,9 +37,9 @@ export default function PreferencesScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const [name, setName] = useState('');
-  const [stylePreference, setStylePreference] = useState<'feminino' | 'masculino' | 'unissex' | null>(null);
+  const [stylePreference, setStylePreference] = useState<'female' | 'male' | 'unisex' | null>(null);
   const { t } = useTranslation();
-  const [comfort, setComfort] = useState<'feel_cold' | 'feel_hotter' | 'feel_neutral' | null>(null);
+  const [comfort, setComfort] = useState<'feel_cold' | 'feel_hot' | 'neutral' | null>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [touchedName, setTouchedName] = useState(false);
 
@@ -178,21 +178,21 @@ export default function PreferencesScreen() {
                 <View style={[globalStyles.preferenceCardContainer, globalStyles.cardGroupSpacing]}>
                   <OptionCard
                     label={t('preferences.optionMale')}
-                    selected={stylePreference === 'masculino'}
+                    selected={stylePreference === 'male'}
                     icon={<FontAwesome5 name="male" style={globalStyles.preferenceCardIcon} />}
-                    onPress={() => setStylePreference('masculino')}
+                    onPress={() => setStylePreference('male')}
                   />
                   <OptionCard
                     label={t('preferences.optionFemale')}
-                    selected={stylePreference === 'feminino'}
+                    selected={stylePreference === 'female'}
                     icon={<FontAwesome5 name="female" style={globalStyles.preferenceCardIcon} />}
-                    onPress={() => setStylePreference('feminino')}
+                    onPress={() => setStylePreference('female')}
                   />
                   <OptionCard
                     label={t('preferences.optionUnisex')}
-                    selected={stylePreference === 'unissex'}
+                    selected={stylePreference === 'unisex'}
                     icon={<FontAwesome5 name="user-friends" style={globalStyles.preferenceCardIcon} />}
-                    onPress={() => setStylePreference('unissex')}
+                    onPress={() => setStylePreference('unisex')}
                   />
                 </View>
                 {stylePreference === null && (
@@ -204,7 +204,7 @@ export default function PreferencesScreen() {
                 )}
 
 
-                {stylePreference === 'masculino' && (
+                {stylePreference === 'male' && (
                   <InfoIconText
                     text={t('preferences.sugestionsMale')}
                     marginTop={globalStyles.infoTextSpacing.marginTop}
@@ -213,7 +213,7 @@ export default function PreferencesScreen() {
                   />
                 )}
 
-                {stylePreference === 'feminino' && (
+                {stylePreference === 'female' && (
                   <InfoIconText
                     text={t('preferences.sugestionsFemale')}
                     marginTop={0}
@@ -221,7 +221,7 @@ export default function PreferencesScreen() {
                   />
                 )}
 
-                {stylePreference === 'unissex' && (
+                {stylePreference === 'unisex' && (
                   <InfoIconText
                     text={t('preferences.sugestionsUnisex')}
                     marginTop={0}
@@ -246,15 +246,15 @@ export default function PreferencesScreen() {
                   />
                   <OptionCard
                     label={t('preferences.comfortHotTitle')}
-                    selected={comfort === 'feel_hotter'}
+                    selected={comfort === 'feel_hot'}
                     //icon={<Ionicons name="sunny" style={globalStyles.preferenceCardIcon} />}
-                    onPress={() => setComfort('feel_hotter')}
+                    onPress={() => setComfort('feel_hot')}
                   />
                   <OptionCard
                     label={t('preferences.comfortNeutralTitle')}
-                    selected={comfort === 'feel_neutral'}
+                    selected={comfort === 'neutral'}
                     //     icon={<Ionicons name="sunny" style={globalStyles.preferenceCardIcon} />}
-                    onPress={() => setComfort('feel_neutral')}
+                    onPress={() => setComfort('neutral')}
                   />
 
 
@@ -276,14 +276,14 @@ export default function PreferencesScreen() {
                     marginBottom={20}
                   />
                 )}
-                {comfort === 'feel_hotter' && (
+                {comfort === 'feel_hot' && (
                   <InfoIconText
                     text={t('preferences.comfortHotDesc')}
                     marginTop={0}
                     marginBottom={20}
                   />
                 )}
-                {comfort === 'feel_neutral' && (
+                {comfort === 'neutral' && (
                   <InfoIconText
                     text={t('preferences.comfortNeutralDesc')}
                     marginTop={0}
