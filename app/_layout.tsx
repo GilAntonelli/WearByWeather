@@ -13,6 +13,7 @@ import { initI18n } from '../i18n';
 import * as SplashScreen from 'expo-splash-screen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Localization from 'expo-localization';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -54,10 +55,13 @@ export default function RootLayout() {
   return (
     <PaperProvider>
       <NavigationThemeProvider value={colorScheme === 'dark' ? DarkTheme : NavigationTheme}>
-        <StyledThemeProvider theme={theme}> {/* ✅ Envolve tudo aqui */}
-          <Slot />
-          <StatusBar style="auto" />
-        </StyledThemeProvider>
+         <StyledThemeProvider theme={theme}>
+  <SafeAreaProvider>
+    <Slot />
+    <StatusBar style="auto" />
+  </SafeAreaProvider>
+</StyledThemeProvider>
+
       </NavigationThemeProvider>
     </PaperProvider>
   );

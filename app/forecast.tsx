@@ -20,6 +20,8 @@ import {
 import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
 import WeatherDetailCard from '../components/WeatherDetailCard';
+import HourlyForecastCard from '../components/HourlyForecastCard';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function ForecastScreen() {
   const router = useRouter();
@@ -78,52 +80,51 @@ export default function ForecastScreen() {
     return parts.join(', ');
   }
 
-  return (
-    <>
+return (
+  <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
+    <View style={{ flex: 1 }}>
       <ScrollView style={{ backgroundColor: theme.colors.background }}>
-        <View style={{ paddingTop: 24 }}>
-          <ForecastHeader
-            city={city}
-            date={new Date().toLocaleDateString('pt-PT', {
-              weekday: 'long',
-              day: '2-digit',
-              month: 'long',
-            })}
-            temperature={`${weather?.temperatura ?? '--'}°C`}
-            condition={weather?.condicao ?? t('Forecast.condition')}
-            smartPhrase={frase ?? ''}
-            icon={
-              <Image
-                source={{
-                  uri: `https://openweathermap.org/img/wn/${weather?.icon ?? '01d'}@2x.png`,
-                }}
-                style={{ width: 64, height: 64 }}
-              />
-            }
-          />
-        </View>
+        <ForecastHeader
+          city={city}
+          date={new Date().toLocaleDateString('pt-PT', {
+            weekday: 'long',
+            day: '2-digit',
+            month: 'long',
+          })}
+          temperature={`${weather?.temperatura ?? '--'}°C`}
+          condition={weather?.condicao ?? t('Forecast.condition')}
+          smartPhrase={frase ?? ''}
+          icon={
+            <Image
+              source={{
+                uri: `https://openweathermap.org/img/wn/${weather?.icon ?? '01d'}@2x.png`,
+              }}
+              style={{ width: 64, height: 64 }}
+            />
+          }
+        />
+
         <View style={globalStyles.container}>
-          <Text style={globalStyles.sectionTitle}>{t('Forecast.sectionTitle')}</Text>
+          <Text style={globalStyles.firstSectionTitle}>{t('Forecast.sectionTitle')}</Text>
+          <View style={globalStyles.sectionDivider} />
+
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ paddingHorizontal: 12, gap: 8 }}
+            contentContainerStyle={{ paddingHorizontal: theme.spacing.md, gap: 8 }}
           >
             {hourlyData.map((item, i) => (
-              <View key={i} style={globalStyles.hourCard}>
-                <Text style={globalStyles.hourLabel}>{item.hora}</Text>
-                <Image
-                  source={{
-                    uri: `https://openweathermap.org/img/wn/${item.icon}@2x.png`,
-                  }}
-                  style={{ width: 40, height: 40 }}
-                />
-                <Text style={globalStyles.hourTemp}>{typeof item.temperatura === 'number' ? `${item.temperatura}°C` : `${item.temperatura}`.replace('°C', '') + '°C'}</Text>
-              </View>
+              <HourlyForecastCard
+                key={i}
+                time={item.hora}
+                icon={item.icon}
+                temperature={item.temperatura}
+              />
             ))}
           </ScrollView>
 
           <Text style={globalStyles.sectionTitle}>{t('Forecast.sectionTitleDetais')}</Text>
+          <View style={globalStyles.sectionDivider} />
 
           <View style={globalStyles.detailGrid}>
             <WeatherDetailCard
@@ -152,14 +153,10 @@ export default function ForecastScreen() {
               value={`${weather?.sensacaoTermica ?? '--'}°C`}
             />
           </View>
-
-
-
-
-
         </View>
-      </ScrollView >
+      </ScrollView>
 
+      {/* ✅ Botão agora dentro da SafeArea */}
       <TouchableOpacity
         style={globalStyles.bottomButton}
         onPress={() => router.push('/home')}
@@ -167,6 +164,8 @@ export default function ForecastScreen() {
         <Ionicons name="arrow-back" size={16} color={theme.colors.textDark} />
         <Text style={globalStyles.bottomButtonText}>{t('Forecast.backButton')}</Text>
       </TouchableOpacity>
-    </>
-  );
+    </View>
+  </SafeAreaView>
+);
+
 }
