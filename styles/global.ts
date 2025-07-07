@@ -156,6 +156,11 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 8,
     fontWeight: '500',
   },
+errorText: {
+  fontSize: theme.fontSize.medium,
+  color: theme.colors.textDark,
+  fontWeight: '600',
+},
 
 
   section: {

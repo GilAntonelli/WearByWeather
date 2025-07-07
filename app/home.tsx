@@ -245,7 +245,6 @@ export default function HomeScreen() {
         contentContainerStyle={{
           ...globalStyles.container,
           minHeight: screenHeight + 120,
-          paddingBottom: 80,
           flexGrow: 1,
         }}
         keyboardShouldPersistTaps="handled"
@@ -420,11 +419,7 @@ export default function HomeScreen() {
             )}
 */}
 
-            <PrimaryButton
-              title={t('home.forecastButton')}
-              onPress={() => router.push('/forecast')}
-              style={{ marginTop: spacing.bottomButton }}
-            />
+
           </>
         )}
         <CitySelectorModal
@@ -438,6 +433,23 @@ export default function HomeScreen() {
           }}
         />
       </ScrollView>
+      <View
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          paddingHorizontal: 20,
+          paddingVertical: 20,
+          backgroundColor: theme.colors.background,
+        }}
+      >
+        <PrimaryButton
+          title={t('home.forecastButton')}
+          onPress={() => router.push('/forecast')}
+        />
+      </View>
+
     </SafeAreaView>
   );
 }

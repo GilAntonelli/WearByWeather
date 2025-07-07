@@ -66,7 +66,9 @@
     "humidityDetail": "Umidade",
     "humidityAir": "Umidade relativa do ar",
     "ThermalSenation": "Sensação Térmica",
-    "backButton": "Voltar para o look do dia"
+    "backButton": "Voltar para o look do dia",
+    "errorMessage": "Não foi possível carregar os dados climáticos.",
+    "retryButton": "Tentar novamente"
   },
   "LookSuggestionCard": {
     "accessoryTitle": "Acessórios"

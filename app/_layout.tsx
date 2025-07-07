@@ -55,12 +55,12 @@ export default function RootLayout() {
   return (
     <PaperProvider>
       <NavigationThemeProvider value={colorScheme === 'dark' ? DarkTheme : NavigationTheme}>
-         <StyledThemeProvider theme={theme}>
-  <SafeAreaProvider>
-    <Slot />
-    <StatusBar style="auto" />
-  </SafeAreaProvider>
-</StyledThemeProvider>
+        <StyledThemeProvider theme={theme}>
+          <SafeAreaProvider>
+            <Slot />
+            <StatusBar style="auto" />
+          </SafeAreaProvider>
+        </StyledThemeProvider>
 
       </NavigationThemeProvider>
     </PaperProvider>

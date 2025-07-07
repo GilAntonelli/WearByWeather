@@ -36,6 +36,7 @@ export default function ForecastScreen() {
   const [weather, setWeather] = useState<any>(null);
   const [hourlyData, setHourlyData] = useState<any[]>([]);
   const { t } = useTranslation();
+const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     const load = async () => {
@@ -53,11 +54,20 @@ export default function ForecastScreen() {
         }
       }
       setCity(label);
-      const clima = await getWeatherByCity(raw);
-      const horas = await getHourlyForecastByCity(raw);
+try {
+  const clima = await getWeatherByCity(raw);
+  const horas = await getHourlyForecastByCity(raw);
 
-      setWeather(clima);
-      setHourlyData(horas);
+  setWeather(clima);
+  setHourlyData(horas);
+} catch (e) {
+  console.error('Erro ao buscar clima ou previsão horária:', e);
+  // opcional: setar estado para fallback visual
+setHasError(true);
+setWeather(null);
+setHourlyData([]);
+}
+
     };
 
     load();
@@ -80,92 +90,112 @@ export default function ForecastScreen() {
     return parts.join(', ');
   }
 
-return (
-  <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
-    <View style={{ flex: 1 }}>
-      <ScrollView style={{ backgroundColor: theme.colors.background }}>
-        <ForecastHeader
-          city={city}
-          date={new Date().toLocaleDateString('pt-PT', {
-            weekday: 'long',
-            day: '2-digit',
-            month: 'long',
-          })}
-          temperature={`${weather?.temperatura ?? '--'}°C`}
-          condition={weather?.condicao ?? t('Forecast.condition')}
-          smartPhrase={frase ?? ''}
-          icon={
-            <Image
-              source={{
-                uri: `https://openweathermap.org/img/wn/${weather?.icon ?? '01d'}@2x.png`,
-              }}
-              style={{ width: 64, height: 64 }}
-            />
-          }
-        />
+if (hasError) {
+  return (
+    <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.colors.background }}>
+      <Text style={[globalStyles.errorText, { textAlign: 'center', marginBottom: 16 }]}>
+  {t('Forecast.errorMessage')}
+</Text>
 
-        <View style={globalStyles.container}>
-          <Text style={globalStyles.firstSectionTitle}>{t('Forecast.sectionTitle')}</Text>
-          <View style={globalStyles.sectionDivider} />
-
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ paddingHorizontal: theme.spacing.md, gap: 8 }}
-          >
-            {hourlyData.map((item, i) => (
-              <HourlyForecastCard
-                key={i}
-                time={item.hora}
-                icon={item.icon}
-                temperature={item.temperatura}
-              />
-            ))}
-          </ScrollView>
-
-          <Text style={globalStyles.sectionTitle}>{t('Forecast.sectionTitleDetais')}</Text>
-          <View style={globalStyles.sectionDivider} />
-
-          <View style={globalStyles.detailGrid}>
-            <WeatherDetailCard
-              icon={<Ionicons name="thermometer-outline" size={20} color={theme.colors.primary} />}
-              title={t('Forecast.detailTitle')}
-              value={`${t('Forecast.temperatureMax')}: ${weather?.tempMax ?? '--'}°C ${t('Forecast.temperatureMin')}: ${weather?.tempMin ?? '--'}°C`}
-            />
-            <WeatherDetailCard
-              icon={<Ionicons name="rainy-outline" size={20} color={theme.colors.primary} />}
-              title={t('Forecast.rainDetail')}
-              value={`${weather?.chuva ? t('Forecast.possibleRain') : t('Forecast.withoutRain')} (estimativa)`}
-            />
-            <WeatherDetailCard
-              icon={<Feather name="wind" size={20} color={theme.colors.primary} />}
-              title={t('Forecast.windDetail')}
-              value={`${weather?.vento ?? '--'} km/h`}
-            />
-            <WeatherDetailCard
-              icon={<Ionicons name="water-outline" size={20} color={theme.colors.primary} />}
-              title={t('Forecast.humidityDetail')}
-              value={`${weather?.umidade ?? '--'}% ${t('Forecast.humidityAir')}`}
-            />
-            <WeatherDetailCard
-              icon={<Ionicons name="thermometer" size={20} color={theme.colors.primary} />}
-              title={t('Forecast.ThermalSenation')}
-              value={`${weather?.sensacaoTermica ?? '--'}°C`}
-            />
-          </View>
-        </View>
-      </ScrollView>
-
-      {/* ✅ Botão agora dentro da SafeArea */}
       <TouchableOpacity
+        onPress={() => router.replace('/forecast')}
         style={globalStyles.bottomButton}
-        onPress={() => router.push('/home')}
       >
-        <Ionicons name="arrow-back" size={16} color={theme.colors.textDark} />
-        <Text style={globalStyles.bottomButtonText}>{t('Forecast.backButton')}</Text>
+        <Ionicons name="refresh" size={16} color={theme.colors.textDark} />
+  <Text style={globalStyles.bottomButtonText}>{t('Forecast.retryButton')}</Text>
+
       </TouchableOpacity>
-    </View>
-  </SafeAreaView>
-);
+    </SafeAreaView>
+  );
+}
+
+
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
+      <View style={{ flex: 1 }}>
+        <ScrollView style={{ backgroundColor: theme.colors.background }}>
+          <ForecastHeader
+            city={city}
+            date={new Date().toLocaleDateString('pt-PT', {
+              weekday: 'long',
+              day: '2-digit',
+              month: 'long',
+            })}
+            temperature={`${weather?.temperatura ?? '--'}°C`}
+            condition={weather?.condicao ?? t('Forecast.condition')}
+            smartPhrase={frase ?? ''}
+            icon={
+              <Image
+                source={{
+                  uri: `https://openweathermap.org/img/wn/${weather?.icon ?? '01d'}@2x.png`,
+                }}
+                style={{ width: 64, height: 64 }}
+              />
+            }
+          />
+
+          <View style={globalStyles.container}>
+            <Text style={globalStyles.firstSectionTitle}>{t('Forecast.sectionTitle')}</Text>
+            <View style={globalStyles.sectionDivider} />
+
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{ paddingHorizontal: theme.spacing.md, gap: 8 }}
+            >
+              {hourlyData.map((item, i) => (
+                <HourlyForecastCard
+                  key={i}
+                  time={item.hora}
+                  icon={item.icon}
+                  temperature={item.temperatura}
+                />
+              ))}
+            </ScrollView>
+
+            <Text style={globalStyles.sectionTitle}>{t('Forecast.sectionTitleDetais')}</Text>
+            <View style={globalStyles.sectionDivider} />
+
+            <View style={globalStyles.detailGrid}>
+              <WeatherDetailCard
+                icon={<Ionicons name="thermometer-outline" size={20} color={theme.colors.primary} />}
+                title={t('Forecast.detailTitle')}
+                value={`${t('Forecast.temperatureMax')}: ${weather?.tempMax ?? '--'}°C ${t('Forecast.temperatureMin')}: ${weather?.tempMin ?? '--'}°C`}
+              />
+              <WeatherDetailCard
+                icon={<Ionicons name="rainy-outline" size={20} color={theme.colors.primary} />}
+                title={t('Forecast.rainDetail')}
+                value={`${weather?.chuva ? t('Forecast.possibleRain') : t('Forecast.withoutRain')} (estimativa)`}
+              />
+              <WeatherDetailCard
+                icon={<Feather name="wind" size={20} color={theme.colors.primary} />}
+                title={t('Forecast.windDetail')}
+                value={`${weather?.vento ?? '--'} km/h`}
+              />
+              <WeatherDetailCard
+                icon={<Ionicons name="water-outline" size={20} color={theme.colors.primary} />}
+                title={t('Forecast.humidityDetail')}
+                value={`${weather?.umidade ?? '--'}% ${t('Forecast.humidityAir')}`}
+              />
+              <WeatherDetailCard
+                icon={<Ionicons name="thermometer" size={20} color={theme.colors.primary} />}
+                title={t('Forecast.ThermalSenation')}
+                value={`${weather?.sensacaoTermica ?? '--'}°C`}
+              />
+            </View>
+          </View>
+        </ScrollView>
+
+        {/* ✅ Botão agora dentro da SafeArea */}
+        <TouchableOpacity
+          style={globalStyles.bottomButton}
+          onPress={() => router.push('/home')}
+        >
+          <Ionicons name="arrow-back" size={16} color={theme.colors.textDark} />
+          <Text style={globalStyles.bottomButtonText}>{t('Forecast.backButton')}</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
+  );
 
 }

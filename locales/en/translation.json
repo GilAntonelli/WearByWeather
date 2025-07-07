@@ -66,7 +66,9 @@
     "humidityDetail": "Humidity",
     "humidityAir": "Relative humidity",
     "ThermalSenation": "Feels like",
-    "backButton": "Back to today's look"
+    "backButton": "Back to today's look",
+    "errorMessage": "Unable to load weather data.",
+    "retryButton": "Try again"
   },
   "LookSuggestionCard": {
     "accessoryTitle": "Accessories"

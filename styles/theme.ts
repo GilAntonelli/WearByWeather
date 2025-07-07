@@ -26,7 +26,7 @@ type Theme = {
     disabled: string;
     focusOutline: string;
     shadow: string;
-    
+
     weatherBackgrounds: Record<WeatherBackgroundKeys, string>;
   };
 };
@@ -46,7 +46,7 @@ export const theme = {
     textDark: '#333333',
     textLight: '#999999',
     textMedium: '#666666',
- 
+
 
     white: '#FFFFFF',
 
@@ -72,15 +72,15 @@ export const theme = {
     full: 999,
   },
 
-fontSize: {
-  small: 13,                   // fixo
-  medium: 15,                  // fixo
-  large: 22,                   // fixo
-  extralarge: RFValue(34),     // responsivo (p/ títulos maiores)
-  title: RFValue(28),          // responsivo (p/ grandes destaques)
-  icon: 22,                    // fixo (ideal para cards)
-  cardText: 14,                // fixo (para texto dentro de botão/card)
-},
+  fontSize: {
+    small: 13,                   // fixo
+    medium: 15,                  // fixo
+    large: 22,                   // fixo
+    extralarge: RFValue(34),     // responsivo (p/ títulos maiores)
+    title: RFValue(28),          // responsivo (p/ grandes destaques)
+    icon: 22,                    // fixo (ideal para cards)
+    cardText: 14,                // fixo (para texto dentro de botão/card)
+  },
 
   fontWeight: {
     regular: '400',
