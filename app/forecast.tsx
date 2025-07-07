@@ -19,6 +19,7 @@ import {
 } from '../services/weatherService';
 import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
+import WeatherDetailCard from '../components/WeatherDetailCard';
 
 export default function ForecastScreen() {
   const router = useRouter();
@@ -123,49 +124,41 @@ export default function ForecastScreen() {
           </ScrollView>
 
           <Text style={globalStyles.sectionTitle}>{t('Forecast.sectionTitleDetais')}</Text>
+
           <View style={globalStyles.detailGrid}>
-            <View style={globalStyles.detailCard}>
-              <Ionicons name="thermometer-outline" size={20} color={theme.colors.primary} />
-              <Text style={globalStyles.detailTitle}>{t('Forecast.detailTitle')}</Text>
-              <Text style={globalStyles.detailValue}>
-                {t('Forecast.temperatureMax')}: {weather?.tempMax ?? '--'}°C{" "}{t('Forecast.temperatureMin')}: {weather?.tempMin ?? '--'}°C
-              </Text>
-            </View>
-
-            <View style={globalStyles.detailCard}>
-              <Ionicons name="rainy-outline" size={20} color={theme.colors.primary} />
-              <Text style={globalStyles.detailTitle}>{t('Forecast.rainDetail')}</Text>
-              <Text style={globalStyles.detailValue}>
-                {weather?.chuva ? t('Forecast.possibleRain') : t('Forecast.withoutRain')}{" "}(estimativa)
-              </Text>
-            </View>
-
-            <View style={globalStyles.detailCard}>
-              <Feather name="wind" size={20} color={theme.colors.primary} />
-              <Text style={globalStyles.detailTitle}>{t('Forecast.windDetail')}</Text>
-              <Text style={globalStyles.detailValue}>
-                {weather?.vento ?? '--'} km/h
-              </Text>
-            </View>
-
-            <View style={globalStyles.detailCard}>
-              <Ionicons name="water-outline" size={20} color={theme.colors.primary} />
-              <Text style={globalStyles.detailTitle}>{t('Forecast.humidityDetail')}</Text>
-              <Text style={globalStyles.detailValue}>
-                {weather?.umidade ?? '--'}%{" "}{t('Forecast.humidityAir')}
-              </Text>
-            </View>
-
-            <View style={globalStyles.detailCardFull}>
-              <Ionicons name="thermometer" size={20} color={theme.colors.primary} />
-              <Text style={globalStyles.detailTitle}>{t('Forecast.ThermalSenation')}</Text>
-              <Text style={globalStyles.detailValue}>
-                {weather?.sensacaoTermica ?? '--'}°C
-              </Text>
-            </View>
+            <WeatherDetailCard
+              icon={<Ionicons name="thermometer-outline" size={20} color={theme.colors.primary} />}
+              title={t('Forecast.detailTitle')}
+              value={`${t('Forecast.temperatureMax')}: ${weather?.tempMax ?? '--'}°C ${t('Forecast.temperatureMin')}: ${weather?.tempMin ?? '--'}°C`}
+            />
+            <WeatherDetailCard
+              icon={<Ionicons name="rainy-outline" size={20} color={theme.colors.primary} />}
+              title={t('Forecast.rainDetail')}
+              value={`${weather?.chuva ? t('Forecast.possibleRain') : t('Forecast.withoutRain')} (estimativa)`}
+            />
+            <WeatherDetailCard
+              icon={<Feather name="wind" size={20} color={theme.colors.primary} />}
+              title={t('Forecast.windDetail')}
+              value={`${weather?.vento ?? '--'} km/h`}
+            />
+            <WeatherDetailCard
+              icon={<Ionicons name="water-outline" size={20} color={theme.colors.primary} />}
+              title={t('Forecast.humidityDetail')}
+              value={`${weather?.umidade ?? '--'}% ${t('Forecast.humidityAir')}`}
+            />
+            <WeatherDetailCard
+              icon={<Ionicons name="thermometer" size={20} color={theme.colors.primary} />}
+              title={t('Forecast.ThermalSenation')}
+              value={`${weather?.sensacaoTermica ?? '--'}°C`}
+            />
           </View>
+
+
+
+
+
         </View>
-      </ScrollView>
+      </ScrollView >
 
       <TouchableOpacity
         style={globalStyles.bottomButton}
