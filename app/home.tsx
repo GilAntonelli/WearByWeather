@@ -146,8 +146,8 @@ export default function HomeScreen() {
         if (json) {
           const prefs = JSON.parse(json);
           if (
-            ['masculino', 'feminino', 'unissex'].includes(prefs.gender) &&
-            ['frio', 'calor', 'neutro'].includes(prefs.comfort)
+            ['male', 'female', 'unisex'].includes(prefs.gender) &&
+            ['feel_cold', 'feel_hot', 'neutral'].includes(prefs.comfort)
           ) {
             setUserPreferences({
               name: prefs.name || '',
