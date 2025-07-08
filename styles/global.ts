@@ -68,12 +68,13 @@ export const globalStyles = StyleSheet.create({
   },
 
   titleWelcome: {
-    fontSize: theme.fontSize.extralarge,
+    //fontSize: theme.fontSize.extralarge,
+    fontSize: theme.fontSize.titleWelcome,
     fontWeight: '700', // levemente mais pesado
     fontFamily: 'System',
     color: theme.colors.textDark,
     textAlign: 'center',
-    marginBottom: theme.spacing.md, // aumento no espaçamento inferior
+    marginBottom: theme.spacing.sm, // aumento no espaçamento inferior
     letterSpacing: 0.4,
     lineHeight: 38,
   },
@@ -97,7 +98,7 @@ export const globalStyles = StyleSheet.create({
     marginBottom: theme.spacing.md,
   },
   title: {
-    fontSize: theme.fontSize.large,
+    fontSize: theme.fontSize.title,
     fontWeight: '700',
     fontFamily: 'serif',
     color: theme.colors.textDark,

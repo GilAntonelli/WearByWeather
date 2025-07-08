@@ -86,13 +86,8 @@ export default function PreferencesScreen() {
   };
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: theme.colors.background,
-        position: 'relative',
-      }}
-    >
+    <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
+
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -124,7 +119,7 @@ export default function PreferencesScreen() {
                 marginBottom={24}
               />
               {/* Nome */}
-              <View style={[globalStyles.section, { marginBottom: 16 }]}>
+              <View style={[globalStyles.firstSectionTitle]}>
                 <Text style={globalStyles.sectionTitle}>{t('preferences.namePlaceholder')}</Text>
                 <View style={{ position: 'relative' }}>
                   <TextInput
@@ -133,7 +128,7 @@ export default function PreferencesScreen() {
                     style={[
                       globalStyles.input,
                       isFocused && globalStyles.inputFocused,
-                      globalStyles.inputGap, // novo
+                      globalStyles.inputGap,
                       { paddingRight: 40 }
                     ]}
                     value={name}
@@ -172,7 +167,7 @@ export default function PreferencesScreen() {
 
               </View>
 
-              {/* Gênero */}
+              {/* Estilo */}
               <View style={[globalStyles.section, globalStyles.sectionSpacing]}>
                 <Text style={globalStyles.sectionTitle}>{t('preferences.genderQuestion')}</Text>
                 <View style={[globalStyles.preferenceCardContainer, globalStyles.cardGroupSpacing]}>

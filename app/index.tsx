@@ -1,44 +1,29 @@
-import { Stack, useRouter } from 'expo-router';
-import React, { useEffect, useState } from 'react';
+// screens/index.tsx
+import { Stack } from 'expo-router';
+import React from 'react';
 import {
   ActivityIndicator,
   Image,
-  StyleSheet,
   Text,
   View,
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useTranslation } from 'react-i18next';
 import { PrimaryButton } from '../components/PrimaryButton';
 import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
-import { useTranslation } from 'react-i18next';
+import { useInitCheck } from '../hooks/useInitCheck';
+import { useRouter } from 'expo-router';
+
+const imageWelcome = require('../assets/images/clothesCloud.png');
 
 export default function WelcomeScreen() {
-  const router = useRouter();
-  const [checkingInit, setCheckingInit] = useState(true);
   const { t } = useTranslation();
-
-  useEffect(() => {
-    checkIfInitialized();
-  }, []);
-
-  const checkIfInitialized = async () => {
-    try {
-      const isInitialized = await AsyncStorage.getItem('isAppInitialized');
-      if (isInitialized) {
-        router.replace('/home');
-      } else {
-        setCheckingInit(false);
-      }
-    } catch (error) {
-      console.error('Erro ao verificar inicialização:', error);
-      setCheckingInit(false);
-    }
-  };
+  const router = useRouter();
+  const { checking } = useInitCheck();
 
   const handleStart = () => router.push('/preferences');
 
-  if (checkingInit) {
+  if (checking) {
     return (
       <View style={globalStyles.centeredFullScreen}>
         <ActivityIndicator size="large" color={theme.colors.primary} />
@@ -51,11 +36,12 @@ export default function WelcomeScreen() {
       <Stack.Screen options={{ headerShown: false }} />
       <View style={[globalStyles.container, globalStyles.centeredEvenly]}>
         <Text style={globalStyles.titleWelcome}>Weather Wear</Text>
-        <Text style={globalStyles.subtitleWelcome}>{t('intro.description')}</Text>
-        <Image
-          source={require('../assets/images/clothesCloud.png')}
-          style={globalStyles.imageWelcome}
-        />
+        <Text style={globalStyles.subtitleWelcome}>
+          {t('intro.description')}
+        </Text>
+
+        <Image source={imageWelcome} style={globalStyles.imageWelcome} />
+
         <PrimaryButton
           title={t('intro.button')}
           iconLeft="sunny-outline"
@@ -65,5 +51,3 @@ export default function WelcomeScreen() {
     </>
   );
 }
-
-

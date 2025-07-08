@@ -75,7 +75,8 @@ export const theme = {
   fontSize: {
     small: 13,                   // fixo
     medium: 15,                  // fixo
-    large: 22,                   // fixo
+    large: 22,  
+    titleWelcome: 32,                 // fixo
     extralarge: RFValue(34),     // responsivo (p/ títulos maiores)
     title: RFValue(28),          // responsivo (p/ grandes destaques)
     icon: 22,                    // fixo (ideal para cards)
