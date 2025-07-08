@@ -74,7 +74,7 @@
     "accessoryTitle": "Accessories"
   },
   "suggestions": {
-    "feminino": {
+    "femine": {
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
@@ -294,9 +294,46 @@
           ],
           "shoes": "Light flip-flops"
         }
+      },
+      "extreme_heat": {
+        "feel_cold": {
+          "isSinglePiece": true,
+          "top": "Light cotton dress",
+          "bottom": "",
+          "accessories": [
+            "hatLight",
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Open sandals",
+          "recommendation": "Choose natural, breathable fabrics to cope with extreme heat."
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Light strap top",
+          "bottom": "Linen shorts or short skirt",
+          "accessories": [
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Breathable sneakers or sandals",
+          "recommendation": "Light and fresh clothes help maintain comfort even in high temperatures."
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Cropped top or dry-fit tank",
+          "bottom": "Sport shorts or biker shorts",
+          "accessories": [
+            "sunglasses",
+            "cap",
+            "waterBottle"
+          ],
+          "shoes": "Lightweight sneakers or flip-flops",
+          "recommendation": "Go for breathable and minimal clothing to stay cool and comfortable."
+        }
       }
     },
-    "masculino": {
+    "male": {
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
@@ -522,6 +559,43 @@
             "lencoNaCabecaControleCapilar"
           ],
           "shoes": "Light flip-flops"
+        }
+      },
+      "extreme_heat": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Light cotton t-shirt",
+          "bottom": "Natural fabric shorts",
+          "accessories": [
+            "hatLight",
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Open sandals or breathable loafers",
+          "recommendation": "Opt for light-colored, breathable clothes to reduce heat sensation."
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Technical t-shirt or casual tank top",
+          "bottom": "Light shorts or swim trunks",
+          "accessories": [
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Breathable sneakers or flip-flops",
+          "recommendation": "Avoid dark or synthetic fabrics on extremely hot days."
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Sport tank or dry-fit shirt",
+          "bottom": "Short, lightweight shorts",
+          "accessories": [
+            "cap",
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Flip-flops or light sandals",
+          "recommendation": "Keep layers to a minimum and prioritize airflow to stay comfortable."
         }
       }
     },
@@ -754,6 +828,43 @@
             "lencoNaCabecaControleCapilar"
           ],
           "shoes": "Light flip-flops"
+        }
+      },
+      "extreme_heat": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Loose cotton t-shirt",
+          "bottom": "Linen shorts or flowy skirt",
+          "accessories": [
+            "hatLight",
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Open sandals",
+          "recommendation": "Wear light and loose clothes to soften the impact of extreme heat."
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Light top or unisex tank",
+          "bottom": "Shorts or lightweight bermudas",
+          "accessories": [
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Breathable sneakers or flip-flops",
+          "recommendation": "Aim for breathable and practical pieces to stay comfortable."
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Technical tank or cropped top",
+          "bottom": "Unisex sport shorts",
+          "accessories": [
+            "cap",
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Flip-flops or ultra-light sneakers",
+          "recommendation": "Stay hydrated and wear the bare minimum to handle the heat."
         }
       }
     }

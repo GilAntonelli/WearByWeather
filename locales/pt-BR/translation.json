@@ -74,7 +74,7 @@
     "accessoryTitle": "Acessórios"
   },
   "suggestions": {
-    "feminino": {
+    "female": {
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
@@ -294,9 +294,46 @@
           ],
           "shoes": "Chinelo leve"
         }
+      },
+      "extreme_heat": {
+        "feel_cold": {
+          "isSinglePiece": true,
+          "top": "Vestido leve de algodão",
+          "bottom": "",
+          "accessories": [
+            "hatLight",
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Sandálias abertas",
+          "recommendation": "Opte por tecidos naturais, leves e respiráveis para lidar com o calor extremo."
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Top de alças leve",
+          "bottom": "Shorts de linho ou saia curta",
+          "accessories": [
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Tênis ventilado ou sandálias",
+          "recommendation": "Roupas frescas e claras ajudam a manter o conforto mesmo sob calor intenso."
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Regata ou cropped dry-fit",
+          "bottom": "Shorts esportivos ou biker shorts",
+          "accessories": [
+            "sunglasses",
+            "cap",
+            "waterBottle"
+          ],
+          "shoes": "Tênis esportivo leve ou chinelo",
+          "recommendation": "Escolha roupas minimalistas e respiráveis para suportar o calor com maior conforto."
+        }
       }
     },
-    "masculino": {
+    "male": {
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
@@ -522,6 +559,43 @@
             "lencoNaCabecaControleCapilar"
           ],
           "shoes": "Chinelo leve"
+        }
+      },
+      "extreme_heat": {
+        "feel_cold": {
+          "isSinglePiece": false,
+          "top": "Camiseta leve de algodão",
+          "bottom": "Bermuda de tecido natural",
+          "accessories": [
+            "hatLight",
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Sandálias ou sapatilha arejada",
+          "recommendation": "Use peças claras e respiráveis para amenizar a sensação térmica."
+        },
+        "neutral": {
+          "isSinglePiece": false,
+          "top": "Camiseta dry-fit ou regata casual",
+          "bottom": "Bermuda leve ou tactel",
+          "accessories": [
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Tênis ventilado ou chinelo",
+          "recommendation": "Evite roupas escuras e sintéticas em dias extremamente quentes."
+        },
+        "feel_hot": {
+          "isSinglePiece": false,
+          "top": "Regata esportiva ou dry-fit",
+          "bottom": "Shorts leves e curtos",
+          "accessories": [
+            "cap",
+            "sunglasses",
+            "waterBottle"
+          ],
+          "shoes": "Chinelo ou sandália leve",
+          "recommendation": "Quanto menos tecido e mais ventilação, melhor será sua experiência térmica."
         }
       }
     },
@@ -755,6 +829,43 @@
           ],
           "shoes": "Chinelo leve"
         }
+      }
+    },
+    "extreme_heat": {
+      "feel_cold": {
+        "isSinglePiece": false,
+        "top": "Camiseta solta de algodão",
+        "bottom": "Shorts de linho ou saia fluida",
+        "accessories": [
+          "hatLight",
+          "sunglasses",
+          "waterBottle"
+        ],
+        "shoes": "Sandálias abertas",
+        "recommendation": "Use roupas claras e soltas para minimizar o impacto do calor."
+      },
+      "neutral": {
+        "isSinglePiece": false,
+        "top": "Top leve ou regata unissex",
+        "bottom": "Shorts curtos ou bermuda leve",
+        "accessories": [
+          "sunglasses",
+          "waterBottle"
+        ],
+        "shoes": "Tênis ventilado ou chinelo",
+        "recommendation": "Opte por praticidade e conforto com peças leves e respiráveis."
+      },
+      "feel_hot": {
+        "isSinglePiece": false,
+        "top": "Regata esportiva ou cropped curto",
+        "bottom": "Shorts esportivos unissex",
+        "accessories": [
+          "cap",
+          "sunglasses",
+          "waterBottle"
+        ],
+        "shoes": "Chinelo ou tênis ultraleve",
+        "recommendation": "Mantenha-se hidratado e escolha o mínimo necessário para aguentar o calor."
       }
     }
   }

@@ -28,4 +28,6 @@ export interface LookSuggestionJson {
   bottom: string;
   accessories?: string[];
   shoes: string
+  recommendation: string;
+  singlePiece: string;
 }
