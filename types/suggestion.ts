@@ -31,3 +31,8 @@ export interface LookSuggestionJson {
   recommendation: string;
   singlePiece: string;
 }
+
+export interface OverlaysJson {
+  description: string;
+  accessories: string;
+}
