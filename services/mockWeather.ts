@@ -26,128 +26,147 @@ Como usar:
 
 // services/mockWeather.ts
 
-/*
-Como usar:
-- Descomente apenas UM bloco `mockWeather` por vez para testar.
-- Cada bloco é nomeado com o clima, temperatura e objetivo visual.
-*/
-
-// 🔥 MUITO QUENTE – Look de verão, acessórios de sol (óculos, boné, protetor)
-/*
-export const mockWeather = {
-  temperatura: 35,
-  sensacaoTermica: 38,
-  tempMin: 30,
-  tempMax: 39,
-  umidade: 35,
-  chuva: false,
-  vento: 5,
-  condicao: 'céu limpo',
-  descricao: 'Clear',
-  icon: '01d',
-  iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
-};
-*/
-
-// ☁️ NUBLADO AMENO – Look meia-estação, sem acessórios específicos
-/*
-export const mockWeather = {
-  temperatura: 21,
-  sensacaoTermica: 20,
-  tempMin: 18,
-  tempMax: 23,
-  umidade: 60,
-  chuva: false,
-  vento: 10,
-  condicao: 'nublado',
-  descricao: 'Clouds',
-  icon: '04d',
-  iconUrl: 'https://openweathermap.org/img/wn/04d@2x.png',
-};
-*/
-
-// ☔ CHUVA MODERADA – Look com guarda-chuva, capa e bota
+ // ❄️ FREEZING
  
 export const mockWeather = {
-  temperatura: 43,
-  sensacaoTermica: 38,
-  tempMin: 15,
-  tempMax: 19,
+  temperatura: 5,
+  sensacaoTermica: 3,
+  tempMin: 2,
+  tempMax: 7,
   umidade: 85,
   chuva: false,
-  vento: 45,
-  condicao: 'chuva moderada',
-  descricao: 'Rain',
-  icon: '10d',
-  iconUrl: 'https://openweathermap.org/img/wn/10d@2x.png',
-  id: 800, // ID do clima
+  vento: 20,
+  condicao: 'neve fraca',
+  descricao: 'Snow',
+  icon: '13d',
+  iconUrl: 'https://openweathermap.org/img/wn/13d@2x.png',
+  id: 600,
 };
  
 
-// 🌩️ TROVOADA – Look com capa e proteção, acessórios de chuva + vento
- /* 
- export const mockWeather = {
-  temperatura: 22,
-  sensacaoTermica: 21,
-  tempMin: 20,
-  tempMax: 24,
-  umidade: 90,
-  chuva: true,
-  vento: 20,
-  condicao: 'trovoadas',
-  descricao: 'Thunderstorm',
-  icon: '11d',
-  iconUrl: 'https://openweathermap.org/img/wn/11d@2x.png',
-};
-*/ 
-// ❄️ FRIO – Look com casaco, cachecol, luvas, gorro
+// 🧊 COLD
 /*
 export const mockWeather = {
   temperatura: 10,
-  sensacaoTermica: 7,
-  tempMin: 8,
+  sensacaoTermica: 8,
+  tempMin: 7,
   tempMax: 12,
-  umidade: 70,
+  umidade: 80,
   chuva: false,
-  vento: 18,
-  condicao: 'céu limpo',
-  descricao: 'Clear',
-  icon: '01d',
-  iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
+  vento: 12,
+  condicao: 'céu nublado',
+  descricao: 'Clouds',
+  icon: '03d',
+  iconUrl: 'https://openweathermap.org/img/wn/03d@2x.png',
+  id: 802,
 };
 */
 
-// 💨 VENTO – Look com corta-vento, gorro ajustado, elástico de cabelo
- /*
-export const mockWeather = {
-  temperatura: 19,
-  sensacaoTermica: 18,
-  tempMin: 17,
-  tempMax: 21,
-  umidade: 60,
-  chuva: false,
-  vento: 30,
-  condicao: 'nublado',
-  descricao: 'Clouds',
-  icon: '04d',
-  iconUrl: 'https://openweathermap.org/img/wn/04d@2x.png',
-};
- 
-*/
-// 🌫️ NEVOEIRO – Look com jaqueta leve, sem muitos acessórios
+// 🌀 CHILLY
 /*
 export const mockWeather = {
   temperatura: 14,
   sensacaoTermica: 13,
-  tempMin: 12,
-  tempMax: 15,
-  umidade: 95,
+  tempMin: 11,
+  tempMax: 16,
+  umidade: 75,
   chuva: false,
-  vento: 6,
+  vento: 10,
   condicao: 'nevoeiro',
-  descricao: 'Fog',
+  descricao: 'Mist',
   icon: '50d',
   iconUrl: 'https://openweathermap.org/img/wn/50d@2x.png',
+  id: 741,
+};
+*/
+
+// 🌤️ MILD
+/*
+export const mockWeather = {
+  temperatura: 17,
+  sensacaoTermica: 18,
+  tempMin: 15,
+  tempMax: 19,
+  umidade: 70,
+  chuva: false,
+  vento: 9,
+  condicao: 'céu limpo',
+  descricao: 'Clear',
+  icon: '01d',
+  iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
+  id: 800,
+};
+*/
+
+// 🌈 COMFORTABLE
+/*
+export const mockWeather = {
+  temperatura: 21,
+  sensacaoTermica: 22,
+  tempMin: 19,
+  tempMax: 23,
+  umidade: 60,
+  chuva: false,
+  vento: 8,
+  condicao: 'algumas nuvens',
+  descricao: 'Clouds',
+  icon: '02d',
+  iconUrl: 'https://openweathermap.org/img/wn/02d@2x.png',
+  id: 801,
+};
+*/
+
+// ☀️ WARM
+/*
+export const mockWeather = {
+  temperatura: 26,
+  sensacaoTermica: 28,
+  tempMin: 24,
+  tempMax: 29,
+  umidade: 55,
+  chuva: false,
+  vento: 6,
+  condicao: 'ensolarado',
+  descricao: 'Clear',
+  icon: '01d',
+  iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
+  id: 800,
+};
+*/
+
+// 🔥 HOT
+/*
+export const mockWeather = {
+  temperatura: 31,
+  sensacaoTermica: 34,
+  tempMin: 29,
+  tempMax: 33,
+  umidade: 50,
+  chuva: false,
+  vento: 5,
+  condicao: 'ensolarado',
+  descricao: 'Clear',
+  icon: '01d',
+  iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
+  id: 800,
+};
+*/
+
+// 🥵 EXTREME HEAT
+/*
+export const mockWeather = {
+  temperatura: 38,
+  sensacaoTermica: 42,
+  tempMin: 36,
+  tempMax: 40,
+  umidade: 40,
+  chuva: false,
+  vento: 4,
+  condicao: 'calor extremo',
+  descricao: 'Extreme heat',
+  icon: '01d',
+  iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
+  id: 904,
 };
 */
 
