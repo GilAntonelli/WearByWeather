@@ -22,6 +22,7 @@ import { theme } from '../styles/theme';
 import WeatherDetailCard from '../components/WeatherDetailCard';
 import HourlyForecastCard from '../components/HourlyForecastCard';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import i18n from 'i18next';
 
 export default function ForecastScreen() {
   const router = useRouter();
@@ -36,7 +37,7 @@ export default function ForecastScreen() {
   const [weather, setWeather] = useState<any>(null);
   const [hourlyData, setHourlyData] = useState<any[]>([]);
   const { t } = useTranslation();
-const [hasError, setHasError] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     const load = async () => {
@@ -54,19 +55,19 @@ const [hasError, setHasError] = useState(false);
         }
       }
       setCity(label);
-try {
-  const clima = await getWeatherByCity(raw);
-  const horas = await getHourlyForecastByCity(raw);
+      try {
+        const clima = await getWeatherByCity(raw);
+        const horas = await getHourlyForecastByCity(raw);
 
-  setWeather(clima);
-  setHourlyData(horas);
-} catch (e) {
-  console.error('Erro ao buscar clima ou previsão horária:', e);
-  // opcional: setar estado para fallback visual
-setHasError(true);
-setWeather(null);
-setHourlyData([]);
-}
+        setWeather(clima);
+        setHourlyData(horas);
+      } catch (e) {
+        console.error('Erro ao buscar clima ou previsão horária:', e);
+        // opcional: setar estado para fallback visual
+        setHasError(true);
+        setWeather(null);
+        setHourlyData([]);
+      }
 
     };
 
@@ -75,13 +76,12 @@ setHourlyData([]);
 
   const frase =
     weather &&
-    getFraseClimatica({
+    getFraseClimatica(t,{
       temperatura: weather.temperatura,
       condicao: weather.condicao,
       chuva: weather.chuva,
       vento: weather.vento,
     });
-
 
   function formatCompactLabel(name: string, state?: string, country?: string): string {
     const parts = [name];
@@ -90,24 +90,24 @@ setHourlyData([]);
     return parts.join(', ');
   }
 
-if (hasError) {
-  return (
-    <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.colors.background }}>
-      <Text style={[globalStyles.errorText, { textAlign: 'center', marginBottom: 16 }]}>
-  {t('Forecast.errorMessage')}
-</Text>
+  if (hasError) {
+    return (
+      <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.colors.background }}>
+        <Text style={[globalStyles.errorText, { textAlign: 'center', marginBottom: 16 }]}>
+          {t('Forecast.errorMessage')}
+        </Text>
 
-      <TouchableOpacity
-        onPress={() => router.replace('/forecast')}
-        style={globalStyles.bottomButton}
-      >
-        <Ionicons name="refresh" size={16} color={theme.colors.textDark} />
-  <Text style={globalStyles.bottomButtonText}>{t('Forecast.retryButton')}</Text>
+        <TouchableOpacity
+          onPress={() => router.replace('/forecast')}
+          style={globalStyles.bottomButton}
+        >
+          <Ionicons name="refresh" size={16} color={theme.colors.textDark} />
+          <Text style={globalStyles.bottomButtonText}>{t('Forecast.retryButton')}</Text>
 
-      </TouchableOpacity>
-    </SafeAreaView>
-  );
-}
+        </TouchableOpacity>
+      </SafeAreaView>
+    );
+  }
 
 
   return (
@@ -116,7 +116,7 @@ if (hasError) {
         <ScrollView style={{ backgroundColor: theme.colors.background }}>
           <ForecastHeader
             city={city}
-            date={new Date().toLocaleDateString('pt-PT', {
+            date={new Date().toLocaleDateString(i18n.language, {
               weekday: 'long',
               day: '2-digit',
               month: 'long',
@@ -132,6 +132,7 @@ if (hasError) {
                 style={{ width: 64, height: 64 }}
               />
             }
+            id={weather?.id ?? 0}
           />
 
           <View style={globalStyles.container}>

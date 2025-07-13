@@ -68,7 +68,24 @@
     "ThermalSenation": "Sensação Térmica",
     "backButton": "Voltar para o look do dia",
     "errorMessage": "Não foi possível carregar os dados climáticos.",
-    "retryButton": "Tentar novamente"
+    "retryButton": "Tentar novamente",
+    "rainTemperature15-": "Dia chuvoso e frio. Leve guarda-chuva e agasalho.",
+    "rain": "Chuva prevista. Não esqueça o guarda-chuva!",
+    "wind20+": "Vento forte hoje. Proteja-se bem ao sair.",
+    "wind30+": "Rajadas de vento fortes hoje. Fique atento ao sair.",
+    "temperature30+": "Dia quente. Use roupas leves e beba bastante água!",
+    "temperature35+": "Muito sol e calor. Hidrate-se bem!",
+    "cold5-": "Frio intenso hoje. Use roupas térmicas.",
+    "temperature10-": "Temperaturas baixas. Vista-se com camadas quentes.",
+    "clearSkyCold5-": "Céu limpo, mas muito frio. Se agasalhe bem.",
+    "cloudsTemperature15-": "Tempo nublado e frio. Um casaco vai bem.",
+    "clouds": "Tempo parcialmente nublado. Aproveite com moderação.",
+    "fog": "Nevoeiro no ar. Atenção à visibilidade.",
+    "mist": "Neblina leve. Pode ser desconfortável pela manhã.",
+    "humidity30-": "Ar seco hoje. Hidrate-se e evite exposição prolongada.",
+    "humidity90+": "Umidade muito alta. Pode causar desconforto.",
+    "clearSky": "Céu limpo e clima estável. Bom dia para atividades ao ar livre.",
+    "fallback": "Clima estável hoje. Fique de olho nas variações ao longo do dia."
   },
   "LookSuggestionCard": {
     "accessoryTitle": "Acessórios"
@@ -230,7 +247,7 @@
           "singlePiece": "Vestido leve de alça larga ou regata",
           "accessories": [
             "hairUp",
-            "lencoNaCabecaSeVento"
+            "headscarfIfWind"
           ],
           "shoes": "Sandália ou tênis leve"
         }
@@ -556,7 +573,7 @@
           "bottom": "Shorts leve",
           "accessories": [
             "ponytail",
-            "lencoNaCabecaControleCapilar"
+            "headscarfhaircontrol"
           ],
           "shoes": "Chinelo leve"
         }
@@ -599,7 +616,7 @@
         }
       }
     },
-    "unissex": {
+    "unisex": {
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
@@ -825,7 +842,7 @@
           "bottom": "Shorts leve",
           "accessories": [
             "ponytail",
-            "lencoNaCabecaControleCapilar"
+            "headscarfhaircontrol"
           ],
           "shoes": "Chinelo leve"
         }
@@ -880,13 +897,16 @@
       "rain_3+": {
         "description": "Chuva moderada (≥ 3mm): usar capa de chuva. Se vento ≥ 20km/h, substituir por capa impermeável.",
         "accessories": [
-          "raincoat"
+          "raincoat",
+          "umbrella"
         ]
       },
       "rain_5+": {
         "description": "Chuva forte (≥ 5mm): adicionar bota impermeável.",
         "accessories": [
-          "rain_boots"
+          "rain_boots",
+          "raincoat",
+          "umbrella"
         ]
       }
     },

@@ -53,16 +53,43 @@ const conditionColorMap: Record<string, string> = {
 
 const DEFAULT_COLOR = '#A4D4FF';
 
-export function getWeatherBackgroundColor(condicao: string = ''): string {
-  const condicaoNormalizada = condicao
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '');
+export function getWeatherBackgroundColor(id: number): string {
+  if (id >= 200 && id <= 202) return '#495866'; // Trovoadas leves a moderadas
+  if (id >= 210 && id <= 221) return '#495866'; // Trovoadas locais
+  if (id >= 230 && id <= 232) return '#3D4C5C'; // Tempestades com chuva forte
 
-  return conditionColorMap[condicaoNormalizada] ?? DEFAULT_COLOR;
+  if (id >= 300 && id <= 302) return '#B5C7D3'; // Garoa leve a moderada
+  if (id >= 310 && id <= 321) return '#A1BBD4'; // Garoa com chuva
+
+  if (id === 500) return '#A1BBD4';             // Chuva leve
+  if (id === 501) return '#90AEC7';             // Chuva moderada
+  if (id >= 502 && id <= 504) return '#5F7C99'; // Chuva forte a extrema
+  if (id >= 511 && id <= 531) return '#7FA1BF'; // Chuva congelante e irregular
+
+  if (id >= 600 && id <= 602) return '#E0F7FA'; // Neve leve a forte
+  if (id >= 611 && id <= 622) return '#E0F7FA'; // Neve com garoa, irregular
+
+  if (id === 701) return '#DDE4E8';             // Névoa
+  if (id === 711) return '#D9E2E6';             // Fumaça (névoa seca)
+  if (id === 721) return '#D9E2E6';             // Névoa seca (haze)
+  if (id === 731 || id === 761) return '#E9D8B5'; // Poeira/sand/dust
+  if (id === 741) return '#E8ECEF';             // Neblina
+  if (id === 751) return '#E9D8B5';             // Areia
+  if (id === 762) return '#E9D8B5';             // Cinzas vulcânicas
+  if (id === 771) return '#4A5968';             // Rajadas de vento (squall)
+  if (id === 781) return '#4D4D4D';             // Tornado
+
+  if (id === 800) return '#A4D4FF';             // Céu limpo
+
+  if (id === 801) return '#C3D9F3';             // Poucas nuvens
+  if (id === 802) return '#D6E0EB';             // Nuvens dispersas
+  if (id === 803) return '#BFC8D1';             // Nuvens parcialmente nubladas
+  if (id === 804) return '#BFC8D1';             // Nuvens encobertas
+
+  return DEFAULT_COLOR; // fallback
 }
 
-export function getWeatherGradientColors(condicao: string = ''): [string, string] {
-  const base = getWeatherBackgroundColor(condicao);
+export function getWeatherGradientColors(id: number): [string, string] {
+  const base = getWeatherBackgroundColor(id);
   return [base, '#00000077']; // degrade com branco translúcido
 }

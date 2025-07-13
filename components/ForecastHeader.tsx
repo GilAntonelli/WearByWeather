@@ -12,6 +12,7 @@ type Props = {
   condition: string;
   smartPhrase: string;
   icon?: React.ReactNode;
+  id: number;
 };
 
 export default function ForecastHeader({
@@ -21,8 +22,9 @@ export default function ForecastHeader({
   condition,
   smartPhrase,
   icon,
+  id,
 }: Props) {
-  const gradientColors = getWeatherGradientColors(condition);
+  const gradientColors = getWeatherGradientColors(id);
 
   return (
     <LinearGradient colors={gradientColors} style={styles.container}>

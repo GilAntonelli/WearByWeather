@@ -69,17 +69,18 @@ export const mockWeather = {
 // ☔ CHUVA MODERADA – Look com guarda-chuva, capa e bota
  
 export const mockWeather = {
-  temperatura: 5,
-  sensacaoTermica: 4,
+  temperatura: 43,
+  sensacaoTermica: 38,
   tempMin: 15,
   tempMax: 19,
   umidade: 85,
-  chuva: true,
-  vento: 15,
+  chuva: false,
+  vento: 45,
   condicao: 'chuva moderada',
   descricao: 'Rain',
   icon: '10d',
   iconUrl: 'https://openweathermap.org/img/wn/10d@2x.png',
+  id: 800, // ID do clima
 };
  
 

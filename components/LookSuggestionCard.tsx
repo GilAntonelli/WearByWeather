@@ -40,9 +40,11 @@ export const LookSuggestionCard: React.FC<LookSuggestionCardProps> = ({ suggesti
             <View style={globalStyles.tag}>
               <Text style={globalStyles.tagText}>{suggestion.roupaSuperior}</Text>
             </View>
-            <View style={globalStyles.tag}>
-              <Text style={globalStyles.tagText}>{suggestion.roupaInferior}</Text>
-            </View>
+            {suggestion.roupaInferior?.trim() !== '' && (
+              <View style={globalStyles.tag}>
+                <Text style={globalStyles.tagText}>{suggestion.roupaInferior}</Text>
+              </View>
+            )}
           </View>
         </View>
 

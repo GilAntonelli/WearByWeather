@@ -68,7 +68,24 @@
     "ThermalSenation": "Feels like",
     "backButton": "Back to today's look",
     "errorMessage": "Unable to load weather data.",
-    "retryButton": "Try again"
+    "retryButton": "Try again",
+    "rainTemperature15-": "Rainy and cold day. Bring an umbrella and dress warmly.",
+    "rain": "Rain expected. Don’t forget your umbrella!",
+    "wind20+": "Strong winds today. Stay protected when going out.",
+    "wind30+": "Very strong wind gusts today. Be cautious outdoors.",
+    "temperature30+": "Hot day. Wear light clothes and stay hydrated!",
+    "temperature35+": "Very sunny and hot. Keep yourself well hydrated!",
+    "cold5-": "Very cold today. Wear thermal clothing.",
+    "temperature10-": "Low temperatures. Dress in warm layers.",
+    "clearSkyCold5-": "Clear sky but very cold. Bundle up properly.",
+    "cloudsTemperature15-": "Cloudy and cold. A jacket will help.",
+    "clouds": "Partly cloudy weather. Enjoy with moderation.",
+    "fog": "Foggy conditions. Watch out for low visibility.",
+    "mist": "Light mist. Might be uncomfortable in the morning.",
+    "humidity30-": "Dry air today. Stay hydrated and avoid long exposure.",
+    "humidity90+": "Very high humidity. It might feel uncomfortable.",
+    "clearSky": "Clear skies and stable weather. Great day for outdoor activities.",
+    "fallback": "Stable weather today. Keep an eye on possible changes."
   },
   "LookSuggestionCard": {
     "accessoryTitle": "Accessories"
@@ -230,7 +247,7 @@
           "singlePiece": "Light dress with wide straps or tank top",
           "accessories": [
             "hairUp",
-            "lencoNaCabecaSeVento"
+            "headscarfIfWind"
           ],
           "shoes": "Sandals or light sneakers"
         }
@@ -556,7 +573,7 @@
           "bottom": "Light shorts",
           "accessories": [
             "ponytail",
-            "lencoNaCabecaControleCapilar"
+            "headscarfhaircontrol"
           ],
           "shoes": "Light flip-flops"
         }
@@ -599,7 +616,7 @@
         }
       }
     },
-    "unissex": {
+    "unisex": {
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
@@ -825,7 +842,7 @@
           "bottom": "Light shorts",
           "accessories": [
             "ponytail",
-            "lencoNaCabecaControleCapilar"
+            "headscarfhaircontrol"
           ],
           "shoes": "Light flip-flops"
         }
@@ -880,13 +897,16 @@
       "rain_3+": {
         "description": "Moderate rain (≥ 3mm): wear raincoat. If wind ≥ 20km/h, switch to waterproof raincoat.",
         "accessories": [
-          "raincoat"
+          "raincoat",
+          "umbrella"
         ]
       },
       "rain_5+": {
         "description": "Heavy rain (≥ 5mm): add waterproof boots.",
         "accessories": [
-          "rain_boots"
+          "rain_boots",
+          "raincoat",
+          "umbrella"
         ]
       }
     },

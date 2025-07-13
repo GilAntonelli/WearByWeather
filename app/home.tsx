@@ -56,7 +56,7 @@ export default function HomeScreen() {
     icon?: string;
     tempMin?: number;
     tempMax?: number;
-
+    id?: number;
   } | null>(null);
 
   const [isCityReady, setIsCityReady] = useState(false);
@@ -197,6 +197,7 @@ export default function HomeScreen() {
           chuva: weather.chuva,
           vento: weather.vento,
           icon: weather.icon,
+          id: weather.id,
         });
 
         const clima = {
@@ -359,6 +360,7 @@ export default function HomeScreen() {
                 tempMin={weatherData.tempMin ?? 0}
                 tempMax={weatherData.tempMax ?? 0}
                 condicao={weatherData.condicao || ''}
+                id={weatherData.id || 0}
               />
             )}
             <Text style={[globalStyles.cardTitle, {

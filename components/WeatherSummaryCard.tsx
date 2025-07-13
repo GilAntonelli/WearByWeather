@@ -13,6 +13,7 @@ interface WeatherSummaryCardProps {
   condicao: string;
   tempMin: number;
   tempMax: number;
+  id: number;
 }
 
 export default function WeatherSummaryCard({
@@ -23,8 +24,9 @@ export default function WeatherSummaryCard({
   condicao,
   tempMin,
   tempMax,
+  id
 }: WeatherSummaryCardProps) {
-  const gradientColors = getWeatherGradientColors(condicao);
+  const gradientColors = getWeatherGradientColors(id);
 
   return (
     <LinearGradient colors={gradientColors} style={styles.card}>

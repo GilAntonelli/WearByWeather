@@ -1,4 +1,5 @@
 // services/weatherPhrases.ts
+import { TFunction } from 'i18next';
 
 type Clima = {
   temperatura: number;
@@ -12,85 +13,86 @@ type Clima = {
 /**
  * Retorna uma frase inteligente com base nas condições climáticas.
  */
-export function getFraseClimatica({
+export function getFraseClimatica(t: TFunction, {
   temperatura,
   condicao,
   descricao,
   chuva,
   vento,
-  umidade,
+  umidade
 }: Clima): string {
+
   // 🌧️ Chuva
   if (chuva && temperatura < 15) {
-    return 'Dia chuvoso e frio. Leve guarda-chuva e agasalho.';
+    return t('Forecast.rainTemperature15-');
   }
 
   if (chuva) {
-    return 'Chuva prevista. Não esqueça o guarda-chuva!';
+    return t('Forecast.rain');
   }
 
   // 🌬️ Vento
   if (vento !== undefined && vento > 30) {
-    return 'Rajadas de vento fortes hoje. Fique atento ao sair.';
+    return t('Forecast.wind30+');
   }
 
   if (vento !== undefined && vento > 20) {
-    return 'Vento forte hoje. Proteja-se bem ao sair.';
+    return t('Forecast.wind20+');
   }
 
   // ☀️ Calor
   if (descricao === 'Clear' && temperatura >= 35) {
-    return 'Calor extremo. Fique em locais frescos e hidrate-se!';
+    return t('Forecast.temperature35+');
   }
 
   if (descricao === 'Clear' && temperatura > 30) {
-    return 'Muito sol e calor. Hidrate-se bem!';
+    return t('Forecast.temperature30+');
   }
 
   // ❄️ Frio
   if (descricao === 'Clear' && temperatura <= 5) {
-    return 'Céu limpo, mas muito frio. Se agasalhe bem.';
+    return t('Forecast.clearSkyCold5-');
   }
 
   if (temperatura <= 5) {
-    return 'Frio intenso hoje. Use roupas térmicas.';
+    return t('Forecast.cold5-');
   }
 
   if (temperatura < 10) {
-    return 'Temperaturas baixas. Vista-se com camadas quentes.';
+    return t('Forecast.temperature10-');
   }
 
   // ☁️ Nuvens e neblina
   if (descricao === 'Clouds' && temperatura < 15) {
-    return 'Tempo nublado e frio. Um casaco vai bem.';
+    return t('Forecast.cloudsTemperature15-');
   }
 
   if (descricao === 'Clouds') {
-    return 'Tempo parcialmente nublado. Aproveite com moderação.';
+    return t('Forecast.clouds');
   }
 
   if (descricao === 'Fog' || condicao?.includes('nevoeiro')) {
-    return 'Nevoeiro no ar. Atenção à visibilidade.';
+    return t('Forecast.fog');
   }
 
   if (descricao === 'Mist') {
-    return 'Neblina leve. Pode ser desconfortável pela manhã.';
+    return t('Forecast.mist');
   }
 
   // 💧 Umidade
   if (umidade !== undefined && umidade > 90) {
-    return 'Umidade muito alta. Pode causar desconforto.';
+    return t('Forecast.humidity90+');
   }
 
   if (umidade !== undefined && umidade < 30) {
-    return 'Ar seco hoje. Hidrate-se e evite exposição prolongada.';
+    return t('Forecast.humidity30-');
   }
 
   // ☀️ Céu limpo padrão
   if (descricao === 'Clear') {
-    return 'Céu limpo e clima estável. Bom dia para atividades ao ar livre.';
+    return t('Forecast.clearSky');
   }
 
   // 🟡 Fallback final
-  return 'Clima estável hoje. Fique de olho nas variações ao longo do dia.';
+  return t('Forecast.fallback');
 }

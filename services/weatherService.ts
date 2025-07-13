@@ -78,6 +78,7 @@ export async function getWeatherByCity(city: string) {
       descricao: data.weather[0].main,
       icon: iconCode,
       iconUrl: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
+      id: data.weather[0].id,
     };
 
     await AsyncStorage.setItem(
