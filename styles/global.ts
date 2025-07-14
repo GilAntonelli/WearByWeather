@@ -609,8 +609,8 @@ firstSectionTitle: {
     borderColor: '#ddd',
   },
   accessoryIcon: {
-    width: 48,
-    height: 48,
+    width: 55,
+    height: 55,
   },
   loadingText: {
     fontSize: 16,

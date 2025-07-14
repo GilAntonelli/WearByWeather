@@ -112,7 +112,7 @@
           "accessories": [
             "scarfMedium",
             "hat",
-            "lightGloves"
+            "gloves"
           ],
           "shoes": "Thermal boots"
         },
@@ -121,8 +121,8 @@
           "top": "Structured coat + light blouse",
           "bottom": "Jeans",
           "accessories": [
-            "hatLight",
-            "lightGloves"
+            "hatBasic",
+            "gloves"
           ],
           "shoes": "Simple boots"
         }
@@ -134,7 +134,7 @@
           "bottom": "Lined pants or sweatpants",
           "accessories": [
             "scarfLight",
-            "hatFitted",
+            "hatTight",
             "hairTie"
           ],
           "shoes": "Leather boots"
@@ -145,7 +145,7 @@
           "bottom": "Jeans",
           "accessories": [
             "hatWool",
-            "earringSimple"
+            "earrings"
           ],
           "shoes": "Short boots"
         },
@@ -165,8 +165,8 @@
           "top": "Sweatshirt + light jacket",
           "bottom": "Jeans",
           "accessories": [
-            "hatLight",
-            "scarfThin",
+            "hatBasic",
+            "scarfLight",
             "hairTie"
           ],
           "shoes": "Bota leve"
@@ -187,7 +187,7 @@
           "bottom": "Tailored trousers",
           "accessories": [
             "scarf",
-            "necklaceLight"
+            "necklace"
           ],
           "shoes": "Casual sneakers"
         }
@@ -199,7 +199,7 @@
           "bottom": "Jeans or midi skirt with tights",
           "accessories": [
             "scarf",
-            "sunglassesIfSun"
+            "sunglasses"
           ],
           "shoes": "Oxford or closed sneakers"
         },
@@ -209,7 +209,7 @@
           "accessories": [
             "bracelet",
             "scarf",
-            "necklaceSimple"
+            "necklace"
           ],
           "shoes": "Ballet flats or loafers"
         },
@@ -218,7 +218,7 @@
           "singlePiece": "Light dress with straps + light kimono",
           "accessories": [
             "sunglasses",
-            "brincoLeve"
+            "earrings"
           ],
           "shoes": "Light sneakers or closed sandals"
         }
@@ -247,7 +247,7 @@
           "singlePiece": "Light dress with wide straps or tank top",
           "accessories": [
             "hairUp",
-            "headscarfIfWind"
+            "headscarfhaircontrol"
           ],
           "shoes": "Sandals or light sneakers"
         }
@@ -266,7 +266,7 @@
           "isSinglePiece": true,
           "singlePiece": "Short dress with wide straps or Japanese sleeves",
           "accessories": [
-            "earringsLight",
+            "earrings",
             "sunglasses"
           ],
           "shoes": "Flat sandals"
@@ -276,7 +276,7 @@
           "singlePiece": "Light dress with thin straps or halter neck",
           "accessories": [
             "hairTie",
-            "necklaceLight"
+            "necklace"
           ],
           "shoes": "Sandals or flip-flops"
         }
@@ -286,7 +286,7 @@
           "isSinglePiece": true,
           "singlePiece": "Light dress with wide straps",
           "accessories": [
-            "scarfNeckLight",
+            "scarfNeck",
             "sunglasses"
           ],
           "shoes": "Flat sandals"
@@ -296,7 +296,7 @@
           "singlePiece": "Dress with thin straps and flowy fabric",
           "accessories": [
             "glasses",
-            "necklaceLight",
+            "necklace",
             "hairUp"
           ],
           "shoes": "Flat sandals or flip-flops"
@@ -305,7 +305,7 @@
           "isSinglePiece": true,
           "singlePiece": "Slip dress with thin straps",
           "accessories": [
-            "ponytail",
+            "hairUp",
             "glasses",
             "scarfHeadControl"
           ],
@@ -318,7 +318,7 @@
           "top": "Light cotton dress",
           "bottom": "",
           "accessories": [
-            "hatLight",
+            "hatBasic",
             "sunglasses",
             "waterBottle"
           ],
@@ -371,7 +371,7 @@
           "accessories": [
             "scarfMedium",
             "hat",
-            "lightGloves"
+            "gloves"
           ],
           "shoes": "Thermal boots"
         },
@@ -380,8 +380,8 @@
           "top": "Structured coat + long sleeve blouse",
           "bottom": "Jeans",
           "accessories": [
-            "hatLight",
-            "lightGloves"
+            "hatBasic",
+            "gloves"
           ],
           "shoes": "Simple boots"
         }
@@ -394,7 +394,7 @@
           "accessories": [
             "scarfLight",
             "beanie",
-            "lightGloves"
+            "gloves"
           ],
           "shoes": "Leather boots"
         },
@@ -403,7 +403,7 @@
           "top": "Mid winter coat + sweater",
           "bottom": "Jeans",
           "accessories": [
-            "hatBasic",
+            "hat",
             "watch"
           ],
           "shoes": "Short boots"
@@ -413,7 +413,7 @@
           "top": "Light sweatshirt + shirt",
           "bottom": "Twill pants",
           "accessories": [
-            "hatLight"
+            "hatBasic"
           ],
           "shoes": "Closed sneakers"
         }
@@ -425,7 +425,7 @@
           "bottom": "Jeans",
           "accessories": [
             "scarfLight",
-            "hatOrCap"
+            "cap"
           ],
           "shoes": "Bota leve"
         },
@@ -435,7 +435,7 @@
           "bottom": "Jeans or chino pants",
           "accessories": [
             "watch",
-            "sunglassesIfSun"
+            "sunglasses"
           ],
           "shoes": "Casual sneakers"
         },
@@ -444,8 +444,8 @@
           "top": "Long sleeve shirt + light vest",
           "bottom": "Twill pants",
           "accessories": [
-            "noHat",
-            "hairUpLong"
+            
+            "hairUp"
           ],
           "shoes": "Sport sneakers"
         }
@@ -468,7 +468,7 @@
           "bottom": "Chino or light twill pants",
           "accessories": [
             "watch",
-            "braceletSimple"
+            "bracelet"
           ],
           "shoes": "Loafers or sneakers"
         },
@@ -499,7 +499,7 @@
           "bottom": "Chino pants",
           "accessories": [
             "sunglasses",
-            "necklaceSimple"
+            "necklace"
           ],
           "shoes": "Casual sneakers or loafers"
         },
@@ -508,8 +508,7 @@
           "top": "Tank top or light fabric T-shirt",
           "bottom": "Bermuda ou short de sarja",
           "accessories": [
-            "hairTieLong",
-            "necklaceSport"
+            "hairTie"
           ],
           "shoes": "Light sneakers or flip-flops"
         }
@@ -521,7 +520,7 @@
           "bottom": "Bermuda estruturada",
           "accessories": [
             "sunglasses",
-            "braceletLight"
+            "bracelet"
           ],
           "shoes": "Sneakers or espadrilles"
         },
@@ -531,7 +530,7 @@
           "bottom": "Shorts or bermuda",
           "accessories": [
             "glasses",
-            "necklaceSimple"
+            "necklace"
           ],
           "shoes": "Sandals or light sneakers"
         },
@@ -540,7 +539,7 @@
           "top": "Light tank top",
           "bottom": "Light shorts",
           "accessories": [
-            "hairUpLong"
+            "hairUp"
           ],
           "shoes": "Flip-flops or sandals"
         }
@@ -552,7 +551,7 @@
           "bottom": "Shorts de linho ou tactel",
           "accessories": [
             "sunglasses",
-            "scarfNeckLight"
+            "scarfNeck"
           ],
           "shoes": "Light sandals"
         },
@@ -562,7 +561,7 @@
           "bottom": "Shorts",
           "accessories": [
             "necklace",
-            "hairUpLong",
+            "hairUp",
             "glasses"
           ],
           "shoes": "Flip-flops or sandals"
@@ -572,7 +571,7 @@
           "top": "Low cut or sleeveless tank top",
           "bottom": "Light shorts",
           "accessories": [
-            "ponytail",
+            "hairUp",
             "headscarfhaircontrol"
           ],
           "shoes": "Light flip-flops"
@@ -584,7 +583,7 @@
           "top": "Light cotton t-shirt",
           "bottom": "Natural fabric shorts",
           "accessories": [
-            "hatLight",
+            "hatBasic",
             "sunglasses",
             "waterBottle"
           ],
@@ -646,8 +645,8 @@
           "top": "Casaco leve + moletom fino",
           "bottom": "Jeans",
           "accessories": [
-            "hatLight",
-            "lightGloves"
+            "hatBasic",
+            "gloves"
           ],
           "shoes": "Simple boots"
         }
@@ -660,7 +659,7 @@
           "accessories": [
             "scarfLight",
             "hatTight",
-            "lightGloves"
+            "gloves"
           ],
           "shoes": "Mid boots"
         },
@@ -670,7 +669,7 @@
           "bottom": "Jeans",
           "accessories": [
             "hat",
-            "watchSimple"
+            "watch"
           ],
           "shoes": "Casual sneakers"
         },
@@ -679,7 +678,7 @@
           "top": "Blusa de manga + colete leve",
           "bottom": "Twill pants",
           "accessories": [
-            "hatLight"
+            "hatBasic"
           ],
           "shoes": "Sneakers or light boots"
         }
@@ -691,8 +690,7 @@
           "bottom": "Jeans",
           "accessories": [
             "scarf",
-            "beanie",
-            "functionalAccessory"
+            "beanie"
           ],
           "shoes": "Bota leve"
         },
@@ -702,7 +700,7 @@
           "bottom": "Chino pants",
           "accessories": [
             "watch",
-            "sunglassesIfSun"
+            "sunglasses"
           ],
           "shoes": "Casual sneakers"
         },
@@ -711,7 +709,7 @@
           "top": "Light shirt + short overlay",
           "bottom": "Light twill pants",
           "accessories": [
-            "colarSimples"
+            "simpleNecklace"
           ],
           "shoes": "Light sneakers"
         }
@@ -723,7 +721,7 @@
           "bottom": "Jeans or chino pants",
           "accessories": [
             "scarfLight",
-            "sunglassesIfSun",
+            "sunglasses",
             "watch"
           ],
           "shoes": "Closed sneakers"
@@ -735,7 +733,7 @@
           "accessories": [
             "bracelet",
             "watch",
-            "necklaceSimple"
+            "necklace"
           ],
           "shoes": "Neutral sneakers or loafers"
         },
@@ -744,8 +742,7 @@
           "top": "Camiseta oversized + colete aberto leve",
           "bottom": "Bermuda de sarja estruturada",
           "accessories": [
-            "glasses",
-            "necklaceSport"
+            "glasses"
           ],
           "shoes": "Light sneakers or casual sneakers"
         }
@@ -757,7 +754,7 @@
           "bottom": "Jeans",
           "accessories": [
             "scarfDecorative",
-            "braceletNeutral"
+            "bracelet"
           ],
           "shoes": "Sneakers or casual shoes"
         },
@@ -766,7 +763,7 @@
           "top": "Basic T-shirt or crew neck",
           "bottom": "Chino or twill pants",
           "accessories": [
-            "necklaceLight",
+            "necklace",
             "sunglasses"
           ],
           "shoes": "Casual sneakers or sneakers"
@@ -777,7 +774,7 @@
           "bottom": "Bermuda neutra",
           "accessories": [
             "glasses",
-            "hairUpLong"
+            "hairUp"
           ],
           "shoes": "Flip-flops or light sneakers"
         }
@@ -798,7 +795,7 @@
           "top": "Regata unissex ou camiseta oversized",
           "bottom": "Shorts or bermuda",
           "accessories": [
-            "colarSimples",
+            "simpleNecklace",
             "bracelet"
           ],
           "shoes": "Flip-flops or light sneakers"
@@ -808,7 +805,7 @@
           "top": "Light cotton tank top (low cut)",
           "bottom": "Light shorts",
           "accessories": [
-            "ponytail",
+            "hairUp",
             "scarfHead"
           ],
           "shoes": "Light flip-flops"
@@ -820,7 +817,7 @@
           "top": "Structured sleeveless T-shirt",
           "bottom": "Cotton shorts",
           "accessories": [
-            "scarfNeckLight",
+            "scarfNeck",
             "sunglasses"
           ],
           "shoes": "Light sandals"
@@ -831,8 +828,8 @@
           "bottom": "Short or neutral shorts",
           "accessories": [
             "glasses",
-            "colarSimples",
-            "hairUpLong"
+            "simpleNecklace",
+            "hairUp"
           ],
           "shoes": "Flat sandals or flip-flops"
         },
@@ -841,7 +838,7 @@
           "top": "Low cut tank top or neutral cropped",
           "bottom": "Light shorts",
           "accessories": [
-            "ponytail",
+            "hairUp",
             "headscarfhaircontrol"
           ],
           "shoes": "Light flip-flops"
@@ -853,7 +850,7 @@
           "top": "Loose cotton t-shirt",
           "bottom": "Linen shorts or flowy skirt",
           "accessories": [
-            "hatLight",
+            "hatBasic",
             "sunglasses",
             "waterBottle"
           ],
@@ -916,7 +913,7 @@
         "accessories": [
           "windbreaker",
           "beanie",
-          "hair_elastic"
+          "hatTight"
         ]
       },
       "wind_45+": {
@@ -925,7 +922,7 @@
           "windbreaker",
           "scarf",
           "gloves",
-          "hair_elastic"
+          "hatTight"
         ]
       }
     },
@@ -933,7 +930,7 @@
       "wind_20+_and_rain_3+": {
         "description": "Rain with wind (rain ≥ 3mm and wind ≥ 20 km/h): replace standard raincoat with windproof version.",
         "accessories": [
-          "raincoat_windproof"
+          "raincoat"
         ]
       }
     },

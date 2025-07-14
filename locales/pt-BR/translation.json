@@ -112,7 +112,7 @@
           "accessories": [
             "scarfMedium",
             "hat",
-            "lightGloves"
+            "gloves"
           ],
           "shoes": "Bota térmica"
         },
@@ -121,8 +121,8 @@
           "top": "Casaco estruturado + blusa leve",
           "bottom": "Calça jeans",
           "accessories": [
-            "hatLight",
-            "lightGloves"
+            "hatBasic",
+            "gloves"
           ],
           "shoes": "Bota simples"
         }
@@ -134,7 +134,7 @@
           "bottom": "Calça forrada ou moletom",
           "accessories": [
             "scarfLight",
-            "hatFitted",
+            "hatTight",
             "hairTie"
           ],
           "shoes": "Bota de couro"
@@ -145,7 +145,7 @@
           "bottom": "Calça jeans",
           "accessories": [
             "hatWool",
-            "earringSimple"
+            "earrings"
           ],
           "shoes": "Bota cano curto"
         },
@@ -165,8 +165,8 @@
           "top": "Moletom + jaqueta leve",
           "bottom": "Calça jeans",
           "accessories": [
-            "hatLight",
-            "scarfThin",
+            "hatBasic",
+            "scarfLight",
             "hairTie"
           ],
           "shoes": "Bota leve"
@@ -187,7 +187,7 @@
           "bottom": "Calça de alfaiataria",
           "accessories": [
             "scarf",
-            "necklaceLight"
+            "necklace"
           ],
           "shoes": "Tênis casual"
         }
@@ -199,7 +199,7 @@
           "bottom": "Calça jeans ou saia midi com meia",
           "accessories": [
             "scarf",
-            "sunglassesIfSun"
+            "sunglasses"
           ],
           "shoes": "Oxford ou tênis fechado"
         },
@@ -209,7 +209,7 @@
           "accessories": [
             "bracelet",
             "scarf",
-            "necklaceSimple"
+            "necklace"
           ],
           "shoes": "Sapatilha ou mocassim"
         },
@@ -218,7 +218,7 @@
           "singlePiece": "Vestido leve de alça + kimono leve",
           "accessories": [
             "sunglasses",
-            "brincoLeve"
+            "earrings"
           ],
           "shoes": "Tênis leve ou sandália fechada"
         }
@@ -247,7 +247,7 @@
           "singlePiece": "Vestido leve de alça larga ou regata",
           "accessories": [
             "hairUp",
-            "headscarfIfWind"
+            "headscarfhaircontrol"
           ],
           "shoes": "Sandália ou tênis leve"
         }
@@ -266,7 +266,7 @@
           "isSinglePiece": true,
           "singlePiece": "Vestido curto com alça larga ou manga japonesa",
           "accessories": [
-            "earringsLight",
+            "earrings",
             "sunglasses"
           ],
           "shoes": "Sandália baixa"
@@ -276,7 +276,7 @@
           "singlePiece": "Vestido leve de alça fina ou frente única",
           "accessories": [
             "hairTie",
-            "necklaceLight"
+            "necklace"
           ],
           "shoes": "Sandália ou chinelo"
         }
@@ -286,7 +286,7 @@
           "isSinglePiece": true,
           "singlePiece": "Vestido leve com alça larga",
           "accessories": [
-            "scarfNeckLight",
+            "scarfNeck",
             "sunglasses"
           ],
           "shoes": "Sandália baixa"
@@ -296,7 +296,7 @@
           "singlePiece": "Vestido com alça fina e tecido fluido",
           "accessories": [
             "glasses",
-            "necklaceLight",
+            "necklace",
             "hairUp"
           ],
           "shoes": "Rasteira ou chinelo"
@@ -305,7 +305,7 @@
           "isSinglePiece": true,
           "singlePiece": "Vestido tipo slip dress de alça fina",
           "accessories": [
-            "ponytail",
+            "hairUp",
             "glasses",
             "scarfHeadControl"
           ],
@@ -318,7 +318,7 @@
           "top": "Vestido leve de algodão",
           "bottom": "",
           "accessories": [
-            "hatLight",
+            "hatBasic",
             "sunglasses",
             "waterBottle"
           ],
@@ -371,7 +371,7 @@
           "accessories": [
             "scarfMedium",
             "hat",
-            "lightGloves"
+            "gloves"
           ],
           "shoes": "Bota térmica"
         },
@@ -380,8 +380,8 @@
           "top": "Casaco estruturado + blusa de manga",
           "bottom": "Calça jeans",
           "accessories": [
-            "hatLight",
-            "lightGloves"
+            "hatBasic",
+            "gloves"
           ],
           "shoes": "Bota simples"
         }
@@ -394,7 +394,7 @@
           "accessories": [
             "scarfLight",
             "beanie",
-            "lightGloves"
+            "gloves"
           ],
           "shoes": "Bota de couro"
         },
@@ -403,7 +403,7 @@
           "top": "Casaco de inverno médio + suéter",
           "bottom": "Calça jeans",
           "accessories": [
-            "hatBasic",
+            "hat",
             "watch"
           ],
           "shoes": "Bota cano curto"
@@ -413,7 +413,7 @@
           "top": "Blusão leve + camisa",
           "bottom": "Calça de sarja",
           "accessories": [
-            "hatLight"
+            "hatBasic"
           ],
           "shoes": "Tênis fechado"
         }
@@ -425,7 +425,7 @@
           "bottom": "Calça jeans",
           "accessories": [
             "scarfLight",
-            "hatOrCap"
+            "cap"
           ],
           "shoes": "Bota leve"
         },
@@ -435,7 +435,7 @@
           "bottom": "Calça jeans ou chino",
           "accessories": [
             "watch",
-            "sunglassesIfSun"
+            "sunglasses"
           ],
           "shoes": "Tênis casual"
         },
@@ -444,8 +444,8 @@
           "top": "Camisa de manga longa + colete leve",
           "bottom": "Calça de sarja",
           "accessories": [
-            "noHat",
-            "hairUpLong"
+            
+            "hairUp"
           ],
           "shoes": "Tênis esportivo"
         }
@@ -457,7 +457,7 @@
           "bottom": "Calça jeans ou chino",
           "accessories": [
             "scarfLight",
-            "sunglassesIfSun",
+            "sunglasses",
             "watch"
           ],
           "shoes": "Tênis fechado"
@@ -468,7 +468,7 @@
           "bottom": "Calça chino ou sarja leve",
           "accessories": [
             "watch",
-            "braceletSimple"
+            "bracelet"
           ],
           "shoes": "Mocassim ou tênis"
         },
@@ -499,7 +499,7 @@
           "bottom": "Calça chino",
           "accessories": [
             "sunglasses",
-            "necklaceSimple"
+            "necklace"
           ],
           "shoes": "Sapatênis ou mocassim"
         },
@@ -508,8 +508,7 @@
           "top": "Regata ou camiseta de tecido leve",
           "bottom": "Bermuda ou short de sarja",
           "accessories": [
-            "hairTieLong",
-            "necklaceSport"
+            "hairTie"
           ],
           "shoes": "Tênis leve ou chinelo"
         }
@@ -521,7 +520,7 @@
           "bottom": "Bermuda estruturada",
           "accessories": [
             "sunglasses",
-            "braceletLight"
+            "bracelet"
           ],
           "shoes": "Tênis ou alpargata"
         },
@@ -531,7 +530,7 @@
           "bottom": "Shorts ou bermuda",
           "accessories": [
             "glasses",
-            "necklaceSimple"
+            "necklace"
           ],
           "shoes": "Sandália ou tênis leve"
         },
@@ -540,7 +539,7 @@
           "top": "Regata leve",
           "bottom": "Shorts leve",
           "accessories": [
-            "hairUpLong"
+            "hairUp"
           ],
           "shoes": "Chinelo ou sandália"
         }
@@ -552,7 +551,7 @@
           "bottom": "Shorts de linho ou tactel",
           "accessories": [
             "sunglasses",
-            "scarfNeckLight"
+            "scarfNeck"
           ],
           "shoes": "Sandália leve"
         },
@@ -562,7 +561,7 @@
           "bottom": "Shorts",
           "accessories": [
             "necklace",
-            "hairUpLong",
+            "hairUp",
             "glasses"
           ],
           "shoes": "Chinelo ou sandália"
@@ -572,7 +571,7 @@
           "top": "Regata cavada ou sem mangas",
           "bottom": "Shorts leve",
           "accessories": [
-            "ponytail",
+            "hairUp",
             "headscarfhaircontrol"
           ],
           "shoes": "Chinelo leve"
@@ -584,7 +583,7 @@
           "top": "Camiseta leve de algodão",
           "bottom": "Bermuda de tecido natural",
           "accessories": [
-            "hatLight",
+            "hatBasic",
             "sunglasses",
             "waterBottle"
           ],
@@ -637,7 +636,7 @@
           "accessories": [
             "scarfMedium",
             "hat",
-            "lightGloves"
+            "gloves"
           ],
           "shoes": "Bota térmica"
         },
@@ -646,8 +645,8 @@
           "top": "Casaco leve + moletom fino",
           "bottom": "Calça jeans",
           "accessories": [
-            "hatLight",
-            "lightGloves"
+            "hatBasic",
+            "gloves"
           ],
           "shoes": "Bota simples"
         }
@@ -660,7 +659,7 @@
           "accessories": [
             "scarfLight",
             "hatTight",
-            "lightGloves"
+            "gloves"
           ],
           "shoes": "Bota cano médio"
         },
@@ -670,7 +669,7 @@
           "bottom": "Calça jeans",
           "accessories": [
             "hat",
-            "watchSimple"
+            "watch"
           ],
           "shoes": "Tênis casual"
         },
@@ -679,7 +678,7 @@
           "top": "Blusa de manga + colete leve",
           "bottom": "Calça de sarja",
           "accessories": [
-            "hatLight"
+            "hatBasic"
           ],
           "shoes": "Tênis ou bota leve"
         }
@@ -691,8 +690,7 @@
           "bottom": "Calça jeans",
           "accessories": [
             "scarf",
-            "beanie",
-            "functionalAccessory"
+            "beanie"
           ],
           "shoes": "Bota leve"
         },
@@ -702,7 +700,7 @@
           "bottom": "Calça chino",
           "accessories": [
             "watch",
-            "sunglassesIfSun"
+            "sunglasses"
           ],
           "shoes": "Tênis casual"
         },
@@ -711,7 +709,7 @@
           "top": "Camisa leve + sobreposição curta",
           "bottom": "Calça sarja leve",
           "accessories": [
-            "colarSimples"
+            "simpleNecklace"
           ],
           "shoes": "Tênis leve"
         }
@@ -723,7 +721,7 @@
           "bottom": "Calça jeans ou chino",
           "accessories": [
             "scarfLight",
-            "sunglassesIfSun",
+            "sunglasses",
             "watch"
           ],
           "shoes": "Tênis fechado"
@@ -735,7 +733,7 @@
           "accessories": [
             "bracelet",
             "watch",
-            "necklaceSimple"
+            "necklace"
           ],
           "shoes": "Tênis neutro ou mocassim"
         },
@@ -744,8 +742,7 @@
           "top": "Camiseta oversized + colete aberto leve",
           "bottom": "Bermuda de sarja estruturada",
           "accessories": [
-            "glasses",
-            "necklaceSport"
+            "glasses"
           ],
           "shoes": "Tênis leve ou sapatênis"
         }
@@ -757,7 +754,7 @@
           "bottom": "Calça jeans",
           "accessories": [
             "scarfDecorative",
-            "braceletNeutral"
+            "bracelet"
           ],
           "shoes": "Tênis ou sapato casual"
         },
@@ -766,7 +763,7 @@
           "top": "Camiseta básica ou gola careca",
           "bottom": "Calça chino ou sarja",
           "accessories": [
-            "necklaceLight",
+            "necklace",
             "sunglasses"
           ],
           "shoes": "Sapatênis ou tênis"
@@ -777,7 +774,7 @@
           "bottom": "Bermuda neutra",
           "accessories": [
             "glasses",
-            "hairUpLong"
+            "hairUp"
           ],
           "shoes": "Chinelo ou tênis leve"
         }
@@ -798,7 +795,7 @@
           "top": "Regata unissex ou camiseta oversized",
           "bottom": "Shorts ou bermuda",
           "accessories": [
-            "colarSimples",
+            "simpleNecklace",
             "bracelet"
           ],
           "shoes": "Chinelo ou tênis leve"
@@ -808,7 +805,7 @@
           "top": "Regata cavada de algodão leve",
           "bottom": "Shorts leve",
           "accessories": [
-            "ponytail",
+            "hairUp",
             "scarfHead"
           ],
           "shoes": "Chinelo leve"
@@ -820,7 +817,7 @@
           "top": "Camiseta sem manga estruturada",
           "bottom": "Shorts de algodão",
           "accessories": [
-            "scarfNeckLight",
+            "scarfNeck",
             "sunglasses"
           ],
           "shoes": "Sandália leve"
@@ -831,8 +828,8 @@
           "bottom": "Shorts curtos ou neutros",
           "accessories": [
             "glasses",
-            "colarSimples",
-            "hairUpLong"
+            "simpleNecklace",
+            "hairUp"
           ],
           "shoes": "Rasteira ou chinelo"
         },
@@ -841,7 +838,7 @@
           "top": "Regata cavada ou cropped neutro",
           "bottom": "Shorts leve",
           "accessories": [
-            "ponytail",
+            "hairUp",
             "headscarfhaircontrol"
           ],
           "shoes": "Chinelo leve"
@@ -854,7 +851,7 @@
         "top": "Camiseta solta de algodão",
         "bottom": "Shorts de linho ou saia fluida",
         "accessories": [
-          "hatLight",
+          "hatBasic",
           "sunglasses",
           "waterBottle"
         ],
@@ -916,7 +913,7 @@
         "accessories": [
           "windbreaker",
           "beanie",
-          "hair_elastic"
+          "hatTight"
         ]
       },
       "wind_45+": {
@@ -925,7 +922,7 @@
           "windbreaker",
           "scarf",
           "gloves",
-          "hair_elastic"
+          "hatTight"
         ]
       }
     },
@@ -933,7 +930,7 @@
       "wind_20+_and_rain_3+": {
         "description": "Chuva com vento (chuva ≥ 3mm e vento ≥ 20 km/h): substituir capa comum por capa impermeável (windproof).",
         "accessories": [
-          "raincoat_windproof"
+          "raincoat"
         ]
       }
     },

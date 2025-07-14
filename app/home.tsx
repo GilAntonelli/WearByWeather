@@ -363,7 +363,7 @@ export default function HomeScreen() {
                 id={weatherData.id || 0}
               />
             )}
-            <Text style={[globalStyles.cardTitle, {
+            <Text style={[globalStyles.firstSectionTitle, {
               marginTop: spacing.section
             }]}>
               {t('home.suggestionTitle')}
