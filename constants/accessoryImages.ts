@@ -23,7 +23,6 @@ export const accessoryImages = {
   'sunglasses': require(`${path}sunglasses.png`),
   'watch': require(`${path}watch.png`),
   'waterBottle': require(`${path}waterBottle.png`),
-  'hatBasic': require(`${path}hatBasic.png`),
   'rain_boots': require(`${path}rain_boots.png`),
   'raincoat': require(`${path}raincoat.png`),
   'scarfHead': require(`${path}scarfHead.png`),

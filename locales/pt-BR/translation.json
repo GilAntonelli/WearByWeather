@@ -71,10 +71,10 @@
     "retryButton": "Tentar novamente",
     "rainTemperature15-": "Dia chuvoso e frio. Leve guarda-chuva e agasalho.",
     "rain": "Chuva prevista. Não esqueça o guarda-chuva!",
-    "wind20+": "Vento forte hoje. Proteja-se bem ao sair.",
-    "wind30+": "Rajadas de vento fortes hoje. Fique atento ao sair.",
-    "temperature30+": "Dia quente. Use roupas leves e beba bastante água!",
-    "temperature35+": "Muito sol e calor. Hidrate-se bem!",
+    "wind20e": "Vento forte hoje. Proteja-se bem ao sair.",
+    "wind30e": "Rajadas de vento fortes hoje. Fique atento ao sair.",
+    "temperature30e": "Dia quente. Use roupas leves e beba bastante água!",
+    "temperature35e": "Muito sol e calor. Hidrate-se bem!",
     "cold5-": "Frio intenso hoje. Use roupas térmicas.",
     "temperature10-": "Temperaturas baixas. Vista-se com camadas quentes.",
     "clearSkyCold5-": "Céu limpo, mas muito frio. Se agasalhe bem.",
@@ -83,7 +83,7 @@
     "fog": "Nevoeiro no ar. Atenção à visibilidade.",
     "mist": "Neblina leve. Pode ser desconfortável pela manhã.",
     "humidity30-": "Ar seco hoje. Hidrate-se e evite exposição prolongada.",
-    "humidity90+": "Umidade muito alta. Pode causar desconforto.",
+    "humidity90e": "Umidade muito alta. Pode causar desconforto.",
     "clearSky": "Céu limpo e clima estável. Bom dia para atividades ao ar livre.",
     "fallback": "Clima estável hoje. Fique de olho nas variações ao longo do dia."
   },
@@ -93,15 +93,15 @@
   "suggestions": {
     "female": {
       "freezing": {
-        "feel_cold": {
+        "feel_cold": { 
           "isSinglePiece": false,
-          "top": "Casaco grosso + suéter térmico",
-          "bottom": "Calça térmica + jeans",
+          "top": "Casaco grosso e suéter térmico",
+          "bottom": "Calça térmica e jeans",
           "accessories": [
             "scarfThick",
             "hatTight",
-            "gloves",
-            "hairTie"
+            "gloves" 
+           
           ],
           "shoes": "Bota forrada impermeável"
         },
@@ -118,10 +118,10 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Casaco estruturado + blusa leve",
+          "top": "Casaco estruturado e blusa leve",
           "bottom": "Calça jeans",
           "accessories": [
-            "hatBasic",
+            "hat",
             "gloves"
           ],
           "shoes": "Bota simples"
@@ -130,7 +130,7 @@
       "cold": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Jaqueta acolchoada + blusa de manga",
+          "top": "Jaqueta acolchoada e blusa de manga",
           "bottom": "Calça forrada ou moletom",
           "accessories": [
             "scarfLight",
@@ -141,7 +141,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Casaco médio + suéter",
+          "top": "Casaco médio e suéter",
           "bottom": "Calça jeans",
           "accessories": [
             "hatWool",
@@ -151,7 +151,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Blusão leve + camisa",
+          "top": "Blusão leve e camisa",
           "bottom": "Calça de sarja",
           "accessories": [
             "hairTie"
@@ -162,10 +162,10 @@
       "chilly": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Moletom + jaqueta leve",
+          "top": "Moletom e jaqueta leve",
           "bottom": "Calça jeans",
           "accessories": [
-            "hatBasic",
+            "hat",
             "scarfLight",
             "hairTie"
           ],
@@ -183,7 +183,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Camisa + blazer estruturado",
+          "top": "Camisa e blazer estruturado",
           "bottom": "Calça de alfaiataria",
           "accessories": [
             "scarf",
@@ -195,7 +195,7 @@
       "mild": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta + suéter fino",
+          "top": "Camiseta e suéter fino",
           "bottom": "Calça jeans ou saia midi com meia",
           "accessories": [
             "scarf",
@@ -205,7 +205,7 @@
         },
         "neutral": {
           "isSinglePiece": true,
-          "singlePiece": "Vestido midi com manga curta + jaqueta leve",
+          "singlePiece": "Vestido midi com manga curta e jaqueta leve",
           "accessories": [
             "bracelet",
             "scarf",
@@ -215,7 +215,7 @@
         },
         "feel_hot": {
           "isSinglePiece": true,
-          "singlePiece": "Vestido leve de alça + kimono leve",
+          "singlePiece": "Vestido leve de alça e kimono leve",
           "accessories": [
             "sunglasses",
             "earrings"
@@ -226,7 +226,7 @@
       "comfortable": {
         "feel_cold": {
           "isSinglePiece": true,
-          "singlePiece": "Vestido midi de manga ¾ + blazer leve",
+          "singlePiece": "Vestido midi de manga ¾ e blazer leve",
           "accessories": [
             "scarfNeck",
             "watch"
@@ -255,7 +255,7 @@
       "warm": {
         "feel_cold": {
           "isSinglePiece": true,
-          "singlePiece": "Vestido curto com manga leve + sobreposição fina",
+          "singlePiece": "Vestido curto com manga leve e sobreposição fina",
           "accessories": [
             "scarfLight",
             "sunglasses"
@@ -318,7 +318,7 @@
           "top": "Vestido leve de algodão",
           "bottom": "",
           "accessories": [
-            "hatBasic",
+            "hat",
             "sunglasses",
             "waterBottle"
           ],
@@ -354,13 +354,13 @@
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Casaco acolchoado + suéter térmico",
-          "bottom": "Calça térmica + jeans",
+          "top": "Casaco acolchoado e suéter térmico",
+          "bottom": "Calça térmica e jeans",
           "accessories": [
             "scarfThick",
             "hatTight",
-            "gloves",
-            "beanie"
+            "gloves" 
+             
           ],
           "shoes": "Bota forrada impermeável"
         },
@@ -377,10 +377,10 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Casaco estruturado + blusa de manga",
+          "top": "Casaco estruturado e blusa de manga",
           "bottom": "Calça jeans",
           "accessories": [
-            "hatBasic",
+            "hat",
             "gloves"
           ],
           "shoes": "Bota simples"
@@ -389,7 +389,7 @@
       "cold": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Jaqueta térmica + blusa de manga",
+          "top": "Jaqueta térmica e blusa de manga",
           "bottom": "Calça grossa ou moletom",
           "accessories": [
             "scarfLight",
@@ -400,7 +400,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Casaco de inverno médio + suéter",
+          "top": "Casaco de inverno médio e suéter",
           "bottom": "Calça jeans",
           "accessories": [
             "hat",
@@ -410,10 +410,10 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Blusão leve + camisa",
+          "top": "Blusão leve e camisa",
           "bottom": "Calça de sarja",
           "accessories": [
-            "hatBasic"
+            "hat"
           ],
           "shoes": "Tênis fechado"
         }
@@ -421,7 +421,7 @@
       "chilly": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Moletom + jaqueta leve",
+          "top": "Moletom e jaqueta leve",
           "bottom": "Calça jeans",
           "accessories": [
             "scarfLight",
@@ -441,7 +441,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Camisa de manga longa + colete leve",
+          "top": "Camisa de manga longa e colete leve",
           "bottom": "Calça de sarja",
           "accessories": [
             
@@ -453,7 +453,7 @@
       "mild": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta + suéter leve ou cardigan",
+          "top": "Camiseta e suéter leve ou cardigan",
           "bottom": "Calça jeans ou chino",
           "accessories": [
             "scarfLight",
@@ -474,7 +474,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Camiseta ou regata + jaqueta fina",
+          "top": "Camiseta ou regata e jaqueta fina",
           "bottom": "Bermuda de tecido estruturado",
           "accessories": [
             "sunglasses"
@@ -485,7 +485,7 @@
       "comfortable": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camisa de manga + jaqueta fina",
+          "top": "Camisa de manga e jaqueta fina",
           "bottom": "Calça jeans",
           "accessories": [
             "scarfLight",
@@ -516,7 +516,7 @@
       "warm": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta + camisa aberta leve",
+          "top": "Camiseta e camisa aberta leve",
           "bottom": "Bermuda estruturada",
           "accessories": [
             "sunglasses",
@@ -583,7 +583,7 @@
           "top": "Camiseta leve de algodão",
           "bottom": "Bermuda de tecido natural",
           "accessories": [
-            "hatBasic",
+            "hat",
             "sunglasses",
             "waterBottle"
           ],
@@ -619,8 +619,8 @@
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Jaqueta acolchoada + blusa térmica",
-          "bottom": "Calça térmica + jeans",
+          "top": "Jaqueta acolchoada e blusa térmica",
+          "bottom": "Calça térmica e jeans",
           "accessories": [
             "scarfThick",
             "hatTight",
@@ -631,7 +631,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Casaco de neve médio + suéter",
+          "top": "Casaco de neve médio e suéter",
           "bottom": "Calça jeans ou sarja",
           "accessories": [
             "scarfMedium",
@@ -642,10 +642,10 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Casaco leve + moletom fino",
+          "top": "Casaco leve e moletom fino",
           "bottom": "Calça jeans",
           "accessories": [
-            "hatBasic",
+            "hat",
             "gloves"
           ],
           "shoes": "Bota simples"
@@ -654,7 +654,7 @@
       "cold": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Moletom grosso + jaqueta corta-vento",
+          "top": "Moletom grosso e jaqueta corta-vento",
           "bottom": "Calça de moletom ou sarja",
           "accessories": [
             "scarfLight",
@@ -665,7 +665,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Suéter + casaco leve",
+          "top": "Suéter e casaco leve",
           "bottom": "Calça jeans",
           "accessories": [
             "hat",
@@ -675,10 +675,10 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Blusa de manga + colete leve",
+          "top": "Blusa de manga e colete leve",
           "bottom": "Calça de sarja",
           "accessories": [
-            "hatBasic"
+            "hat"
           ],
           "shoes": "Tênis ou bota leve"
         }
@@ -686,7 +686,7 @@
       "chilly": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Moletom + jaqueta leve",
+          "top": "Moletom e jaqueta leve",
           "bottom": "Calça jeans",
           "accessories": [
             "scarf",
@@ -706,7 +706,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Camisa leve + sobreposição curta",
+          "top": "Camisa leve e sobreposição curta",
           "bottom": "Calça sarja leve",
           "accessories": [
             "simpleNecklace"
@@ -717,7 +717,7 @@
       "mild": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta + suéter leve",
+          "top": "Camiseta e suéter leve",
           "bottom": "Calça jeans ou chino",
           "accessories": [
             "scarfLight",
@@ -739,7 +739,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Camiseta oversized + colete aberto leve",
+          "top": "Camiseta oversized e colete aberto leve",
           "bottom": "Bermuda de sarja estruturada",
           "accessories": [
             "glasses"
@@ -750,7 +750,7 @@
       "comfortable": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camisa manga longa + jaqueta jeans",
+          "top": "Camisa manga longa e jaqueta jeans",
           "bottom": "Calça jeans",
           "accessories": [
             "scarfDecorative",
@@ -782,7 +782,7 @@
       "warm": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta leve + camisa aberta",
+          "top": "Camiseta leve e camisa aberta",
           "bottom": "Bermuda estruturada",
           "accessories": [
             "sunglasses",
@@ -851,7 +851,7 @@
         "top": "Camiseta solta de algodão",
         "bottom": "Shorts de linho ou saia fluida",
         "accessories": [
-          "hatBasic",
+          "hat",
           "sunglasses",
           "waterBottle"
         ],
@@ -885,20 +885,20 @@
   },
   "overlays": {
     "rain": {
-      "rain_1+": {
+      "rain_1e": {
         "description": "Chuva leve (≥ 1mm): incluir guarda-chuva.",
         "accessories": [
           "umbrella"
         ]
       },
-      "rain_3+": {
+      "rain_3e": {
         "description": "Chuva moderada (≥ 3mm): usar capa de chuva. Se vento ≥ 20km/h, substituir por capa impermeável.",
         "accessories": [
           "raincoat",
           "umbrella"
         ]
       },
-      "rain_5+": {
+      "rain_5e": {
         "description": "Chuva forte (≥ 5mm): adicionar bota impermeável.",
         "accessories": [
           "rain_boots",
@@ -916,7 +916,7 @@
           "hatTight"
         ]
       },
-      "wind_45+": {
+      "wind_45e": {
         "description": "Vento forte (> 45 km/h): adicionar corta-vento, cachecol reforçado, luvas leves e elástico de cabelo.",
         "accessories": [
           "windbreaker",
@@ -927,7 +927,7 @@
       }
     },
     "windandrain": {
-      "wind_20+_and_rain_3+": {
+      "wind_20e_and_rain_3e": {
         "description": "Chuva com vento (chuva ≥ 3mm e vento ≥ 20 km/h): substituir capa comum por capa impermeável (windproof).",
         "accessories": [
           "raincoat"
@@ -935,7 +935,7 @@
       }
     },
     "windandwarm": {
-      "temp_23+_and_wind_30+": {
+      "temp_23e_and_wind_30e": {
         "description": "Vento com calor (temp > 23°C e vento > 30 km/h): substituir peças esvoaçantes por coladas e adicionar controle capilar.",
         "accessories": [
           "hair_control"

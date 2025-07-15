@@ -71,10 +71,10 @@
     "retryButton": "Try again",
     "rainTemperature15-": "Rainy and cold day. Bring an umbrella and dress warmly.",
     "rain": "Rain expected. Don’t forget your umbrella!",
-    "wind20+": "Strong winds today. Stay protected when going out.",
-    "wind30+": "Very strong wind gusts today. Be cautious outdoors.",
-    "temperature30+": "Hot day. Wear light clothes and stay hydrated!",
-    "temperature35+": "Very sunny and hot. Keep yourself well hydrated!",
+    "wind20and": "Strong winds today. Stay protected when going out.",
+    "wind30and": "Very strong wind gusts today. Be cautious outdoors.",
+    "temperature30and": "Hot day. Wear light clothes and stay hydrated!",
+    "temperature35and": "Very sunny and hot. Keep yourself well hydrated!",
     "cold5-": "Very cold today. Wear thermal clothing.",
     "temperature10-": "Low temperatures. Dress in warm layers.",
     "clearSkyCold5-": "Clear sky but very cold. Bundle up properly.",
@@ -83,7 +83,7 @@
     "fog": "Foggy conditions. Watch out for low visibility.",
     "mist": "Light mist. Might be uncomfortable in the morning.",
     "humidity30-": "Dry air today. Stay hydrated and avoid long exposure.",
-    "humidity90+": "Very high humidity. It might feel uncomfortable.",
+    "humidity90and": "Very high humidity. It might feel uncomfortable.",
     "clearSky": "Clear skies and stable weather. Great day for outdoor activities.",
     "fallback": "Stable weather today. Keep an eye on possible changes."
   },
@@ -95,13 +95,13 @@
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Thick coat + thermal sweater",
-          "bottom": "Thermal pants + jeans",
+          "top": "Thick coat and thermal sweater",
+          "bottom": "Thermal pants and jeans",
           "accessories": [
             "scarfThick",
             "hatTight",
-            "gloves",
-            "hairTie"
+            "gloves" 
+            
           ],
           "shoes": "Lined waterproof boots"
         },
@@ -118,10 +118,10 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Structured coat + light blouse",
+          "top": "Structured coat and light blouse",
           "bottom": "Jeans",
           "accessories": [
-            "hatBasic",
+            "hat",
             "gloves"
           ],
           "shoes": "Simple boots"
@@ -130,7 +130,7 @@
       "cold": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Padded jacket + long sleeve shirt",
+          "top": "Padded jacket and long sleeve shirt",
           "bottom": "Lined pants or sweatpants",
           "accessories": [
             "scarfLight",
@@ -141,7 +141,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Mid coat + sweater",
+          "top": "Mid coat and sweater",
           "bottom": "Jeans",
           "accessories": [
             "hatWool",
@@ -151,7 +151,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Light sweatshirt + shirt",
+          "top": "Light sweatshirt and shirt",
           "bottom": "Twill pants",
           "accessories": [
             "hairTie"
@@ -162,10 +162,10 @@
       "chilly": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Sweatshirt + light jacket",
+          "top": "Sweatshirt and light jacket",
           "bottom": "Jeans",
           "accessories": [
-            "hatBasic",
+            "hat",
             "scarfLight",
             "hairTie"
           ],
@@ -183,7 +183,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Shirt + structured blazer",
+          "top": "Shirt and structured blazer",
           "bottom": "Tailored trousers",
           "accessories": [
             "scarf",
@@ -195,7 +195,7 @@
       "mild": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "T-shirt + light sweater",
+          "top": "T-shirt and light sweater",
           "bottom": "Jeans or midi skirt with tights",
           "accessories": [
             "scarf",
@@ -205,7 +205,7 @@
         },
         "neutral": {
           "isSinglePiece": true,
-          "singlePiece": "Midi dress with short sleeves + light jacket",
+          "singlePiece": "Midi dress with short sleeves and light jacket",
           "accessories": [
             "bracelet",
             "scarf",
@@ -215,7 +215,7 @@
         },
         "feel_hot": {
           "isSinglePiece": true,
-          "singlePiece": "Light dress with straps + light kimono",
+          "singlePiece": "Light dress with straps and light kimono",
           "accessories": [
             "sunglasses",
             "earrings"
@@ -226,7 +226,7 @@
       "comfortable": {
         "feel_cold": {
           "isSinglePiece": true,
-          "singlePiece": "Midi dress with ¾ sleeves + light blazer",
+          "singlePiece": "Midi dress with ¾ sleeves and light blazer",
           "accessories": [
             "scarfNeck",
             "watch"
@@ -255,7 +255,7 @@
       "warm": {
         "feel_cold": {
           "isSinglePiece": true,
-          "singlePiece": "Short dress with light sleeves + thin overlay",
+          "singlePiece": "Short dress with light sleeves and thin overlay",
           "accessories": [
             "scarfLight",
             "sunglasses"
@@ -318,7 +318,7 @@
           "top": "Light cotton dress",
           "bottom": "",
           "accessories": [
-            "hatBasic",
+            "hat",
             "sunglasses",
             "waterBottle"
           ],
@@ -354,13 +354,12 @@
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Padded coat + thermal sweater",
-          "bottom": "Thermal pants + jeans",
+          "top": "Padded coat and thermal sweater",
+          "bottom": "Thermal pants and jeans",
           "accessories": [
             "scarfThick",
             "hatTight",
-            "gloves",
-            "beanie"
+            "gloves" 
           ],
           "shoes": "Lined waterproof boots"
         },
@@ -377,10 +376,10 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Structured coat + long sleeve blouse",
+          "top": "Structured coat and long sleeve blouse",
           "bottom": "Jeans",
           "accessories": [
-            "hatBasic",
+            "hat",
             "gloves"
           ],
           "shoes": "Simple boots"
@@ -389,7 +388,7 @@
       "cold": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Thermal jacket + long sleeve blouse",
+          "top": "Thermal jacket and long sleeve blouse",
           "bottom": "Thick pants or sweatpants",
           "accessories": [
             "scarfLight",
@@ -400,7 +399,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Mid winter coat + sweater",
+          "top": "Mid winter coat and sweater",
           "bottom": "Jeans",
           "accessories": [
             "hat",
@@ -410,10 +409,10 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Light sweatshirt + shirt",
+          "top": "Light sweatshirt and shirt",
           "bottom": "Twill pants",
           "accessories": [
-            "hatBasic"
+            "hat"
           ],
           "shoes": "Closed sneakers"
         }
@@ -421,7 +420,7 @@
       "chilly": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Sweatshirt + light jacket",
+          "top": "Sweatshirt and light jacket",
           "bottom": "Jeans",
           "accessories": [
             "scarfLight",
@@ -441,7 +440,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Long sleeve shirt + light vest",
+          "top": "Long sleeve shirt and light vest",
           "bottom": "Twill pants",
           "accessories": [
             
@@ -453,7 +452,7 @@
       "mild": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "T-shirt + light sweater or cardigan",
+          "top": "T-shirt and light sweater or cardigan",
           "bottom": "Jeans or chino pants",
           "accessories": [
             "scarfLight",
@@ -474,7 +473,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "T-shirt or tank top + thin jacket",
+          "top": "T-shirt or tank top and thin jacket",
           "bottom": "Bermuda de tecido estruturado",
           "accessories": [
             "sunglasses"
@@ -485,7 +484,7 @@
       "comfortable": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Long sleeve shirt + light jacket",
+          "top": "Long sleeve shirt and light jacket",
           "bottom": "Jeans",
           "accessories": [
             "scarfLight",
@@ -516,7 +515,7 @@
       "warm": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "T-shirt + open light shirt",
+          "top": "T-shirt and open light shirt",
           "bottom": "Bermuda estruturada",
           "accessories": [
             "sunglasses",
@@ -583,7 +582,7 @@
           "top": "Light cotton t-shirt",
           "bottom": "Natural fabric shorts",
           "accessories": [
-            "hatBasic",
+            "hat",
             "sunglasses",
             "waterBottle"
           ],
@@ -619,8 +618,8 @@
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Padded jacket + thermal shirt",
-          "bottom": "Thermal pants + jeans",
+          "top": "Padded jacket and thermal shirt",
+          "bottom": "Thermal pants and jeans",
           "accessories": [
             "scarfThick",
             "hatTight",
@@ -631,7 +630,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Mid snow coat + sweater",
+          "top": "Mid snow coat and sweater",
           "bottom": "Jeans or twill pants",
           "accessories": [
             "scarfMedium",
@@ -642,10 +641,10 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Casaco leve + moletom fino",
+          "top": "Casaco leve and moletom fino",
           "bottom": "Jeans",
           "accessories": [
-            "hatBasic",
+            "hat",
             "gloves"
           ],
           "shoes": "Simple boots"
@@ -654,7 +653,7 @@
       "cold": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Moletom grosso + jaqueta corta-vento",
+          "top": "Moletom grosso and jaqueta corta-vento",
           "bottom": "Sweatpants or twill pants",
           "accessories": [
             "scarfLight",
@@ -665,7 +664,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Sweater + light coat",
+          "top": "Sweater and light coat",
           "bottom": "Jeans",
           "accessories": [
             "hat",
@@ -675,10 +674,10 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Blusa de manga + colete leve",
+          "top": "Blusa de manga and colete leve",
           "bottom": "Twill pants",
           "accessories": [
-            "hatBasic"
+            "hat"
           ],
           "shoes": "Sneakers or light boots"
         }
@@ -686,7 +685,7 @@
       "chilly": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Sweatshirt + light jacket",
+          "top": "Sweatshirt and light jacket",
           "bottom": "Jeans",
           "accessories": [
             "scarf",
@@ -706,7 +705,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Light shirt + short overlay",
+          "top": "Light shirt and short overlay",
           "bottom": "Light twill pants",
           "accessories": [
             "simpleNecklace"
@@ -717,7 +716,7 @@
       "mild": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "T-shirt + light sweater",
+          "top": "T-shirt and light sweater",
           "bottom": "Jeans or chino pants",
           "accessories": [
             "scarfLight",
@@ -739,7 +738,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Camiseta oversized + colete aberto leve",
+          "top": "Camiseta oversized and colete aberto leve",
           "bottom": "Bermuda de sarja estruturada",
           "accessories": [
             "glasses"
@@ -750,7 +749,7 @@
       "comfortable": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camisa manga longa + jaqueta jeans",
+          "top": "Camisa manga longa and jaqueta jeans",
           "bottom": "Jeans",
           "accessories": [
             "scarfDecorative",
@@ -782,7 +781,7 @@
       "warm": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta leve + camisa aberta",
+          "top": "Camiseta leve and camisa aberta",
           "bottom": "Bermuda estruturada",
           "accessories": [
             "sunglasses",
@@ -850,7 +849,7 @@
           "top": "Loose cotton t-shirt",
           "bottom": "Linen shorts or flowy skirt",
           "accessories": [
-            "hatBasic",
+            "hat",
             "sunglasses",
             "waterBottle"
           ],
@@ -885,20 +884,20 @@
   },
   "overlays": {
     "rain": {
-      "rain_1+": {
+      "rain_1and": {
         "description": "Light rain (≥ 1mm): include umbrella.",
         "accessories": [
           "umbrella"
         ]
       },
-      "rain_3+": {
+      "rain_3and": {
         "description": "Moderate rain (≥ 3mm): wear raincoat. If wind ≥ 20km/h, switch to waterproof raincoat.",
         "accessories": [
           "raincoat",
           "umbrella"
         ]
       },
-      "rain_5+": {
+      "rain_5and": {
         "description": "Heavy rain (≥ 5mm): add waterproof boots.",
         "accessories": [
           "rain_boots",
@@ -916,7 +915,7 @@
           "hatTight"
         ]
       },
-      "wind_45+": {
+      "wind_45and": {
         "description": "Strong wind (> 45 km/h): add windbreaker, thick scarf, light gloves, and hair tie.",
         "accessories": [
           "windbreaker",
@@ -927,7 +926,7 @@
       }
     },
     "windandrain": {
-      "wind_20+_and_rain_3+": {
+      "wind_20and_and_rain_3and": {
         "description": "Rain with wind (rain ≥ 3mm and wind ≥ 20 km/h): replace standard raincoat with windproof version.",
         "accessories": [
           "raincoat"
@@ -935,7 +934,7 @@
       }
     },
     "windandwarm": {
-      "temp_23+_and_wind_30+": {
+      "temp_23and_and_wind_30and": {
         "description": "Wind with heat (temp > 23°C and wind > 30 km/h): avoid flowy clothes, prefer fitted ones, and apply hair control.",
         "accessories": [
           "hair_control"
