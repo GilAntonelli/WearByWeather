@@ -9,7 +9,7 @@
     "subtitle": "Vamos personalizar sua experiência!",
     "description": "Essas informações nos ajudarão a recomendar roupas que combinam com seu estilo.",
     "editLater": "Você poderá editar essas preferências mais tarde.",
-    "nameLabel": "Digite seu nome ou apelido (opcional)",
+    "nameLabel": "Digite seu nome (opcional)",
     "nameNote": "Você pode deixar esse campo em branco se preferir não ser chamado pelo nome.",
     "namePlaceholder": "Como prefere ser chamado(a)?",
     "genderQuestion": "Estilo de vestuário preferido",
@@ -941,5 +941,19 @@
         ]
       }
     }
+  },
+  "alerts": {
+    "preferencesAlert": "Por favor, selecione o estilo e a temperatura de conforto.",
+    "resetAlert": "Tem certeza que deseja apagar suas preferências e reiniciar o app",
+    "cancelbutton": "Cancelar",
+    "resetbutton": "Redefinir",
+    "typePermission": "Permissão necessária",
+    "detectCityAlert": "Para detectar automaticamente sua cidade, permita o acesso à localização nas configurações do sistema.",
+    "text": "Abrir Configurações",
+    "typeError": "Erro",
+    "localizationAlert": "Não foi possível detectar sua localização.",
+    "typeInvalidCity": "Cidade inválida",
+    "invalidCityAlert": "Não foi possível obter dados climáticos para esta cidade.",
+    "typeAttention": "Atenção!"
   }
 }

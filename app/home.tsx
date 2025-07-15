@@ -125,12 +125,12 @@ export default function HomeScreen() {
     }
 
     Alert.alert(
-      'Permissão necessária',
-      'Para detectar automaticamente sua cidade, permita o acesso à localização nas configurações do sistema.',
+      t('alerts.typePermission'),
+      t('alerts.detectCityAlert'),
       [
-        { text: 'Cancelar', style: 'cancel' },
+        { text: t('alerts.cancelbutton'), style: 'cancel' },
         {
-          text: 'Abrir Configurações',
+          text: t('alerts.text'),
           onPress: () => Linking.openSettings(),
         },
       ]
@@ -319,11 +319,11 @@ export default function HomeScreen() {
                       setMenuVisible(false);
                       Alert.alert(
                         t('SettingsMenu.reset'),
-                        'Tem certeza que deseja apagar suas preferências e reiniciar o app?',
+                        t('alerts.resetAlert'),
                         [
-                          { text: 'Cancelar', style: 'cancel' },
+                          { text: t('alerts.cancelbutton'), style: 'cancel' },
                           {
-                            text: 'Redefinir',
+                            text: t('alerts.resetbutton'),
                             style: 'destructive',
                             onPress: async () => {
                               await AsyncStorage.clear();
