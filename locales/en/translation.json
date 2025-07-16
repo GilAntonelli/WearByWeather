@@ -175,7 +175,7 @@
             "hat",
             "scarfLight" 
           ],
-          "shoes": "Bota leve", "recommendation":"It’s a chilly day. Go for a sweatshirt and light jacket to stay warm and comfortable if you get cold easily."
+          "shoes": "Light boots", "recommendation":"It’s a chilly day. Go for a sweatshirt and light jacket to stay warm and comfortable if you get cold easily."
 
         },
         "neutral": {
@@ -248,7 +248,7 @@
             "necklace",
             "sunglasses"
           ],
-          "shoes": "Sapatilha ou mule"
+          "shoes": "Ballet flats or mules"
         },
         "feel_hot": {
           "isSinglePiece": true,
@@ -440,7 +440,7 @@
             "scarfLight",
             "cap"
           ],
-          "shoes": "Bota leve"
+          "shoes": "Light boots"
         },
         "neutral": {
           "isSinglePiece": false,
@@ -469,7 +469,7 @@
           "bottom": "Jeans or chino pants",
           "accessories": [
             "scarfLight",
-            "sunglassesIfSun",
+            "sunglasses",
             "watch"
           ],
           "shoes": "Closed sneakers"
@@ -487,7 +487,7 @@
         "feel_hot": {
           "isSinglePiece": false,
           "top": "T-shirt or tank top and thin jacket",
-          "bottom": "Bermuda de tecido estruturado",
+          "bottom": "Structured fabric shorts",
           "accessories": [
             "sunglasses"
           ],
@@ -518,7 +518,7 @@
         "feel_hot": {
           "isSinglePiece": false,
           "top": "Tank top or light fabric T-shirt",
-          "bottom": "Bermuda ou short de sarja",
+          "bottom": "Structured shorts or bermuda",
           "accessories": [
             "hairTie"
           ],
@@ -529,7 +529,7 @@
         "feel_cold": {
           "isSinglePiece": false,
           "top": "T-shirt and open light shirt",
-          "bottom": "Bermuda estruturada",
+          "bottom": "Structured shorts",
           "accessories": [
             "sunglasses",
             "bracelet"
@@ -560,7 +560,7 @@
         "feel_cold": {
           "isSinglePiece": false,
           "top": "Cotton light tank top or T-shirt",
-          "bottom": "Shorts de linho ou tactel",
+          "bottom": "Linen or nylon shorts",
           "accessories": [
             "sunglasses",
             "scarfNeck"
@@ -655,7 +655,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Casaco leve and moletom fino",
+          "top": "Light jacket and thin sweatshirt",
           "bottom": "Jeans",
           "accessories": [
             "hat",
@@ -709,7 +709,7 @@
             "scarf",
             "beanie"
           ],
-          "shoes": "Bota leve"
+          "shoes": "Light boots"
         },
         "neutral": {
           "isSinglePiece": false,
@@ -756,8 +756,8 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Camiseta oversized and colete aberto leve",
-          "bottom": "Bermuda de sarja estruturada",
+          "top": "Oversized t-shirt and light open vest",
+          "bottom": "Structured twill shorts",
           "accessories": [
             "glasses"
           ],
@@ -767,7 +767,7 @@
       "comfortable": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camisa manga longa and jaqueta jeans",
+          "top": "Long sleeve shirt and denim jacket",
           "bottom": "Jeans",
           "accessories": [
             "scarfDecorative",
@@ -787,8 +787,8 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Regata ou camiseta fluida",
-          "bottom": "Bermuda neutra",
+          "top": "Flowy tank top or lightweight t-shirt",
+          "bottom": "Neutral shorts",
           "accessories": [
             "glasses",
             "hairUp"
@@ -799,8 +799,8 @@
       "warm": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta leve and camisa aberta",
-          "bottom": "Bermuda estruturada",
+          "top": "Light t-shirt and open shirt",
+          "bottom": "Structured shorts",
           "accessories": [
             "sunglasses",
             "scarfLight"
@@ -809,7 +809,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Regata unissex ou camiseta oversized",
+          "top": "Unisex tank top or oversized t-shirt",
           "bottom": "Shorts or bermuda",
           "accessories": [
             "simpleNecklace",
@@ -965,7 +965,7 @@
     "resetAlert": "Are you sure you want to delete your preferences and restart the app?",
     "cancelbutton": "Cancel",
     "resetbutton": "Reset",
-    "typePermission": "Permissão necessária",
+    "typePermission": "Permission required",
     "detectCityAlert": "To automatically detect your city, allow location access in your system settings.",
     "text": "Open settings",
     "typeError": "Error",
