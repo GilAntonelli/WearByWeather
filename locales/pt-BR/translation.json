@@ -104,6 +104,8 @@
            
           ],
           "shoes": "Bota forrada impermeável"
+          , "recommendation":"Está muito frio lá fora. Aposte em peças térmicas reforçadas, como casacos pesados e calças forradas, e proteja bem as extremidades."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -114,7 +116,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota térmica"
+          "shoes": "Bota térmica", "recommendation":"O clima está gelado. Use roupas quentes e confortáveis que mantenham o estilo sem comprometer o aquecimento."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -124,7 +127,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota simples"
+          "shoes": "Bota simples", "recommendation":"Mesmo com o frio intenso, prefira roupas quentes com tecidos mais leves se você tende a sentir calor."
+
         }
       },
       "cold": {
@@ -362,7 +366,8 @@
             "gloves" 
              
           ],
-          "shoes": "Bota forrada impermeável"
+          "shoes": "Bota forrada impermeável", "recommendation":"O frio é intenso. Invista em roupas térmicas, casacos reforçados e acessórios que isolem bem o corpo."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -373,7 +378,9 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota térmica"
+
+          "shoes": "Bota térmica", "recommendation":"O clima está muito frio. Use roupas reforçadas que garantam conforto e proteção sem perder o estilo."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -383,7 +390,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota simples"
+          "shoes": "Bota simples", "recommendation":"Apesar do frio forte, opte por roupas quentes com tecidos leves e ventilação, se você costuma sentir calor."
+
         }
       },
       "cold": {
@@ -626,7 +634,8 @@
             "hatTight",
             "gloves"
           ],
-          "shoes": "Bota forrada impermeável"
+          "shoes": "Bota forrada impermeável", "recommendation":"No frio intenso, use roupas térmicas em camadas e acessórios que cubram bem cabeça, pescoço e mãos."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -637,7 +646,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota térmica"
+          "shoes": "Bota térmica", "recommendation":"Com o frio intenso, escolha roupas quentes e confortáveis que mantenham o corpo aquecido sem exageros."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -647,7 +657,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota simples"
+          "shoes": "Bota simples", "recommendation":"Mesmo no frio intenso, prefira roupas térmicas mais leves e respiráveis se você costuma sentir calor."
+
         }
       },
       "cold": {

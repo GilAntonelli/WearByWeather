@@ -103,8 +103,10 @@
             "gloves" 
              
           ],
-          "shoes": "Bota forrada impermeável"
-        },
+          "shoes": "Bota forrada impermeável", 
+          "recommendation":"Está um frio intenso. Use várias camadas com peças térmicas e acessórios quentes para se manter protegida."
+
+       },
         "neutral": {
           "isSinglePiece": false,
           "top": "Casaco grosso",
@@ -114,7 +116,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota térmica"
+          "shoes": "Bota térmica", "recommendation":"O tempo está muito frio. Prefira um casaco grosso e acessórios que ajudem a manter o conforto térmico com elegância."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -124,7 +127,8 @@
             "hatLight",
             "gloves"
           ],
-          "shoes": "Bota simples"
+          "shoes": "Bota simples", "recommendation":"Apesar do frio, opte por camadas térmicas mais leves e respiráveis se costuma aquecer com facilidade."
+
         }
       },
       "cold": {
@@ -361,7 +365,8 @@
             "hatTight",
             "gloves" 
           ],
-          "shoes": "Bota forrada impermeável"
+          "shoes": "Bota forrada impermeável", "recommendation":"Está extremamente frio. Use casacos acolchoados, peças térmicas e proteja bem cabeça, mãos e pés."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -372,17 +377,19 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota térmica"
+          "shoes": "Bota térmica", "recommendation":"Com este frio intenso, aposte em peças quentes e confortáveis, mantendo um visual funcional e elegante."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
           "top": "Casaco estruturado e blusa de manga",
           "bottom": "Calça jeans",
           "accessories": [
-            "hatLight",
+            "hat",
             "gloves"
           ],
-          "shoes": "Bota simples"
+          "shoes": "Bota simples", "recommendation":"Mesmo com o frio intenso, escolha camadas mais leves e respiráveis se tende a sentir calor com facilidade."
+
         }
       },
       "cold": {
@@ -625,7 +632,8 @@
             "hatTight",
             "gloves"
           ],
-          "shoes": "Bota forrada impermeável"
+          "shoes": "Bota forrada impermeável", "recommendation":"Com temperaturas negativas, privilegie peças térmicas e sobreposições reforçadas que protejam todo o corpo."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -636,7 +644,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota térmica"
+          "shoes": "Bota térmica", "recommendation":"O dia está gelado. Combine camadas quentes com peças confortáveis que mantenham o equilíbrio térmico."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -646,7 +655,8 @@
             "hatLight",
             "gloves"
           ],
-          "shoes": "Bota simples"
+          "shoes": "Bota simples", "recommendation":"Apesar do frio extremo, opte por camadas leves e tecidos respiráveis se aquece com facilidade."
+
         }
       },
       "cold": {
