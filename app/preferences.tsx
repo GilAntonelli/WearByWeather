@@ -161,8 +161,8 @@ export default function PreferencesScreen() {
 
                 <InfoIconText
                   text={t('preferences.nameNote')}
-                  marginTop={globalStyles.infoTextSpacing.marginTop}
-                  marginBottom={globalStyles.infoTextSpacing.marginBottom}
+                  marginTop={-10}
+                  marginBottom={20}
                 />
 
               </View>
@@ -170,7 +170,7 @@ export default function PreferencesScreen() {
               {/* Estilo */}
               <View style={[globalStyles.section, globalStyles.sectionSpacing]}>
                 <Text style={globalStyles.sectionTitle}>{t('preferences.genderQuestion')}</Text>
-                <View style={[globalStyles.preferenceCardContainer, globalStyles.cardGroupSpacing]}>
+                <View style={globalStyles.preferenceCardContainer}>
                   <OptionCard
                     label={t('preferences.optionMale')}
                     selected={stylePreference === 'male'}
@@ -202,16 +202,15 @@ export default function PreferencesScreen() {
                 {stylePreference === 'male' && (
                   <InfoIconText
                     text={t('preferences.sugestionsMale')}
-                    marginTop={globalStyles.infoTextSpacing.marginTop}
-
-                    marginBottom={globalStyles.infoTextSpacing.marginBottom}
+                    marginTop={-20}
+                    marginBottom={20}
                   />
                 )}
 
                 {stylePreference === 'female' && (
                   <InfoIconText
                     text={t('preferences.sugestionsFemale')}
-                    marginTop={0}
+                    marginTop={-20}
                     marginBottom={20}
                   />
                 )}
@@ -219,7 +218,7 @@ export default function PreferencesScreen() {
                 {stylePreference === 'unisex' && (
                   <InfoIconText
                     text={t('preferences.sugestionsUnisex')}
-                    marginTop={0}
+                    marginTop={-20}
                     marginBottom={20}
                   />
                 )}
@@ -267,21 +266,21 @@ export default function PreferencesScreen() {
                 {comfort === 'feel_cold' && (
                   <InfoIconText
                     text={t('preferences.comfortColdDesc')}
-                    marginTop={0}
+                    marginTop={-20}
                     marginBottom={20}
                   />
                 )}
                 {comfort === 'feel_hot' && (
                   <InfoIconText
                     text={t('preferences.comfortHotDesc')}
-                    marginTop={0}
+                    marginTop={-20}
                     marginBottom={20}
                   />
                 )}
                 {comfort === 'neutral' && (
                   <InfoIconText
                     text={t('preferences.comfortNeutralDesc')}
-                    marginTop={0}
+                    marginTop={-20}
                     marginBottom={20}
                   />
                 )}
@@ -332,54 +331,5 @@ function OptionCard({ label, selected, icon, onPress }: any) {
       {icon}
       <Text style={globalStyles.preferenceCardText}>{label}</Text>
     </TouchableOpacity>
-  );
-}
-
-function OptionBlock({ label, description, selected, icon, onPress }: any) {
-  return (
-    <Pressable
-      onPress={onPress}
-      accessibilityRole="button"
-      accessibilityState={{ selected }}
-      style={[
-        globalStyles.block,
-        selected && globalStyles.comfortBlockSelected,
-      ]}
-    >
-      <View style={globalStyles.blockHeader}>
-        {icon && (
-          <View style={{ marginRight: 6 }}>
-            {typeof icon === 'string' ? <Text>{icon}</Text> : icon}
-          </View>
-        )}
-        <Ionicons
-          name={selected ? 'checkbox' : 'checkbox-outline'}
-          size={20}
-          color={selected ? theme.colors.background : theme.colors.textLight}
-          style={{
-            backgroundColor: selected ? theme.colors.primary : 'transparent',
-            borderRadius: 4,
-            padding: 2,
-            marginRight: 6,
-          }}
-        />
-        <Text
-          style={[
-            globalStyles.blockLabel,
-            selected && { color: theme.colors.textDark },
-          ]}
-        >
-          {label}
-        </Text>
-      </View>
-      <Text
-        style={[
-          globalStyles.blockDesc,
-          selected && { color: theme.colors.text },
-        ]}
-      >
-        {description}
-      </Text>
-    </Pressable>
   );
 }

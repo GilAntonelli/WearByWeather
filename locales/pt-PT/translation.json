@@ -32,7 +32,10 @@
   "home": {
     "greeting": "Olá!",
     "suggestionTitle": "Look Sugerido do Dia",
-    "forecastButton": "Ver previsão detalhada"
+    "forecastButton": "Ver previsão detalhada",
+    "selectCity": "Selecione uma cidade para continuar...",
+    "detectingLocation": "A detetar localização...",
+    "trydetectingLocation": "Tentar detetar a cidade novamente"
   },
   "cityModal": {
     "title": "Escolha uma cidade",

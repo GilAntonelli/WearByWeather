@@ -231,15 +231,6 @@ export default function HomeScreen() {
     loadCity();
   }, []);
 
-
-  function formatCompactLabel(name: string, state?: string, country?: string): string {
-    const parts = [name];
-    if (state) parts.push(state.toUpperCase());
-    if (country) parts.push(country.toUpperCase());
-    return parts.join(', ');
-  }
-
-
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
       <ScrollView
@@ -254,10 +245,10 @@ export default function HomeScreen() {
         {!isCityReady ? (
           <>
             <Text style={globalStyles.loadingText}>
-              {modalVisible ? 'Selecione uma cidade para continuar...' : 'Detectando localização...'}
+              {modalVisible ? t('home.selectCity'): t('home.detectingLocation')}
             </Text>
             <PrimaryButton
-              title="Tentar novamente detectar cidade"
+              title={t('home.trydetectingLocation')}
               onPress={async () => {
                 const granted = await handleLocationPermissionRetry();
                 if (granted) {
@@ -311,7 +302,7 @@ export default function HomeScreen() {
                       router.push('/language-selector');
                     }}
                     title={t('SettingsMenu.language')}
-                    leadingIcon="globe-outline"
+                    leadingIcon="translate"
                   />
                   <Divider />
                   <Menu.Item
@@ -370,57 +361,6 @@ export default function HomeScreen() {
             </Text>
 
             {suggestion && <LookSuggestionCard suggestion={suggestion} />}
-
-            {/*
-            {suggestion && (
-              <View style={[globalStyles.cardhome, {
-                marginTop: spacing.section
-              }]}>
-                <View style={globalStyles.suggestionWrapper}>
-                  <View style={{ flex: 1 }}>
-                    <Text style={globalStyles.lookText}>{suggestion.recomendação}</Text>
-                    <Image
-                      source={suggestion.image}
-                      style={globalStyles.avatar}
-                      resizeMode="contain"
-                    />
-
-                    <View style={globalStyles.tagRow}>
-                      <View style={globalStyles.tag}>
-                        <Text style={globalStyles.tagText}>{suggestion.roupaSuperior}</Text>
-
-                      </View>
-                      <View style={globalStyles.tag}>
-                        <Text style={globalStyles.tagText}>{suggestion.roupaInferior}</Text>
-                      </View>
-                    </View>
-                  </View>
-                  <View style={globalStyles.accessoryColumn}>
-                    <Text style={globalStyles.accessoryTitle}>Acessórios</Text>
-                    {suggestion.acessórios?.map((item, i) => {
-                      const icon = accessoryImages[item as keyof typeof accessoryImages];
-                      if (!icon) return null;
-
-                      function formatCompactLabel(name: string, state?: string, country?: string): string {
-                        const parts = [name];
-                        if (state) parts.push(state.toUpperCase());
-                        if (country) parts.push(country.toUpperCase());
-                        return parts.join(', ');
-                      }
-
-
-                      return (
-                        <View key={i} style={globalStyles.accessoryIconWrapper}>
-                          <Image source={icon} style={globalStyles.accessoryIcon} resizeMode="contain" />
-                        </View>
-                      );
-                    })}
-                  </View>
-                </View>
-              </View>
-            )}
-*/}
-
 
           </>
         )}
