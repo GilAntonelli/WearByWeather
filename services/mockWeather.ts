@@ -28,38 +28,38 @@ Como usar:
 
  // ❄️ FREEZING
  
-export const mockWeather = {
-  temperatura: 1,
-  sensacaoTermica: -3,
-  tempMin: 2,
-  tempMax: 7,
-  umidade: 85,
-  chuva: false,
-  vento: 20,
-  condicao: 'neve fraca',
-  descricao: 'Snow',
-  icon: '13d',
-  iconUrl: 'https://openweathermap.org/img/wn/13d@2x.png',
-  id: 600,
-};
+// export const mockWeather = {
+//   temperatura: 1,
+//   sensacaoTermica: -3,
+//   tempMin: 2,
+//   tempMax: 7,
+//   umidade: 85,
+//   chuva: false,
+//   vento: 20,
+//   condicao: 'neve fraca',
+//   descricao: 'Snow',
+//   icon: '13d',
+//   iconUrl: 'https://openweathermap.org/img/wn/13d@2x.png',
+//   id: 600,
+// };
  
 
 // 🧊 COLD
  
-// export const mockWeather = {
-//   temperatura: 10,
-//   sensacaoTermica: 8,
-//   tempMin: 7,
-//   tempMax: 12,
-//   umidade: 80,
-//   chuva: false,
-//   vento: 12,
-//   condicao: 'céu nublado',
-//   descricao: 'Clouds',
-//   icon: '03d',
-//   iconUrl: 'https://openweathermap.org/img/wn/03d@2x.png',
-//   id: 802,
-// };
+export const mockWeather = {
+  temperatura: 10,
+  sensacaoTermica: 8,
+  tempMin: 7,
+  tempMax: 12,
+  umidade: 80,
+  chuva: false,
+  vento: 12,
+  condicao: 'céu nublado',
+  descricao: 'Clouds',
+  icon: '03d',
+  iconUrl: 'https://openweathermap.org/img/wn/03d@2x.png',
+  id: 802,
+};
  
 
 // 🌀 CHILLY

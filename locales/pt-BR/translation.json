@@ -93,19 +93,17 @@
   "suggestions": {
     "female": {
       "freezing": {
-        "feel_cold": { 
+        "feel_cold": {
           "isSinglePiece": false,
           "top": "Casaco grosso e suéter térmico",
           "bottom": "Calça térmica e jeans",
           "accessories": [
             "scarfThick",
             "hatTight",
-            "gloves" 
-           
+            "gloves"
           ],
-          "shoes": "Bota forrada impermeável"
-          , "recommendation":"Está muito frio lá fora. Aposte em peças térmicas reforçadas, como casacos pesados e calças forradas, e proteja bem as extremidades."
-
+          "shoes": "Bota forrada impermeável",
+          "recommendation": "Está muito frio lá fora. Aposte em peças térmicas reforçadas, como casacos pesados e calças forradas, e proteja bem as extremidades."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -116,8 +114,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota térmica", "recommendation":"O clima está gelado. Use roupas quentes e confortáveis que mantenham o estilo sem comprometer o aquecimento."
-
+          "shoes": "Bota térmica",
+          "recommendation": "O clima está gelado. Use roupas quentes e confortáveis que mantenham o estilo sem comprometer o aquecimento."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -127,8 +125,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota simples", "recommendation":"Mesmo com o frio intenso, prefira roupas quentes com tecidos mais leves se você tende a sentir calor."
-
+          "shoes": "Bota simples",
+          "recommendation": "Mesmo com o frio intenso, prefira roupas quentes com tecidos mais leves se você tende a sentir calor."
         }
       },
       "cold": {
@@ -138,10 +136,10 @@
           "bottom": "Calça forrada ou moletom",
           "accessories": [
             "scarfLight",
-            "hatTight",
-            "hairTie"
+            "hatTight"
           ],
-          "shoes": "Bota de couro"
+          "shoes": "Bota de couro",
+          "recommendation": "Está fazendo frio. Use casacos quentinhos, roupas de manga longa e acessórios que ajudem a manter o corpo aquecido."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -151,7 +149,8 @@
             "hatWool",
             "earrings"
           ],
-          "shoes": "Bota cano curto"
+          "shoes": "Bota cano curto",
+          "recommendation": "O clima está frio. Prefira roupas confortáveis e quentinhas como suéteres e casacos médios para manter o equilíbrio térmico."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -160,7 +159,8 @@
           "accessories": [
             "hairTie"
           ],
-          "shoes": "Tênis fechado"
+          "shoes": "Tênis fechado",
+          "recommendation": "Mesmo com o frio, use roupas leves em camadas finas para manter o aquecimento sem exagero."
         }
       },
       "chilly": {
@@ -170,10 +170,10 @@
           "bottom": "Calça jeans",
           "accessories": [
             "hat",
-            "scarfLight",
-            "hairTie"
+            "scarfLight" 
           ],
-          "shoes": "Bota leve"
+          "shoes": "Bota leve", "recommendation":"O tempo está ameno, mas frio para quem sente mais. Use moletom com jaqueta leve para garantir o conforto térmico."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -183,7 +183,8 @@
             "earrings",
             "watch"
           ],
-          "shoes": "Tênis ou bota leve"
+          "shoes": "Tênis ou bota leve", "recommendation":"O clima está ameno. Um moletom ou cardigan leve garante o equilíbrio entre conforto e estilo."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -363,11 +364,10 @@
           "accessories": [
             "scarfThick",
             "hatTight",
-            "gloves" 
-             
+            "gloves"
           ],
-          "shoes": "Bota forrada impermeável", "recommendation":"O frio é intenso. Invista em roupas térmicas, casacos reforçados e acessórios que isolem bem o corpo."
-
+          "shoes": "Bota forrada impermeável",
+          "recommendation": "O frio é intenso. Invista em roupas térmicas, casacos reforçados e acessórios que isolem bem o corpo."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -378,9 +378,8 @@
             "hat",
             "gloves"
           ],
-
-          "shoes": "Bota térmica", "recommendation":"O clima está muito frio. Use roupas reforçadas que garantam conforto e proteção sem perder o estilo."
-
+          "shoes": "Bota térmica",
+          "recommendation": "O clima está muito frio. Use roupas reforçadas que garantam conforto e proteção sem perder o estilo."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -390,8 +389,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota simples", "recommendation":"Apesar do frio forte, opte por roupas quentes com tecidos leves e ventilação, se você costuma sentir calor."
-
+          "shoes": "Bota simples",
+          "recommendation": "Apesar do frio forte, opte por roupas quentes com tecidos leves e ventilação, se você costuma sentir calor."
         }
       },
       "cold": {
@@ -404,7 +403,8 @@
             "beanie",
             "gloves"
           ],
-          "shoes": "Bota de couro"
+          "shoes": "Bota de couro",
+          "recommendation": "Está frio lá fora. Invista em casacos térmicos e camadas reforçadas para manter o corpo bem aquecido."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -414,7 +414,8 @@
             "hat",
             "watch"
           ],
-          "shoes": "Bota cano curto"
+          "shoes": "Bota cano curto",
+          "recommendation": "Com o clima frio, escolha roupas confortáveis como suéteres e casacos médios para manter o estilo e o conforto térmico."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -423,7 +424,8 @@
           "accessories": [
             "hat"
           ],
-          "shoes": "Tênis fechado"
+          "shoes": "Tênis fechado",
+          "recommendation": "Apesar do frio, escolha roupas leves e confortáveis, em tecidos que ajudem a evitar o superaquecimento."
         }
       },
       "chilly": {
@@ -452,7 +454,6 @@
           "top": "Camisa de manga longa e colete leve",
           "bottom": "Calça de sarja",
           "accessories": [
-            
             "hairUp"
           ],
           "shoes": "Tênis esportivo"
@@ -634,8 +635,8 @@
             "hatTight",
             "gloves"
           ],
-          "shoes": "Bota forrada impermeável", "recommendation":"No frio intenso, use roupas térmicas em camadas e acessórios que cubram bem cabeça, pescoço e mãos."
-
+          "shoes": "Bota forrada impermeável",
+          "recommendation": "No frio intenso, use roupas térmicas em camadas e acessórios que cubram bem cabeça, pescoço e mãos."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -646,8 +647,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota térmica", "recommendation":"Com o frio intenso, escolha roupas quentes e confortáveis que mantenham o corpo aquecido sem exageros."
-
+          "shoes": "Bota térmica",
+          "recommendation": "Com o frio intenso, escolha roupas quentes e confortáveis que mantenham o corpo aquecido sem exageros."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -657,8 +658,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Bota simples", "recommendation":"Mesmo no frio intenso, prefira roupas térmicas mais leves e respiráveis se você costuma sentir calor."
-
+          "shoes": "Bota simples",
+          "recommendation": "Mesmo no frio intenso, prefira roupas térmicas mais leves e respiráveis se você costuma sentir calor."
         }
       },
       "cold": {
@@ -671,7 +672,8 @@
             "hatTight",
             "gloves"
           ],
-          "shoes": "Bota cano médio"
+          "shoes": "Bota cano médio",
+          "recommendation": "Com o frio, prefira moletom grosso e jaquetas que ajudem a manter o corpo aquecido e isolado."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -681,7 +683,8 @@
             "hat",
             "watch"
           ],
-          "shoes": "Tênis casual"
+          "shoes": "Tênis casual",
+          "recommendation": "O clima está frio. Use roupas quentes e confortáveis que garantam proteção sem comprometer a liberdade de movimento."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -690,7 +693,8 @@
           "accessories": [
             "hat"
           ],
-          "shoes": "Tênis ou bota leve"
+          "shoes": "Tênis ou bota leve",
+          "recommendation": "Mesmo com o tempo frio, opte por camadas leves e tecidos respiráveis se costuma sentir calor com facilidade."
         }
       },
       "chilly": {

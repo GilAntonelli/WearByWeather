@@ -102,9 +102,8 @@
             "hatTight",
             "gloves"
           ],
-          "shoes": "Lined waterproof boots" 
-, "recommendation":"It’s freezing outside. Layer up with thermal pieces and insulated accessories to stay warm and protected."
-
+          "shoes": "Lined waterproof boots",
+          "recommendation": "It’s freezing outside. Layer up with thermal pieces and insulated accessories to stay warm and protected."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -115,9 +114,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Thermal boots", "recommendation":"The weather is very cold. Choose warm and stylish layers that balance comfort and elegance."
-
-
+          "shoes": "Thermal boots",
+          "recommendation": "The weather is very cold. Choose warm and stylish layers that balance comfort and elegance."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -127,9 +125,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Simple boots" 
-, "recommendation":"Even in the extreme cold, go for lighter thermal layers if you tend to overheat easily."
-
+          "shoes": "Simple boots",
+          "recommendation": "Even in the extreme cold, go for lighter thermal layers if you tend to overheat easily."
         }
       },
       "cold": {
@@ -139,10 +136,10 @@
           "bottom": "Lined pants or sweatpants",
           "accessories": [
             "scarfLight",
-            "hatTight",
-            "hairTie"
+            "hatTight"
           ],
-          "shoes": "Leather boots"
+          "shoes": "Leather boots",
+          "recommendation": "It’s cold outside. Wear padded coats, long sleeves, and thermal accessories to stay warm and comfortable."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -152,7 +149,8 @@
             "hatWool",
             "earrings"
           ],
-          "shoes": "Short boots"
+          "shoes": "Short boots",
+          "recommendation": "Cold weather today. Go for comfortable warm pieces like sweaters and mid-weight coats to stay balanced."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -161,7 +159,8 @@
           "accessories": [
             "hairTie"
           ],
-          "shoes": "Closed sneakers"
+          "shoes": "Closed sneakers",
+          "recommendation": "Even in the cold, choose light layers and breathable fabrics to avoid overheating."
         }
       },
       "chilly": {
@@ -171,10 +170,10 @@
           "bottom": "Jeans",
           "accessories": [
             "hat",
-            "scarfLight",
-            "hairTie"
+            "scarfLight" 
           ],
-          "shoes": "Bota leve"
+          "shoes": "Bota leve", "recommendation":"It’s a chilly day. Go for a sweatshirt and light jacket to stay warm and comfortable if you get cold easily."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -184,7 +183,8 @@
             "earrings",
             "watch"
           ],
-          "shoes": "Sneakers or light boots"
+          "shoes": "Sneakers or light boots", "recommendation":"It’s a cool day. A light sweatshirt or cardigan is enough to stay comfortable and stylish."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -366,8 +366,8 @@
             "hatTight",
             "gloves"
           ],
-          "shoes": "Lined waterproof boots", "recommendation":"It’s extremely cold. Wear padded coats, thermal layers, and protect your head, hands, and feet."
-
+          "shoes": "Lined waterproof boots",
+          "recommendation": "It’s extremely cold. Wear padded coats, thermal layers, and protect your head, hands, and feet."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -378,8 +378,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Thermal boots", "recommendation":"The weather is extremely cold. Choose warm and comfortable layers that keep you protected and stylish."
-
+          "shoes": "Thermal boots",
+          "recommendation": "The weather is extremely cold. Choose warm and comfortable layers that keep you protected and stylish."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -389,8 +389,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Simple boots", "recommendation":"Even in freezing weather, go for warm but breathable layers if you tend to feel hot easily."
-
+          "shoes": "Simple boots",
+          "recommendation": "Even in freezing weather, go for warm but breathable layers if you tend to feel hot easily."
         }
       },
       "cold": {
@@ -403,7 +403,8 @@
             "beanie",
             "gloves"
           ],
-          "shoes": "Leather boots"
+          "shoes": "Leather boots",
+          "recommendation": "It’s cold out. Wear thermal jackets and warm layers to stay fully protected throughout the day."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -413,7 +414,8 @@
             "hat",
             "watch"
           ],
-          "shoes": "Short boots"
+          "shoes": "Short boots",
+          "recommendation": "Cold day ahead. Opt for mid-weight coats and cozy sweaters to balance warmth and style."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -422,7 +424,8 @@
           "accessories": [
             "hat"
           ],
-          "shoes": "Closed sneakers"
+          "shoes": "Closed sneakers",
+          "recommendation": "Although it’s cold, wear light and breathable clothing to avoid feeling too warm."
         }
       },
       "chilly": {
@@ -632,8 +635,8 @@
             "hatTight",
             "gloves"
           ],
-          "shoes": "Lined waterproof boots", "recommendation":"In freezing temperatures, wear layered thermal clothing and full-coverage accessories for complete protection."
-
+          "shoes": "Lined waterproof boots",
+          "recommendation": "In freezing temperatures, wear layered thermal clothing and full-coverage accessories for complete protection."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -644,8 +647,8 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Thermal boots", "recommendation":"It’s a freezing day. Choose warm and comfortable layers that balance protection and ease."
-
+          "shoes": "Thermal boots",
+          "recommendation": "It’s a freezing day. Choose warm and comfortable layers that balance protection and ease."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -655,21 +658,22 @@
             "hat",
             "gloves"
           ],
-          "shoes": "Simple boots", "recommendation":"Even in extreme cold, choose light and breathable thermal layers if you tend to warm up easily."
-
+          "shoes": "Simple boots",
+          "recommendation": "Even in extreme cold, choose light and breathable thermal layers if you tend to warm up easily."
         }
       },
       "cold": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Moletom grosso and jaqueta corta-vento",
+          "top": "Thick sweatshirt and windbreaker jacket",
           "bottom": "Sweatpants or twill pants",
           "accessories": [
             "scarfLight",
             "hatTight",
             "gloves"
           ],
-          "shoes": "Mid boots"
+          "shoes": "Mid boots",
+          "recommendation": "It’s cold out. Go for thick sweatshirts and windbreakers to stay warm and well-insulated."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -679,16 +683,18 @@
             "hat",
             "watch"
           ],
-          "shoes": "Casual sneakers"
+          "shoes": "Casual sneakers",
+          "recommendation": "Cold day. Mix light coats with comfortable layers to stay warm without losing mobility."
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Blusa de manga and colete leve",
+          "top": "Long-sleeve shirt and light vest",
           "bottom": "Twill pants",
           "accessories": [
             "hat"
           ],
-          "shoes": "Sneakers or light boots"
+          "shoes": "Sneakers or light boots",
+          "recommendation": "Even in cold weather, choose light, breathable layers if you tend to warm up easily."
         }
       },
       "chilly": {
