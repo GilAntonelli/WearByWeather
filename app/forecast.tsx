@@ -26,7 +26,6 @@ import i18n from 'i18next';
 
 export default function ForecastScreen() {
   const router = useRouter();
-  const [menuVisible, setMenuVisible] = useState(false);
 
   const resetApp = async () => {
     await AsyncStorage.clear();
