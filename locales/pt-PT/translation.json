@@ -26,7 +26,7 @@
     "comfortHotTitle": "Tenho muito calor",
     "comfortHotDesc": "Prefere roupas mais leves e frescas",
     "comfortNeutralTitle": "Prefiro equilíbrio térmico",
-    "comfortNeutralDesc": "Você costuma adaptar-se bem ao clima e prefere roupas de acordo com a temperatura",
+    "comfortNeutralDesc": "Costuma adaptar-se bem ao clima e prefere roupas de acordo com a temperatura",
     "button": "Guardar preferências e continuar"
   },
   "home": {
@@ -78,7 +78,7 @@
     "wind30e": "Rajadas de vento intensas hoje. Tenha atenção ao sair de casa.",
     "temperature30e": "Dia quente. Use roupa leve e beba bastante água!",
     "temperature35e": "Muito sol e calor. Hidrate-se bem!",
-    "cold5-": "Frio intenso hoje. Vista roupa térmica.",
+    "cold5-": "Frio intenso hoje. Vista roupas térmicas.",
     "temperature10-": "Temperaturas baixas. Use várias camadas de roupa quente.",
     "clearSkyCold5-": "Céu limpo, mas muito frio. Agasalhe-se bem.",
     "cloudsTemperature15-": "Tempo nublado e frio. Um casaco será útil.",
@@ -122,7 +122,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Casaco estruturado e blusa leve",
+          "top": "Casaco estruturado e camisola leve",
           "bottom": "Calça jeans",
           "accessories": [
             "hatLight",
@@ -135,14 +135,14 @@
       "cold": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Jaqueta acolchoada e blusa de manga",
-          "bottom": "Calça forrada ou moletom",
+          "top": "Jaqueta acolchoada e camisola de manga",
+          "bottom": "Calça forrada ou sweatshirt",
           "accessories": [
             "scarfLight",
             "hatTight"
           ],
           "shoes": "Bota de couro",
-          "recommendation": "Com o tempo frio, aposte em casacos acolchoados, blusas de manga comprida e acessórios térmicos para manter-se quente."
+          "recommendation": "Com o tempo frio, aposte em casacos acolchoados, camisolas de manga comprida e acessórios térmicos para manter-se quente."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -157,25 +157,25 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Blusão leve e camisa",
+          "top": "Casaco leve e camisa",
           "bottom": "Calça de sarja",
           "accessories": [
             "hairTie"
           ],
-          "shoes": "Tênis fechado",
+          "shoes": "Ténis fechado",
           "recommendation": "Apesar do frio, escolha sobreposições leves com tecidos respiráveis para evitar o sobreaquecimento."
         }
       },
       "chilly": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Moletom e jaqueta leve",
+          "top": "Moletom e casaco leve",
           "bottom": "Calça jeans",
           "accessories": [
             "hatLight",
             "scarfLight" 
           ],
-          "shoes": "Bota leve", "recommendation":"Com o tempo fresco, aposte em sobreposições leves como moletom e jaqueta para manter-se confortável e aquecida."
+          "shoes": "Bota leve", "recommendation":"Com o tempo fresco, aposte em sobreposições leves como sweatshirt e casaco para manter-se confortável e aquecida."
 
         },
         "neutral": {
@@ -186,7 +186,7 @@
             "earrings",
             "watch"
           ],
-          "shoes": "Tênis ou bota leve", "recommendation":"Dia fresco. Um moletom ou cardigan leve é suficiente para manter o conforto sem exageros."
+          "shoes": "Ténis ou bota leve", "recommendation":"Dia fresco. Um sweatshirt ou cardigan leve é suficiente para manter o conforto sem exageros."
 
         },
         "feel_hot": {
@@ -197,23 +197,23 @@
             "scarf",
             "necklace"
           ],
-          "shoes": "Tênis casual"
+          "shoes": "Ténis casual"
         }
       },
       "mild": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta e suéter fino",
-          "bottom": "Calça jeans ou saia midi com meia",
+          "top": "T-shirt e suéter fino",
+          "bottom": "Calça jeans ou saia pelo joelho com meia",
           "accessories": [
             "scarf",
             "sunglasses"
           ],
-          "shoes": "Oxford ou tênis fechado"
+          "shoes": "Oxford ou ténis fechado"
         },
         "neutral": {
           "isSinglePiece": true,
-          "singlePiece": "Vestido midi com manga curta e jaqueta leve",
+          "singlePiece": "Vestido midi com manga curta e casaco leve",
           "accessories": [
             "bracelet",
             "scarf",
@@ -223,12 +223,12 @@
         },
         "feel_hot": {
           "isSinglePiece": true,
-          "singlePiece": "Vestido leve de alça e kimono leve",
+          "singlePiece": "Vestido leve de alças e kimono leve",
           "accessories": [
             "sunglasses",
             "earrings"
           ],
-          "shoes": "Tênis leve ou sandália fechada"
+          "shoes": "Ténis leve ou sandália fechada"
         }
       },
       "comfortable": {
@@ -239,7 +239,7 @@
             "scarfNeck",
             "watch"
           ],
-          "shoes": "Tênis casual ou oxford"
+          "shoes": "Ténis casual ou oxford"
         },
         "neutral": {
           "isSinglePiece": true,
@@ -252,12 +252,12 @@
         },
         "feel_hot": {
           "isSinglePiece": true,
-          "singlePiece": "Vestido leve de alça larga ou regata",
+          "singlePiece": "Vestido leve de alças larga ou camisola de alças",
           "accessories": [
             "hairUp",
             "headscarfhaircontrol"
           ],
-          "shoes": "Sandália ou tênis leve"
+          "shoes": "Sandália ou ténis leve"
         }
       },
       "warm": {
@@ -268,7 +268,7 @@
             "scarfLight",
             "sunglasses"
           ],
-          "shoes": "Tênis leve ou mocassim"
+          "shoes": "Ténis leve ou mocassim"
         },
         "neutral": {
           "isSinglePiece": true,
@@ -281,12 +281,12 @@
         },
         "feel_hot": {
           "isSinglePiece": true,
-          "singlePiece": "Vestido leve de alça fina ou frente única",
+          "singlePiece": "Vestido leve de alças fina ou frente única",
           "accessories": [
             "hairTie",
             "necklace"
           ],
-          "shoes": "Sandália ou chinelo"
+          "shoes": "Sandália ou chinelos"
         }
       },
       "hot": {
@@ -307,11 +307,11 @@
             "necklace",
             "hairUp"
           ],
-          "shoes": "Rasteira ou chinelo"
+          "shoes": "Rasteira ou chinelos"
         },
         "feel_hot": {
           "isSinglePiece": true,
-          "singlePiece": "Vestido tipo slip dress de alça fina",
+          "singlePiece": "Vestido slip de alça fina",
           "accessories": [
             "hairUp",
             "glasses",
@@ -346,7 +346,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Top curto ou regata em tecido técnico",
+          "top": "Top curto ou camisola de alças em tecido técnico",
           "bottom": "Calções desportivos ou ciclista",
           "accessories": [
             "sunglasses",
@@ -386,7 +386,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Casaco estruturado e blusa de manga",
+          "top": "Casaco estruturado e camisola de manga",
           "bottom": "Calça jeans",
           "accessories": [
             "hat",
@@ -399,15 +399,15 @@
       "cold": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Jaqueta térmica e blusa de manga",
-          "bottom": "Calça grossa ou moletom",
+          "top": "Jaqueta térmica e camisola de manga",
+          "bottom": "Calça grossa ou sweatshirt",
           "accessories": [
             "scarfLight",
             "beanie",
             "gloves"
           ],
           "shoes": "Bota de couro",
-          "recommendation": "Com o tempo frio, utilize casacos térmicos e blusas de manga para garantir aquecimento e proteção durante o dia."
+          "recommendation": "Com o tempo frio, utilize casacos térmicos e camisolas de manga para garantir aquecimento e proteção durante o dia."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -422,19 +422,19 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Blusão leve e camisa",
+          "top": "Casaco leve e camisa",
           "bottom": "Calça de sarja",
           "accessories": [
             "hatLight"
           ],
-          "shoes": "Tênis fechado",
+          "shoes": "Ténis fechado",
           "recommendation": "Mesmo com temperaturas frias, opte por camadas leves e respiráveis para evitar desconforto térmico."
         }
       },
       "chilly": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Moletom e jaqueta leve",
+          "top": "Moletom e casaco leve",
           "bottom": "Calça jeans",
           "accessories": [
             "scarfLight",
@@ -450,29 +450,29 @@
             "watch",
             "sunglasses"
           ],
-          "shoes": "Tênis casual"
+          "shoes": "Ténis casual"
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Camisa de manga longa e colete leve",
+          "top": "Camisa de manga comprida longa e colete leve",
           "bottom": "Calça de sarja",
           "accessories": [
             "hairUp"
           ],
-          "shoes": "Tênis esportivo"
+          "shoes": "Ténis desportivo"
         }
       },
       "mild": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta e suéter leve ou cardigan",
+          "top": "T-shirt e suéter leve ou cardigan",
           "bottom": "Calça jeans ou chino",
           "accessories": [
             "scarfLight",
             "sunglasses",
             "watch"
           ],
-          "shoes": "Tênis fechado"
+          "shoes": "Ténis fechado"
         },
         "neutral": {
           "isSinglePiece": false,
@@ -482,73 +482,73 @@
             "watch",
             "bracelet"
           ],
-          "shoes": "Mocassim ou tênis"
+          "shoes": "Mocassim ou ténis"
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Camiseta ou regata e jaqueta fina",
+          "top": "T-shirt ou camisola de alças e casaco fina",
           "bottom": "Bermuda de tecido estruturado",
           "accessories": [
             "sunglasses"
           ],
-          "shoes": "Tênis leve ou sapatênis"
+          "shoes": "Ténis leve ou sapaténis"
         }
       },
       "comfortable": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camisa de manga e jaqueta fina",
+          "top": "Camisa de manga comprida e casaco fino",
           "bottom": "Calça jeans",
           "accessories": [
             "scarfLight",
             "watch"
           ],
-          "shoes": "Tênis ou sapato casual"
+          "shoes": "Ténis ou sapatos casuais"
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Camiseta ou polo",
+          "top": "T-shirt ou polo",
           "bottom": "Calça chino",
           "accessories": [
             "sunglasses",
             "necklace"
           ],
-          "shoes": "Sapatênis ou mocassim"
+          "shoes": "Sapatilhas ou mocassim"
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Regata ou camiseta de tecido leve",
+          "top": "Camisola de alças ou camiseta de tecido leve",
           "bottom": "Bermuda ou short de sarja",
           "accessories": [
             "hairTie"
           ],
-          "shoes": "Tênis leve ou chinelo"
+          "shoes": "Ténis leve ou chinelos"
         }
       },
       "warm": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta e camisa aberta leve",
+          "top": "T-shirt e camisa aberta leve",
           "bottom": "Bermuda estruturada",
           "accessories": [
             "sunglasses",
             "bracelet"
           ],
-          "shoes": "Tênis ou alpargata"
+          "shoes": "Ténis ou alpargata"
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Camiseta ou regata estruturada",
+          "top": "T-shirt ou camisola de alças estruturada",
           "bottom": "Shorts ou bermuda",
           "accessories": [
             "glasses",
             "necklace"
           ],
-          "shoes": "Sandália ou tênis leve"
+          "shoes": "Sandália ou ténis leve"
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Regata leve",
+          "top": "Camisola de alças leve",
           "bottom": "Shorts leve",
           "accessories": [
             "hairUp"
@@ -559,7 +559,7 @@
       "hot": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Regata ou camiseta leve de algodão",
+          "top": "Camisola de alças ou camiseta leve de algodão",
           "bottom": "Shorts de linho ou tactel",
           "accessories": [
             "sunglasses",
@@ -569,7 +569,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Regata ou top leve",
+          "top": "Camisola de alças ou top leve",
           "bottom": "Shorts",
           "accessories": [
             "necklace",
@@ -580,7 +580,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Regata cavada ou sem mangas",
+          "top": "Camisola de alças cavada ou sem mangas",
           "bottom": "Shorts leve",
           "accessories": [
             "hairUp",
@@ -604,7 +604,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "T-shirt técnica ou regata casual",
+          "top": "T-shirt técnica ou camisola de alças casual",
           "bottom": "Calções leves ou de tecido fino",
           "accessories": [
             "sunglasses",
@@ -615,7 +615,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Regata desportiva ou técnica",
+          "top": "Camisola de alças desportiva ou técnica",
           "bottom": "Calções curtos e leves",
           "accessories": [
             "cap",
@@ -631,7 +631,7 @@
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Jaqueta acolchoada e blusa térmica",
+          "top": "Jaqueta acolchoada e camisola térmica",
           "bottom": "Calça térmica e jeans",
           "accessories": [
             "scarfThick",
@@ -655,7 +655,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Casaco leve e moletom fino",
+          "top": "Casaco leve e sweatshirt fino",
           "bottom": "Calça jeans",
           "accessories": [
             "hatLight",
@@ -668,8 +668,8 @@
       "cold": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Moletom grosso e jaqueta corta-vento",
-          "bottom": "Calça de moletom ou sarja",
+          "top": "Moletom grosso e casaco corta-vento",
+          "bottom": "Calça de sweatshirt ou sarja",
           "accessories": [
             "scarfLight",
             "hatTight",
@@ -686,7 +686,7 @@
             "hat",
             "watch"
           ],
-          "shoes": "Tênis casual",
+          "shoes": "Ténis casual",
           "recommendation": "Dia frio. Combine casacos leves com peças confortáveis para manter o aquecimento sem perder mobilidade."
         },
         "feel_hot": {
@@ -696,14 +696,14 @@
           "accessories": [
             "hat"
           ],
-          "shoes": "Tênis ou bota leve",
+          "shoes": "Ténis ou bota leve",
           "recommendation": "Com o frio, escolha sobreposições leves e respiráveis se tende a aquecer facilmente ao longo do dia."
         }
       },
       "chilly": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Moletom e jaqueta leve",
+          "top": "Moletom e casaco leve",
           "bottom": "Calça jeans",
           "accessories": [
             "scarf",
@@ -713,13 +713,13 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Suéter médio ou jaqueta leve",
+          "top": "Suéter médio ou casaco leve",
           "bottom": "Calça chino",
           "accessories": [
             "watch",
             "sunglasses"
           ],
-          "shoes": "Tênis casual"
+          "shoes": "Ténis casual"
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -728,98 +728,98 @@
           "accessories": [
             "simpleNecklace"
           ],
-          "shoes": "Tênis leve"
+          "shoes": "Ténis leve"
         }
       },
       "mild": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta e suéter leve",
+          "top": "T-shirt e suéter leve",
           "bottom": "Calça jeans ou chino",
           "accessories": [
             "scarfLight",
             "sunglasses",
             "watch"
           ],
-          "shoes": "Tênis fechado"
+          "shoes": "Ténis fechado"
         },
         "neutral": {
           "isSinglePiece": false,
           "top": "Camisa de botão solta ou polo unissex",
-          "bottom": "Calça chino ou moletom leve",
+          "bottom": "Calça chino ou sweatshirt leve",
           "accessories": [
             "bracelet",
             "watch",
             "necklace"
           ],
-          "shoes": "Tênis neutro ou mocassim"
+          "shoes": "Ténis neutro ou mocassim"
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Camiseta oversized e colete aberto leve",
+          "top": "T-shirt oversized e colete aberto leve",
           "bottom": "Bermuda de sarja estruturada",
           "accessories": [
             "glasses"
           ],
-          "shoes": "Tênis leve ou sapatênis"
+          "shoes": "Ténis leve ou sapaténis"
         }
       },
       "comfortable": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camisa manga longa e jaqueta jeans",
+          "top": "Camisa manga longa e casaco jeans",
           "bottom": "Calça jeans",
           "accessories": [
             "scarfDecorative",
             "bracelet"
           ],
-          "shoes": "Tênis ou sapato casual"
+          "shoes": "Ténis ou sapatos casuais"
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Camiseta básica ou gola careca",
+          "top": "T-shirt básica ou gola careca",
           "bottom": "Calça chino ou sarja",
           "accessories": [
             "necklace",
             "sunglasses"
           ],
-          "shoes": "Sapatênis ou tênis"
+          "shoes": "Sapatilhas ou ténis"
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Regata ou camiseta fluida",
+          "top": "Camisola de alças ou camiseta fluida",
           "bottom": "Bermuda neutra",
           "accessories": [
             "glasses",
             "hairUp"
           ],
-          "shoes": "Chinelo ou tênis leve"
+          "shoes": "Chinelo ou ténis leve"
         }
       },
       "warm": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta leve e camisa aberta",
+          "top": "T-shirt leve e camisa aberta",
           "bottom": "Bermuda estruturada",
           "accessories": [
             "sunglasses",
             "scarfLight"
           ],
-          "shoes": "Tênis ou sandália baixa"
+          "shoes": "Ténis ou sandália baixa"
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Regata unissex ou camiseta oversized",
+          "top": "Camisola de alças unissex ou camiseta oversized",
           "bottom": "Shorts ou bermuda",
           "accessories": [
             "simpleNecklace",
             "bracelet"
           ],
-          "shoes": "Chinelo ou tênis leve"
+          "shoes": "Chinelo ou ténis leve"
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Regata cavada de algodão leve",
+          "top": "Camisola de alças cavada de algodão leve",
           "bottom": "Shorts leve",
           "accessories": [
             "hairUp",
@@ -831,7 +831,7 @@
       "hot": {
         "feel_cold": {
           "isSinglePiece": false,
-          "top": "Camiseta sem manga estruturada",
+          "top": "T-shirt sem manga estruturada",
           "bottom": "Shorts de algodão",
           "accessories": [
             "scarfNeck",
@@ -841,18 +841,18 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Regata ou camiseta larga",
+          "top": "Camisola de alças ou camiseta larga",
           "bottom": "Shorts curtos ou neutros",
           "accessories": [
             "glasses",
             "simpleNecklace",
             "hairUp"
           ],
-          "shoes": "Rasteira ou chinelo"
+          "shoes": "Rasteira ou chinelos"
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Regata cavada ou cropped neutro",
+          "top": "Camisola de alças cavada ou cropped neutro",
           "bottom": "Shorts leve",
           "accessories": [
             "hairUp",
@@ -876,7 +876,7 @@
         },
         "neutral": {
           "isSinglePiece": false,
-          "top": "Top leve ou regata unissexo",
+          "top": "Top leve ou camisola de alças unissexo",
           "bottom": "Calções curtos ou bermuda leve",
           "accessories": [
             "sunglasses",
@@ -887,7 +887,7 @@
         },
         "feel_hot": {
           "isSinglePiece": false,
-          "top": "Regata técnica ou top curto",
+          "top": "Camisola de alças técnica ou top curto",
           "bottom": "Calções desportivos unissexo",
           "accessories": [
             "cap",
@@ -964,7 +964,7 @@
     "preferencesAlert": "Por favor, selecione o estilo e a temperatura de conforto.",
     "resetAlert": "Tem a certeza de que pretende apagar as suas preferências e reiniciar a aplicação?",
     "cancelbutton": "Cancelar",
-    "resetbutton": "Redefinir",
+    "resetbutton": "Repor",
     "typePermission": "Permissão necessária",
     "detectCityAlert": "Para detetar automaticamente a sua cidade, permita o acesso à localização nas definições do sistema.",
     "text": "Abrir Configurações",
