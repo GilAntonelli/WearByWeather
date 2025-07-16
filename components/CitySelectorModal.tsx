@@ -11,6 +11,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
+  SafeAreaView,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { globalStyles } from '../styles/global';
@@ -149,62 +150,81 @@ export const CitySelectorModal = ({
     onClose();
   };
 
-  return (
-    <Modal animationType="fade" transparent visible={visible} onRequestClose={onClose}>
-      <Pressable style={globalStyles.overlay} onPress={onClose} />
+   return (
+    <Modal visible={visible} animationType="fade" statusBarTranslucent>
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          backgroundColor: 'white',
-          borderTopLeftRadius: 16,
-          borderTopRightRadius: 16,
-          padding: 16,
-          maxHeight: '90%',
-        }}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={{ flex: 1 }}
       >
-        <Text style={globalStyles.title}>{t('cityModal.currentLocation')}</Text>
-
-        <TextInput
-          placeholder={t('cityModal.searchPlaceholder')}
-          value={search}
-          onChangeText={setSearch}
-          style={globalStyles.searchInput}
-          placeholderTextColor={theme.colors.textLight}
-        />
-
-        {loading ? (
-          <ActivityIndicator color={theme.colors.primary} style={{ marginTop: 16 }} />
-        ) : (
-          <FlatList
-            data={search.length < 3 ? fullCityList : results}
-            keyExtractor={(item, index) =>
-              `${item.name}-${item.state ?? ''}-${item.country ?? ''}-${index}`
-            }
-            renderItem={({ item }) => {
-              const isFromSearch = search.length >= 3;
-              const label =
-                item.name === t('cityModal.currentLocation')
-                  ? item.name
-                  : isFromSearch
-                  ? `${getPreferredCityName(item)}, ${item.state ?? ''}, ${item.country ?? ''}`
-                  : formatLocationName(getPreferredCityName(item), item.state, item.country);
-
-              return (
-                <TouchableOpacity
-                  style={globalStyles.cityItem}
-                  onPress={() => handleSelectCity(item)}
+        <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
+          <View style={{ padding: 16 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 12 }}>
+              <TouchableOpacity
+                onPress={onClose}
+                style={{ flexDirection: 'row', alignItems: 'center' }}
+              >
+                <Ionicons name="arrow-back" size={24} color={theme.colors.textDark} />
+                <Text
+                  style={{
+                    marginLeft: 8,
+                    fontSize: 16,
+                    color: theme.colors.textDark,
+                    fontWeight: '500',
+                  }}
                 >
-                  <Ionicons name="location-outline" size={20} color={theme.colors.primary} />
-                  <Text style={globalStyles.cityName}>{label}</Text>
-                </TouchableOpacity>
-              );
-            }}
-          />
-        )}
+                  {t('BackButton.label')}
+                </Text>
+              </TouchableOpacity>
+            </View>
+
+            <TextInput
+              placeholder={t('cityModal.searchPlaceholder')}
+              value={search}
+              onChangeText={setSearch}
+              autoFocus
+              style={[                
+                globalStyles.fakeSearchInput
+              ]}
+              placeholderTextColor={theme.colors.textLight}
+            />
+          </View>
+
+          {loading ? (
+            <ActivityIndicator color={theme.colors.primary} style={{ marginTop: 32 }} />
+          ) : (
+            <FlatList
+              data={search.length < 3 ? fullCityList : results}
+              keyExtractor={(item, index) =>
+                `${item.name}-${item.state ?? ''}-${item.country ?? ''}-${index}`
+              }
+              keyboardShouldPersistTaps="handled"
+              contentContainerStyle={{ paddingBottom: 32, paddingHorizontal: 16 }}
+              renderItem={({ item }) => {
+                const isFromSearch = search.length >= 3;
+                const label =
+                  item.name === t('cityModal.currentLocation')
+                    ? item.name
+                    : isFromSearch
+                    ? `${getPreferredCityName(item)}, ${item.state ?? ''}, ${item.country ?? ''}`
+                    : formatLocationName(getPreferredCityName(item), item.state, item.country);
+                return (
+                  <TouchableOpacity
+                    style={globalStyles.cityItem}
+                    onPress={() => handleSelectCity(item)}
+                  >
+                    <Ionicons
+                      name="location-outline"
+                      size={20}
+                      color={theme.colors.primary}
+                      style={{ marginRight: 8 }}
+                    />
+                    <Text style={globalStyles.cityName}>{label}</Text>
+                  </TouchableOpacity>
+                );
+              }}
+            />
+          )}
+        </SafeAreaView>
       </KeyboardAvoidingView>
     </Modal>
   );
