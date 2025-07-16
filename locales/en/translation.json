@@ -100,8 +100,7 @@
           "accessories": [
             "scarfThick",
             "hatTight",
-            "gloves" 
-            
+            "gloves"
           ],
           "shoes": "Lined waterproof boots" 
 , "recommendation":"It’s freezing outside. Layer up with thermal pieces and insulated accessories to stay warm and protected."
@@ -365,7 +364,7 @@
           "accessories": [
             "scarfThick",
             "hatTight",
-            "gloves" 
+            "gloves"
           ],
           "shoes": "Lined waterproof boots", "recommendation":"It’s extremely cold. Wear padded coats, thermal layers, and protect your head, hands, and feet."
 
@@ -452,7 +451,6 @@
           "top": "Long sleeve shirt and light vest",
           "bottom": "Twill pants",
           "accessories": [
-            
             "hairUp"
           ],
           "shoes": "Sport sneakers"
@@ -952,5 +950,19 @@
         ]
       }
     }
+  },
+  "alerts": {
+    "preferencesAlert": "Please select your clothing style and comfort temperature.",
+    "resetAlert": "Are you sure you want to delete your preferences and restart the app?",
+    "cancelbutton": "Cancel",
+    "resetbutton": "Reset",
+    "typePermission": "Permissão necessária",
+    "detectCityAlert": "To automatically detect your city, allow location access in your system settings.",
+    "text": "Open settings",
+    "typeError": "Error",
+    "localizationAlert": "Unable to detect your location.",
+    "typeInvalidCity": "Invalid city",
+    "invalidCityAlert": "Weather data could not be retrieved for this city.",
+    "typeAttention": "Attention!"
   }
 }

@@ -100,8 +100,7 @@
           "accessories": [
             "scarfThick",
             "hatTight",
-            "gloves" 
-             
+            "gloves"
           ],
           "shoes": "Bota forrada impermeável", 
           "recommendation":"Está um frio intenso. Use várias camadas com peças térmicas e acessórios quentes para se manter protegida."
@@ -363,7 +362,7 @@
           "accessories": [
             "scarfThick",
             "hatTight",
-            "gloves" 
+            "gloves"
           ],
           "shoes": "Bota forrada impermeável", "recommendation":"Está extremamente frio. Use casacos acolchoados, peças térmicas e proteja bem cabeça, mãos e pés."
 
@@ -450,7 +449,6 @@
           "top": "Camisa de manga longa e colete leve",
           "bottom": "Calça de sarja",
           "accessories": [
-            
             "hairUp"
           ],
           "shoes": "Tênis esportivo"
@@ -950,5 +948,19 @@
         ]
       }
     }
+  },
+  "alerts": {
+    "preferencesAlert": "Por favor, selecione o estilo e a temperatura de conforto.",
+    "resetAlert": "Tem a certeza de que pretende apagar as suas preferências e reiniciar a aplicação?",
+    "cancelbutton": "Cancelar",
+    "resetbutton": "Redefinir",
+    "typePermission": "Permissão necessária",
+    "detectCityAlert": "Para detetar automaticamente a sua cidade, permita o acesso à localização nas definições do sistema.",
+    "text": "Abrir Configurações",
+    "typeError": "Erro",
+    "localizationAlert": "Não foi possível detetar a sua localização.",
+    "typeInvalidCity": "Cidade inválida",
+    "invalidCityAlert": "Não foi possível obter dados meteorológicos para esta cidade.",
+    "typeAttention": "Atenção!"
   }
 }

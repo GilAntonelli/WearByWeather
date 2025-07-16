@@ -70,7 +70,7 @@ export default function PreferencesScreen() {
 
   const handleSave = async () => {
     if (!stylePreference || !comfort) {
-      alert('Por favor, selecione o estilo e a temperatura de conforto.');
+      Alert.alert(t('alerts.typeAttention'),t('alerts.preferencesAlert'));
       return;
     }
 

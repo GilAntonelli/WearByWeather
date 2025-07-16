@@ -110,7 +110,7 @@ export const CitySelectorModal = ({
     if (selectedItem.name === t('cityModal.currentLocation')) {
       const detectedCity = await getdetectedCity();
       if (!detectedCity) {
-        Alert.alert('Erro', 'Não foi possível detectar sua localização.');
+        Alert.alert(t('alerts.typeError'), t('alerts.localizationAlert'));
         setLoading(false);
         return;
       }
@@ -140,7 +140,7 @@ export const CitySelectorModal = ({
     setLoading(false);
 
     if (!clima) {
-      Alert.alert('Cidade inválida', 'Não foi possível obter dados climáticos para esta cidade.');
+      Alert.alert(t('alerts.typeInvalidCity'), t('alerts.invalidCityAlert'));
       return;
     }
 
