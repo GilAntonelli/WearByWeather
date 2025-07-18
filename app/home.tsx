@@ -265,7 +265,7 @@ export default function HomeScreen() {
               title={
                 userPreferences.name
                   ? `${t('home.greeting')}, ${userPreferences.name}!`
-                  : t('home.greeting')
+                  : `${t('home.greeting')}!`
               }
               renderAnchor={() => (
                 <Menu

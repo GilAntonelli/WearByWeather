@@ -9,7 +9,7 @@
     "subtitle": "Vamos personalizar a sua experiência!",
     "description": "Estas informações vão ajudar-nos a recomendar roupas que combinam com o seu estilo.",
     "editLater": "Poderá editar estas preferências mais tarde.",
-    "nameLabel": "Escreva o seu nome ou apelido (opcional)",
+    "nameLabel": "Escreva o seu nome ou alcunha (opcional)",
     "nameNote": "Pode deixar este campo em branco se preferir não ser tratado pelo nome.",
     "namePlaceholder": "Como prefere ser tratado(a)?",
     "genderQuestion": "Estilo de vestuário preferido",
@@ -30,7 +30,7 @@
     "button": "Guardar preferências e continuar"
   },
   "home": {
-    "greeting": "Olá!",
+    "greeting": "Olá",
     "suggestionTitle": "Look Sugerido do Dia",
     "forecastButton": "Ver previsão detalhada",
     "selectCity": "Selecione uma cidade para continuar...",

@@ -30,7 +30,7 @@
     "button": "Save preferences and continue"
   },
   "home": {
-    "greeting": "Hello!",
+    "greeting": "Hello",
     "suggestionTitle": "Suggested Look of the Day",
     "forecastButton": "See detailed forecast",
     "selectCity": "Select a city to continue...",
