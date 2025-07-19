@@ -26,12 +26,6 @@ import i18n from 'i18next';
 
 export default function ForecastScreen() {
   const router = useRouter();
-
-  const resetApp = async () => {
-    await AsyncStorage.clear();
-    router.replace('/');
-  };
-
   const [city, setCity] = useState<string>('Carregando...');
   const [weather, setWeather] = useState<any>(null);
   const [hourlyData, setHourlyData] = useState<any[]>([]);

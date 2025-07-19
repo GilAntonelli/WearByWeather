@@ -74,10 +74,10 @@
     "retryButton": "Try again",
     "rainTemperature15-": "Rainy and cold day. Bring an umbrella and dress warmly.",
     "rain": "Rain expected. Don’t forget your umbrella!",
-    "wind20and": "Strong winds today. Stay protected when going out.",
-    "wind30and": "Very strong wind gusts today. Be cautious outdoors.",
-    "temperature30and": "Hot day. Wear light clothes and stay hydrated!",
-    "temperature35and": "Very sunny and hot. Keep yourself well hydrated!",
+    "wind20+": "Strong winds today. Stay protected when going out.",
+    "wind30+": "Very strong wind gusts today. Be cautious outdoors.",
+    "temperature30+": "Hot day. Wear light clothes and stay hydrated!",
+    "temperature35+": "Very sunny and hot. Keep yourself well hydrated!",
     "cold5-": "Very cold today. Wear thermal clothing.",
     "temperature10-": "Low temperatures. Dress in warm layers.",
     "clearSkyCold5-": "Clear sky but very cold. Bundle up properly.",
@@ -86,7 +86,7 @@
     "fog": "Foggy conditions. Watch out for low visibility.",
     "mist": "Light mist. Might be uncomfortable in the morning.",
     "humidity30-": "Dry air today. Stay hydrated and avoid long exposure.",
-    "humidity90and": "Very high humidity. It might feel uncomfortable.",
+    "humidity90+": "Very high humidity. It might feel uncomfortable.",
     "clearSky": "Clear skies and stable weather. Great day for outdoor activities.",
     "fallback": "Stable weather today. Keep an eye on possible changes."
   },
@@ -94,7 +94,7 @@
     "accessoryTitle": "Accessories"
   },
   "suggestions": {
-    "femine": {
+    "female": {
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,

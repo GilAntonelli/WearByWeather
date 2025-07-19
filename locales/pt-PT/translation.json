@@ -74,10 +74,10 @@
     "retryButton": "Tentar novamente",
     "rainTemperature15-": "Dia chuvoso e frio. Leve um guarda-chuva e agasalhe-se bem.",
     "rain": "Previsão de chuva. Não se esqueça do guarda-chuva!",
-    "wind20e": "Vento forte hoje. Proteja-se bem ao sair.",
-    "wind30e": "Rajadas de vento intensas hoje. Tenha atenção ao sair de casa.",
-    "temperature30e": "Dia quente. Use roupa leve e beba bastante água!",
-    "temperature35e": "Muito sol e calor. Hidrate-se bem!",
+    "wind20+": "Vento forte hoje. Proteja-se bem ao sair.",
+    "wind30+": "Rajadas de vento intensas hoje. Tenha atenção ao sair de casa.",
+    "temperature30+": "Dia quente. Use roupa leve e beba bastante água!",
+    "temperature35+": "Muito sol e calor. Hidrate-se bem!",
     "cold5-": "Frio intenso hoje. Vista roupas térmicas.",
     "temperature10-": "Temperaturas baixas. Use várias camadas de roupa quente.",
     "clearSkyCold5-": "Céu limpo, mas muito frio. Agasalhe-se bem.",
@@ -86,7 +86,7 @@
     "fog": "Nevoeiro no ar. Atenção à visibilidade na condução.",
     "mist": "Neblina ligeira. Pode ser desconfortável de manhã.",
     "humidity30-": "Ar seco hoje. Hidrate-se e evite exposição prolongada.",
-    "humidity90e": "Humidade muito elevada. Pode causar desconforto.",
+    "humidity90+": "Humidade muito elevada. Pode causar desconforto.",
     "clearSky": "Céu limpo e clima estável. Bom dia para atividades ao ar livre.",
     "fallback": "Clima estável hoje. Esteja atento a possíveis alterações ao longo do dia."
   },
@@ -94,7 +94,7 @@
     "accessoryTitle": "Acessórios"
   },
   "suggestions": {
-    "femile": {
+    "female": {
       "freezing": {
         "feel_cold": {
           "isSinglePiece": false,

@@ -15,7 +15,8 @@ export async function getWeatherByCity(city: string) {
   }
 
   const now = Date.now();
-  
+  const lang = mapLanguageToOpenWeather(i18n.language);
+
   try {
     const nomeParaApi = city;
 
@@ -24,8 +25,9 @@ export async function getWeatherByCity(city: string) {
       const parsed = JSON.parse(cached);
       const isFresh =
         now - parsed.timestamp < WEATHER_CACHE_TTL && parsed.city === city;
-
-      if (isFresh) {
+      const changedLang = parsed.data.idioma !== lang;
+      
+      if (isFresh && !changedLang) {
         console.log('Usando clima do cache');
         return parsed.data;
       }
@@ -79,6 +81,7 @@ export async function getWeatherByCity(city: string) {
       icon: iconCode,
       iconUrl: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
       id: data.weather[0].id,
+      idioma: lang
     };
 
     await AsyncStorage.setItem(
@@ -105,7 +108,7 @@ export async function getHourlyForecastByCity(city: string) {
 
   try {
     const nomeParaApi = city;
-
+    const lang = mapLanguageToOpenWeather(i18n.language);
     // 1. Buscar lat/lon
     const geoResponse = await axios.get(
       'https://api.openweathermap.org/geo/1.0/direct',
