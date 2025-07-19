@@ -50,10 +50,11 @@
     "label": "Back"
   },
   "SettingsMenu": {
-    "preferences": "Preferences",
+    "preferences": "Edit preferences",
     "begin": "Home",
     "language": "Language",
-    "reset": "Reset"
+    "reset": "Reset",
+    "refreshWeather": "Update weather"
   },
   "Forecast": {
     "condition": "Loading...",

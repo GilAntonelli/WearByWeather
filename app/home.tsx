@@ -7,7 +7,7 @@ import { getWeatherByCity } from '../services/weatherService';
 import { TopHeader } from '../components/TopHeader'; // certifique-se de adicionar no topo
 import { spacing } from '../styles/global';
 import { LookSuggestionCard } from '../components/LookSuggestionCard';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import {
   Alert,
   Dimensions,
@@ -31,6 +31,7 @@ import { theme } from '../styles/theme';
 import { UserPreferences } from '../types/preferences';
 import { LookSuggestion } from '../types/suggestion';
 import { useTranslation } from 'react-i18next';
+import FloatingMenu from '../components/FloatingMenu';
 
 const resetApp = async () => {
   await AsyncStorage.clear();
@@ -139,6 +140,58 @@ export default function HomeScreen() {
     return false;
   };
 
+  const reloadWeather = useCallback(async () => {
+    if (isLoadingRef.current) return;
+    isLoadingRef.current = true;
+
+    try {
+      const savedCity = await AsyncStorage.getItem('lastCity');
+      let raw = city;
+      let label = city;
+      if (savedCity) {
+        try {
+          const parsed = JSON.parse(savedCity);
+          raw = parsed.raw || parsed;
+          label = parsed.label || parsed;
+        } catch {
+          raw = savedCity;
+          label = savedCity;
+        }
+      }
+      setSelectedCity(label);
+
+      const weather = await getWeatherByCity(raw);
+      if (!weather) return;
+
+      setWeatherData({
+        temperatura: weather.temperatura,
+        sensacaoTermica: weather.sensacaoTermica,
+        condicao: weather.condicao,
+        tempMin: weather.tempMin,
+        tempMax: weather.tempMax,
+        chuva: weather.chuva,
+        vento: weather.vento,
+        icon: weather.icon,
+        id: weather.id,
+      });
+
+      const clima = {
+        ...weather,
+        genero: userPreferences.gender,
+        conforto: userPreferences.comfort,
+        t: t,
+      };
+
+      const result = getSuggestionByWeather(clima);
+      console.log('Sugestão recarregada:', result);
+      setSuggestion(result);
+    } catch (e) {
+      console.error('Erro ao recarregar sugestão:', e);
+    } finally {
+      isLoadingRef.current = false;
+    }
+  }, [city, userPreferences, t]);
+
   useEffect(() => {
     const loadPreferences = async () => {
       try {
@@ -245,7 +298,7 @@ export default function HomeScreen() {
         {!isCityReady ? (
           <>
             <Text style={globalStyles.loadingText}>
-              {modalVisible ? t('home.selectCity'): t('home.detectingLocation')}
+              {modalVisible ? t('home.selectCity') : t('home.detectingLocation')}
             </Text>
             <PrimaryButton
               title={t('home.trydetectingLocation')}
@@ -267,68 +320,7 @@ export default function HomeScreen() {
                   ? `${t('home.greeting')}, ${userPreferences.name}!`
                   : `${t('home.greeting')}!`
               }
-              renderAnchor={() => (
-                <Menu
-                  visible={menuVisible}
-                  onDismiss={() => setMenuVisible(false)}
-                  anchor={
-                    <TouchableOpacity onPress={() => setMenuVisible(true)}>
-                      <Ionicons name="settings-outline" style={globalStyles.gearIcon} />
-
-                    </TouchableOpacity>
-                  }
-                >
-                  <Menu.Item
-                    onPress={() => {
-                      setMenuVisible(false);
-                      router.push('/preferences');
-                    }}
-                    title={t('SettingsMenu.preferences')}
-                    leadingIcon="tune"
-                  />
-                  <Divider />
-                  <Menu.Item
-                    onPress={() => {
-                      setMenuVisible(false);
-                      router.push('/');
-                    }}
-                    title={t('SettingsMenu.begin')}
-                    leadingIcon="home-outline"
-                  />
-                  <Divider />
-                  <Menu.Item
-                    onPress={() => {
-                      setMenuVisible(false);
-                      router.push('/language-selector');
-                    }}
-                    title={t('SettingsMenu.language')}
-                    leadingIcon="translate"
-                  />
-                  <Divider />
-                  <Menu.Item
-                    onPress={() => {
-                      setMenuVisible(false);
-                      Alert.alert(
-                        t('SettingsMenu.reset'),
-                        t('alerts.resetAlert'),
-                        [
-                          { text: t('alerts.cancelbutton'), style: 'cancel' },
-                          {
-                            text: t('alerts.resetbutton'),
-                            style: 'destructive',
-                            onPress: async () => {
-                              await AsyncStorage.clear();
-                              router.replace('/');
-                            },
-                          },
-                        ]
-                      );
-                    }}
-                    title={t('SettingsMenu.reset')}
-                    leadingIcon="restart"
-                  />
-                </Menu>
-              )}
+              renderAnchor={() => <FloatingMenu reloadWeather={reloadWeather} />}
             />
 
 
@@ -352,6 +344,7 @@ export default function HomeScreen() {
                 tempMax={weatherData.tempMax ?? 0}
                 condicao={weatherData.condicao || ''}
                 id={weatherData.id || 0}
+                onPress={() => router.push('/forecast')}
               />
             )}
             <Text style={[globalStyles.firstSectionTitle, {

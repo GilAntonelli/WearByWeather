@@ -50,10 +50,11 @@
     "label": "Voltar"
   },
   "SettingsMenu": {
-    "preferences": "Preferências",
+    "preferences": "Editar preferências",
     "begin": "Início",
     "language": "Idioma",
-    "reset": "Redefinir"
+    "reset": "Redefinir",
+    "refreshWeather": "Atualizar clima"
   },
   "Forecast": {
     "condition": "Carregando...",

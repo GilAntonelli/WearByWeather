@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { getWeatherGradientColors } from '../utils/weatherColors';
 import { capitalizeFirstLetter } from '../utils/stringUtils';
+import { TouchableOpacity } from 'react-native';
 
 interface WeatherSummaryCardProps {
   city: string;
@@ -14,6 +15,7 @@ interface WeatherSummaryCardProps {
   tempMin: number;
   tempMax: number;
   id: number;
+  onPress?: () => void;
 }
 
 export default function WeatherSummaryCard({
@@ -24,26 +26,29 @@ export default function WeatherSummaryCard({
   condicao,
   tempMin,
   tempMax,
-  id
+  id,
+  onPress
 }: WeatherSummaryCardProps) {
   const gradientColors = getWeatherGradientColors(id);
 
   return (
-    <LinearGradient colors={gradientColors} style={styles.card}>
-      <View style={styles.headerRow}>
-        <View style={styles.leftColumn}>
-          <Text style={styles.cityText}>{city}</Text>
+    <TouchableOpacity onPress={onPress} activeOpacity={0.85}>
+      <LinearGradient colors={gradientColors} style={styles.card}>
+        <View style={styles.headerRow}>
+          <View style={styles.leftColumn}>
+            <Text style={styles.cityText}>{city}</Text>
 
-          <Text style={styles.condicaoText}>
-            {capitalizeFirstLetter(condicao)}
-          </Text>
-          <Text style={styles.minMaxText}>
-            Máx.: {Math.round(tempMax)}°  Mín.: {Math.round(tempMin)}°
-          </Text>
+            <Text style={styles.condicaoText}>
+              {capitalizeFirstLetter(condicao)}
+            </Text>
+            <Text style={styles.minMaxText}>
+              Máx.: {Math.round(tempMax)}°  Mín.: {Math.round(tempMin)}°
+            </Text>
+          </View>
+          <Text style={styles.tempText}>{Math.round(temperatura)}°</Text>
         </View>
-        <Text style={styles.tempText}>{Math.round(temperatura)}°</Text>
-      </View>
-    </LinearGradient>
+      </LinearGradient>
+    </TouchableOpacity>
   );
 }
 
