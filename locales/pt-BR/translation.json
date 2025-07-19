@@ -173,10 +173,10 @@
           "bottom": "Calça jeans",
           "accessories": [
             "hat",
-            "scarfLight" 
+            "scarfLight"
           ],
-          "shoes": "Bota leve", "recommendation":"O tempo está ameno, mas frio para quem sente mais. Use moletom com jaqueta leve para garantir o conforto térmico."
-
+          "shoes": "Bota leve",
+          "recommendation": "O tempo está ameno, mas frio para quem sente mais. Use moletom com jaqueta leve para garantir o conforto térmico."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -186,8 +186,8 @@
             "earrings",
             "watch"
           ],
-          "shoes": "Tênis ou bota leve", "recommendation":"O clima está ameno. Um moletom ou cardigan leve garante o equilíbrio entre conforto e estilo."
-
+          "shoes": "Tênis ou bota leve",
+          "recommendation": "O clima está ameno. Um moletom ou cardigan leve garante o equilíbrio entre conforto e estilo."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -197,7 +197,8 @@
             "scarf",
             "necklace"
           ],
-          "shoes": "Tênis casual"
+          "shoes": "Tênis casual",
+          "recommendation": "Apesar do clima ameno, prefira roupas mais leves e estruturadas se você costuma sentir calor com facilidade."
         }
       },
       "mild": {
@@ -440,7 +441,8 @@
             "scarfLight",
             "cap"
           ],
-          "shoes": "Bota leve"
+          "shoes": "Bota leve",
+          "recommendation": "No clima ameno, use moletom e jaqueta leve para manter o corpo aquecido de forma confortável."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -450,7 +452,8 @@
             "watch",
             "sunglasses"
           ],
-          "shoes": "Tênis casual"
+          "shoes": "Tênis casual",
+          "recommendation": "O tempo está ameno. Use jaqueta leve ou suéter com calça confortável para manter o equilíbrio térmico e o estilo."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -459,7 +462,8 @@
           "accessories": [
             "hairUp"
           ],
-          "shoes": "Tênis esportivo"
+          "shoes": "Tênis esportivo",
+          "recommendation": "Mesmo com o clima ameno, prefira camadas leves como camisa de manga e colete fino para manter o conforto térmico."
         }
       },
       "mild": {
@@ -709,7 +713,8 @@
             "scarf",
             "beanie"
           ],
-          "shoes": "Bota leve"
+          "shoes": "Bota leve",
+          "recommendation": "No clima ameno, aposte em moletom e jaqueta leve para garantir conforto e proteção térmica."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -719,7 +724,8 @@
             "watch",
             "sunglasses"
           ],
-          "shoes": "Tênis casual"
+          "shoes": "Tênis casual",
+          "recommendation": "O tempo está ameno. Use suéter médio ou jaqueta leve com calça confortável para manter o equilíbrio térmico."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -728,7 +734,8 @@
           "accessories": [
             "simpleNecklace"
           ],
-          "shoes": "Tênis leve"
+          "shoes": "Tênis leve",
+          "recommendation": "Apesar do clima ameno, prefira camadas leves e tecidos frescos se você costuma sentir calor com facilidade."
         }
       },
       "mild": {

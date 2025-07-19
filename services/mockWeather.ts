@@ -46,24 +46,24 @@ Como usar:
 
 // 🧊 COLD
  
-export const mockWeather = {
-  temperatura: 10,
-  sensacaoTermica: 8,
-  tempMin: 7,
-  tempMax: 12,
-  umidade: 80,
-  chuva: false,
-  vento: 12,
-  condicao: 'céu nublado',
-  descricao: 'Clouds',
-  icon: '03d',
-  iconUrl: 'https://openweathermap.org/img/wn/03d@2x.png',
-  id: 802,
-};
+// export const mockWeather = {
+//   temperatura: 10,
+//   sensacaoTermica: 8,
+//   tempMin: 7,
+//   tempMax: 12,
+//   umidade: 80,
+//   chuva: false,
+//   vento: 12,
+//   condicao: 'céu nublado',
+//   descricao: 'Clouds',
+//   icon: '03d',
+//   iconUrl: 'https://openweathermap.org/img/wn/03d@2x.png',
+//   id: 802,
+// };
  
 
 // 🌀 CHILLY
-/*
+ 
 export const mockWeather = {
   temperatura: 14,
   sensacaoTermica: 13,
@@ -78,7 +78,7 @@ export const mockWeather = {
   iconUrl: 'https://openweathermap.org/img/wn/50d@2x.png',
   id: 741,
 };
-*/
+ 
 
 // 🌤️ MILD
 /*

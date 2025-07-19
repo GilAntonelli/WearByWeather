@@ -173,10 +173,10 @@
           "bottom": "Jeans",
           "accessories": [
             "hat",
-            "scarfLight" 
+            "scarfLight"
           ],
-          "shoes": "Light boots", "recommendation":"It’s a chilly day. Go for a sweatshirt and light jacket to stay warm and comfortable if you get cold easily."
-
+          "shoes": "Light boots",
+          "recommendation": "It’s a chilly day. Go for a sweatshirt and light jacket to stay warm and comfortable if you get cold easily."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -186,8 +186,8 @@
             "earrings",
             "watch"
           ],
-          "shoes": "Sneakers or light boots", "recommendation":"It’s a cool day. A light sweatshirt or cardigan is enough to stay comfortable and stylish."
-
+          "shoes": "Sneakers or light boots",
+          "recommendation": "It’s a cool day. A light sweatshirt or cardigan is enough to stay comfortable and stylish."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -197,7 +197,8 @@
             "scarf",
             "necklace"
           ],
-          "shoes": "Casual sneakers"
+          "shoes": "Casual sneakers", "recommendation":"Even with the cool weather, go for light, structured clothing if you tend to feel hot easily."
+
         }
       },
       "mild": {
@@ -440,7 +441,8 @@
             "scarfLight",
             "cap"
           ],
-          "shoes": "Light boots"
+          "shoes": "Light boots", "recommendation":"On a chilly day, wear a sweatshirt and light jacket to stay warm without sacrificing comfort."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -450,7 +452,8 @@
             "watch",
             "sunglasses"
           ],
-          "shoes": "Casual sneakers"
+          "shoes": "Casual sneakers", "recommendation":"It’s a mild day. Pair a light jacket or sweater with comfortable pants for a practical and balanced outfit."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -459,7 +462,8 @@
           "accessories": [
             "hairUp"
           ],
-          "shoes": "Sport sneakers"
+          "shoes": "Sport sneakers", "recommendation":"Even on a cool day, choose light layers like long-sleeve shirts and thin vests to avoid overheating."
+
         }
       },
       "mild": {
@@ -709,7 +713,8 @@
             "scarf",
             "beanie"
           ],
-          "shoes": "Light boots"
+          "shoes": "Light boots", "recommendation":"In cool weather, wear a sweatshirt and light jacket to stay warm while keeping full mobility."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -719,7 +724,8 @@
             "watch",
             "sunglasses"
           ],
-          "shoes": "Casual sneakers"
+          "shoes": "Casual sneakers", "recommendation":"It’s a cool day. Pair a mid-weight sweater or light jacket with comfortable pants for a balanced outfit."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -728,7 +734,8 @@
           "accessories": [
             "simpleNecklace"
           ],
-          "shoes": "Light sneakers"
+          "shoes": "Light sneakers", "recommendation":"Even in chilly weather, choose light and breathable layers if you tend to feel hot easily."
+
         }
       },
       "mild": {
