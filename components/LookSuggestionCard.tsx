@@ -28,7 +28,7 @@ export const LookSuggestionCard: React.FC<LookSuggestionCardProps> = ({ suggesti
     <View style={[globalStyles.cardhome, { marginTop: spacing.section }]}>
       <View style={globalStyles.suggestionWrapper}>
         <View style={globalStyles.suggestionMain}>
-          
+
 
           <Image
             source={suggestion.image}
@@ -45,6 +45,13 @@ export const LookSuggestionCard: React.FC<LookSuggestionCardProps> = ({ suggesti
                 <Text style={globalStyles.tagText}>{suggestion.roupaInferior}</Text>
               </View>
             )}
+
+            {suggestion.shoes?.trim() !== '' && (
+              <View style={globalStyles.tag}>
+                <Text style={globalStyles.tagText}>{suggestion.shoes}</Text>
+              </View>
+            )}
+
           </View>
           <Text style={globalStyles.lookText}>{suggestion.recomendação}</Text>
         </View>

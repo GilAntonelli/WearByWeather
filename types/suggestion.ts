@@ -11,12 +11,13 @@ export interface WeatherContext {
   clima: string;
   genero: 'masculino' | 'feminino' | 'unissex';
   conforto: 'frio' | 'calor' | 'neutro';
-  t: TFunction 
+  t: TFunction
 }
 
 export interface LookSuggestion {
   roupaSuperior: string;
   roupaInferior: string;
+  shoes: string;
   acessórios?: string[];
   recomendação: string;
   image: ImageSourcePropType;

@@ -197,8 +197,8 @@
             "scarf",
             "necklace"
           ],
-          "shoes": "Ténis casual", "recommendation":"Mesmo com o tempo fresco, opte por peças leves e estruturadas se tende a aquecer com facilidade."
-
+          "shoes": "Ténis casual",
+          "recommendation": "Mesmo com o tempo fresco, opte por peças leves e estruturadas se tende a aquecer com facilidade."
         }
       },
       "mild": {
@@ -441,8 +441,8 @@
             "scarfLight",
             "cap"
           ],
-          "shoes": "Bota leve", "recommendation":"Com o tempo fresco, vista moletom e casaco leve para manter o calor sem comprometer o conforto."
-
+          "shoes": "Bota leve",
+          "recommendation": "Com o tempo fresco, vista moletom e casaco leve para manter o calor sem comprometer o conforto."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -452,8 +452,8 @@
             "watch",
             "sunglasses"
           ],
-          "shoes": "Ténis casual", "recommendation":"O dia está fresco. Combine casaco leve ou camisola com calças confortáveis para um visual prático e equilibrado."
-
+          "shoes": "Ténis casual",
+          "recommendation": "O dia está fresco. Combine casaco leve ou camisola com calças confortáveis para um visual prático e equilibrado."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -462,8 +462,8 @@
           "accessories": [
             "hairUp"
           ],
-          "shoes": "Ténis desportivo", "recommendation":"Com o tempo fresco, escolha camadas leves como camisas e coletes finos para evitar o sobreaquecimento."
-
+          "shoes": "Ténis desportivo",
+          "recommendation": "Com o tempo fresco, escolha camadas leves como camisas e coletes finos para evitar o sobreaquecimento."
         }
       },
       "mild": {
@@ -713,8 +713,8 @@
             "scarf",
             "beanie"
           ],
-          "shoes": "Bota leve", "recommendation":"Com o tempo fresco, use moletom e casaco leve para manter o aquecimento sem perder mobilidade."
-
+          "shoes": "Bota leve",
+          "recommendation": "Com o tempo fresco, use moletom e casaco leve para manter o aquecimento sem perder mobilidade."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -724,8 +724,8 @@
             "watch",
             "sunglasses"
           ],
-          "shoes": "Ténis casual", "recommendation":"O clima está fresco. Combine peças leves como camisolas ou casacos finos com calças confortáveis para um look equilibrado."
-
+          "shoes": "Ténis casual",
+          "recommendation": "O clima está fresco. Combine peças leves como camisolas ou casacos finos com calças confortáveis para um look equilibrado."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -734,8 +734,8 @@
           "accessories": [
             "simpleNecklace"
           ],
-          "shoes": "Ténis leve", "recommendation":"Mesmo com o tempo fresco, opte por sobreposições leves e tecidos respiráveis para evitar o desconforto térmico."
-
+          "shoes": "Ténis leve",
+          "recommendation": "Mesmo com o tempo fresco, opte por sobreposições leves e tecidos respiráveis para evitar o desconforto térmico."
         }
       },
       "mild": {
