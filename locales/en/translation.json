@@ -249,7 +249,8 @@
             "scarfNeck",
             "watch"
           ],
-          "shoes": "Casual sneakers or oxfords"
+          "shoes": "Casual sneakers or oxfords","recommendation": "Even with comfortable weather, if you tend to feel cold, go for dresses with longer sleeves and light layering to stay warm without compromising style."
+
         },
         "neutral": {
           "isSinglePiece": true,
@@ -258,7 +259,8 @@
             "necklace",
             "sunglasses"
           ],
-          "shoes": "Ballet flats or mules"
+          "shoes": "Ballet flats or mules","recommendation": "The weather is pleasant. A flowy dress with light accessories is perfect to stay comfortable and stylish throughout the day."
+
         },
         "feel_hot": {
           "isSinglePiece": true,
@@ -267,7 +269,8 @@
             "hairUp",
             "headscarfhaircontrol"
           ],
-          "shoes": "Sandals or light sneakers"
+          "shoes": "Sandals or light sneakers","recommendation": "In mild weather, choose breathable fabrics and wide straps that allow airflow and keep you cool without losing elegance."
+
         }
       },
       "warm": {
@@ -278,7 +281,8 @@
             "scarfLight",
             "sunglasses"
           ],
-          "shoes": "Light sneakers or loafers"
+          "shoes": "Light sneakers or loafers","recommendation": "Even with warm weather, if you tend to feel chilly, go for dresses with light sleeves and a thin layer to balance your body temperature."
+
         },
         "neutral": {
           "isSinglePiece": true,
@@ -287,7 +291,8 @@
             "earrings",
             "sunglasses"
           ],
-          "shoes": "Flat sandals"
+          "shoes": "Flat sandals","recommendation": "It’s a warm day. Light dresses with wide straps or loose sleeves are great choices to stay fresh and comfortable."
+
         },
         "feel_hot": {
           "isSinglePiece": true,
@@ -296,7 +301,8 @@
             "hairTie",
             "necklace"
           ],
-          "shoes": "Sandals or flip-flops"
+          "shoes": "Sandals or flip-flops","recommendation": "On warmer days, opt for ultra-light, flowy dresses with breathable cuts to stay cool and comfortable all day."
+
         }
       },
       "hot": {
@@ -307,7 +313,8 @@
             "scarfNeck",
             "sunglasses"
           ],
-          "shoes": "Flat sandals"
+          "shoes": "Flat sandals","recommendation": "Even on hot days, if you tend to feel discomfort, go for light dresses with wide straps that offer some coverage while staying breathable."
+
         },
         "neutral": {
           "isSinglePiece": true,
@@ -317,7 +324,8 @@
             "necklace",
             "hairUp"
           ],
-          "shoes": "Flat sandals or flip-flops"
+          "shoes": "Flat sandals or flip-flops","recommendation": "It’s a hot day. Choose flowy dresses made from light fabrics and fresh accessories to stay cool and comfortable."
+
         },
         "feel_hot": {
           "isSinglePiece": true,
@@ -327,7 +335,8 @@
             "glasses",
             "scarfHeadControl"
           ],
-          "shoes": "Light flip-flops"
+          "shoes": "Light flip-flops","recommendation": "On very hot days, opt for minimal, breathable dresses with open cuts to allow airflow and maximum comfort."
+
         }
       },
       "extreme_heat": {
@@ -520,7 +529,9 @@
             "scarfLight",
             "watch"
           ],
-          "shoes": "Sneakers or casual shoes"
+          "shoes": "Sneakers or casual shoes",
+"recommendation": "Even in pleasant weather, if you tend to feel cold, wear light layers like long-sleeve shirts and thin jackets to stay warm comfortably."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -530,7 +541,9 @@
             "sunglasses",
             "necklace"
           ],
-          "shoes": "Casual sneakers or loafers"
+          "shoes": "Casual sneakers or loafers", 
+"recommendation": "With mild weather, go for versatile, lightweight outfits like t-shirts and chinos for a balanced, practical look."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -539,7 +552,9 @@
           "accessories": [
             "hairTie"
           ],
-          "shoes": "Light sneakers or flip-flops"
+          "shoes": "Light sneakers or flip-flops",
+"recommendation": "If you usually feel hot, even on comfortable days, opt for sleeveless shirts or tank tops with shorts to stay cool and relaxed."
+
         }
       },
       "warm": {
@@ -551,7 +566,9 @@
             "sunglasses",
             "bracelet"
           ],
-          "shoes": "Sneakers or espadrilles"
+          "shoes": "Sneakers or espadrilles",
+"recommendation": "Even on warm days, if you tend to feel chilly, layer a light t-shirt with an open shirt to stay balanced and comfortable."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -561,7 +578,9 @@
             "glasses",
             "necklace"
           ],
-          "shoes": "Sandals or light sneakers"
+          "shoes": "Sandals or light sneakers",
+"recommendation": "It’s a warm day. Choose lightweight, breathable pieces like t-shirts or tanks paired with shorts for a casual and cool outfit."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -570,7 +589,9 @@
           "accessories": [
             "hairUp"
           ],
-          "shoes": "Flip-flops or sandals"
+          "shoes": "Flip-flops or sandals",
+"recommendation": "With high temperatures, go for minimal, airy clothing like cotton tank tops and loose shorts to stay fresh throughout the day."
+
         }
       },
       "hot": {
@@ -582,7 +603,9 @@
             "sunglasses",
             "scarfNeck"
           ],
-          "shoes": "Light sandals"
+          "shoes": "Light sandals",
+"recommendation": "Even on hot days, if you feel some thermal discomfort, go for light pieces with some coverage, like wide-strap tanks and cotton shorts."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -593,7 +616,9 @@
             "hairUp",
             "glasses"
           ],
-          "shoes": "Flip-flops or sandals"
+          "shoes": "Flip-flops or sandals",
+"recommendation": "It’s a hot day. Choose light and breathable clothing like tanks or loose t-shirts paired with cool shorts to stay comfortable."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -603,7 +628,9 @@
             "hairUp",
             "headscarfhaircontrol"
           ],
-          "shoes": "Light flip-flops"
+          "shoes": "Light flip-flops",
+"recommendation": "With high heat, wear minimal and airy outfits like sleeveless tops and light shorts to stay ventilated and avoid overheating."
+
         }
       },
       "extreme_heat": {
@@ -796,7 +823,9 @@
             "scarfDecorative",
             "bracelet"
           ],
-          "shoes": "Sneakers or casual shoes"
+          "shoes": "Sneakers or casual shoes",
+"recommendation": "Even in comfortable weather, if you tend to feel cold, wear light layers like long-sleeve shirts and jackets to stay warm."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -806,7 +835,9 @@
             "necklace",
             "sunglasses"
           ],
-          "shoes": "Casual sneakers or sneakers"
+          "shoes": "Casual sneakers or sneakers",
+"recommendation": "The weather is pleasant. Go for basic, breathable pieces like t-shirts and lightweight pants to stay balanced and comfortable."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -816,7 +847,9 @@
             "glasses",
             "hairUp"
           ],
-          "shoes": "Flip-flops or light sneakers"
+          "shoes": "Flip-flops or light sneakers",
+"recommendation": "If you usually feel hot, even in mild weather, choose sleeveless tops and light shorts to stay cool and at ease."
+
         }
       },
       "warm": {
@@ -828,7 +861,9 @@
             "sunglasses",
             "scarfLight"
           ],
-          "shoes": "Sneakers or low sandals"
+          "shoes": "Sneakers or low sandals",
+"recommendation": "Even on warm days, if you tend to feel cold, layer a light t-shirt with an open shirt to stay balanced and comfortable."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -838,7 +873,9 @@
             "simpleNecklace",
             "bracelet"
           ],
-          "shoes": "Flip-flops or light sneakers"
+          "shoes": "Flip-flops or light sneakers",
+"recommendation": "It’s a warm day. Choose light and breathable outfits like tank tops or oversized t-shirts paired with comfy shorts."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -848,7 +885,9 @@
             "hairUp",
             "scarfHead"
           ],
-          "shoes": "Light flip-flops"
+          "shoes": "Light flip-flops",
+"recommendation": "With warm weather, go for minimal clothing like airy tank tops and loose shorts to stay cool and fresh."
+
         }
       },
       "hot": {
@@ -860,7 +899,9 @@
             "scarfNeck",
             "sunglasses"
           ],
-          "shoes": "Light sandals"
+          "shoes": "Light sandals",
+"recommendation": "Even in hot weather, if you feel uncomfortable with too little coverage, wear light but structured tops and breathable cotton shorts."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -871,7 +912,9 @@
             "simpleNecklace",
             "hairUp"
           ],
-          "shoes": "Flat sandals or flip-flops"
+          "shoes": "Flat sandals or flip-flops",
+"recommendation": "It’s a hot day. Pick loose and cool pieces like tank tops or wide t-shirts paired with neutral shorts to stay comfortable."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -881,7 +924,9 @@
             "hairUp",
             "headscarfhaircontrol"
           ],
-          "shoes": "Light flip-flops"
+          "shoes": "Light flip-flops",
+"recommendation": "With high temperatures, stick to minimal and breathable outfits like sleeveless tops and light shorts to keep cool all day long."
+
         }
       },
       "extreme_heat": {
