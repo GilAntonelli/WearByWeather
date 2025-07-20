@@ -106,7 +106,7 @@ export function getSuggestionByWeather({
   let roupaInferior = '';
   let shoes = '';
   let acessórios: string[] = [];
-  let recomendação = '';
+  let recommendation = '';
   let image = null;
 
   let suggestions = getSuggestionsJson(genero, getThermalRangeDecription(tempAjustada), conforto, t);
@@ -114,14 +114,14 @@ export function getSuggestionByWeather({
   roupaInferior = suggestions.roupaInferior;
   shoes = suggestions.shoes;
   acessórios = suggestions.acessórios || [];
-  recomendação = suggestions.recomendação;
+  recommendation = suggestions.recommendation;
   image = suggestions.image;
 
   let overlays = getOverlays(chuva, vento, tempAjustada, 5, t); //Para o valor 5 deverá ser obtido o volume de chuva em mm
   if (overlays) {
     console.log('Overlays:', overlays);
     acessórios.push(...overlays.accessories);
-    recomendação += overlays.description;
+    recommendation += overlays.description;
   }
 
   return {
@@ -129,7 +129,7 @@ export function getSuggestionByWeather({
     roupaInferior,
     acessórios,
     shoes,
-    recomendação,
+    recommendation,
     image: image,
   };
 }
@@ -155,7 +155,7 @@ export function getSuggestionsJson(
     roupaInferior: suggestions.bottom || '',
     shoes: suggestions.shoes || '',
     acessórios: suggestions.accessories || [],
-    recomendação: suggestions.recommendation || '',
+    recommendation: suggestions.recommendation || '',
     image: getAvatar(rangeDescription, gender, comfort),
   };
 }
@@ -209,6 +209,7 @@ export function getOverlays(chuva: boolean, vento: number, tempAjustada: number,
   let overlays: OverlaysJson = {
     description: '',
     accessories: '',
+    recommendation: ''
   }
   console.log('chuva:', chuva);
   console.log('vento:', vento);
