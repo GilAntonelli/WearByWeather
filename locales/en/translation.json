@@ -457,7 +457,8 @@
           "bottom": "Jeans",
           "accessories": [
             "scarfLight",
-            "cap"
+            "cap" 
+            
           ],
           "shoes": "Light boots",
           "recommendation": "On a chilly day, wear a sweatshirt and light jacket to stay warm without sacrificing comfort."
@@ -478,7 +479,8 @@
           "top": "Long sleeve shirt and light vest",
           "bottom": "Twill pants",
           "accessories": [
-            "hairUp"
+                      "watch",
+            "sunglasses"
           ],
           "shoes": "Sport sneakers",
           "recommendation": "Even on a cool day, choose light layers like long-sleeve shirts and thin vests to avoid overheating."
