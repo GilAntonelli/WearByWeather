@@ -94,6 +94,11 @@
   "LookSuggestionCard": {
     "accessoryTitle": "Acessórios"
   },
+  "and": "e",
+  "buttons": {
+    "close": "Fechar"
+  },
+  "textLookDescription": "Look sugerido de hoje:",
   "suggestions": {
     "female": {
       "freezing": {
@@ -211,7 +216,8 @@
             "scarf",
             "sunglasses"
           ],
-          "shoes": "Oxford ou tênis fechado"
+          "shoes": "Oxford ou tênis fechado", "recommendation":"O clima está ameno. Use camiseta com suéter leve e complemente com peças que ajudem a manter o corpo aquecido."
+
         },
         "neutral": {
           "isSinglePiece": true,
@@ -222,6 +228,8 @@
             "necklace"
           ],
           "shoes": "Sapatilha ou mocassim"
+          , "recommendation":"Com o clima ameno, um vestido midi com jaqueta leve garante equilíbrio térmico e praticidade."
+
         },
         "feel_hot": {
           "isSinglePiece": true,
@@ -230,7 +238,8 @@
             "sunglasses",
             "earrings"
           ],
-          "shoes": "Tênis leve ou sandália fechada"
+          "shoes": "Tênis leve ou sandália fechada", "recommendation":"Com o tempo ameno, prefira vestidos leves com tecidos frescos e sobreposições delicadas para manter o conforto térmico."
+
         }
       },
       "comfortable": {
@@ -477,7 +486,8 @@
             "sunglasses",
             "watch"
           ],
-          "shoes": "Tênis fechado"
+          "shoes": "Tênis fechado", "recommendation":"No clima ameno, aposte em suéter leve ou cardigan com calça jeans ou chino para manter o corpo aquecido."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -487,7 +497,8 @@
             "watch",
             "bracelet"
           ],
-          "shoes": "Mocassim ou tênis"
+          "shoes": "Mocassim ou tênis", "recommendation":"Com o tempo ameno, camisas leves ou polos de manga longa combinadas com calça de sarja são ótimas opções."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -496,7 +507,8 @@
           "accessories": [
             "sunglasses"
           ],
-          "shoes": "Tênis leve ou sapatênis"
+          "shoes": "Tênis leve ou sapatênis", "recommendation":"Com o clima ameno, prefira camisetas ou regatas com jaquetas leves para manter o conforto sem passar calor."
+
         }
       },
       "comfortable": {
@@ -749,7 +761,8 @@
             "sunglasses",
             "watch"
           ],
-          "shoes": "Tênis fechado"
+          "shoes": "Tênis fechado", "recommendation":"No tempo ameno, use camiseta com suéter leve para garantir conforto térmico de forma prática."
+
         },
         "neutral": {
           "isSinglePiece": false,
@@ -760,7 +773,8 @@
             "watch",
             "necklace"
           ],
-          "shoes": "Tênis neutro ou mocassim"
+          "shoes": "Tênis neutro ou mocassim", "recommendation":"Com o clima ameno, camisas leves ou polos unissex com calças confortáveis mantêm o equilíbrio entre estilo e conforto."
+
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -769,7 +783,8 @@
           "accessories": [
             "glasses"
           ],
-          "shoes": "Tênis leve ou sapatênis"
+          "shoes": "Tênis leve ou sapatênis", "recommendation":"Com o clima ameno, prefira roupas largas e frescas como camiseta oversized e bermuda estruturada."
+
         }
       },
       "comfortable": {
