@@ -157,36 +157,73 @@ export const CitySelectorModal = ({
         style={{ flex: 1 }}
       >
         <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
-          <View style={{ padding: 16 }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 12 }}>
+          <View style={{ paddingHorizontal: 16, paddingTop: 8, marginBottom: 13 }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                height: 44,
+              }}
+            >
+              <View
+                style={[
+                  globalStyles.fakeSearchInput,
+                  {
+                    flex: 1,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    paddingHorizontal: 12,
+                    height: 44,
+                    borderRadius: 12,
+                    backgroundColor: '#F0F0F0',
+                  },
+                ]}
+              >
+                <Ionicons name="search" size={20} color={theme.colors.textLight} style={{ marginRight: 8 }} />
+                <TextInput
+                  placeholder={t('cityModal.searchPlaceholder')}
+                  value={search}
+                  onChangeText={setSearch}
+                  autoFocus
+                  style={{
+                    flex: 1,
+                    color: theme.colors.textMedium,
+                    fontSize: 16,
+                    paddingVertical: 0,
+                  }}
+                  placeholderTextColor={theme.colors.textLight}
+                />
+                {search.length > 0 && (
+                  <TouchableOpacity onPress={() => setSearch('')}>
+                    <Ionicons name="close-circle" size={18} color={theme.colors.textLight} />
+                  </TouchableOpacity>
+                )}
+              </View>
+
               <TouchableOpacity
                 onPress={onClose}
-                style={{ flexDirection: 'row', alignItems: 'center' }}
+                style={{
+                  marginLeft: 4,
+                  height: 18,
+                  justifyContent: 'center',
+                  paddingHorizontal: 4,
+                }}
               >
-                <Ionicons name="arrow-back" size={24} color={theme.colors.textDark} />
                 <Text
                   style={{
-                    marginLeft: 8,
+                    color: theme.colors.textLight,
                     fontSize: 16,
-                    color: theme.colors.textDark,
                     fontWeight: '500',
+                    lineHeight: 15,
+                    paddingVertical: 13,
+                    includeFontPadding: false,
+                    textAlignVertical: 'center',
                   }}
                 >
-                  {t('BackButton.label')}
+                  {t('alerts.cancelbutton')}
                 </Text>
               </TouchableOpacity>
             </View>
-
-            <TextInput
-              placeholder={t('cityModal.searchPlaceholder')}
-              value={search}
-              onChangeText={setSearch}
-              autoFocus
-              style={[                
-                globalStyles.fakeSearchInput
-              ]}
-              placeholderTextColor={theme.colors.textLight}
-            />
           </View>
 
           {loading ? (
@@ -205,8 +242,8 @@ export const CitySelectorModal = ({
                   item.name === t('cityModal.currentLocation')
                     ? item.name
                     : isFromSearch
-                    ? `${getPreferredCityName(item)}, ${item.state ?? ''}, ${item.country ?? ''}`
-                    : formatLocationName(getPreferredCityName(item), item.state, item.country);
+                      ? `${getPreferredCityName(item)}, ${item.state ?? ''}, ${item.country ?? ''}`
+                      : formatLocationName(getPreferredCityName(item), item.state, item.country);
                 return (
                   <TouchableOpacity
                     style={globalStyles.cityItem}
