@@ -19,7 +19,7 @@ export interface LookSuggestion {
   roupaInferior: string;
   shoes: string;
   acessórios?: string[];
-  recomendação: string;
+  recommendation: string;
   image: ImageSourcePropType;
 }
 
@@ -36,4 +36,5 @@ export interface LookSuggestionJson {
 export interface OverlaysJson {
   description: string;
   accessories: string;
+  recommendation: string;
 }
