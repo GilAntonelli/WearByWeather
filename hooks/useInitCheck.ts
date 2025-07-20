@@ -1,17 +1,18 @@
 // hooks/useInitCheck.ts
 import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams  } from 'expo-router';
 
 export function useInitCheck() {
   const [checking, setChecking] = useState(true);
   const router = useRouter();
+  const { force } = useLocalSearchParams();
 
   useEffect(() => {
     const checkInitialization = async () => {
       try {
         const isInitialized = await AsyncStorage.getItem('isAppInitialized');
-        if (isInitialized) {
+        if (isInitialized && !force) {
           router.replace('/home');
         } else {
           setChecking(false);

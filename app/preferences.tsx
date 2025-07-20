@@ -79,6 +79,7 @@ export default function PreferencesScreen() {
 
     try {
       await AsyncStorage.setItem('@user_preferences', JSON.stringify(prefs));
+      await AsyncStorage.setItem('isAppInitialized', 'true');
       router.push('/home');
     } catch (e) {
       console.error('Erro ao salvar preferências:', e);
