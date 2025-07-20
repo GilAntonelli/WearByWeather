@@ -42,7 +42,7 @@ export const theme = {
     borderLight: '#E0E0E0', // tom de cinza claro suave, visualmente neutro
 
     // Adicionada compatibilidade
-    text: '#333333', // mesmo valor de textDark
+    text: '#000000ff', // mesmo valor de textDark
     textDark: '#333333',
     textLight: '#999999',
     textMedium: '#666666',

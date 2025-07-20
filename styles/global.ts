@@ -1,10 +1,98 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import { theme } from './theme';
+import styled from 'styled-components/native';
 
 const screenWidth = Dimensions.get('window').width;
 const cardSpacing = 12;
 const containerPadding = 24;
 const cardWidth = (screenWidth - containerPadding * 2 - cardSpacing * 2) / 3;
+
+// Container principal do cartão de sugestão
+export const LookSuggestionContainer = styled.View`
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 16px;
+  shadow-color: #000;
+  shadow-opacity: 0.1;
+  shadow-radius: 6px;
+  elevation: 4;
+`;
+
+// Texto da recomendação do look
+
+export const LookRecommendation = styled.Text`
+  font-size: 16px;
+  color: ${({ theme }) => theme.colors.text};
+  margin-bottom: 12px;
+  margin-top: 4px;
+  text-align: center;
+  line-height: 22px;
+`;
+
+// Container da imagem do avatar
+export const LookAvatarContainer = styled.View`
+  align-items: center;
+  margin-bottom: 15px;
+`;
+
+// Imagem do avatar
+export const LookAvatar = styled.Image`
+  width: 100%;
+  height: 280px;
+`;
+
+
+// Título da seção de acessórios
+export const LookSectionTitle = styled.Text`
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+`;
+
+// Lista de acessórios em linha
+export const LookAccessoryList = styled.View`
+  flex-direction: row;
+  gap: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  justify-content: center;
+`;
+
+// Cada ícone de acessório (com sombra e padding)
+export const LookAccessoryIcon = styled.View`
+  width: 70px;
+  height: 70px;
+  background-color: #f6f6f6;
+  border-radius: 14px;
+  justify-content: center;
+  align-items: center;
+  shadow-color: #000;
+  shadow-opacity: 0.05;
+  shadow-radius: 6px;
+  elevation: 3;
+`;
+// Imagem do acessório
+
+export const LookAccessoryImage = styled.Image`
+  width: 60px;
+  height: 60px;
+`;
+
+export const LookSectionDivider = styled.View`
+   border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  margin-top: 8px;
+  width: 100%;
+  align-self: stretch;
+`;
+export const LookDescriptionText = styled.Text`
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.text};
+  text-align: center;
+  margin-top: 12px;
+`;
+
 
 export const spacing = {
   section: 16,      // antes 24
@@ -18,7 +106,8 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: theme.colors.background,
     padding: theme.spacing.lg,
-    paddingHorizontal: theme.spacing.md,
+    paddingHorizontal: 20, // ✅ define alinhamento uniforme
+
     paddingBottom: theme.spacing.lg,
 
   },
@@ -320,7 +409,16 @@ firstSectionTitle: {
     shadowOffset: { width: 0, height: 2 },
 
     shadowRadius: 6,
-    elevation: 2,
+    elevation: 6,
+
+    /*   background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 16px;
+  shadow-color: #000;
+  shadow-opacity: 0.1;
+  shadow-radius: 6px;
+  elevation: 4; */
   },
   cardTitle: {
     fontSize: 20,
@@ -370,11 +468,13 @@ firstSectionTitle: {
     height: screenWidth * 0.9,
     resizeMode: 'contain',
   },
-  lookText: {
-    flex: 1,
-    fontSize: 14,
-    color: theme.colors.textDark,
-  },
+lookText: {
+  fontSize: 16,
+  color: '#000', // Temporário, só para testar
+  textAlign: 'center',
+  marginTop: 8,
+},
+
   tagRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -586,7 +686,7 @@ firstSectionTitle: {
     textAlign: 'center',
   },
   suggestionWrapper: {
-    flexDirection: 'row',
+     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     gap: 16,
@@ -825,6 +925,59 @@ firstSectionTitle: {
     color: theme.colors.textDark,
   },
 
+modalOverlay: {
+  flex: 1,
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  justifyContent: 'center',
+  alignItems: 'center',
+},
+modalContent: {
+  backgroundColor: '#fff',
+  borderRadius: 12,
+  padding: 20,
+  width: '85%',
+  alignItems: 'center',
+  maxHeight: '90%',
+  justifyContent: 'center',
+},
+modalTitle: {
+  fontSize: 18,
+  fontWeight: 'bold',
+  marginBottom: 12,
+},
+modalImage: {
+  width: 200,
+  height: 200,
+  marginBottom: 16,
+},
+modalButtonRow: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  width: '60%',
+  marginVertical: 8,
+},
+modalNavButton: {
+  paddingHorizontal: 20,
+  paddingVertical: 10,
+  backgroundColor: '#eee',
+  borderRadius: 8,
+},
+modalButtonText: {
+  fontSize: 18,
+},
+modalCloseButton: {
+  marginTop: 10,
+},
+modalCloseText: {
+  color: 'red',
+  fontWeight: 'bold',
+},
+ 
+modalContentWrapper: {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+}
 
 
 });

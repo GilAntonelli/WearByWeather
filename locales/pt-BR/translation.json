@@ -481,7 +481,8 @@
           "top": "Camisa de manga longa e colete leve",
           "bottom": "Calça de sarja",
           "accessories": [
-            "hairUp"
+                                 "watch",
+            "sunglasses"
           ],
           "shoes": "Tênis esportivo",
           "recommendation": "Mesmo com o clima ameno, prefira camadas leves como camisa de manga e colete fino para manter o conforto térmico."
@@ -589,7 +590,7 @@
           "top": "Regata leve",
           "bottom": "Shorts leve",
           "accessories": [
-            "hairUp"
+              "sunglasses"
           ],
           "shoes": "Chinelo ou sandália",
 "recommendation": "Com o calor em alta, escolha roupas leves e arejadas como regatas de algodão e shorts soltos para se manter fresco o dia todo."
@@ -929,7 +930,7 @@
           "shoes": "Chinelo leve",
 "recommendation": "Com o calor elevado, prefira roupas mínimas como regatas cavadas e shorts leves para se manter fresco e ventilado o dia todo."
 
-        }
+        } 
       }
     },
     "extreme_heat": {

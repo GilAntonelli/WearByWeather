@@ -481,7 +481,8 @@
           "top": "Camisa de manga comprida longa e colete leve",
           "bottom": "Calça de sarja",
           "accessories": [
-            "hairUp"
+                                 "watch",
+            "sunglasses"
           ],
           "shoes": "Ténis desportivo",
           "recommendation": "Com o tempo fresco, escolha camadas leves como camisas e coletes finos para evitar o sobreaquecimento."
@@ -589,7 +590,7 @@
           "top": "Camisola de alças leve",
           "bottom": "Shorts leve",
           "accessories": [
-            "hairUp"
+              "sunglasses"
           ],
           "shoes": "Chinelo ou sandália",
 "recommendation": "Com temperaturas elevadas, opte por roupas mínimas e respiráveis como regatas leves e calções soltos para garantir o máximo conforto."
@@ -931,7 +932,7 @@
 "recommendation": "Com temperaturas elevadas, privilegie peças mínimas como regatas cavadas e calções leves para maximizar a ventilação e o conforto."
 
         }
-      },
+      }, 
       "extreme_heat": {
         "feel_cold": {
           "isSinglePiece": false,
