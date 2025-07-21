@@ -616,7 +616,6 @@
           "bottom": "Shorts",
           "accessories": [
             "necklace",
-            "hairUp",
             "glasses"
           ],
           "shoes": "Chinelo ou sandália",
@@ -627,8 +626,7 @@
           "isSinglePiece": false,
           "top": "Regata cavada ou sem mangas",
           "bottom": "Shorts leve",
-          "accessories": [
-            "hairUp",
+          "accessories": [ 
             "headscarfhaircontrol"
           ],
           "shoes": "Chinelo leve",

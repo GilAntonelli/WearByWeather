@@ -607,7 +607,6 @@
           "bottom": "Shorts",
           "accessories": [
             "necklace",
-            "hairUp",
             "glasses"
           ],
           "shoes": "Flip-flops or sandals",
@@ -617,8 +616,7 @@
           "isSinglePiece": false,
           "top": "Low cut or sleeveless tank top",
           "bottom": "Light shorts",
-          "accessories": [
-            "hairUp",
+          "accessories": [ 
             "headscarfhaircontrol"
           ],
           "shoes": "Light flip-flops",
