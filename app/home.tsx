@@ -368,22 +368,25 @@ export default function HomeScreen() {
           }}
         />
       </ScrollView>
-      <View
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          paddingHorizontal: 20,
-          paddingVertical: 20,
-          backgroundColor: theme.colors.background,
-        }}
-      >
-        <PrimaryButton
-          title={t('home.forecastButton')}
-          onPress={() => router.push('/forecast')}
-        />
-      </View>
+      {isCityReady && (
+        <View
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            paddingHorizontal: 20,
+            paddingVertical: 20,
+            backgroundColor: theme.colors.background,
+
+          }}
+        >
+          <PrimaryButton
+            title={t('home.forecastButton')}
+            onPress={() => router.push('/forecast')}
+          />
+        </View>
+      )}
 
     </SafeAreaView>
   );
