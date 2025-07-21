@@ -216,8 +216,8 @@
             "scarf",
             "sunglasses"
           ],
-          "shoes": "Oxford ou ténis fechado", "recommendation":"Com o tempo ameno, opte por camisolas finas com sobreposição leve para manter-se aquecida de forma confortável."
-
+          "shoes": "Oxford ou ténis fechado",
+          "recommendation": "Com o tempo ameno, opte por camisolas finas com sobreposição leve para manter-se aquecida de forma confortável."
         },
         "neutral": {
           "isSinglePiece": true,
@@ -227,9 +227,8 @@
             "scarf",
             "necklace"
           ],
-          "shoes": "Sapatilha ou mocassim"
-          , "recommendation":"O tempo está ameno. Um vestido leve com jaqueta fina é ideal para manter o conforto durante o dia."
-
+          "shoes": "Sapatilha ou mocassim",
+          "recommendation": "O tempo está ameno. Um vestido leve com jaqueta fina é ideal para manter o conforto durante o dia."
         },
         "feel_hot": {
           "isSinglePiece": true,
@@ -238,9 +237,8 @@
             "sunglasses",
             "earrings"
           ],
-          "shoes": "Ténis leve ou sandália fechada"
-          , "recommendation":"Num dia ameno, escolha vestidos leves e fluidos com sobreposição fina para evitar o excesso de calor."
-
+          "shoes": "Ténis leve ou sandália fechada",
+          "recommendation": "Num dia ameno, escolha vestidos leves e fluidos com sobreposição fina para evitar o excesso de calor."
         }
       },
       "comfortable": {
@@ -253,7 +251,6 @@
           ],
           "shoes": "Ténis casual ou oxford",
           "recommendation": "Apesar do clima confortável, se tende a sentir frio, opte por vestidos com manga mais longa e sobreposições leves para garantir aquecimento sem pesar no visual."
-
         },
         "neutral": {
           "isSinglePiece": true,
@@ -262,8 +259,8 @@
             "necklace",
             "sunglasses"
           ],
-          "shoes": "Sapatilha ou mule", "recommendation": "O clima está agradável. Um vestido fluido e acessórios leves são ideais para manter o conforto e o estilo durante todo o dia."
-
+          "shoes": "Sapatilha ou mule",
+          "recommendation": "O clima está agradável. Um vestido fluido e acessórios leves são ideais para manter o conforto e o estilo durante todo o dia."
         },
         "feel_hot": {
           "isSinglePiece": true,
@@ -272,8 +269,8 @@
             "hairUp",
             "headscarfhaircontrol"
           ],
-          "shoes": "Sandália ou ténis leve", "recommendation": "Com o tempo confortável, prefira tecidos leves e alças largas que permitam maior ventilação sem abrir mão do visual descontraído."
-
+          "shoes": "Sandália ou ténis leve",
+          "recommendation": "Com o tempo confortável, prefira tecidos leves e alças largas que permitam maior ventilação sem abrir mão do visual descontraído."
         }
       },
       "warm": {
@@ -284,8 +281,8 @@
             "scarfLight",
             "sunglasses"
           ],
-          "shoes": "Ténis leve ou mocassim","recommendation": "Com o tempo quente, mas se sente frio com facilidade, prefira vestidos com manga leve e uma sobreposição fina para equilibrar o conforto térmico."
-
+          "shoes": "Ténis leve ou mocassim",
+          "recommendation": "Com o tempo quente, mas se sente frio com facilidade, prefira vestidos com manga leve e uma sobreposição fina para equilibrar o conforto térmico."
         },
         "neutral": {
           "isSinglePiece": true,
@@ -294,8 +291,8 @@
             "earrings",
             "sunglasses"
           ],
-          "shoes": "Sandália baixa", "recommendation": "O tempo está quente. Vestidos leves com alças largas ou mangas soltas são ideais para manter a frescura e o conforto ao longo do dia."
-
+          "shoes": "Sandália baixa",
+          "recommendation": "O tempo está quente. Vestidos leves com alças largas ou mangas soltas são ideais para manter a frescura e o conforto ao longo do dia."
         },
         "feel_hot": {
           "isSinglePiece": true,
@@ -304,8 +301,8 @@
             "hairTie",
             "necklace"
           ],
-          "shoes": "Sandália ou chinelos", "recommendation": "Com temperaturas elevadas, opte por vestidos frescos e fluídos com cortes abertos que facilitem a ventilação e ajudem a evitar o sobreaquecimento."
-
+          "shoes": "Sandália ou chinelos",
+          "recommendation": "Com temperaturas elevadas, opte por vestidos frescos e fluídos com cortes abertos que facilitem a ventilação e ajudem a evitar o sobreaquecimento."
         }
       },
       "hot": {
@@ -316,8 +313,8 @@
             "scarfNeck",
             "sunglasses"
           ],
-          "shoes": "Sandália baixa","recommendation": "Mesmo com o calor, se tende a sentir algum desconforto térmico, escolha vestidos leves com alças largas que ofereçam alguma cobertura sem comprometer a frescura."
-
+          "shoes": "Sandália baixa",
+          "recommendation": "Mesmo com o calor, se tende a sentir algum desconforto térmico, escolha vestidos leves com alças largas que ofereçam alguma cobertura sem comprometer a frescura."
         },
         "neutral": {
           "isSinglePiece": true,
@@ -327,8 +324,8 @@
             "necklace",
             "hairUp"
           ],
-          "shoes": "Rasteira ou chinelos", "recommendation": "O dia está quente. Prefira vestidos fluidos com tecidos leves e acessórios frescos para manter-se confortável e elegante."
-
+          "shoes": "Rasteira ou chinelos",
+          "recommendation": "O dia está quente. Prefira vestidos fluidos com tecidos leves e acessórios frescos para manter-se confortável e elegante."
         },
         "feel_hot": {
           "isSinglePiece": true,
@@ -338,8 +335,8 @@
             "glasses",
             "scarfHeadControl"
           ],
-          "shoes": "Chinelo leve","recommendation": "Com temperaturas elevadas, opte por vestidos minimalistas, de alças finas, que garantam máxima ventilação e liberdade de movimento."
-
+          "shoes": "Chinelo leve",
+          "recommendation": "Com temperaturas elevadas, opte por vestidos minimalistas, de alças finas, que garantam máxima ventilação e liberdade de movimento."
         }
       },
       "extreme_heat": {
@@ -481,7 +478,7 @@
           "top": "Camisa de manga comprida longa e colete leve",
           "bottom": "Calça de sarja",
           "accessories": [
-                                 "watch",
+            "watch",
             "sunglasses"
           ],
           "shoes": "Ténis desportivo",
@@ -498,8 +495,8 @@
             "sunglasses",
             "watch"
           ],
-          "shoes": "Ténis fechado", "recommendation":"Com o tempo ameno, combine uma camisola leve ou cardigan com calças confortáveis para manter-se aquecido."
-
+          "shoes": "Ténis fechado",
+          "recommendation": "Com o tempo ameno, combine uma camisola leve ou cardigan com calças confortáveis para manter-se aquecido."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -509,8 +506,8 @@
             "watch",
             "bracelet"
           ],
-          "shoes": "Mocassim ou ténis", "recommendation":"O clima está ameno. Prefira camisas leves ou polos de manga comprida com calças confortáveis para um look versátil."
-
+          "shoes": "Mocassim ou ténis",
+          "recommendation": "O clima está ameno. Prefira camisas leves ou polos de manga comprida com calças confortáveis para um look versátil."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -519,8 +516,8 @@
           "accessories": [
             "sunglasses"
           ],
-          "shoes": "Ténis leve ou sapaténis", "recommendation":"Num dia ameno, escolha camisetas ou regatas com sobreposição leve para evitar o calor excessivo."
-
+          "shoes": "Ténis leve ou sapaténis",
+          "recommendation": "Num dia ameno, escolha camisetas ou regatas com sobreposição leve para evitar o calor excessivo."
         }
       },
       "comfortable": {
@@ -529,12 +526,10 @@
           "top": "Camisa de manga comprida e casaco fino",
           "bottom": "Calça jeans",
           "accessories": [
-            "scarfLight",
             "watch"
           ],
           "shoes": "Ténis ou sapatos casuais",
-"recommendation": "Apesar do tempo agradável, se tende a sentir frio, vista camadas leves como camisas de manga e casacos finos para manter o aquecimento sem perder mobilidade."
-
+          "recommendation": "Apesar do tempo agradável, se tende a sentir frio, vista camadas leves como camisas de manga e casacos finos para manter o aquecimento sem perder mobilidade."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -545,8 +540,7 @@
             "necklace"
           ],
           "shoes": "Sapatilhas ou mocassim",
-"recommendation": "Com o clima confortável, aposte em peças leves e versáteis como t-shirts e calças chino para um look prático e equilibrado."
-
+          "recommendation": "Com o clima confortável, aposte em peças leves e versáteis como t-shirts e calças chino para um look prático e equilibrado."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -556,8 +550,7 @@
             "hairTie"
           ],
           "shoes": "Ténis leve ou chinelos",
-"recommendation": "Mesmo com o tempo ameno, se costuma sentir calor, escolha tecidos leves e respiráveis como camisolas de alças e bermudas para maior frescura."
-
+          "recommendation": "Mesmo com o tempo ameno, se costuma sentir calor, escolha tecidos leves e respiráveis como camisolas de alças e bermudas para maior frescura."
         }
       },
       "warm": {
@@ -570,8 +563,7 @@
             "bracelet"
           ],
           "shoes": "Ténis ou alpargata",
-"recommendation": "Com o tempo quente, mas se sente frio com facilidade, use t-shirts leves combinadas com uma camisa aberta para equilibrar o conforto térmico."
-
+          "recommendation": "Com o tempo quente, mas se sente frio com facilidade, use t-shirts leves combinadas com uma camisa aberta para equilibrar o conforto térmico."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -582,19 +574,17 @@
             "necklace"
           ],
           "shoes": "Sandália ou ténis leve",
-"recommendation": "O dia está quente. Prefira peças leves como t-shirts ou camisolas de alças, combinadas com calções confortáveis para manter-se fresco e com estilo."
-
+          "recommendation": "O dia está quente. Prefira peças leves como t-shirts ou camisolas de alças, combinadas com calções confortáveis para manter-se fresco e com estilo."
         },
         "feel_hot": {
           "isSinglePiece": false,
           "top": "Camisola de alças leve",
           "bottom": "Shorts leve",
           "accessories": [
-              "sunglasses"
+            "sunglasses"
           ],
           "shoes": "Chinelo ou sandália",
-"recommendation": "Com temperaturas elevadas, opte por roupas mínimas e respiráveis como regatas leves e calções soltos para garantir o máximo conforto."
-
+          "recommendation": "Com temperaturas elevadas, opte por roupas mínimas e respiráveis como regatas leves e calções soltos para garantir o máximo conforto."
         }
       },
       "hot": {
@@ -603,12 +593,10 @@
           "top": "Camisola de alças ou camiseta leve de algodão",
           "bottom": "Shorts de linho ou tactel",
           "accessories": [
-            "sunglasses",
-            "scarfNeck"
+            "sunglasses"
           ],
           "shoes": "Sandália leve",
-"recommendation": "Mesmo com o calor, se sente algum desconforto térmico, use peças leves com alguma cobertura, como camisolas de alças largas e calções de algodão."
-
+          "recommendation": "Mesmo com o calor, se sente algum desconforto térmico, use peças leves com alguma cobertura, como camisolas de alças largas e calções de algodão."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -619,19 +607,17 @@
             "glasses"
           ],
           "shoes": "Chinelo ou sandália",
-"recommendation": "O dia está quente. Prefira roupas leves e respiráveis como camisolas de alças ou t-shirts largas combinadas com calções frescos."
-
+          "recommendation": "O dia está quente. Prefira roupas leves e respiráveis como camisolas de alças ou t-shirts largas combinadas com calções frescos."
         },
         "feel_hot": {
           "isSinglePiece": false,
           "top": "Camisola de alças cavada ou sem mangas",
           "bottom": "Shorts leve",
-          "accessories": [ 
+          "accessories": [
             "headscarfhaircontrol"
           ],
           "shoes": "Chinelo leve",
-"recommendation": "Com temperaturas elevadas, opte por peças mínimas e tecidos frescos como regatas cavadas e calções leves para manter o corpo fresco e ventilado."
-
+          "recommendation": "Com temperaturas elevadas, opte por peças mínimas e tecidos frescos como regatas cavadas e calções leves para manter o corpo fresco e ventilado."
         }
       },
       "extreme_heat": {
@@ -789,8 +775,8 @@
             "sunglasses",
             "watch"
           ],
-          "shoes": "Ténis fechado", "recommendation":"Com o clima ameno, utilize camisetas com suéter leve para manter-se aquecido sem perder mobilidade."
-
+          "shoes": "Ténis fechado",
+          "recommendation": "Com o clima ameno, utilize camisetas com suéter leve para manter-se aquecido sem perder mobilidade."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -801,9 +787,8 @@
             "watch",
             "necklace"
           ],
-          "shoes": "Ténis neutro ou mocassim"
-          , "recommendation":"O tempo está ameno. Camisas soltas ou polos unissexo combinadas com calças leves garantem conforto e estilo."
-
+          "shoes": "Ténis neutro ou mocassim",
+          "recommendation": "O tempo está ameno. Camisas soltas ou polos unissexo combinadas com calças leves garantem conforto e estilo."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -812,8 +797,8 @@
           "accessories": [
             "glasses"
           ],
-          "shoes": "Ténis leve ou sapaténis", "recommendation":"Num dia ameno, opte por peças amplas e respiráveis como camisetas oversized e bermudas leves."
-
+          "shoes": "Ténis leve ou sapaténis",
+          "recommendation": "Num dia ameno, opte por peças amplas e respiráveis como camisetas oversized e bermudas leves."
         }
       },
       "comfortable": {
@@ -826,8 +811,7 @@
             "bracelet"
           ],
           "shoes": "Ténis ou sapatos casuais",
-"recommendation": "Mesmo com o tempo confortável, se tende a sentir frio, use camadas leves como camisas de manga comprida e casacos finos para manter o aquecimento."
-
+          "recommendation": "Mesmo com o tempo confortável, se tende a sentir frio, use camadas leves como camisas de manga comprida e casacos finos para manter o aquecimento."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -838,8 +822,7 @@
             "sunglasses"
           ],
           "shoes": "Sapatilhas ou ténis",
-"recommendation": "O clima está agradável. Prefira peças leves e versáteis como t-shirts e calças chino para um look equilibrado e confortável."
-
+          "recommendation": "O clima está agradável. Prefira peças leves e versáteis como t-shirts e calças chino para um look equilibrado e confortável."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -850,8 +833,7 @@
             "hairUp"
           ],
           "shoes": "Chinelo ou ténis leve",
-"recommendation": "Se costuma sentir calor, mesmo com o clima confortável, opte por camisolas leves e bermudas para maior frescura durante o dia."
-
+          "recommendation": "Se costuma sentir calor, mesmo com o clima confortável, opte por camisolas leves e bermudas para maior frescura durante o dia."
         }
       },
       "warm": {
@@ -864,8 +846,7 @@
             "scarfLight"
           ],
           "shoes": "Ténis ou sandália baixa",
-"recommendation": "Apesar do calor, se tende a sentir frio, use uma t-shirt leve combinada com uma camisa aberta para garantir conforto térmico sem aquecer demasiado."
-
+          "recommendation": "Apesar do calor, se tende a sentir frio, use uma t-shirt leve combinada com uma camisa aberta para garantir conforto térmico sem aquecer demasiado."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -876,8 +857,7 @@
             "bracelet"
           ],
           "shoes": "Chinelo ou ténis leve",
-"recommendation": "O clima está quente. Prefira peças leves como camisolas de alças ou t-shirts largas com calções para manter a frescura ao longo do dia."
-
+          "recommendation": "O clima está quente. Prefira peças leves como camisolas de alças ou t-shirts largas com calções para manter a frescura ao longo do dia."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -888,8 +868,7 @@
             "scarfHead"
           ],
           "shoes": "Chinelo leve",
-"recommendation": "Com o tempo quente, opte por roupas mínimas e respiráveis como regatas cavadas e calções leves para evitar o sobreaquecimento."
-
+          "recommendation": "Com o tempo quente, opte por roupas mínimas e respiráveis como regatas cavadas e calções leves para evitar o sobreaquecimento."
         }
       },
       "hot": {
@@ -902,8 +881,7 @@
             "sunglasses"
           ],
           "shoes": "Sandália leve",
-"recommendation": "Mesmo num dia quente, se sente algum desconforto térmico, escolha peças leves com alguma cobertura, como t-shirts estruturadas e calções de algodão."
-
+          "recommendation": "Mesmo num dia quente, se sente algum desconforto térmico, escolha peças leves com alguma cobertura, como t-shirts estruturadas e calções de algodão."
         },
         "neutral": {
           "isSinglePiece": false,
@@ -915,8 +893,7 @@
             "hairUp"
           ],
           "shoes": "Rasteira ou chinelos",
-"recommendation": "O dia está quente. Escolha roupas soltas e respiráveis como camisolas de alças ou t-shirts largas combinadas com calções neutros."
-
+          "recommendation": "O dia está quente. Escolha roupas soltas e respiráveis como camisolas de alças ou t-shirts largas combinadas com calções neutros."
         },
         "feel_hot": {
           "isSinglePiece": false,
@@ -927,10 +904,9 @@
             "headscarfhaircontrol"
           ],
           "shoes": "Chinelo leve",
-"recommendation": "Com temperaturas elevadas, privilegie peças mínimas como regatas cavadas e calções leves para maximizar a ventilação e o conforto."
-
+          "recommendation": "Com temperaturas elevadas, privilegie peças mínimas como regatas cavadas e calções leves para maximizar a ventilação e o conforto."
         }
-      }, 
+      },
       "extreme_heat": {
         "feel_cold": {
           "isSinglePiece": false,

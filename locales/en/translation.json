@@ -457,8 +457,7 @@
           "bottom": "Jeans",
           "accessories": [
             "scarfLight",
-            "cap" 
-            
+            "cap"
           ],
           "shoes": "Light boots",
           "recommendation": "On a chilly day, wear a sweatshirt and light jacket to stay warm without sacrificing comfort."
@@ -479,7 +478,7 @@
           "top": "Long sleeve shirt and light vest",
           "bottom": "Twill pants",
           "accessories": [
-                      "watch",
+            "watch",
             "sunglasses"
           ],
           "shoes": "Sport sneakers",
@@ -527,7 +526,6 @@
           "top": "Long sleeve shirt and light jacket",
           "bottom": "Jeans",
           "accessories": [
-            "scarfLight",
             "watch"
           ],
           "shoes": "Sneakers or casual shoes",
@@ -549,7 +547,7 @@
           "top": "Tank top or light fabric T-shirt",
           "bottom": "Structured shorts or bermuda",
           "accessories": [
-            "sunglasses" 
+            "sunglasses"
           ],
           "shoes": "Light sneakers or flip-flops",
           "recommendation": "If you usually feel hot, even on comfortable days, opt for sleeveless shirts or tank tops with shorts to stay cool and relaxed."
@@ -595,8 +593,7 @@
           "top": "Cotton light tank top or T-shirt",
           "bottom": "Linen or nylon shorts",
           "accessories": [
-            "sunglasses",
-            "scarfNeck"
+            "sunglasses"
           ],
           "shoes": "Light sandals",
           "recommendation": "Even on hot days, if you feel some thermal discomfort, go for light pieces with some coverage, like wide-strap tanks and cotton shorts."
@@ -616,7 +613,7 @@
           "isSinglePiece": false,
           "top": "Low cut or sleeveless tank top",
           "bottom": "Light shorts",
-          "accessories": [ 
+          "accessories": [
             "headscarfhaircontrol"
           ],
           "shoes": "Light flip-flops",
