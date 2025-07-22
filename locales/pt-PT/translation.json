@@ -341,11 +341,11 @@
       },
       "extreme_heat": {
         "feel_cold": {
-          "isSinglePiece": true,
-          "top": "Vestido leve de algodão",
-          "bottom": "",
+                   "isSinglePiece": true,
+          "singlePiece":  "Vestido leve de algodão",
+         
           "accessories": [
-            "hatLight",
+                        "femaleSunHat", 
             "sunglasses",
             "waterBottle"
           ],
@@ -1019,5 +1019,5 @@
     "typeInvalidCity": "Cidade inválida",
     "invalidCityAlert": "Não foi possível obter dados meteorológicos para esta cidade.",
     "typeAttention": "Atenção!"
-  }
+  } 
 }

@@ -298,7 +298,7 @@
           "isSinglePiece": true,
           "singlePiece": "Light dress with thin straps or halter neck",
           "accessories": [
-            "hairTie",
+            "hair Tie",
             "necklace"
           ],
           "shoes": "Sandals or flip-flops",
@@ -341,11 +341,11 @@
       },
       "extreme_heat": {
         "feel_cold": {
-          "isSinglePiece": true,
-          "top": "Light cotton dress",
-          "bottom": "",
+                   "isSinglePiece": true,
+          "singlePiece":"Light cotton dress",
+         
           "accessories": [
-            "hat",
+            "femaleSunHat",
             "sunglasses",
             "waterBottle"
           ],
