@@ -104,27 +104,28 @@ export default function ForecastScreen() {
 
 
   return (
-
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
-      <View style={{ flex: 1 }}>
-        <ScrollView style={{ backgroundColor: theme.colors.background }}>
-          <ForecastHeader
-            city={city}
-//           localDateFormatted={weather?.localDateFormatted ?? '--'}
-//
-            temperature={`${weather?.temperatura ?? '--'}°C`}
-            condition={weather?.condicao ?? t('Forecast.condition')}
-            smartPhrase={frase ?? ''}
-            icon={
-              <Image
-                source={{
-                  uri: `https://openweathermap.org/img/wn/${weather?.icon ?? '01d'}@2x.png`,
-                }}
-                style={{ width: 64, height: 64 }}
-              />
-            }
-            id={weather?.id ?? 0}
-          />
+      {weather && (
+        <View style={{ flex: 1 }}>
+          <ScrollView style={{ backgroundColor: theme.colors.background }}>
+            <ForecastHeader
+              city={city}
+              //           localDateFormatted={weather?.localDateFormatted ?? '--'}
+              //
+              temperature={`${weather?.temperatura ?? '--'}°C`}
+              condition={weather?.condicao ?? t('Forecast.condition')}
+              smartPhrase={frase ?? ''}
+              icon={
+                <Image
+                  source={{
+                    uri: `https://openweathermap.org/img/wn/${weather?.icon ?? '01d'}@2x.png`,
+                  }}
+                  style={{ width: 64, height: 64 }}
+                />
+              }
+              id={weather?.id ?? 0}
+              localTime={weather?.localTime}
+            />
 
             <View style={globalStyles.container}>
               <Text style={globalStyles.firstSectionTitle}>{t('Forecast.sectionTitle')}</Text>
