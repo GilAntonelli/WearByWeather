@@ -4,36 +4,49 @@ import { Text, View, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { capitalizeFirstLetter } from '../utils/stringUtils';
 import { getWeatherGradientColors } from '../utils/weatherColors';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   city: string;
-  date: string;
   temperature: string;
   condition: string;
   smartPhrase: string;
   icon?: React.ReactNode;
   id: number;
+  localTime?: string;
 };
 
 export default function ForecastHeader({
   city,
-  date,
+
   temperature,
   condition,
   smartPhrase,
   icon,
-  id,
+  id, localTime,
 }: Props) {
   const gradientColors = getWeatherGradientColors(id);
-
+  const { t } = useTranslation();
   return (
     <LinearGradient colors={gradientColors} style={styles.container}>
-      <View style={styles.locationRow}>
+      {/* <View style={styles.locationRow}>
         <Ionicons name="location-outline" size={16} color="#FFF" />
         <Text style={styles.city}>{city}</Text>
-      </View>
+      </View> */}
 
-      <Text style={styles.date}>{date}</Text>
+      {/* <Text style={styles.date}>{localDateFormatted}</Text> */}
+      {/* {localTime && (
+  <Text style={styles.localTime}>
+    {t('localTimeLabel')}: {localTime}
+  </Text>
+)} */}
+
+      <View style={styles.locationRow}>
+        <Ionicons name="location-outline" size={16} color="#FFF" />
+        <Text style={styles.city}>
+          {city}{localTime ? ` • ${localTime}` : ''}
+        </Text>
+      </View>
 
       {icon && <View style={styles.iconWrapper}>{icon}</View>}
 
@@ -76,10 +89,15 @@ const styles = StyleSheet.create({
     color: '#FFF',
     marginBottom: 8,
   },
+  localTime: {
+    fontSize: 13,
+    color: '#FFF',
+    marginBottom: 8,
+  },
   iconWrapper: {
     marginBottom: 4,
-  alignItems: 'center',
-  justifyContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   temperature: {
     fontSize: 44,

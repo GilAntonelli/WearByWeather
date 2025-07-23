@@ -26,6 +26,27 @@ Como usar:
 
 // services/mockWeather.ts
 
+// 🧊 COLD
+ 
+export const mockWeather = {
+  temperatura: 10,
+  sensacaoTermica: 8,
+  tempMin: 7,
+  tempMax: 12,
+  umidade: 80,
+  chuva: false,
+  vento: 12,
+  condicao: 'céu nublado',
+  descricao: 'Clouds',
+  icon: '03d',
+  iconUrl: 'https://openweathermap.org/img/wn/03d@2x.png',
+  id: 802,
+  localTime: '18:30',
+};
+ 
+
+
+
  // ❄️ FREEZING
  
 // export const mockWeather = {
@@ -44,41 +65,22 @@ Como usar:
 // };
  
 
-// 🧊 COLD
- 
+ // 🌀 CHILLY
 // export const mockWeather = {
-//   temperatura: 10,
-//   sensacaoTermica: 8,
-//   tempMin: 7,
-//   tempMax: 12,
-//   umidade: 80,
+//   temperatura: 14,
+//   sensacaoTermica: 13,
+//   tempMin: 11,
+//   tempMax: 16,
+//   umidade: 75,
 //   chuva: false,
-//   vento: 12,
-//   condicao: 'céu nublado',
-//   descricao: 'Clouds',
-//   icon: '03d',
-//   iconUrl: 'https://openweathermap.org/img/wn/03d@2x.png',
-//   id: 802,
+//   vento: 10,
+//   condicao: 'nevoeiro',
+//   descricao: 'Mist',
+//   icon: '50d',
+//   iconUrl: 'https://openweathermap.org/img/wn/50d@2x.png',
+//   id: 741,
+//   localTime: '18:30',
 // };
- 
-
-// 🌀 CHILLY
- 
-export const mockWeather = {
-  temperatura: 14,
-  sensacaoTermica: 13,
-  tempMin: 11,
-  tempMax: 16,
-  umidade: 75,
-  chuva: false,
-  vento: 10,
-  condicao: 'nevoeiro',
-  descricao: 'Mist',
-  icon: '50d',
-  iconUrl: 'https://openweathermap.org/img/wn/50d@2x.png',
-  id: 741,
-};
- 
 
 // 🌤️ MILD
 /*
@@ -95,6 +97,7 @@ export const mockWeather = {
   icon: '01d',
   iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
   id: 800,
+  localTime: '18:30',
 };
 */
 
@@ -113,6 +116,7 @@ export const mockWeather = {
   icon: '02d',
   iconUrl: 'https://openweathermap.org/img/wn/02d@2x.png',
   id: 801,
+  localTime: '18:30',
 };
 */
 
@@ -131,6 +135,7 @@ export const mockWeather = {
   icon: '01d',
   iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
   id: 800,
+  localTime: '18:30',
 };
 */
 
@@ -149,6 +154,7 @@ export const mockWeather = {
   icon: '01d',
   iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
   id: 800,
+  localTime: '18:30',
 };
 */
 
@@ -167,10 +173,9 @@ export const mockWeather = {
   icon: '01d',
   iconUrl: 'https://openweathermap.org/img/wn/01d@2x.png',
   id: 904,
+  localTime: '18:30',
 };
 */
-
-
 /*
 ******************
  Forecast 
@@ -178,18 +183,20 @@ export const mockWeather = {
 
 */
 
-export const mockHourlyForecast = [
+ export const mockHourlyForecast = [
   {
     hora: '09h',
+    localTime: '09:00',
     temperatura: '20°C',
     condicao: 'céu limpo',
-    descricao: 'Clear', // ✅ adicionado
+    descricao: 'Clear',
     icon: '01d',
     vento: 10,
     chuva: false,
   },
   {
     hora: '12h',
+    localTime: '12:00',
     temperatura: '22°C',
     condicao: 'parcialmente nublado',
     descricao: 'Clouds',
@@ -199,56 +206,62 @@ export const mockHourlyForecast = [
   },
   {
     hora: '15h',
+    localTime: '15:00',
     temperatura: '24°C',
-    condicao: 'poucas nuvens',
-    descricao: 'Clouds',
-    icon: '03d',
-    vento: 14,
-    chuva: false,
+    condicao: 'chuva leve',
+    descricao: 'Rain',
+    icon: '10d',
+    vento: 18,
+    chuva: true,
   },
   {
     hora: '18h',
+    localTime: '18:00',
     temperatura: '21°C',
     condicao: 'nublado',
     descricao: 'Clouds',
     icon: '04d',
-    vento: 11,
+    vento: 15,
     chuva: false,
   },
   {
     hora: '21h',
+    localTime: '21:00',
     temperatura: '19°C',
     condicao: 'céu limpo',
     descricao: 'Clear',
     icon: '01n',
-    vento: 9,
+    vento: 11,
     chuva: false,
   },
   {
     hora: '00h',
+    localTime: '00:00',
     temperatura: '17°C',
-    condicao: 'céu limpo',
-    descricao: 'Clear',
-    icon: '01n',
-    vento: 8,
-    chuva: false,
+    condicao: 'chuva leve',
+    descricao: 'Rain',
+    icon: '10n',
+    vento: 10,
+    chuva: true,
   },
   {
     hora: '03h',
+    localTime: '03:00',
     temperatura: '16°C',
     condicao: 'nevoeiro',
     descricao: 'Fog',
     icon: '50n',
-    vento: 7,
+    vento: 8,
     chuva: false,
   },
   {
     hora: '06h',
+    localTime: '06:00',
     temperatura: '15°C',
     condicao: 'céu limpo',
     descricao: 'Clear',
     icon: '01d',
-    vento: 6,
+    vento: 7,
     chuva: false,
   },
 ];

@@ -91,6 +91,9 @@
         "clearSky": "Clear skies and stable weather. Great day for outdoor activities.",
         "fallback": "Stable weather today. Keep an eye on possible changes."
     },
+    "localTimeLabel": "Local time",
+
+
     "LookSuggestionCard": {
         "accessoryTitle": "Accessories"
     },

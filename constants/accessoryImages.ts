@@ -28,6 +28,9 @@ export const accessoryImages = {
   windbreaker: require('../assets/accessories/windbreaker.png'),
   hair_control: require('../assets/accessories/hair_control.png'),
   simpleNecklace: require('../assets/accessories/simpleNecklace.png'),
+  femaleSunHat: require('../assets/accessories/femaleSunHat.png') 
+ 
+
 } as const;
 
 export type AccessoryName = keyof typeof accessoryImages;

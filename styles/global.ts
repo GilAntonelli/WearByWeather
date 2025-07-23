@@ -985,6 +985,6 @@ export const globalStyles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 8,
     color: '#333' // ajuste se você estiver usando tema escuro ou claro
-  }
-
+  },
+ 
 });

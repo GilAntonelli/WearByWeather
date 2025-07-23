@@ -69,7 +69,7 @@ export default function ForecastScreen() {
 
   const frase =
     weather &&
-    getFraseClimatica(t,{
+    getFraseClimatica(t, {
       temperatura: weather.temperatura,
       condicao: weather.condicao,
       chuva: weather.chuva,
@@ -106,29 +106,25 @@ export default function ForecastScreen() {
   return (
 
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
-      {weather && (
-        <View style={{ flex: 1 }}>
-          <ScrollView style={{ backgroundColor: theme.colors.background }}>
-            <ForecastHeader
-              city={city}
-              date={new Date().toLocaleDateString(i18n.language, {
-                weekday: 'long',
-                day: '2-digit',
-                month: 'long',
-              })}
-              temperature={`${weather?.temperatura ?? '--'}°C`}
-              condition={weather?.condicao ?? t('Forecast.condition')}
-              smartPhrase={frase ?? ''}
-              icon={
-                <Image
-                  source={{
-                    uri: `https://openweathermap.org/img/wn/${weather?.icon ?? '01d'}@2x.png`,
-                  }}
-                  style={{ width: 64, height: 64 }}
-                />
-              }
-              id={weather?.id ?? 0}
-            />
+      <View style={{ flex: 1 }}>
+        <ScrollView style={{ backgroundColor: theme.colors.background }}>
+          <ForecastHeader
+            city={city}
+//           localDateFormatted={weather?.localDateFormatted ?? '--'}
+//
+            temperature={`${weather?.temperatura ?? '--'}°C`}
+            condition={weather?.condicao ?? t('Forecast.condition')}
+            smartPhrase={frase ?? ''}
+            icon={
+              <Image
+                source={{
+                  uri: `https://openweathermap.org/img/wn/${weather?.icon ?? '01d'}@2x.png`,
+                }}
+                style={{ width: 64, height: 64 }}
+              />
+            }
+            id={weather?.id ?? 0}
+          />
 
             <View style={globalStyles.container}>
               <Text style={globalStyles.firstSectionTitle}>{t('Forecast.sectionTitle')}</Text>
