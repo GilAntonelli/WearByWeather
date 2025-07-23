@@ -1,1024 +1,1060 @@
 {
-  "intro": {
-    "title": "Weather Wear",
-    "description": "O clima muda. Seu estilo se adapta. Receba sugestões de looks com base no clima em tempo real.",
-    "button": "Ver Sugestão do Dia"
-  },
-  "preferences": {
-    "title": "Suas Preferências",
-    "subtitle": "Vamos personalizar sua experiência!",
-    "description": "Essas informações nos ajudarão a recomendar roupas que combinam com seu estilo.",
-    "editLater": "Você poderá editar essas preferências mais tarde.",
-    "nameLabel": "Digite seu nome ou apelido (opcional)",
-    "nameNote": "Você pode deixar esse campo em branco se preferir não ser chamado pelo nome.",
-    "namePlaceholder": "Como prefere ser chamado(a)?",
-    "genderQuestion": "Estilo de vestuário preferido",
-    "optionMale": "Masculino",
-    "optionFemale": "Feminino",
-    "optionUnisex": "Unissex",
-    "genderNote": "Essa informação nos ajuda a ajustar as roupas conforme sua sensibilidade térmica.",
-    "sugestionsMale": "Sugestões com bermuda, camisa polo, etc.",
-    "sugestionsFemale": "Sugestões com vestidos, saias, etc.",
-    "sugestionsUnisex": "Roupas neutras como jeans, t-shirt, etc.",
-    "comfortQuestion": "Temperatura de conforto",
-    "comfortColdTitle": "Prefiro me agasalhar mais",
-    "comfortColdDesc": "Você geralmente sente frio com facilidade",
-    "comfortHotTitle": "Sinto muito calor",
-    "comfortHotDesc": "Você prefere roupas mais leves e frescas",
-    "comfortNeutralTitle": "Prefiro equilíbrio térmico",
-    "comfortNeutralDesc": "Você se adapta bem ao clima e escolhe roupas conforme a temperatura do dia",
-    "button": "Salvar preferências e continuar"
-  },
-  "home": {
-    "greeting": "Olá",
-    "suggestionTitle": "Look Sugerido do Dia",
-    "forecastButton": "Ver previsão detalhada",
-    "selectCity": "Selecione uma cidade para continuar...",
-    "detectingLocation": "Detectando localização...",
-    "trydetectingLocation": "Tentar novamente detectar cidade"
-  },
-  "cityModal": {
-    "title": "Escolha uma cidade",
-    "searchPlaceholder": "Buscar cidade",
-    "currentLocation": "Localização atual"
-  },
-  "language": {
-    "auto": "Detectar automaticamente",
-    "title": "Escolha seu idioma"
-  },
-  "BackButton": {
-    "label": "Voltar"
-  },
-  "SettingsMenu": {
-    "preferences": "Editar preferências",
-    "begin": "Início",
-    "language": "Idioma",
-    "reset": "Redefinir",
-    "refreshWeather": "Atualizar clima"
-  },
-  "Forecast": {
-    "condition": "Carregando...",
-    "sectionTitle": "Próximas 24h (intervalos de 3h)",
-    "sectionTitleDetais": "Detalhes Climáticos",
-    "detailTitle": "Temperatura",
-    "temperatureMax": "Máx",
-    "temperatureMin": "Min",
-    "rainDetail": "Chuva",
-    "possibleRain": "Possível chuva",
-    "withoutRain": "Sem chuva",
-    "windDetail": "Vento",
-    "humidityDetail": "Umidade",
-    "humidityAir": "Umidade relativa do ar",
-    "ThermalSenation": "Sensação Térmica",
-    "backButton": "Voltar para o look do dia",
-    "errorMessage": "Não foi possível carregar os dados climáticos.",
-    "retryButton": "Tentar novamente",
-    "rainTemperature15-": "Dia chuvoso e frio. Leve guarda-chuva e agasalho.",
-    "rain": "Chuva prevista. Não esqueça o guarda-chuva!",
-    "wind20+": "Vento forte hoje. Proteja-se bem ao sair.",
-    "wind30+": "Rajadas de vento fortes hoje. Fique atento ao sair.",
-    "temperature30+": "Dia quente. Use roupas leves e beba bastante água!",
-    "temperature35+": "Muito sol e calor. Hidrate-se bem!",
-    "cold5-": "Frio intenso hoje. Use roupas térmicas.",
-    "temperature10-": "Temperaturas baixas. Vista-se com camadas quentes.",
-    "clearSkyCold5-": "Céu limpo, mas muito frio. Se agasalhe bem.",
-    "cloudsTemperature15-": "Tempo nublado e frio. Um casaco vai bem.",
-    "clouds": "Tempo parcialmente nublado. Aproveite com moderação.",
-    "fog": "Nevoeiro no ar. Atenção à visibilidade.",
-    "mist": "Neblina leve. Pode ser desconfortável pela manhã.",
-    "humidity30-": "Ar seco hoje. Hidrate-se e evite exposição prolongada.",
-    "humidity90+": "Umidade muito alta. Pode causar desconforto.",
-    "clearSky": "Céu limpo e clima estável. Bom dia para atividades ao ar livre.",
-    "fallback": "Clima estável hoje. Fique de olho nas variações ao longo do dia."
-  },
-  "LookSuggestionCard": {
-    "accessoryTitle": "Acessórios"
-  },
-  "and": "e",
-  "buttons": {
-    "close": "Fechar"
-  },
-  "textLookDescription": "Look sugerido de hoje:",
-  "suggestions": {
-    "female": {
-      "freezing": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Casaco grosso e suéter térmico",
-          "bottom": "Calça térmica e jeans",
-          "accessories": [
-            "scarfThick",
-            "hatTight",
-            "gloves"
-          ],
-          "shoes": "Bota forrada impermeável",
-          "recommendation": "Está muito frio lá fora. Aposte em peças térmicas reforçadas, como casacos pesados e calças forradas, e proteja bem as extremidades."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Casaco grosso",
-          "bottom": "Jeans ou sarja grossa",
-          "accessories": [
-            "scarfMedium",
-            "hat",
-            "gloves"
-          ],
-          "shoes": "Bota térmica",
-          "recommendation": "O clima está gelado. Use roupas quentes e confortáveis que mantenham o estilo sem comprometer o aquecimento."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Casaco estruturado e blusa leve",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "hat",
-            "gloves"
-          ],
-          "shoes": "Bota simples",
-          "recommendation": "Mesmo com o frio intenso, prefira roupas quentes com tecidos mais leves se você tende a sentir calor."
-        }
-      },
-      "cold": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Jaqueta acolchoada e blusa de manga",
-          "bottom": "Calça forrada ou moletom",
-          "accessories": [
-            "scarfLight",
-            "hatTight"
-          ],
-          "shoes": "Bota de couro",
-          "recommendation": "Está fazendo frio. Use casacos quentinhos, roupas de manga longa e acessórios que ajudem a manter o corpo aquecido."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Casaco médio e suéter",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "hatWool",
-            "earrings"
-          ],
-          "shoes": "Bota cano curto",
-          "recommendation": "O clima está frio. Prefira roupas confortáveis e quentinhas como suéteres e casacos médios para manter o equilíbrio térmico."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Blusão leve e camisa",
-          "bottom": "Calça de sarja",
-          "accessories": [
-            "hairTie"
-          ],
-          "shoes": "Tênis fechado",
-          "recommendation": "Mesmo com o frio, use roupas leves em camadas finas para manter o aquecimento sem exagero."
-        }
-      },
-      "chilly": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Moletom e jaqueta leve",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "hat",
-            "scarfLight"
-          ],
-          "shoes": "Bota leve",
-          "recommendation": "O tempo está ameno, mas frio para quem sente mais. Use moletom com jaqueta leve para garantir o conforto térmico."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Moletom ou cardigan",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "earrings",
-            "watch"
-          ],
-          "shoes": "Tênis ou bota leve",
-          "recommendation": "O clima está ameno. Um moletom ou cardigan leve garante o equilíbrio entre conforto e estilo."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Camisa e blazer estruturado",
-          "bottom": "Calça de alfaiataria",
-          "accessories": [
-            "scarf",
-            "necklace"
-          ],
-          "shoes": "Tênis casual",
-          "recommendation": "Apesar do clima ameno, prefira roupas mais leves e estruturadas se você costuma sentir calor com facilidade."
-        }
-      },
-      "mild": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Camiseta e suéter fino",
-          "bottom": "Calça jeans ou saia midi com meia",
-          "accessories": [
-            "scarf",
-            "sunglasses"
-          ],
-          "shoes": "Oxford ou tênis fechado",
-          "recommendation": "O clima está ameno. Use camiseta com suéter leve e complemente com peças que ajudem a manter o corpo aquecido."
-        },
-        "neutral": {
-          "isSinglePiece": true,
-          "singlePiece": "Vestido midi com manga curta e jaqueta leve",
-          "accessories": [
-            "bracelet",
-            "scarf",
-            "necklace"
-          ],
-          "shoes": "Sapatilha ou mocassim",
-          "recommendation": "Com o clima ameno, um vestido midi com jaqueta leve garante equilíbrio térmico e praticidade."
-        },
-        "feel_hot": {
-          "isSinglePiece": true,
-          "singlePiece": "Vestido leve de alça e kimono leve",
-          "accessories": [
-            "sunglasses",
-            "earrings"
-          ],
-          "shoes": "Tênis leve ou sandália fechada",
-          "recommendation": "Com o tempo ameno, prefira vestidos leves com tecidos frescos e sobreposições delicadas para manter o conforto térmico."
-        }
-      },
-      "comfortable": {
-        "feel_cold": {
-          "isSinglePiece": true,
-          "singlePiece": "Vestido midi de manga ¾ e blazer leve",
-          "accessories": [
-            "scarfNeck",
-            "watch"
-          ],
-          "shoes": "Tênis casual ou oxford",
-          "recommendation": "Mesmo com o clima agradável, se você sente frio com facilidade, aposte em vestidos com mangas mais longas e sobreposições leves para se manter aquecida com estilo."
-        },
-        "neutral": {
-          "isSinglePiece": true,
-          "singlePiece": "Vestido fluido com manga curta",
-          "accessories": [
-            "necklace",
-            "sunglasses"
-          ],
-          "shoes": "Sapatilha ou mule",
-          "recommendation": "O tempo está confortável. Um vestido leve e fluido é suficiente para garantir bem-estar e elegância durante o dia."
-        },
-        "feel_hot": {
-          "isSinglePiece": true,
-          "singlePiece": "Vestido leve de alça larga ou regata",
-          "accessories": [
-            "hairUp",
-            "headscarfhaircontrol"
-          ],
-          "shoes": "Sandália ou tênis leve",
-          "recommendation": "Com o tempo ameno, prefira tecidos frescos e alças largas que permitam ventilação e liberdade de movimento sem perder o charme."
-        }
-      },
-      "warm": {
-        "feel_cold": {
-          "isSinglePiece": true,
-          "singlePiece": "Vestido curto com manga leve e sobreposição fina",
-          "accessories": [
-            "scarfLight",
-            "sunglasses"
-          ],
-          "shoes": "Tênis leve ou mocassim",
-          "recommendation": "Mesmo com o tempo quente, se você costuma sentir frio, aposte em vestidos com mangas leves e uma sobreposição fina para equilibrar a temperatura."
-        },
-        "neutral": {
-          "isSinglePiece": true,
-          "singlePiece": "Vestido curto com alça larga ou manga japonesa",
-          "accessories": [
-            "earrings",
-            "sunglasses"
-          ],
-          "shoes": "Sandália baixa",
-          "recommendation": "O dia está quente. Vestidos leves com alças largas ou mangas soltinhas são ideais para manter o frescor e o conforto."
-        },
-        "feel_hot": {
-          "isSinglePiece": true,
-          "singlePiece": "Vestido leve de alça fina ou frente única",
-          "accessories": [
-            "hairTie",
-            "necklace"
-          ],
-          "shoes": "Sandália ou chinelo",
-          "recommendation": "Em dias quentes, escolha vestidos bem leves e fluidos, com cortes frescos, para garantir conforto e ventilação."
-        }
-      },
-      "hot": {
-        "feel_cold": {
-          "isSinglePiece": true,
-          "singlePiece": "Vestido leve com alça larga",
-          "accessories": [
-            "scarfNeck",
-            "sunglasses"
-          ],
-          "shoes": "Sandália baixa",
-          "recommendation": "Mesmo com o tempo quente, se você costuma sentir desconforto térmico, escolha vestidos leves com alças largas que tragam frescor sem expor demais."
-        },
-        "neutral": {
-          "isSinglePiece": true,
-          "singlePiece": "Vestido com alça fina e tecido fluido",
-          "accessories": [
-            "glasses",
-            "necklace",
-            "hairUp"
-          ],
-          "shoes": "Rasteira ou chinelo",
-          "recommendation": "O dia está quente. Prefira vestidos soltos, tecidos leves e acessórios frescos para manter o conforto ao longo do dia."
-        },
-        "feel_hot": {
-          "isSinglePiece": true,
-          "singlePiece": "Vestido tipo slip dress de alça fina",
-          "accessories": [
-            "hairUp",
-            "glasses",
-            "scarfHeadControl"
-          ],
-          "shoes": "Chinelo leve",
-          "recommendation": "Com muito calor, opte por vestidos frescos com cortes abertos e tecidos leves que permitam ventilação e liberdade de movimento."
-        }
-      },
-      "extreme_heat": {
-        "feel_cold": {
-                            "isSinglePiece": true,
-          "singlePiece":"Vestido leve de algodão",
-       
-          "accessories": [
-                      "femaleSunHat",
+    "intro": {
+        "title": "Weather Wear",
+        "description": "O clima muda. Seu estilo se adapta. Receba sugestões de looks com base no clima em tempo real.",
+        "button": "Ver Sugestão do Dia"
+    },
+    "preferences": {
+        "title": "Suas Preferências",
+        "subtitle": "Vamos personalizar sua experiência!",
+        "description": "Essas informações nos ajudarão a recomendar roupas que combinam com seu estilo.",
+        "editLater": "Você poderá editar essas preferências mais tarde.",
+        "nameLabel": "Digite seu nome ou apelido (opcional)",
+        "nameNote": "Você pode deixar esse campo em branco se preferir não ser chamado pelo nome.",
+        "namePlaceholder": "Como prefere ser chamado(a)?",
+        "genderQuestion": "Estilo de vestuário preferido",
+        "optionMale": "Masculino",
+        "optionFemale": "Feminino",
+        "optionUnisex": "Unissex",
+        "genderNote": "Essa informação nos ajuda a ajustar as roupas conforme sua sensibilidade térmica.",
+        "sugestionsMale": "Sugestões com bermuda, camisa polo, etc.",
+        "sugestionsFemale": "Sugestões com vestidos, saias, etc.",
+        "sugestionsUnisex": "Roupas neutras como jeans, t-shirt, etc.",
+        "comfortQuestion": "Temperatura de conforto",
+        "comfortColdTitle": "Prefiro me agasalhar mais",
+        "comfortColdDesc": "Você geralmente sente frio com facilidade",
+        "comfortHotTitle": "Sinto muito calor",
+        "comfortHotDesc": "Você prefere roupas mais leves e frescas",
+        "comfortNeutralTitle": "Prefiro equilíbrio térmico",
+        "comfortNeutralDesc": "Você se adapta bem ao clima e escolhe roupas conforme a temperatura do dia",
+        "button": "Salvar preferências e continuar"
+    },
+    "home": {
+        "greeting": "Olá",
+        "suggestionTitle": "Look Sugerido do Dia",
+        "forecastButton": "Ver previsão detalhada",
+        "selectCity": "Selecione uma cidade para continuar...",
+        "detectingLocation": "Detectando localização...",
+        "trydetectingLocation": "Tentar novamente detectar cidade"
+    },
+    "cityModal": {
+        "title": "Escolha uma cidade",
+        "searchPlaceholder": "Buscar cidade",
+        "currentLocation": "Localização atual"
+    },
+    "language": {
+        "auto": "Detectar automaticamente",
+        "title": "Escolha seu idioma"
+    },
+    "BackButton": {
+        "label": "Voltar"
+    },
+    "SettingsMenu": {
+        "preferences": "Editar preferências",
+        "begin": "Início",
+        "language": "Idioma",
+        "reset": "Redefinir",
+        "refreshWeather": "Atualizar clima"
+    },
+    "Forecast": {
+        "condition": "Carregando...",
+        "sectionTitle": "Próximas 24h (intervalos de 3h)",
+        "sectionTitleDetais": "Detalhes Climáticos",
+        "detailTitle": "Temperatura",
+        "temperatureMax": "Máx",
+        "temperatureMin": "Min",
+        "rainDetail": "Chuva",
+        "possibleRain": "Possível chuva",
+        "withoutRain": "Sem chuva",
+        "windDetail": "Vento",
+        "humidityDetail": "Umidade",
+        "humidityAir": "Umidade relativa do ar",
+        "ThermalSenation": "Sensação Térmica",
+        "backButton": "Voltar para o look do dia",
+        "errorMessage": "Não foi possível carregar os dados climáticos.",
+        "retryButton": "Tentar novamente",
+        "rainTemperature15-": "Dia chuvoso e frio. Leve guarda-chuva e agasalho.",
+        "rain": "Chuva prevista. Não esqueça o guarda-chuva!",
+        "wind20+": "Vento forte hoje. Proteja-se bem ao sair.",
+        "wind30+": "Rajadas de vento fortes hoje. Fique atento ao sair.",
+        "temperature30+": "Dia quente. Use roupas leves e beba bastante água!",
+        "temperature35+": "Muito sol e calor. Hidrate-se bem!",
+        "cold5-": "Frio intenso hoje. Use roupas térmicas.",
+        "temperature10-": "Temperaturas baixas. Vista-se com camadas quentes.",
+        "clearSkyCold5-": "Céu limpo, mas muito frio. Se agasalhe bem.",
+        "cloudsTemperature15-": "Tempo nublado e frio. Um casaco vai bem.",
+        "clouds": "Tempo parcialmente nublado. Aproveite com moderação.",
+        "fog": "Nevoeiro no ar. Atenção à visibilidade.",
+        "mist": "Neblina leve. Pode ser desconfortável pela manhã.",
+        "humidity30-": "Ar seco hoje. Hidrate-se e evite exposição prolongada.",
+        "humidity90+": "Umidade muito alta. Pode causar desconforto.",
+        "clearSky": "Céu limpo e clima estável. Bom dia para atividades ao ar livre.",
+        "fallback": "Clima estável hoje. Fique de olho nas variações ao longo do dia."
+    },
+    "LookSuggestionCard": {
+        "accessoryTitle": "Acessórios"
+    },
+    "and": "e",
+    "buttons": {
+        "close": "Fechar"
+    },
+    "textLookDescription": "Look sugerido de hoje:",
+    "suggestions": {
+        "female": {
+            "freezing": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Casaco grosso e suéter térmico",
+                    "bottom": "Calça térmica e jeans",
+                    "accessories": [
+                        "scarfThick",
+                        "hatTight",
+                        "gloves"
+                    ],
+                    "shoes": "Bota forrada impermeável",
+                    "recommendation": "Está muito frio lá fora. Aposte em peças térmicas reforçadas, como casacos pesados e calças forradas, e proteja bem as extremidades."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Casaco grosso",
+                    "bottom": "Jeans ou sarja grossa",
+                    "accessories": [
+                        "scarfMedium",
+                        "hat",
+                        "gloves"
+                    ],
+                    "shoes": "Bota térmica",
+                    "recommendation": "O clima está gelado. Use roupas quentes e confortáveis que mantenham o estilo sem comprometer o aquecimento."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Casaco estruturado e blusa leve",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "hat",
+                        "gloves"
+                    ],
+                    "shoes": "Bota simples",
+                    "recommendation": "Mesmo com o frio intenso, prefira roupas quentes com tecidos mais leves se você tende a sentir calor."
+                }
+            },
+            "cold": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Jaqueta acolchoada e blusa de manga",
+                    "bottom": "Calça forrada ou moletom",
+                    "accessories": [
+                        "scarfLight",
+                        "hatTight"
+                    ],
+                    "shoes": "Bota de couro",
+                    "recommendation": "Está fazendo frio. Use casacos quentinhos, roupas de manga longa e acessórios que ajudem a manter o corpo aquecido."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Casaco médio e suéter",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "hatWool",
+                        "earrings"
+                    ],
+                    "shoes": "Bota cano curto",
+                    "recommendation": "O clima está frio. Prefira roupas confortáveis e quentinhas como suéteres e casacos médios para manter o equilíbrio térmico."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Blusão leve e camisa",
+                    "bottom": "Calça de sarja",
+                    "accessories": [
+                        "hairTie"
+                    ],
+                    "shoes": "Tênis fechado",
+                    "recommendation": "Mesmo com o frio, use roupas leves em camadas finas para manter o aquecimento sem exagero."
+                }
+            },
+            "chilly": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Moletom e jaqueta leve",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "hat",
+                        "scarfLight"
+                    ],
+                    "shoes": "Bota leve",
+                    "recommendation": "O tempo está ameno, mas frio para quem sente mais. Use moletom com jaqueta leve para garantir o conforto térmico."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Moletom ou cardigan",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "earrings",
+                        "watch"
+                    ],
+                    "shoes": "Tênis ou bota leve",
+                    "recommendation": "O clima está ameno. Um moletom ou cardigan leve garante o equilíbrio entre conforto e estilo."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Camisa e blazer estruturado",
+                    "bottom": "Calça de alfaiataria",
+                    "accessories": [
+                        "scarf",
+                        "necklace"
+                    ],
+                    "shoes": "Tênis casual",
+                    "recommendation": "Apesar do clima ameno, prefira roupas mais leves e estruturadas se você costuma sentir calor com facilidade."
+                }
+            },
+            "mild": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta e suéter fino",
+                    "bottom": "Calça jeans ou saia midi com meia",
+                    "accessories": [
+                        "scarf",
+                        "sunglasses"
+                    ],
+                    "shoes": "Oxford ou tênis fechado",
+                    "recommendation": "O clima está ameno. Use camiseta com suéter leve e complemente com peças que ajudem a manter o corpo aquecido."
+                },
+                "neutral": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido midi com manga curta e jaqueta leve",
+                    "accessories": [
+                        "bracelet",
+                        "scarf",
+                        "necklace"
+                    ],
+                    "shoes": "Sapatilha ou mocassim",
+                    "recommendation": "Com o clima ameno, um vestido midi com jaqueta leve garante equilíbrio térmico e praticidade."
+                },
+                "feel_hot": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido leve de alça e kimono leve",
+                    "accessories": [
+                        "sunglasses",
+                        "earrings"
+                    ],
+                    "shoes": "Tênis leve ou sandália fechada",
+                    "recommendation": "Com o tempo ameno, prefira vestidos leves com tecidos frescos e sobreposições delicadas para manter o conforto térmico."
+                }
+            },
+            "comfortable": {
+                "feel_cold": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido midi de manga ¾ e blazer leve",
+                    "accessories": [
+                        "scarfNeck",
+                        "watch"
+                    ],
+                    "shoes": "Tênis casual ou oxford",
+                    "recommendation": "Mesmo com o clima agradável, se você sente frio com facilidade, aposte em vestidos com mangas mais longas e sobreposições leves para se manter aquecida com estilo."
+                },
+                "neutral": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido fluido com manga curta",
+                    "accessories": [
+                        "necklace",
+                        "sunglasses"
+                    ],
+                    "shoes": "Sapatilha ou mule",
+                    "recommendation": "O tempo está confortável. Um vestido leve e fluido é suficiente para garantir bem-estar e elegância durante o dia."
+                },
+                "feel_hot": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido leve de alça larga ou regata",
+                    "accessories": [
+                        "hairUp",
+                        "headscarfhaircontrol"
+                    ],
+                    "shoes": "Sandália ou tênis leve",
+                    "recommendation": "Com o tempo ameno, prefira tecidos frescos e alças largas que permitam ventilação e liberdade de movimento sem perder o charme."
+                }
+            },
+            "warm": {
+                "feel_cold": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido curto com manga leve e sobreposição fina",
+                    "accessories": [
+                        "scarfLight",
+                        "sunglasses"
+                    ],
+                    "shoes": "Tênis leve ou mocassim",
+                    "recommendation": "Mesmo com o tempo quente, se você costuma sentir frio, aposte em vestidos com mangas leves e uma sobreposição fina para equilibrar a temperatura."
+                },
+                "neutral": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido curto com alça larga ou manga japonesa",
+                    "accessories": [
+                        "earrings",
+                        "sunglasses"
+                    ],
+                    "shoes": "Sandália baixa",
+                    "recommendation": "O dia está quente. Vestidos leves com alças largas ou mangas soltinhas são ideais para manter o frescor e o conforto."
+                },
+                "feel_hot": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido leve de alça fina ou frente única",
+                    "accessories": [
+                        "hairTie",
+                        "necklace"
+                    ],
+                    "shoes": "Sandália ou chinelo",
+                    "recommendation": "Em dias quentes, escolha vestidos bem leves e fluidos, com cortes frescos, para garantir conforto e ventilação."
+                }
+            },
+            "hot": {
+                "feel_cold": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido leve com alça larga",
+                    "accessories": [
+                        "scarfNeck",
+                        "sunglasses"
+                    ],
+                    "shoes": "Sandália baixa",
+                    "recommendation": "Mesmo com o tempo quente, se você costuma sentir desconforto térmico, escolha vestidos leves com alças largas que tragam frescor sem expor demais."
+                },
+                "neutral": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido com alça fina e tecido fluido",
+                    "accessories": [
+                        "glasses",
+                        "necklace",
+                        "hairUp"
+                    ],
+                    "shoes": "Rasteira ou chinelo",
+                    "recommendation": "O dia está quente. Prefira vestidos soltos, tecidos leves e acessórios frescos para manter o conforto ao longo do dia."
+                },
+                "feel_hot": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido tipo slip dress de alça fina",
+                    "accessories": [
+                        "hairUp",
+                        "glasses",
+                        "scarfHeadControl"
+                    ],
+                    "shoes": "Chinelo leve",
+                    "recommendation": "Com muito calor, opte por vestidos frescos com cortes abertos e tecidos leves que permitam ventilação e liberdade de movimento."
+                }
+            },
+            "extreme_heat": {
+                "feel_cold": {
+                    "isSinglePiece": true,
+                    "singlePiece": "Vestido leve de algodão",
 
-            "sunglasses",
-            "waterBottle"
-          ],
-          "shoes": "Sandálias abertas",
-          "recommendation": "Opte por tecidos naturais, leves e respiráveis para lidar com o calor extremo."
+                    "accessories": [
+                        "femaleSunHat",
+
+                        "sunglasses",
+                        "waterBottle"
+                    ],
+                    "shoes": "Sandálias abertas",
+                    "recommendation": "Opte por tecidos naturais, leves e respiráveis para lidar com o calor extremo."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Top de alças leve",
+                    "bottom": "Shorts de linho ou saia curta",
+                    "accessories": [
+                        "sunglasses",
+                        "waterBottle"
+                    ],
+                    "shoes": "Tênis ventilado ou sandálias",
+                    "recommendation": "Roupas frescas e claras ajudam a manter o conforto mesmo sob calor intenso."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Regata ou cropped dry-fit",
+                    "bottom": "Shorts esportivos ou biker shorts",
+                    "accessories": [
+                        "sunglasses",
+                        "cap",
+                        "waterBottle"
+                    ],
+                    "shoes": "Tênis esportivo leve ou chinelo",
+                    "recommendation": "Escolha roupas minimalistas e respiráveis para suportar o calor com maior conforto."
+                }
+            }
         },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Top de alças leve",
-          "bottom": "Shorts de linho ou saia curta",
-          "accessories": [
-            "sunglasses",
-            "waterBottle"
-          ],
-          "shoes": "Tênis ventilado ou sandálias",
-          "recommendation": "Roupas frescas e claras ajudam a manter o conforto mesmo sob calor intenso."
+        "male": {
+            "freezing": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Casaco acolchoado e suéter térmico",
+                    "bottom": "Calça térmica e jeans",
+                    "accessories": [
+                        "scarfThick",
+                        "hatTight",
+                        "gloves"
+                    ],
+                    "shoes": "Bota forrada impermeável",
+                    "recommendation": "O frio é intenso. Invista em roupas térmicas, casacos reforçados e acessórios que isolem bem o corpo."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Casaco grosso com forro",
+                    "bottom": "Calça jeans ou sarja grossa",
+                    "accessories": [
+                        "scarfMedium",
+                        "hat",
+                        "gloves"
+                    ],
+                    "shoes": "Bota térmica",
+                    "recommendation": "O clima está muito frio. Use roupas reforçadas que garantam conforto e proteção sem perder o estilo."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Casaco estruturado e blusa de manga",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "hat",
+                        "gloves"
+                    ],
+                    "shoes": "Bota simples",
+                    "recommendation": "Apesar do frio forte, opte por roupas quentes com tecidos leves e ventilação, se você costuma sentir calor."
+                }
+            },
+            "cold": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Jaqueta térmica e blusa de manga",
+                    "bottom": "Calça grossa ou moletom",
+                    "accessories": [
+                        "scarfLight",
+                        "beanie",
+                        "gloves"
+                    ],
+                    "shoes": "Bota de couro",
+                    "recommendation": "Está frio lá fora. Invista em casacos térmicos e camadas reforçadas para manter o corpo bem aquecido."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Casaco de inverno médio e suéter",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "hat",
+                        "watch"
+                    ],
+                    "shoes": "Bota cano curto",
+                    "recommendation": "Com o clima frio, escolha roupas confortáveis como suéteres e casacos médios para manter o estilo e o conforto térmico."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Blusão leve e camisa",
+                    "bottom": "Calça de sarja",
+                    "accessories": [
+                        "hat"
+                    ],
+                    "shoes": "Tênis fechado",
+                    "recommendation": "Apesar do frio, escolha roupas leves e confortáveis, em tecidos que ajudem a evitar o superaquecimento."
+                }
+            },
+            "chilly": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Moletom e jaqueta leve",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "scarfLight",
+                        "cap"
+                    ],
+                    "shoes": "Bota leve",
+                    "recommendation": "No clima ameno, use moletom e jaqueta leve para manter o corpo aquecido de forma confortável."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Jaqueta leve ou suéter",
+                    "bottom": "Calça jeans ou chino",
+                    "accessories": [
+                        "watch",
+                        "sunglasses"
+                    ],
+                    "shoes": "Tênis casual",
+                    "recommendation": "O tempo está ameno. Use jaqueta leve ou suéter com calça confortável para manter o equilíbrio térmico e o estilo."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Camisa de manga longa e colete leve",
+                    "bottom": "Calça de sarja",
+                    "accessories": [
+                        "watch",
+                        "sunglasses"
+                    ],
+                    "shoes": "Tênis esportivo",
+                    "recommendation": "Mesmo com o clima ameno, prefira camadas leves como camisa de manga e colete fino para manter o conforto térmico."
+                }
+            },
+            "mild": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta e suéter leve ou cardigan",
+                    "bottom": "Calça jeans ou chino",
+                    "accessories": [
+                        "scarfLight",
+                        "sunglasses",
+                        "watch"
+                    ],
+                    "shoes": "Tênis fechado",
+                    "recommendation": "No clima ameno, aposte em suéter leve ou cardigan com calça jeans ou chino para manter o corpo aquecido."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Camisa leve ou polo de manga longa",
+                    "bottom": "Calça chino ou sarja leve",
+                    "accessories": [
+                        "watch",
+                        "bracelet"
+                    ],
+                    "shoes": "Mocassim ou tênis",
+                    "recommendation": "Com o tempo ameno, camisas leves ou polos de manga longa combinadas com calça de sarja são ótimas opções."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta ou regata e jaqueta fina",
+                    "bottom": "Bermuda de tecido estruturado",
+                    "accessories": [
+                        "sunglasses"
+                    ],
+                    "shoes": "Tênis leve ou sapatênis",
+                    "recommendation": "Com o clima ameno, prefira camisetas ou regatas com jaquetas leves para manter o conforto sem passar calor."
+                }
+            },
+            "comfortable": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camisa de manga e jaqueta fina",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "watch"
+                    ],
+                    "shoes": "Tênis ou sapato casual",
+                    "recommendation": "Mesmo com o tempo agradável, se você costuma sentir frio, aposte em camadas leves como camisas de manga longa e casacos finos para manter-se aquecido com conforto."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta ou polo",
+                    "bottom": "Calça chino",
+                    "accessories": [
+                        "sunglasses",
+                        "necklace"
+                    ],
+                    "shoes": "Sapatênis ou mocassim",
+                    "recommendation": "Com o clima confortável, escolha peças leves e versáteis como camisetas e calças chino para um visual prático e equilibrado."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Regata ou camiseta de tecido leve",
+                    "bottom": "Bermuda ou short de sarja",
+                    "accessories": [
+                        "hairTie"
+                    ],
+                    "shoes": "Tênis leve ou chinelo",
+                    "recommendation": "Se tende a sentir calor, mesmo em dias amenos, prefira camisetas leves ou regatas com bermudas para garantir frescor e mobilidade."
+                }
+            },
+            "warm": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta e camisa aberta leve",
+                    "bottom": "Bermuda estruturada",
+                    "accessories": [
+                        "sunglasses",
+                        "bracelet"
+                    ],
+                    "shoes": "Tênis ou alpargata",
+                    "recommendation": "Mesmo com o clima quente, se você sente frio com facilidade, aposte em uma camiseta leve combinada com uma camisa aberta para manter o conforto térmico."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta ou regata estruturada",
+                    "bottom": "Shorts ou bermuda",
+                    "accessories": [
+                        "glasses",
+                        "necklace"
+                    ],
+                    "shoes": "Sandália ou tênis leve",
+                    "recommendation": "O dia está quente. Prefira peças leves e confortáveis como camisetas ou regatas e bermudas para manter a leveza e a praticidade."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Regata leve",
+                    "bottom": "Shorts leve",
+                    "accessories": [
+                        "sunglasses"
+                    ],
+                    "shoes": "Chinelo ou sandália",
+                    "recommendation": "Com o calor em alta, escolha roupas leves e arejadas como regatas de algodão e shorts soltos para se manter fresco o dia todo."
+                }
+            },
+            "hot": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Regata ou camiseta leve de algodão",
+                    "bottom": "Shorts de linho ou tactel",
+                    "accessories": [
+                        "sunglasses"
+                    ],
+                    "shoes": "Sandália leve",
+                    "recommendation": "Mesmo com o tempo quente, se você sente desconforto térmico, use regatas largas ou camisetas leves com tecidos frescos que ainda ofereçam alguma cobertura."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Regata ou top leve",
+                    "bottom": "Shorts",
+                    "accessories": [
+                        "necklace",
+                        "glasses"
+                    ],
+                    "shoes": "Chinelo ou sandália",
+                    "recommendation": "O dia está quente. Aposte em peças leves como regatas, camisetas soltas e shorts para manter o frescor e a liberdade de movimento."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Regata cavada ou sem mangas",
+                    "bottom": "Shorts leve",
+                    "accessories": [
+                        "headscarfhaircontrol"
+                    ],
+                    "shoes": "Chinelo leve",
+                    "recommendation": "Com o calor intenso, escolha roupas bem leves como regatas cavadas e shorts de tecido fino para garantir ventilação e conforto térmico."
+                }
+            },
+            "extreme_heat": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta leve de algodão",
+                    "bottom": "Bermuda de tecido natural",
+                    "accessories": [
+                        "hat",
+                        "sunglasses",
+                        "waterBottle"
+                    ],
+                    "shoes": "Sandálias ou sapatilha arejada",
+                    "recommendation": "Use peças claras e respiráveis para amenizar a sensação térmica."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta dry-fit ou regata casual",
+                    "bottom": "Bermuda leve ou tactel",
+                    "accessories": [
+                        "sunglasses",
+                        "waterBottle"
+                    ],
+                    "shoes": "Tênis ventilado ou chinelo",
+                    "recommendation": "Evite roupas escuras e sintéticas em dias extremamente quentes."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Regata esportiva ou dry-fit",
+                    "bottom": "Shorts leves e curtos",
+                    "accessories": [
+                        "cap",
+                        "sunglasses",
+                        "waterBottle"
+                    ],
+                    "shoes": "Chinelo ou sandália leve",
+                    "recommendation": "Quanto menos tecido e mais ventilação, melhor será sua experiência térmica."
+                }
+            }
         },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Regata ou cropped dry-fit",
-          "bottom": "Shorts esportivos ou biker shorts",
-          "accessories": [
-            "sunglasses",
-            "cap",
-            "waterBottle"
-          ],
-          "shoes": "Tênis esportivo leve ou chinelo",
-          "recommendation": "Escolha roupas minimalistas e respiráveis para suportar o calor com maior conforto."
+        "unisex": {
+            "freezing": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Jaqueta acolchoada e blusa térmica",
+                    "bottom": "Calça térmica e jeans",
+                    "accessories": [
+                        "scarfThick",
+                        "hatTight",
+                        "gloves"
+                    ],
+                    "shoes": "Bota forrada impermeável",
+                    "recommendation": "No frio intenso, use roupas térmicas em camadas e acessórios que cubram bem cabeça, pescoço e mãos."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Casaco de neve médio e suéter",
+                    "bottom": "Calça jeans ou sarja",
+                    "accessories": [
+                        "scarfMedium",
+                        "hat",
+                        "gloves"
+                    ],
+                    "shoes": "Bota térmica",
+                    "recommendation": "Com o frio intenso, escolha roupas quentes e confortáveis que mantenham o corpo aquecido sem exageros."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Casaco leve e moletom fino",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "hat",
+                        "gloves"
+                    ],
+                    "shoes": "Bota simples",
+                    "recommendation": "Mesmo no frio intenso, prefira roupas térmicas mais leves e respiráveis se você costuma sentir calor."
+                }
+            },
+            "cold": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Moletom grosso e jaqueta corta-vento",
+                    "bottom": "Calça de moletom ou sarja",
+                    "accessories": [
+                        "scarfLight",
+                        "hatTight",
+                        "gloves"
+                    ],
+                    "shoes": "Bota cano médio",
+                    "recommendation": "Com o frio, prefira moletom grosso e jaquetas que ajudem a manter o corpo aquecido e isolado."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Suéter e casaco leve",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "hat",
+                        "watch"
+                    ],
+                    "shoes": "Tênis casual",
+                    "recommendation": "O clima está frio. Use roupas quentes e confortáveis que garantam proteção sem comprometer a liberdade de movimento."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Blusa de manga e colete leve",
+                    "bottom": "Calça de sarja",
+                    "accessories": [
+                        "hat"
+                    ],
+                    "shoes": "Tênis ou bota leve",
+                    "recommendation": "Mesmo com o tempo frio, opte por camadas leves e tecidos respiráveis se costuma sentir calor com facilidade."
+                }
+            },
+            "chilly": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Moletom e jaqueta leve",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "scarf",
+                        "beanie"
+                    ],
+                    "shoes": "Bota leve",
+                    "recommendation": "No clima ameno, aposte em moletom e jaqueta leve para garantir conforto e proteção térmica."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Suéter médio ou jaqueta leve",
+                    "bottom": "Calça chino",
+                    "accessories": [
+                        "watch",
+                        "sunglasses"
+                    ],
+                    "shoes": "Tênis casual",
+                    "recommendation": "O tempo está ameno. Use suéter médio ou jaqueta leve com calça confortável para manter o equilíbrio térmico."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Camisa leve e sobreposição curta",
+                    "bottom": "Calça sarja leve",
+                    "accessories": [
+                        "simpleNecklace"
+                    ],
+                    "shoes": "Tênis leve",
+                    "recommendation": "Apesar do clima ameno, prefira camadas leves e tecidos frescos se você costuma sentir calor com facilidade."
+                }
+            },
+            "mild": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta e suéter leve",
+                    "bottom": "Calça jeans ou chino",
+                    "accessories": [
+                        "scarfLight",
+                        "sunglasses",
+                        "watch"
+                    ],
+                    "shoes": "Tênis fechado",
+                    "recommendation": "No tempo ameno, use camiseta com suéter leve para garantir conforto térmico de forma prática."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Camisa de botão solta ou polo unissex",
+                    "bottom": "Calça chino ou moletom leve",
+                    "accessories": [
+                        "bracelet",
+                        "watch",
+                        "necklace"
+                    ],
+                    "shoes": "Tênis neutro ou mocassim",
+                    "recommendation": "Com o clima ameno, camisas leves ou polos unissex com calças confortáveis mantêm o equilíbrio entre estilo e conforto."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta oversized e colete aberto leve",
+                    "bottom": "Bermuda de sarja estruturada",
+                    "accessories": [
+                        "glasses"
+                    ],
+                    "shoes": "Tênis leve ou sapatênis",
+                    "recommendation": "Com o clima ameno, prefira roupas largas e frescas como camiseta oversized e bermuda estruturada."
+                }
+            },
+            "comfortable": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camisa manga longa e jaqueta jeans",
+                    "bottom": "Calça jeans",
+                    "accessories": [
+                        "scarfDecorative",
+                        "bracelet"
+                    ],
+                    "shoes": "Tênis ou sapato casual",
+                    "recommendation": "Mesmo com o tempo agradável, se você sente frio com facilidade, aposte em camadas leves como camisas de manga e jaquetas finas para manter-se aquecido."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta básica ou gola careca",
+                    "bottom": "Calça chino ou sarja",
+                    "accessories": [
+                        "necklace",
+                        "sunglasses"
+                    ],
+                    "shoes": "Sapatênis ou tênis",
+                    "recommendation": "Com o clima confortável, escolha peças práticas e frescas como camisetas básicas e calças leves para manter o equilíbrio térmico."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Regata ou camiseta fluida",
+                    "bottom": "Bermuda neutra",
+                    "accessories": [
+                        "glasses",
+                        "hairUp"
+                    ],
+                    "shoes": "Chinelo ou tênis leve",
+                    "recommendation": "Se tende a sentir calor mesmo em dias amenos, prefira regatas e bermudas leves para garantir conforto térmico e liberdade de movimento."
+                }
+            },
+            "warm": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta leve e camisa aberta",
+                    "bottom": "Bermuda estruturada",
+                    "accessories": [
+                        "sunglasses",
+                        "scarfLight"
+                    ],
+                    "shoes": "Tênis ou sandália baixa",
+                    "recommendation": "Mesmo com o clima quente, se você costuma sentir frio, aposte em uma camiseta leve com uma camisa aberta para equilibrar a temperatura corporal."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Regata unissex ou camiseta oversized",
+                    "bottom": "Shorts ou bermuda",
+                    "accessories": [
+                        "simpleNecklace",
+                        "bracelet"
+                    ],
+                    "shoes": "Chinelo ou tênis leve",
+                    "recommendation": "O dia está quente. Prefira peças leves como regatas ou camisetas soltas com shorts para manter o frescor e o conforto."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Regata cavada de algodão leve",
+                    "bottom": "Shorts leve",
+                    "accessories": [
+                        "hairUp",
+                        "scarfHead"
+                    ],
+                    "shoes": "Chinelo leve",
+                    "recommendation": "Com o calor intenso, escolha roupas bem leves como regatas cavadas e shorts de tecido fresco para garantir ventilação e mobilidade."
+                }
+            },
+            "hot": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta sem manga estruturada",
+                    "bottom": "Shorts de algodão",
+                    "accessories": [
+                        "scarfNeck",
+                        "sunglasses"
+                    ],
+                    "shoes": "Sandália leve",
+                    "recommendation": "Mesmo em dias muito quentes, se você sente desconforto térmico, use camisetas leves com alguma cobertura e shorts confortáveis para manter o equilíbrio térmico."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Regata ou camiseta larga",
+                    "bottom": "Shorts curtos ou neutros",
+                    "accessories": [
+                        "glasses",
+                        "simpleNecklace",
+                        "hairUp"
+                    ],
+                    "shoes": "Rasteira ou chinelo",
+                    "recommendation": "O dia está quente. Aposte em peças frescas e soltas como camisetas largas ou regatas com shorts neutros para maior conforto."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Regata cavada ou cropped neutro",
+                    "bottom": "Shorts leve",
+                    "accessories": [
+                        "hairUp",
+                        "headscarfhaircontrol"
+                    ],
+                    "shoes": "Chinelo leve",
+                    "recommendation": "Com o calor elevado, prefira roupas mínimas como regatas cavadas e shorts leves para se manter fresco e ventilado o dia todo."
+                }
+            }
+        },
+        "extreme_heat": {
+            "feel_cold": {
+                "isSinglePiece": false,
+                "top": "Camiseta solta de algodão",
+                "bottom": "Shorts de linho ou saia fluida",
+                "accessories": [
+                    "hat",
+                    "sunglasses",
+                    "waterBottle"
+                ],
+                "shoes": "Sandálias abertas",
+                "recommendation": "Use roupas claras e soltas para minimizar o impacto do calor."
+            },
+            "neutral": {
+                "isSinglePiece": false,
+                "top": "Top leve ou regata unissex",
+                "bottom": "Shorts curtos ou bermuda leve",
+                "accessories": [
+                    "sunglasses",
+                    "waterBottle"
+                ],
+                "shoes": "Tênis ventilado ou chinelo",
+                "recommendation": "Opte por praticidade e conforto com peças leves e respiráveis."
+            },
+            "feel_hot": {
+                "isSinglePiece": false,
+                "top": "Regata esportiva ou cropped curto",
+                "bottom": "Shorts esportivos unissex",
+                "accessories": [
+                    "cap",
+                    "sunglasses",
+                    "waterBottle"
+                ],
+                "shoes": "Chinelo ou tênis ultraleve",
+                "recommendation": "Mantenha-se hidratado e escolha o mínimo necessário para aguentar o calor."
+            }
         }
-      }
     },
-    "male": {
-      "freezing": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Casaco acolchoado e suéter térmico",
-          "bottom": "Calça térmica e jeans",
-          "accessories": [
-            "scarfThick",
-            "hatTight",
-            "gloves"
-          ],
-          "shoes": "Bota forrada impermeável",
-          "recommendation": "O frio é intenso. Invista em roupas térmicas, casacos reforçados e acessórios que isolem bem o corpo."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Casaco grosso com forro",
-          "bottom": "Calça jeans ou sarja grossa",
-          "accessories": [
-            "scarfMedium",
-            "hat",
-            "gloves"
-          ],
-          "shoes": "Bota térmica",
-          "recommendation": "O clima está muito frio. Use roupas reforçadas que garantam conforto e proteção sem perder o estilo."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Casaco estruturado e blusa de manga",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "hat",
-            "gloves"
-          ],
-          "shoes": "Bota simples",
-          "recommendation": "Apesar do frio forte, opte por roupas quentes com tecidos leves e ventilação, se você costuma sentir calor."
-        }
-      },
-      "cold": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Jaqueta térmica e blusa de manga",
-          "bottom": "Calça grossa ou moletom",
-          "accessories": [
-            "scarfLight",
-            "beanie",
-            "gloves"
-          ],
-          "shoes": "Bota de couro",
-          "recommendation": "Está frio lá fora. Invista em casacos térmicos e camadas reforçadas para manter o corpo bem aquecido."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Casaco de inverno médio e suéter",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "hat",
-            "watch"
-          ],
-          "shoes": "Bota cano curto",
-          "recommendation": "Com o clima frio, escolha roupas confortáveis como suéteres e casacos médios para manter o estilo e o conforto térmico."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Blusão leve e camisa",
-          "bottom": "Calça de sarja",
-          "accessories": [
-            "hat"
-          ],
-          "shoes": "Tênis fechado",
-          "recommendation": "Apesar do frio, escolha roupas leves e confortáveis, em tecidos que ajudem a evitar o superaquecimento."
-        }
-      },
-      "chilly": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Moletom e jaqueta leve",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "scarfLight",
-            "cap"
-          ],
-          "shoes": "Bota leve",
-          "recommendation": "No clima ameno, use moletom e jaqueta leve para manter o corpo aquecido de forma confortável."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Jaqueta leve ou suéter",
-          "bottom": "Calça jeans ou chino",
-          "accessories": [
-            "watch",
-            "sunglasses"
-          ],
-          "shoes": "Tênis casual",
-          "recommendation": "O tempo está ameno. Use jaqueta leve ou suéter com calça confortável para manter o equilíbrio térmico e o estilo."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Camisa de manga longa e colete leve",
-          "bottom": "Calça de sarja",
-          "accessories": [
-            "watch",
-            "sunglasses"
-          ],
-          "shoes": "Tênis esportivo",
-          "recommendation": "Mesmo com o clima ameno, prefira camadas leves como camisa de manga e colete fino para manter o conforto térmico."
-        }
-      },
-      "mild": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Camiseta e suéter leve ou cardigan",
-          "bottom": "Calça jeans ou chino",
-          "accessories": [
-            "scarfLight",
-            "sunglasses",
-            "watch"
-          ],
-          "shoes": "Tênis fechado",
-          "recommendation": "No clima ameno, aposte em suéter leve ou cardigan com calça jeans ou chino para manter o corpo aquecido."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Camisa leve ou polo de manga longa",
-          "bottom": "Calça chino ou sarja leve",
-          "accessories": [
-            "watch",
-            "bracelet"
-          ],
-          "shoes": "Mocassim ou tênis",
-          "recommendation": "Com o tempo ameno, camisas leves ou polos de manga longa combinadas com calça de sarja são ótimas opções."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Camiseta ou regata e jaqueta fina",
-          "bottom": "Bermuda de tecido estruturado",
-          "accessories": [
-            "sunglasses"
-          ],
-          "shoes": "Tênis leve ou sapatênis",
-          "recommendation": "Com o clima ameno, prefira camisetas ou regatas com jaquetas leves para manter o conforto sem passar calor."
-        }
-      },
-      "comfortable": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Camisa de manga e jaqueta fina",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "watch"
-          ],
-          "shoes": "Tênis ou sapato casual",
-          "recommendation": "Mesmo com o tempo agradável, se você costuma sentir frio, aposte em camadas leves como camisas de manga longa e casacos finos para manter-se aquecido com conforto."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Camiseta ou polo",
-          "bottom": "Calça chino",
-          "accessories": [
-            "sunglasses",
-            "necklace"
-          ],
-          "shoes": "Sapatênis ou mocassim",
-          "recommendation": "Com o clima confortável, escolha peças leves e versáteis como camisetas e calças chino para um visual prático e equilibrado."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Regata ou camiseta de tecido leve",
-          "bottom": "Bermuda ou short de sarja",
-          "accessories": [
-            "hairTie"
-          ],
-          "shoes": "Tênis leve ou chinelo",
-          "recommendation": "Se tende a sentir calor, mesmo em dias amenos, prefira camisetas leves ou regatas com bermudas para garantir frescor e mobilidade."
-        }
-      },
-      "warm": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Camiseta e camisa aberta leve",
-          "bottom": "Bermuda estruturada",
-          "accessories": [
-            "sunglasses",
-            "bracelet"
-          ],
-          "shoes": "Tênis ou alpargata",
-          "recommendation": "Mesmo com o clima quente, se você sente frio com facilidade, aposte em uma camiseta leve combinada com uma camisa aberta para manter o conforto térmico."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Camiseta ou regata estruturada",
-          "bottom": "Shorts ou bermuda",
-          "accessories": [
-            "glasses",
-            "necklace"
-          ],
-          "shoes": "Sandália ou tênis leve",
-          "recommendation": "O dia está quente. Prefira peças leves e confortáveis como camisetas ou regatas e bermudas para manter a leveza e a praticidade."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Regata leve",
-          "bottom": "Shorts leve",
-          "accessories": [
-            "sunglasses"
-          ],
-          "shoes": "Chinelo ou sandália",
-          "recommendation": "Com o calor em alta, escolha roupas leves e arejadas como regatas de algodão e shorts soltos para se manter fresco o dia todo."
-        }
-      },
-      "hot": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Regata ou camiseta leve de algodão",
-          "bottom": "Shorts de linho ou tactel",
-          "accessories": [
-            "sunglasses"
-          ],
-          "shoes": "Sandália leve",
-          "recommendation": "Mesmo com o tempo quente, se você sente desconforto térmico, use regatas largas ou camisetas leves com tecidos frescos que ainda ofereçam alguma cobertura."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Regata ou top leve",
-          "bottom": "Shorts",
-          "accessories": [
-            "necklace",
-            "glasses"
-          ],
-          "shoes": "Chinelo ou sandália",
-          "recommendation": "O dia está quente. Aposte em peças leves como regatas, camisetas soltas e shorts para manter o frescor e a liberdade de movimento."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Regata cavada ou sem mangas",
-          "bottom": "Shorts leve",
-          "accessories": [
-            "headscarfhaircontrol"
-          ],
-          "shoes": "Chinelo leve",
-          "recommendation": "Com o calor intenso, escolha roupas bem leves como regatas cavadas e shorts de tecido fino para garantir ventilação e conforto térmico."
-        }
-      },
-      "extreme_heat": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Camiseta leve de algodão",
-          "bottom": "Bermuda de tecido natural",
-          "accessories": [
-            "hat",
-            "sunglasses",
-            "waterBottle"
-          ],
-          "shoes": "Sandálias ou sapatilha arejada",
-          "recommendation": "Use peças claras e respiráveis para amenizar a sensação térmica."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Camiseta dry-fit ou regata casual",
-          "bottom": "Bermuda leve ou tactel",
-          "accessories": [
-            "sunglasses",
-            "waterBottle"
-          ],
-          "shoes": "Tênis ventilado ou chinelo",
-          "recommendation": "Evite roupas escuras e sintéticas em dias extremamente quentes."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Regata esportiva ou dry-fit",
-          "bottom": "Shorts leves e curtos",
-          "accessories": [
-            "cap",
-            "sunglasses",
-            "waterBottle"
-          ],
-          "shoes": "Chinelo ou sandália leve",
-          "recommendation": "Quanto menos tecido e mais ventilação, melhor será sua experiência térmica."
-        }
-      }
+
+    "accessoryNames": {
+        "scarfThick": "Cachecol grosso",
+        "scarfMedium": "Cachecol médio",
+        "scarfLight": "Cachecol leve",
+        "scarfNeck": "Lenço de pescoço",
+        "scarfDecorative": "Lenço decorativo",
+        "hatTight": "Touca justa",
+        "hatLight": "Chapéu leve",
+        "hatWool": "Touca de lã",
+        "hat": "Touca",
+        "beanie": "Touca",
+        "cap": "Boné",
+        "femaleSunHat": "Chapéu de sol",
+        "gloves": "Luvas",
+        "waterBottle": "Garrafa de água",
+        "sunglasses": "Óculos de sol",
+        "glasses": "Óculos",
+        "necklace": "Colar",
+        "simpleNecklace": "Colar simples",
+        "bracelet": "Pulseira",
+        "earrings": "Brincos",
+        "watch": "Relógio",
+        "hairTie": "Elástico de cabelo",
+        "hairUp": "Cabelo preso",
+        "headscarfhaircontrol": "Lenço de controle capilar",
+        "scarfHead": "Lenço de cabeça",
+        "raincoat": "Capa de chuva",
+        "umbrella": "Guarda-chuva",
+        "rain_boots": "Botas impermeáveis",
+        "windbreaker": "Corta-vento",
+        "hair_control": "Controle capilar"
     },
-    "unisex": {
-      "freezing": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Jaqueta acolchoada e blusa térmica",
-          "bottom": "Calça térmica e jeans",
-          "accessories": [
-            "scarfThick",
-            "hatTight",
-            "gloves"
-          ],
-          "shoes": "Bota forrada impermeável",
-          "recommendation": "No frio intenso, use roupas térmicas em camadas e acessórios que cubram bem cabeça, pescoço e mãos."
+
+
+
+    "overlays": {
+        "rain": {
+            "rain_1e": {
+                "description": "Chuva leve (≥ 1mm): incluir guarda-chuva.",
+                "accessories": [
+                    "umbrella"
+                ]
+            },
+            "rain_3e": {
+                "description": "Chuva moderada (≥ 3mm): usar capa de chuva. Se vento ≥ 20km/h, substituir por capa impermeável.",
+                "accessories": [
+                    "raincoat",
+                    "umbrella"
+                ]
+            },
+            "rain_5e": {
+                "description": "Chuva forte (≥ 5mm): adicionar bota impermeável.",
+                "accessories": [
+                    "rain_boots",
+                    "raincoat",
+                    "umbrella"
+                ]
+            }
         },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Casaco de neve médio e suéter",
-          "bottom": "Calça jeans ou sarja",
-          "accessories": [
-            "scarfMedium",
-            "hat",
-            "gloves"
-          ],
-          "shoes": "Bota térmica",
-          "recommendation": "Com o frio intenso, escolha roupas quentes e confortáveis que mantenham o corpo aquecido sem exageros."
+        "wind": {
+            "wind_30_45": {
+                "description": "Vento moderado (30–45 km/h): adicionar corta-vento, gorro ajustado e elástico de cabelo.",
+                "accessories": [
+                    "windbreaker",
+                    "beanie",
+                    "hatTight"
+                ]
+            },
+            "wind_45e": {
+                "description": "Vento forte (> 45 km/h): adicionar corta-vento, cachecol reforçado, luvas leves e elástico de cabelo.",
+                "accessories": [
+                    "windbreaker",
+                    "scarf",
+                    "gloves",
+                    "hatTight"
+                ]
+            }
         },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Casaco leve e moletom fino",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "hat",
-            "gloves"
-          ],
-          "shoes": "Bota simples",
-          "recommendation": "Mesmo no frio intenso, prefira roupas térmicas mais leves e respiráveis se você costuma sentir calor."
+        "windandrain": {
+            "wind_20e_and_rain_3e": {
+                "description": "Chuva com vento (chuva ≥ 3mm e vento ≥ 20 km/h): substituir capa comum por capa impermeável (windproof).",
+                "accessories": [
+                    "raincoat"
+                ]
+            }
+        },
+        "windandwarm": {
+            "temp_23e_and_wind_30e": {
+                "description": "Vento com calor (temp > 23°C e vento > 30 km/h): substituir peças esvoaçantes por coladas e adicionar controle capilar.",
+                "accessories": [
+                    "hair_control"
+                ]
+            }
         }
-      },
-      "cold": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Moletom grosso e jaqueta corta-vento",
-          "bottom": "Calça de moletom ou sarja",
-          "accessories": [
-            "scarfLight",
-            "hatTight",
-            "gloves"
-          ],
-          "shoes": "Bota cano médio",
-          "recommendation": "Com o frio, prefira moletom grosso e jaquetas que ajudem a manter o corpo aquecido e isolado."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Suéter e casaco leve",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "hat",
-            "watch"
-          ],
-          "shoes": "Tênis casual",
-          "recommendation": "O clima está frio. Use roupas quentes e confortáveis que garantam proteção sem comprometer a liberdade de movimento."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Blusa de manga e colete leve",
-          "bottom": "Calça de sarja",
-          "accessories": [
-            "hat"
-          ],
-          "shoes": "Tênis ou bota leve",
-          "recommendation": "Mesmo com o tempo frio, opte por camadas leves e tecidos respiráveis se costuma sentir calor com facilidade."
-        }
-      },
-      "chilly": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Moletom e jaqueta leve",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "scarf",
-            "beanie"
-          ],
-          "shoes": "Bota leve",
-          "recommendation": "No clima ameno, aposte em moletom e jaqueta leve para garantir conforto e proteção térmica."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Suéter médio ou jaqueta leve",
-          "bottom": "Calça chino",
-          "accessories": [
-            "watch",
-            "sunglasses"
-          ],
-          "shoes": "Tênis casual",
-          "recommendation": "O tempo está ameno. Use suéter médio ou jaqueta leve com calça confortável para manter o equilíbrio térmico."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Camisa leve e sobreposição curta",
-          "bottom": "Calça sarja leve",
-          "accessories": [
-            "simpleNecklace"
-          ],
-          "shoes": "Tênis leve",
-          "recommendation": "Apesar do clima ameno, prefira camadas leves e tecidos frescos se você costuma sentir calor com facilidade."
-        }
-      },
-      "mild": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Camiseta e suéter leve",
-          "bottom": "Calça jeans ou chino",
-          "accessories": [
-            "scarfLight",
-            "sunglasses",
-            "watch"
-          ],
-          "shoes": "Tênis fechado",
-          "recommendation": "No tempo ameno, use camiseta com suéter leve para garantir conforto térmico de forma prática."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Camisa de botão solta ou polo unissex",
-          "bottom": "Calça chino ou moletom leve",
-          "accessories": [
-            "bracelet",
-            "watch",
-            "necklace"
-          ],
-          "shoes": "Tênis neutro ou mocassim",
-          "recommendation": "Com o clima ameno, camisas leves ou polos unissex com calças confortáveis mantêm o equilíbrio entre estilo e conforto."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Camiseta oversized e colete aberto leve",
-          "bottom": "Bermuda de sarja estruturada",
-          "accessories": [
-            "glasses"
-          ],
-          "shoes": "Tênis leve ou sapatênis",
-          "recommendation": "Com o clima ameno, prefira roupas largas e frescas como camiseta oversized e bermuda estruturada."
-        }
-      },
-      "comfortable": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Camisa manga longa e jaqueta jeans",
-          "bottom": "Calça jeans",
-          "accessories": [
-            "scarfDecorative",
-            "bracelet"
-          ],
-          "shoes": "Tênis ou sapato casual",
-          "recommendation": "Mesmo com o tempo agradável, se você sente frio com facilidade, aposte em camadas leves como camisas de manga e jaquetas finas para manter-se aquecido."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Camiseta básica ou gola careca",
-          "bottom": "Calça chino ou sarja",
-          "accessories": [
-            "necklace",
-            "sunglasses"
-          ],
-          "shoes": "Sapatênis ou tênis",
-          "recommendation": "Com o clima confortável, escolha peças práticas e frescas como camisetas básicas e calças leves para manter o equilíbrio térmico."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Regata ou camiseta fluida",
-          "bottom": "Bermuda neutra",
-          "accessories": [
-            "glasses",
-            "hairUp"
-          ],
-          "shoes": "Chinelo ou tênis leve",
-          "recommendation": "Se tende a sentir calor mesmo em dias amenos, prefira regatas e bermudas leves para garantir conforto térmico e liberdade de movimento."
-        }
-      },
-      "warm": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Camiseta leve e camisa aberta",
-          "bottom": "Bermuda estruturada",
-          "accessories": [
-            "sunglasses",
-            "scarfLight"
-          ],
-          "shoes": "Tênis ou sandália baixa",
-          "recommendation": "Mesmo com o clima quente, se você costuma sentir frio, aposte em uma camiseta leve com uma camisa aberta para equilibrar a temperatura corporal."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Regata unissex ou camiseta oversized",
-          "bottom": "Shorts ou bermuda",
-          "accessories": [
-            "simpleNecklace",
-            "bracelet"
-          ],
-          "shoes": "Chinelo ou tênis leve",
-          "recommendation": "O dia está quente. Prefira peças leves como regatas ou camisetas soltas com shorts para manter o frescor e o conforto."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Regata cavada de algodão leve",
-          "bottom": "Shorts leve",
-          "accessories": [
-            "hairUp",
-            "scarfHead"
-          ],
-          "shoes": "Chinelo leve",
-          "recommendation": "Com o calor intenso, escolha roupas bem leves como regatas cavadas e shorts de tecido fresco para garantir ventilação e mobilidade."
-        }
-      },
-      "hot": {
-        "feel_cold": {
-          "isSinglePiece": false,
-          "top": "Camiseta sem manga estruturada",
-          "bottom": "Shorts de algodão",
-          "accessories": [
-            "scarfNeck",
-            "sunglasses"
-          ],
-          "shoes": "Sandália leve",
-          "recommendation": "Mesmo em dias muito quentes, se você sente desconforto térmico, use camisetas leves com alguma cobertura e shorts confortáveis para manter o equilíbrio térmico."
-        },
-        "neutral": {
-          "isSinglePiece": false,
-          "top": "Regata ou camiseta larga",
-          "bottom": "Shorts curtos ou neutros",
-          "accessories": [
-            "glasses",
-            "simpleNecklace",
-            "hairUp"
-          ],
-          "shoes": "Rasteira ou chinelo",
-          "recommendation": "O dia está quente. Aposte em peças frescas e soltas como camisetas largas ou regatas com shorts neutros para maior conforto."
-        },
-        "feel_hot": {
-          "isSinglePiece": false,
-          "top": "Regata cavada ou cropped neutro",
-          "bottom": "Shorts leve",
-          "accessories": [
-            "hairUp",
-            "headscarfhaircontrol"
-          ],
-          "shoes": "Chinelo leve",
-          "recommendation": "Com o calor elevado, prefira roupas mínimas como regatas cavadas e shorts leves para se manter fresco e ventilado o dia todo."
-        }
-      }
     },
-    "extreme_heat": {
-      "feel_cold": {
-        "isSinglePiece": false,
-        "top": "Camiseta solta de algodão",
-        "bottom": "Shorts de linho ou saia fluida",
-        "accessories": [
-          "hat",
-          "sunglasses",
-          "waterBottle"
-        ],
-        "shoes": "Sandálias abertas",
-        "recommendation": "Use roupas claras e soltas para minimizar o impacto do calor."
-      },
-      "neutral": {
-        "isSinglePiece": false,
-        "top": "Top leve ou regata unissex",
-        "bottom": "Shorts curtos ou bermuda leve",
-        "accessories": [
-          "sunglasses",
-          "waterBottle"
-        ],
-        "shoes": "Tênis ventilado ou chinelo",
-        "recommendation": "Opte por praticidade e conforto com peças leves e respiráveis."
-      },
-      "feel_hot": {
-        "isSinglePiece": false,
-        "top": "Regata esportiva ou cropped curto",
-        "bottom": "Shorts esportivos unissex",
-        "accessories": [
-          "cap",
-          "sunglasses",
-          "waterBottle"
-        ],
-        "shoes": "Chinelo ou tênis ultraleve",
-        "recommendation": "Mantenha-se hidratado e escolha o mínimo necessário para aguentar o calor."
-      }
+    "alerts": {
+        "preferencesAlert": "Por favor, selecione o estilo e a temperatura de conforto.",
+        "resetAlert": "Tem certeza que deseja apagar suas preferências e reiniciar o app",
+        "cancelbutton": "Cancelar",
+        "resetbutton": "Redefinir",
+        "typePermission": "Permissão necessária",
+        "detectCityAlert": "Para detectar automaticamente sua cidade, permita o acesso à localização nas configurações do sistema.",
+        "text": "Abrir Configurações",
+        "typeError": "Erro",
+        "localizationAlert": "Não foi possível detectar sua localização.",
+        "typeInvalidCity": "Cidade inválida",
+        "invalidCityAlert": "Não foi possível obter dados climáticos para esta cidade.",
+        "typeAttention": "Atenção!"
     }
-  },
-  "overlays": {
-    "rain": {
-      "rain_1e": {
-        "description": "Chuva leve (≥ 1mm): incluir guarda-chuva.",
-        "accessories": [
-          "umbrella"
-        ]
-      },
-      "rain_3e": {
-        "description": "Chuva moderada (≥ 3mm): usar capa de chuva. Se vento ≥ 20km/h, substituir por capa impermeável.",
-        "accessories": [
-          "raincoat",
-          "umbrella"
-        ]
-      },
-      "rain_5e": {
-        "description": "Chuva forte (≥ 5mm): adicionar bota impermeável.",
-        "accessories": [
-          "rain_boots",
-          "raincoat",
-          "umbrella"
-        ]
-      }
-    },
-    "wind": {
-      "wind_30_45": {
-        "description": "Vento moderado (30–45 km/h): adicionar corta-vento, gorro ajustado e elástico de cabelo.",
-        "accessories": [
-          "windbreaker",
-          "beanie",
-          "hatTight"
-        ]
-      },
-      "wind_45e": {
-        "description": "Vento forte (> 45 km/h): adicionar corta-vento, cachecol reforçado, luvas leves e elástico de cabelo.",
-        "accessories": [
-          "windbreaker",
-          "scarf",
-          "gloves",
-          "hatTight"
-        ]
-      }
-    },
-    "windandrain": {
-      "wind_20e_and_rain_3e": {
-        "description": "Chuva com vento (chuva ≥ 3mm e vento ≥ 20 km/h): substituir capa comum por capa impermeável (windproof).",
-        "accessories": [
-          "raincoat"
-        ]
-      }
-    },
-    "windandwarm": {
-      "temp_23e_and_wind_30e": {
-        "description": "Vento com calor (temp > 23°C e vento > 30 km/h): substituir peças esvoaçantes por coladas e adicionar controle capilar.",
-        "accessories": [
-          "hair_control"
-        ]
-      }
-    }
-  },
-  "alerts": {
-    "preferencesAlert": "Por favor, selecione o estilo e a temperatura de conforto.",
-    "resetAlert": "Tem certeza que deseja apagar suas preferências e reiniciar o app",
-    "cancelbutton": "Cancelar",
-    "resetbutton": "Redefinir",
-    "typePermission": "Permissão necessária",
-    "detectCityAlert": "Para detectar automaticamente sua cidade, permita o acesso à localização nas configurações do sistema.",
-    "text": "Abrir Configurações",
-    "typeError": "Erro",
-    "localizationAlert": "Não foi possível detectar sua localização.",
-    "typeInvalidCity": "Cidade inválida",
-    "invalidCityAlert": "Não foi possível obter dados climáticos para esta cidade.",
-    "typeAttention": "Atenção!" 
-  }
 }

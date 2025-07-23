@@ -99,7 +99,12 @@ export const LookSuggestionCard: React.FC<LookSuggestionCardProps> = ({ suggesti
             <View style={globalStyles.modalContent} onStartShouldSetResponder={() => true}>
               <Text style={globalStyles.modalTitle}>{t('LookSuggestionCard.accessoryTitle')}</Text>
               {currentAccessoryImage && (
-                <Image source={currentAccessoryImage} style={globalStyles.modalImage} resizeMode="contain" />
+                <>
+                  <Image source={currentAccessoryImage} style={globalStyles.modalImage} resizeMode="contain" />
+                  <Text style={globalStyles.modalAccessoryLabel}>
+                    {t(`accessoryNames.${currentAccessory}`)}
+                  </Text>
+                </>
               )}
               <View style={globalStyles.modalButtonRow}>
                 <TouchableOpacity onPress={handlePrev} style={globalStyles.modalNavButton}>
@@ -147,28 +152,28 @@ export const LookSuggestionCard: React.FC<LookSuggestionCardProps> = ({ suggesti
       </Modal>
 
       {/* CONTEÚDO PRINCIPAL DO CARTÃO */}
-      
-<View style={globalStyles.suggestionWrapper}>
-  <View style={globalStyles.suggestionMain}>
-    <TouchableOpacity onPress={() => setAvatarModalVisible(true)}>
-      <Image source={suggestion.image} style={globalStyles.avatar} resizeMode="contain" />
-    </TouchableOpacity>
 
-   
-  </View>
+      <View style={globalStyles.suggestionWrapper}>
+        <View style={globalStyles.suggestionMain}>
+          <TouchableOpacity onPress={() => setAvatarModalVisible(true)}>
+            <Image source={suggestion.image} style={globalStyles.avatar} resizeMode="contain" />
+          </TouchableOpacity>
 
-  <View style={globalStyles.accessoryColumn}>
-    <Text style={globalStyles.accessoryTitle}>{t('LookSuggestionCard.accessoryTitle')}</Text>
-    {accessories}
-  </View>
-</View>
 
-<LookSectionDivider />
- <View style={globalStyles.lookText}>
-      {suggestion.roupaSuperior && <Text style={globalStyles.tagText}>{suggestion.roupaSuperior}</Text>}
-      {suggestion.roupaInferior && <Text style={globalStyles.tagText}>{suggestion.roupaInferior}</Text>}
-      {suggestion.shoes && <Text style={globalStyles.tagText}>{suggestion.shoes}</Text>}
-    </View>
+        </View>
+
+        <View style={globalStyles.accessoryColumn}>
+          <Text style={globalStyles.accessoryTitle}>{t('LookSuggestionCard.accessoryTitle')}</Text>
+          {accessories}
+        </View>
+      </View>
+
+      <LookSectionDivider />
+      <View style={globalStyles.lookText}>
+        {suggestion.roupaSuperior && <Text style={globalStyles.tagText}>{suggestion.roupaSuperior}</Text>}
+        {suggestion.roupaInferior && <Text style={globalStyles.tagText}>{suggestion.roupaInferior}</Text>}
+        {suggestion.shoes && <Text style={globalStyles.tagText}>{suggestion.shoes}</Text>}
+      </View>
     </View>
   );
 };
