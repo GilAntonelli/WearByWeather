@@ -91,6 +91,7 @@
         "clearSky": "Céu limpo e clima estável. Bom dia para atividades ao ar livre.",
         "fallback": "Clima estável hoje. Esteja atento a possíveis alterações ao longo do dia."
     },
+    "localTimeLabel": "Hora local",
     "LookSuggestionCard": {
         "accessoryTitle": "Acessórios"
     },

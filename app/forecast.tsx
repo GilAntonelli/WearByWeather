@@ -69,7 +69,7 @@ export default function ForecastScreen() {
 
   const frase =
     weather &&
-    getFraseClimatica(t,{
+    getFraseClimatica(t, {
       temperatura: weather.temperatura,
       condicao: weather.condicao,
       chuva: weather.chuva,
@@ -109,11 +109,8 @@ export default function ForecastScreen() {
         <ScrollView style={{ backgroundColor: theme.colors.background }}>
           <ForecastHeader
             city={city}
-            date={new Date().toLocaleDateString(i18n.language, {
-              weekday: 'long',
-              day: '2-digit',
-              month: 'long',
-            })}
+ //           localDateFormatted={weather?.localDateFormatted ?? '--'}
+//
             temperature={`${weather?.temperatura ?? '--'}°C`}
             condition={weather?.condicao ?? t('Forecast.condition')}
             smartPhrase={frase ?? ''}
@@ -126,6 +123,8 @@ export default function ForecastScreen() {
               />
             }
             id={weather?.id ?? 0}
+            localTime={weather?.localTime}
+
           />
 
           <View style={globalStyles.container}>

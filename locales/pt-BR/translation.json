@@ -56,6 +56,7 @@
         "reset": "Redefinir",
         "refreshWeather": "Atualizar clima"
     },
+
     "Forecast": {
         "condition": "Carregando...",
         "sectionTitle": "Próximas 24h (intervalos de 3h)",
@@ -91,6 +92,9 @@
         "clearSky": "Céu limpo e clima estável. Bom dia para atividades ao ar livre.",
         "fallback": "Clima estável hoje. Fique de olho nas variações ao longo do dia."
     },
+    "localTimeLabel": "Hora local",
+
+
     "LookSuggestionCard": {
         "accessoryTitle": "Acessórios"
     },
