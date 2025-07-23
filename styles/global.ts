@@ -246,24 +246,24 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 8,
     fontWeight: '500',
   },
-errorText: {
-  fontSize: theme.fontSize.medium,
-  color: theme.colors.textDark,
-  fontWeight: '600',
-},
+  errorText: {
+    fontSize: theme.fontSize.medium,
+    color: theme.colors.textDark,
+    fontWeight: '600',
+  },
 
 
   section: {
     marginBottom: theme.spacing.xxl,
   },
 
-firstSectionTitle: {
-  marginTop: theme.spacing.sm, // menor do que o padrão
-  marginBottom: theme.spacing.xs,
-  fontSize: theme.fontSize.large,
-  fontWeight: 'bold',
-  color: theme.colors.textDark,
-},
+  firstSectionTitle: {
+    marginTop: theme.spacing.sm, // menor do que o padrão
+    marginBottom: theme.spacing.xs,
+    fontSize: theme.fontSize.large,
+    fontWeight: 'bold',
+    color: theme.colors.textDark,
+  },
   sectionTitle: {
     marginBottom: theme.spacing.xs,
     marginTop: theme.spacing.lg, // cria separação visual entre blocos
@@ -468,12 +468,12 @@ firstSectionTitle: {
     height: screenWidth * 0.9,
     resizeMode: 'contain',
   },
-lookText: {
-  fontSize: 16,
-  color: '#000', // Temporário, só para testar
-  textAlign: 'center',
-  marginTop: 8,
-},
+  lookText: {
+    fontSize: 16,
+    color: '#000', // Temporário, só para testar
+    textAlign: 'center',
+    marginTop: 8,
+  },
 
   tagRow: {
     flexDirection: 'row',
@@ -686,7 +686,7 @@ lookText: {
     textAlign: 'center',
   },
   suggestionWrapper: {
-     flexDirection: 'row',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     gap: 16,
@@ -925,59 +925,66 @@ lookText: {
     color: theme.colors.textDark,
   },
 
-modalOverlay: {
-  flex: 1,
-  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  justifyContent: 'center',
-  alignItems: 'center',
-},
-modalContent: {
-  backgroundColor: '#fff',
-  borderRadius: 12,
-  padding: 20,
-  width: '85%',
-  alignItems: 'center',
-  maxHeight: '90%',
-  justifyContent: 'center',
-},
-modalTitle: {
-  fontSize: 18,
-  fontWeight: 'bold',
-  marginBottom: 12,
-},
-modalImage: {
-  width: 200,
-  height: 200,
-  marginBottom: 16,
-},
-modalButtonRow: {
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  width: '60%',
-  marginVertical: 8,
-},
-modalNavButton: {
-  paddingHorizontal: 20,
-  paddingVertical: 10,
-  backgroundColor: '#eee',
-  borderRadius: 8,
-},
-modalButtonText: {
-  fontSize: 18,
-},
-modalCloseButton: {
-  marginTop: 10,
-},
-modalCloseText: {
-  color: 'red',
-  fontWeight: 'bold',
-},
- 
-modalContentWrapper: {
-  flex: 1,
-  justifyContent: 'center',
-  alignItems: 'center',
-}
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    padding: 20,
+    width: '85%',
+    alignItems: 'center',
+    maxHeight: '90%',
+    justifyContent: 'center',
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 12,
+  },
+  modalImage: {
+    width: 200,
+    height: 200,
+    marginBottom: 16,
+  },
+  modalButtonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '60%',
+    marginVertical: 8,
+  },
+  modalNavButton: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    backgroundColor: '#eee',
+    borderRadius: 8,
+  },
+  modalButtonText: {
+    fontSize: 18,
+  },
+  modalCloseButton: {
+    marginTop: 10,
+  },
+  modalCloseText: {
+    color: 'red',
+    fontWeight: 'bold',
+  },
 
+  modalContentWrapper: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  modalAccessoryLabel: {
+    fontSize: 16,
+    fontWeight: '500',
+    textAlign: 'center',
+    marginTop: 8,
+    color: '#333' // ajuste se você estiver usando tema escuro ou claro
+  }
 
 });
