@@ -16,7 +16,7 @@
         "optionMale": "Masculino",
         "optionFemale": "Feminino",
         "optionUnisex": "Unissex",
-        "genderNote": "Essa informação nos ajuda a ajustar as roupas conforme sua sensibilidade térmica.",
+        "genderNote": "Esta informação ajuda-nos a sugerir roupas mais adequadas ao seu estilo.",
         "sugestionsMale": "Sugestões com bermuda, camisa polo, etc.",
         "sugestionsFemale": "Sugestões com vestidos, saias, etc.",
         "sugestionsUnisex": "Roupas neutras como jeans, t-shirt, etc.",
@@ -27,7 +27,10 @@
         "comfortHotDesc": "Você prefere roupas mais leves e frescas",
         "comfortNeutralTitle": "Prefiro equilíbrio térmico",
         "comfortNeutralDesc": "Você se adapta bem ao clima e escolhe roupas conforme a temperatura do dia",
-        "button": "Salvar preferências e continuar"
+        "button": "Salvar preferências e continuar",
+        "temperatureNote": "Essas informações nos ajudam a sugerir roupas mais adequadas ao seu conforto térmico."
+
+
     },
     "home": {
         "greeting": "Olá",

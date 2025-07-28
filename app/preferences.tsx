@@ -61,12 +61,12 @@ export default function PreferencesScreen() {
     loadPreferences();
   }, []);
 
-  const handleInfoPress = () => {
-    Alert.alert(
-      'Preferências editáveis',
-      'Você poderá alterar suas preferências a qualquer momento acessando o menu de configurações.'
-    );
-  };
+  // const handleInfoPress = () => {
+  //   Alert.alert(
+  //     'Preferências editáveis',
+  //     'Você poderá alterar suas preferências a qualquer momento acessando o menu de configurações.'
+  //   );
+  // };
 
   const handleSave = async () => {
     if (!stylePreference || !comfort) {
@@ -259,7 +259,7 @@ export default function PreferencesScreen() {
 
                 {comfort === null && (
                   <InfoIconText
-                    text={t('preferences.genderNote')}
+                    text={t('preferences.temperatureNote')}
                     marginTop={0}
                     marginBottom={20}
                   />

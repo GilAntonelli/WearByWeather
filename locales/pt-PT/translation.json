@@ -27,7 +27,10 @@
         "comfortHotDesc": "Prefere roupas mais leves e frescas",
         "comfortNeutralTitle": "Prefiro equilíbrio térmico",
         "comfortNeutralDesc": "Costuma adaptar-se bem ao clima e prefere roupas de acordo com a temperatura",
-        "button": "Guardar preferências e continuar"
+        "button": "Guardar preferências e continuar",
+        "temperatureNote": "Estas informações ajudam-nos a sugerir roupas mais adequadas ao seu conforto térmico."
+
+
     },
     "home": {
         "greeting": "Olá",
