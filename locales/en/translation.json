@@ -29,8 +29,6 @@
         "comfortNeutralDesc": "You usually adapt well to the weather and choose outfits according to the temperature",
         "button": "Save preferences and continue",
         "temperatureNote": "This information helps us suggest clothes that better match your thermal comfort."
-
-
     },
     "home": {
         "greeting": "Hello",
@@ -95,8 +93,6 @@
         "fallback": "Stable weather today. Keep an eye on possible changes."
     },
     "localTimeLabel": "Local time",
-
-
     "LookSuggestionCard": {
         "accessoryTitle": "Accessories"
     },
@@ -114,8 +110,11 @@
                     "bottom": "Thermal pants and jeans",
                     "accessories": [
                         "scarfThick",
-                        "hatTight",
-                        "gloves"
+                        "hatWool",
+                        "gloves",
+                        "face_covering_scarf",
+                        "faux_fur_earmuffs",
+                        "thermal_socks"
                     ],
                     "shoes": "Lined waterproof boots",
                     "recommendation": "It’s freezing outside. Layer up with thermal pieces and insulated accessories to stay warm and protected."
@@ -126,8 +125,9 @@
                     "bottom": "Jeans or heavy twill",
                     "accessories": [
                         "scarfMedium",
-                        "hat",
-                        "gloves"
+                        "hatTight",
+                        "gloves",
+                        "thermal_socks"
                     ],
                     "shoes": "Thermal boots",
                     "recommendation": "The weather is very cold. Choose warm and stylish layers that balance comfort and elegance."
@@ -138,7 +138,8 @@
                     "bottom": "Jeans",
                     "accessories": [
                         "hat",
-                        "gloves"
+                        "gloves",
+                        "scarfMedium"
                     ],
                     "shoes": "Simple boots",
                     "recommendation": "Even in the extreme cold, go for lighter thermal layers if you tend to overheat easily."
@@ -150,8 +151,11 @@
                     "top": "Padded jacket and long sleeve shirt",
                     "bottom": "Lined pants or sweatpants",
                     "accessories": [
-                        "scarfLight",
-                        "hatTight"
+                        "scarfThick",
+                        "hatWool",
+                        "gloves",
+                        "thermal_socks",
+                        "leather_bag_with_wide_strap"
                     ],
                     "shoes": "Leather boots",
                     "recommendation": "It’s cold outside. Wear padded coats, long sleeves, and thermal accessories to stay warm and comfortable."
@@ -162,7 +166,9 @@
                     "bottom": "Jeans",
                     "accessories": [
                         "hatWool",
-                        "earrings"
+                        "earrings",
+                        "scarfMedium",
+                        "leather_bag_with_wide_strap"
                     ],
                     "shoes": "Short boots",
                     "recommendation": "Cold weather today. Go for comfortable warm pieces like sweaters and mid-weight coats to stay balanced."
@@ -172,7 +178,9 @@
                     "top": "Light sweatshirt and shirt",
                     "bottom": "Twill pants",
                     "accessories": [
-                        "hairTie"
+                        "scarf1",
+                        "thick_fabric_beret",
+                        "leather_bag_with_wide_strap"
                     ],
                     "shoes": "Closed sneakers",
                     "recommendation": "Even in the cold, choose light layers and breathable fabrics to avoid overheating."
@@ -185,7 +193,9 @@
                     "bottom": "Jeans",
                     "accessories": [
                         "hat",
-                        "scarfLight"
+                        "scarfMedium",
+                        "thermal_vest",
+                        "leather_bag_with_wide_strap"
                     ],
                     "shoes": "Light boots",
                     "recommendation": "It’s a chilly day. Go for a sweatshirt and light jacket to stay warm and comfortable if you get cold easily."
@@ -195,8 +205,9 @@
                     "top": "Sweatshirt or cardigan",
                     "bottom": "Jeans",
                     "accessories": [
-                        "earrings",
-                        "watch"
+                        "scarf1",
+                        "rings",
+                        "leather_bag_with_wide_strap"
                     ],
                     "shoes": "Sneakers or light boots",
                     "recommendation": "It’s a cool day. A light sweatshirt or cardigan is enough to stay comfortable and stylish."
@@ -206,8 +217,9 @@
                     "top": "Shirt and structured blazer",
                     "bottom": "Tailored trousers",
                     "accessories": [
-                        "scarf",
-                        "necklace"
+                        "scarfLight",
+                        "leather_bag_with_wide_strap",
+                        "rings"
                     ],
                     "shoes": "Casual sneakers",
                     "recommendation": "Even with the cool weather, go for light, structured clothing if you tend to feel hot easily."
@@ -219,8 +231,12 @@
                     "top": "T-shirt and light sweater",
                     "bottom": "Jeans or midi skirt with tights",
                     "accessories": [
-                        "scarf",
-                        "sunglasses"
+                        "scarfLight",
+                        "sunglasses",
+                        "thermal_vest",
+                        "small_crossbody_bag",
+                        "rings",
+                        "earrings"
                     ],
                     "shoes": "Oxford or closed sneakers",
                     "recommendation": "It’s a mild day. Choose a light sweater over a t-shirt to stay comfortably warm without overheating."
@@ -229,9 +245,10 @@
                     "isSinglePiece": true,
                     "singlePiece": "Midi dress with short sleeves and light jacket",
                     "accessories": [
-                        "bracelet",
-                        "scarf",
-                        "necklace"
+                        "thick_fabric_beret",
+                        "small_crossbody_bag",
+                        "rings",
+                        "earrings"
                     ],
                     "shoes": "Ballet flats or loafers",
                     "recommendation": "The weather is mild. A midi dress with a light jacket is a great option for comfort and style."
@@ -241,7 +258,9 @@
                     "singlePiece": "Light dress with straps and light kimono",
                     "accessories": [
                         "sunglasses",
-                        "earrings"
+                        "earrings",
+                        "small_crossbody_bag",
+                        "rings"
                     ],
                     "shoes": "Light sneakers or closed sandals",
                     "recommendation": "On a mild day, go for light, airy dresses with thin layers to stay fresh and comfortable."
@@ -253,7 +272,11 @@
                     "singlePiece": "Midi dress with ¾ sleeves and light blazer",
                     "accessories": [
                         "scarfNeck",
-                        "watch"
+                        "watch",
+                        "rings",
+                        "straw_or_raffia_bag",
+                        "panama_hat",
+                        "sunglasses"
                     ],
                     "shoes": "Casual sneakers or oxfords",
                     "recommendation": "Even with comfortable weather, if you tend to feel cold, go for dresses with longer sleeves and light layering to stay warm without compromising style."
@@ -262,8 +285,10 @@
                     "isSinglePiece": true,
                     "singlePiece": "Flowy dress with short sleeves",
                     "accessories": [
+                        "panama_hat",
                         "necklace",
-                        "sunglasses"
+                        "sunglasses",
+                        "small_crossbody_bag"
                     ],
                     "shoes": "Ballet flats or mules",
                     "recommendation": "The weather is pleasant. A flowy dress with light accessories is perfect to stay comfortable and stylish throughout the day."
@@ -272,8 +297,10 @@
                     "isSinglePiece": true,
                     "singlePiece": "Light dress with wide straps or tank top",
                     "accessories": [
-                        "hairUp",
-                        "headscarfhaircontrol"
+                        "necklace",
+                        "sunglasses",
+                        "small_crossbody_bag",
+                        "scarfHead"
                     ],
                     "shoes": "Sandals or light sneakers",
                     "recommendation": "In mild weather, choose breathable fabrics and wide straps that allow airflow and keep you cool without losing elegance."
@@ -284,8 +311,10 @@
                     "isSinglePiece": true,
                     "singlePiece": "Short dress with light sleeves and thin overlay",
                     "accessories": [
-                        "scarfLight",
-                        "sunglasses"
+                        "light_earrings",
+                        "womens_straw_hat",
+                        "womens_light_necklaces",
+                        "scarfDecorative"
                     ],
                     "shoes": "Light sneakers or loafers",
                     "recommendation": "Even with warm weather, if you tend to feel chilly, go for dresses with light sleeves and a thin layer to balance your body temperature."
@@ -295,7 +324,11 @@
                     "singlePiece": "Short dress with wide straps or Japanese sleeves",
                     "accessories": [
                         "earrings",
-                        "sunglasses"
+                        "sunglasses",
+                        "light_earrings",
+                        "wide_brim_hat",
+                        "womens_light_necklaces",
+                        "scarfDecorative"
                     ],
                     "shoes": "Flat sandals",
                     "recommendation": "It’s a warm day. Light dresses with wide straps or loose sleeves are great choices to stay fresh and comfortable."
@@ -305,7 +338,9 @@
                     "singlePiece": "Light dress with thin straps or halter neck",
                     "accessories": [
                         "hair Tie",
-                        "necklace"
+                        "sunglasses",
+                        "light_earrings",
+                        "womens_light_necklaces"
                     ],
                     "shoes": "Sandals or flip-flops",
                     "recommendation": "On warmer days, opt for ultra-light, flowy dresses with breathable cuts to stay cool and comfortable all day."
@@ -316,7 +351,8 @@
                     "isSinglePiece": true,
                     "singlePiece": "Light dress with wide straps",
                     "accessories": [
-                        "scarfNeck",
+                        "womens_wide_brim_hat",
+                        "visor_hat",
                         "sunglasses"
                     ],
                     "shoes": "Flat sandals",
@@ -326,9 +362,10 @@
                     "isSinglePiece": true,
                     "singlePiece": "Dress with thin straps and flowy fabric",
                     "accessories": [
-                        "glasses",
-                        "necklace",
-                        "hairUp"
+                        "light_earrings",
+                        "hairUp",
+                        "cooling_neck_bands",
+                        "sunglasses1"
                     ],
                     "shoes": "Flat sandals or flip-flops",
                     "recommendation": "It’s a hot day. Choose flowy dresses made from light fabrics and fresh accessories to stay cool and comfortable."
@@ -338,8 +375,8 @@
                     "singlePiece": "Slip dress with thin straps",
                     "accessories": [
                         "hairUp",
-                        "glasses",
-                        "scarfHeadControl"
+                        "cooling_neck_bands",
+                        "sunglasses"
                     ],
                     "shoes": "Light flip-flops",
                     "recommendation": "On very hot days, opt for minimal, breathable dresses with open cuts to allow airflow and maximum comfort."
@@ -349,7 +386,6 @@
                 "feel_cold": {
                     "isSinglePiece": true,
                     "singlePiece": "Light cotton dress",
-
                     "accessories": [
                         "femaleSunHat",
                         "sunglasses",
@@ -364,7 +400,8 @@
                     "bottom": "Linen shorts or short skirt",
                     "accessories": [
                         "sunglasses",
-                        "waterBottle"
+                        "waterBottle",
+                        "bucketHat"
                     ],
                     "shoes": "Breathable sneakers or sandals",
                     "recommendation": "Light and fresh clothes help maintain comfort even in high temperatures."
@@ -952,7 +989,6 @@
             }
         }
     },
-
     "accessoryNames": {
         "scarfThick": "Thick scarf",
         "scarfMedium": "Medium scarf",
@@ -983,30 +1019,67 @@
         "umbrella": "Umbrella",
         "rain_boots": "Rain boots",
         "windbreaker": "Windbreaker",
-        "hair_control": "Hair control"
+        "hair_control": "Hair control",
+        "rings": "Rings",
+        "head_bandana_or_scarf": "Head bandana or scarf",
+        "cooling_neck_bands": "Cooling neck bands",
+        "thick_fabric_beret": "Thick fabric beret",
+        "wool_beret": "Wool beret",
+        "leather_bag_with_wide_strap": "Leather bag with wide strap",
+        "straw_or_raffia_bag": "Straw or raffia bag",
+        "waterproof_crossbody_fabric_bag": "Waterproof crossbody fabric bag",
+        "light_crossbody_bag": "Light crossbody bag",
+        "small_crossbody_bag": "Small crossbody bag",
+        "cap1": "Cap",
+        "light_earrings": "Light earrings",
+        "scarf": "Scarf",
+        "face_covering_scarf": "Face-covering scarf",
+        "wool_scarf": "Wool scarf",
+        "female_lined_raincoat": "Lined raincoat",
+        "mens_lined_raincoat": "Lined raincoat",
+        "panama_hat": "Panama hat",
+        "bucket_hat": "Bucket hat",
+        "womens_wide_brim_hat": "Women's wide-brim hat",
+        "womens_straw_hat": "Straw hat",
+        "womens_light_necklaces": "Light necklaces",
+        "thermal_vest": "Thermal Vest",
+        "ultra_thin_scarf": "Ultra-thin scarf",
+        "wool_beanie": "Wool beanie",
+        "faux_fur_earmuffs": "Faux fur earmuffs",
+        "uv_protection_sleeveless_shirt": "Sleeveless UV-protection shirt",
+        "handheld_fan": "Handheld fan",
+        "mini_folding_fan": "Mini folding fan",
+        "visor_hat": "Visor hat",
+        "sunglasses1": "Sunglasses",
+        "thermal_socks": "Thermal socks",
+        "wide_Brim_Hat": "Wide brim hat"
     },
-
     "overlays": {
         "rain": {
             "rain_1and": {
                 "description": "Light rain (≥ 1mm): include umbrella.",
                 "accessories": [
-                    "umbrella"
+                    "umbrella",
+                    "waterproof_crossbody_fabric_bag"
+
                 ]
             },
             "rain_3and": {
                 "description": "Moderate rain (≥ 3mm): wear raincoat. If wind ≥ 20km/h, switch to waterproof raincoat.",
                 "accessories": [
-                    "raincoat",
-                    "umbrella"
+                    "mens_lined_raincoat",
+                    "umbrella",
+                    "waterproof_crossbody_fabric_bag"
+
                 ]
             },
             "rain_5and": {
                 "description": "Heavy rain (≥ 5mm): add waterproof boots.",
                 "accessories": [
                     "rain_boots",
-                    "raincoat",
-                    "umbrella"
+                    "mens_lined_raincoat",
+                    "umbrella",
+                    "waterproof_crossbody_fabric_bag"
                 ]
             }
         },

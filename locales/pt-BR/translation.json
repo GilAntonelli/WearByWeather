@@ -29,8 +29,6 @@
         "comfortNeutralDesc": "Você se adapta bem ao clima e escolhe roupas conforme a temperatura do dia",
         "button": "Salvar preferências e continuar",
         "temperatureNote": "Essas informações nos ajudam a sugerir roupas mais adequadas ao seu conforto térmico."
-
-
     },
     "home": {
         "greeting": "Olá",
@@ -59,7 +57,6 @@
         "reset": "Redefinir",
         "refreshWeather": "Atualizar clima"
     },
-
     "Forecast": {
         "condition": "Carregando...",
         "sectionTitle": "Próximas 24h (intervalos de 3h)",
@@ -96,8 +93,6 @@
         "fallback": "Clima estável hoje. Fique de olho nas variações ao longo do dia."
     },
     "localTimeLabel": "Hora local",
-
-
     "LookSuggestionCard": {
         "accessoryTitle": "Acessórios"
     },
@@ -115,8 +110,11 @@
                     "bottom": "Calça térmica e jeans",
                     "accessories": [
                         "scarfThick",
-                        "hatTight",
-                        "gloves"
+                        "hatWool",
+                        "gloves",
+                        "face_covering_scarf",
+                        "faux_fur_earmuffs",
+                        "thermal_socks"
                     ],
                     "shoes": "Bota forrada impermeável",
                     "recommendation": "Está muito frio lá fora. Aposte em peças térmicas reforçadas, como casacos pesados e calças forradas, e proteja bem as extremidades."
@@ -127,8 +125,9 @@
                     "bottom": "Jeans ou sarja grossa",
                     "accessories": [
                         "scarfMedium",
-                        "hat",
-                        "gloves"
+                        "hatTight",
+                        "gloves",
+                        "thermal_socks"
                     ],
                     "shoes": "Bota térmica",
                     "recommendation": "O clima está gelado. Use roupas quentes e confortáveis que mantenham o estilo sem comprometer o aquecimento."
@@ -139,7 +138,8 @@
                     "bottom": "Calça jeans",
                     "accessories": [
                         "hat",
-                        "gloves"
+                        "gloves",
+                        "scarfMedium"
                     ],
                     "shoes": "Bota simples",
                     "recommendation": "Mesmo com o frio intenso, prefira roupas quentes com tecidos mais leves se você tende a sentir calor."
@@ -151,8 +151,11 @@
                     "top": "Jaqueta acolchoada e blusa de manga",
                     "bottom": "Calça forrada ou moletom",
                     "accessories": [
-                        "scarfLight",
-                        "hatTight"
+                        "scarfThick",
+                        "hatWool",
+                        "gloves",
+                        "thermal_socks",
+                        "leather_bag_with_wide_strap"
                     ],
                     "shoes": "Bota de couro",
                     "recommendation": "Está fazendo frio. Use casacos quentinhos, roupas de manga longa e acessórios que ajudem a manter o corpo aquecido."
@@ -163,7 +166,9 @@
                     "bottom": "Calça jeans",
                     "accessories": [
                         "hatWool",
-                        "earrings"
+                        "earrings",
+                        "scarfMedium",
+                        "leather_bag_with_wide_strap"
                     ],
                     "shoes": "Bota cano curto",
                     "recommendation": "O clima está frio. Prefira roupas confortáveis e quentinhas como suéteres e casacos médios para manter o equilíbrio térmico."
@@ -173,7 +178,9 @@
                     "top": "Blusão leve e camisa",
                     "bottom": "Calça de sarja",
                     "accessories": [
-                        "hairTie"
+                        "scarf1",
+                        "thick_fabric_beret",
+                        "leather_bag_with_wide_strap"
                     ],
                     "shoes": "Tênis fechado",
                     "recommendation": "Mesmo com o frio, use roupas leves em camadas finas para manter o aquecimento sem exagero."
@@ -186,7 +193,9 @@
                     "bottom": "Calça jeans",
                     "accessories": [
                         "hat",
-                        "scarfLight"
+                        "scarfMedium",
+                        "thermal_vest",
+                        "leather_bag_with_wide_strap"
                     ],
                     "shoes": "Bota leve",
                     "recommendation": "O tempo está ameno, mas frio para quem sente mais. Use moletom com jaqueta leve para garantir o conforto térmico."
@@ -196,8 +205,9 @@
                     "top": "Moletom ou cardigan",
                     "bottom": "Calça jeans",
                     "accessories": [
-                        "earrings",
-                        "watch"
+                        "scarf1",
+                        "rings",
+                        "leather_bag_with_wide_strap"
                     ],
                     "shoes": "Tênis ou bota leve",
                     "recommendation": "O clima está ameno. Um moletom ou cardigan leve garante o equilíbrio entre conforto e estilo."
@@ -207,8 +217,9 @@
                     "top": "Camisa e blazer estruturado",
                     "bottom": "Calça de alfaiataria",
                     "accessories": [
-                        "scarf",
-                        "necklace"
+                        "scarfLight",
+                        "leather_bag_with_wide_strap",
+                        "rings"
                     ],
                     "shoes": "Tênis casual",
                     "recommendation": "Apesar do clima ameno, prefira roupas mais leves e estruturadas se você costuma sentir calor com facilidade."
@@ -220,8 +231,12 @@
                     "top": "Camiseta e suéter fino",
                     "bottom": "Calça jeans ou saia midi com meia",
                     "accessories": [
-                        "scarf",
-                        "sunglasses"
+                        "scarfLight",
+                        "sunglasses",
+                        "thermal_vest",
+                        "small_crossbody_bag",
+                        "rings",
+                        "earrings"
                     ],
                     "shoes": "Oxford ou tênis fechado",
                     "recommendation": "O clima está ameno. Use camiseta com suéter leve e complemente com peças que ajudem a manter o corpo aquecido."
@@ -230,9 +245,10 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido midi com manga curta e jaqueta leve",
                     "accessories": [
-                        "bracelet",
-                        "scarf",
-                        "necklace"
+                        "thick_fabric_beret",
+                        "small_crossbody_bag",
+                        "rings",
+                        "earrings"
                     ],
                     "shoes": "Sapatilha ou mocassim",
                     "recommendation": "Com o clima ameno, um vestido midi com jaqueta leve garante equilíbrio térmico e praticidade."
@@ -242,7 +258,9 @@
                     "singlePiece": "Vestido leve de alça e kimono leve",
                     "accessories": [
                         "sunglasses",
-                        "earrings"
+                        "earrings",
+                        "small_crossbody_bag",
+                        "rings"
                     ],
                     "shoes": "Tênis leve ou sandália fechada",
                     "recommendation": "Com o tempo ameno, prefira vestidos leves com tecidos frescos e sobreposições delicadas para manter o conforto térmico."
@@ -254,7 +272,11 @@
                     "singlePiece": "Vestido midi de manga ¾ e blazer leve",
                     "accessories": [
                         "scarfNeck",
-                        "watch"
+                        "watch",
+                        "rings",
+                        "straw_or_raffia_bag",
+                        "panama_hat",
+                        "sunglasses"
                     ],
                     "shoes": "Tênis casual ou oxford",
                     "recommendation": "Mesmo com o clima agradável, se você sente frio com facilidade, aposte em vestidos com mangas mais longas e sobreposições leves para se manter aquecida com estilo."
@@ -263,8 +285,10 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido fluido com manga curta",
                     "accessories": [
+                        "panama_hat",
                         "necklace",
-                        "sunglasses"
+                        "sunglasses",
+                        "small_crossbody_bag"
                     ],
                     "shoes": "Sapatilha ou mule",
                     "recommendation": "O tempo está confortável. Um vestido leve e fluido é suficiente para garantir bem-estar e elegância durante o dia."
@@ -273,8 +297,10 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido leve de alça larga ou regata",
                     "accessories": [
-                        "hairUp",
-                        "headscarfhaircontrol"
+                        "necklace",
+                        "sunglasses",
+                        "small_crossbody_bag",
+                        "scarfHead"
                     ],
                     "shoes": "Sandália ou tênis leve",
                     "recommendation": "Com o tempo ameno, prefira tecidos frescos e alças largas que permitam ventilação e liberdade de movimento sem perder o charme."
@@ -285,8 +311,10 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido curto com manga leve e sobreposição fina",
                     "accessories": [
-                        "scarfLight",
-                        "sunglasses"
+                        "light_earrings",
+                        "womens_straw_hat",
+                        "womens_light_necklaces",
+                        "scarfDecorative"
                     ],
                     "shoes": "Tênis leve ou mocassim",
                     "recommendation": "Mesmo com o tempo quente, se você costuma sentir frio, aposte em vestidos com mangas leves e uma sobreposição fina para equilibrar a temperatura."
@@ -296,7 +324,11 @@
                     "singlePiece": "Vestido curto com alça larga ou manga japonesa",
                     "accessories": [
                         "earrings",
-                        "sunglasses"
+                        "sunglasses",
+                        "light_earrings",
+                        "wide_brim_hat",
+                        "womens_light_necklaces",
+                        "scarfDecorative"
                     ],
                     "shoes": "Sandália baixa",
                     "recommendation": "O dia está quente. Vestidos leves com alças largas ou mangas soltinhas são ideais para manter o frescor e o conforto."
@@ -305,8 +337,10 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido leve de alça fina ou frente única",
                     "accessories": [
-                        "hairTie",
-                        "necklace"
+                        "hair Tie",
+                        "sunglasses",
+                        "light_earrings",
+                        "womens_light_necklaces"
                     ],
                     "shoes": "Sandália ou chinelo",
                     "recommendation": "Em dias quentes, escolha vestidos bem leves e fluidos, com cortes frescos, para garantir conforto e ventilação."
@@ -317,7 +351,8 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido leve com alça larga",
                     "accessories": [
-                        "scarfNeck",
+                        "womens_wide_brim_hat",
+                        "visor_hat",
                         "sunglasses"
                     ],
                     "shoes": "Sandália baixa",
@@ -327,9 +362,10 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido com alça fina e tecido fluido",
                     "accessories": [
-                        "glasses",
-                        "necklace",
-                        "hairUp"
+                        "light_earrings",
+                        "hairUp",
+                        "cooling_neck_bands",
+                        "sunglasses1"
                     ],
                     "shoes": "Rasteira ou chinelo",
                     "recommendation": "O dia está quente. Prefira vestidos soltos, tecidos leves e acessórios frescos para manter o conforto ao longo do dia."
@@ -339,8 +375,8 @@
                     "singlePiece": "Vestido tipo slip dress de alça fina",
                     "accessories": [
                         "hairUp",
-                        "glasses",
-                        "scarfHeadControl"
+                        "cooling_neck_bands",
+                        "sunglasses"
                     ],
                     "shoes": "Chinelo leve",
                     "recommendation": "Com muito calor, opte por vestidos frescos com cortes abertos e tecidos leves que permitam ventilação e liberdade de movimento."
@@ -350,10 +386,8 @@
                 "feel_cold": {
                     "isSinglePiece": true,
                     "singlePiece": "Vestido leve de algodão",
-
                     "accessories": [
                         "femaleSunHat",
-
                         "sunglasses",
                         "waterBottle"
                     ],
@@ -922,7 +956,7 @@
                 "top": "Camiseta solta de algodão",
                 "bottom": "Shorts de linho ou saia fluida",
                 "accessories": [
-                    "hat",
+                    "femaleSunHat",
                     "sunglasses",
                     "waterBottle"
                 ],
@@ -935,7 +969,8 @@
                 "bottom": "Shorts curtos ou bermuda leve",
                 "accessories": [
                     "sunglasses",
-                    "waterBottle"
+                    "waterBottle",
+                    "bucketHat"
                 ],
                 "shoes": "Tênis ventilado ou chinelo",
                 "recommendation": "Opte por praticidade e conforto com peças leves e respiráveis."
@@ -945,8 +980,8 @@
                 "top": "Regata esportiva ou cropped curto",
                 "bottom": "Shorts esportivos unissex",
                 "accessories": [
-                    "cap",
                     "sunglasses",
+                    "cap",
                     "waterBottle"
                 ],
                 "shoes": "Chinelo ou tênis ultraleve",
@@ -954,7 +989,6 @@
             }
         }
     },
-
     "accessoryNames": {
         "scarfThick": "Cachecol grosso",
         "scarfMedium": "Cachecol médio",
@@ -985,32 +1019,66 @@
         "umbrella": "Guarda-chuva",
         "rain_boots": "Botas impermeáveis",
         "windbreaker": "Corta-vento",
-        "hair_control": "Controle capilar"
+        "hair_control": "Controle capilar",
+        "rings": "Anéis",
+        "head_bandana_or_scarf": "Bandana ou lenço na cabeça",
+        "cooling_neck_bands": "Faixas refrescantes para o pescoço",
+        "thick_fabric_beret": "Boina de tecido grosso",
+        "wool_beret": "Boina ou boné de lã",
+        "leather_bag_with_wide_strap": "Bolsa de couro com alça larga",
+        "straw_or_raffia_bag": "Bolsa de palha ou ráfia",
+        "waterproof_crossbody_fabric_bag": "Bolsa tiracolo impermeável",
+        "light_crossbody_bag": "Bolsa tiracolo leve",
+        "small_crossbody_bag": "Bolsa transversal pequena",
+        "cap1": "Boné",
+        "light_earrings": "Brincos leves",
+        "scarf": "Cachecol",
+        "face_covering_scarf": "Cachecol cobrindo o rosto",
+        "wool_scarf": "Cachecol de lã",
+        "female_lined_raincoat": "Capa de chuva com forro",
+        "mens_lined_raincoat": "Capa de chuva com forro",
+        "panama_hat": "Chapéu Panamá",
+        "bucket_hat": "Chapéu tipo bucket",
+        "womens_wide_brim_hat": "Chapéu de aba larga",
+        "womens_straw_hat": "Chapéu de palha",
+        "womens_light_necklaces": "Colares leves",
+        "thermal_vest": "Colete térmico",
+        "ultra_thin_scarf": "Echarpe ultrafina",
+        "wool_beanie": "Gorro de lã unissex",
+        "faux_fur_earmuffs": "Protetores de orelha com pelo sintético",
+        "uv_protection_sleeveless_shirt": "Regata com proteção UV",
+        "handheld_fan": "Ventilador de mão",
+        "mini_folding_fan": "Mini leque dobrável",
+        "visor_hat": "Viseira",
+        "sunglasses1": "Óculos de sol",
+        "thermal_socks": "Meias térmicas",
+        "wide_Brim_Hat": "Chapéu de aba larga"
     },
-
-
-
     "overlays": {
         "rain": {
             "rain_1e": {
                 "description": "Chuva leve (≥ 1mm): incluir guarda-chuva.",
                 "accessories": [
-                    "umbrella"
+                    "umbrella",
+                    "waterproof_crossbody_fabric_bag"
                 ]
             },
             "rain_3e": {
                 "description": "Chuva moderada (≥ 3mm): usar capa de chuva. Se vento ≥ 20km/h, substituir por capa impermeável.",
                 "accessories": [
-                    "raincoat",
-                    "umbrella"
+                    "mens_lined_raincoat",
+                    "umbrella",
+                    "waterproof_crossbody_fabric_bag"
+
                 ]
             },
             "rain_5e": {
                 "description": "Chuva forte (≥ 5mm): adicionar bota impermeável.",
                 "accessories": [
                     "rain_boots",
-                    "raincoat",
-                    "umbrella"
+                    "mens_lined_raincoat",
+                    "umbrella",
+                    "waterproof_crossbody_fabric_bag"
                 ]
             }
         },
