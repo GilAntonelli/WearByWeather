@@ -54,7 +54,7 @@ export const accessoryImages = {
   thermal_vest: require('../assets/accessories/thermal_vest.png'),
   ultra_thin_scarf: require('../assets/accessories/ultra_thin_scarf.png'),
   faux_fur_earmuffs: require('../assets/accessories/faux_fur_earmuffs.png'),
-  uv_protection_sleeveless_shirt: require('../assets/accessories/uv_protection_sleeveless_shirt.png'),
+ // uv_protection_sleeveless_shirt: require('../assets/accessories/uv_protection_sleeveless_shirt.png'),
   mini_folding_fan: require('../assets/accessories/mini_folding_fan.png'),
   visor_hat: require('../assets/accessories/visor_hat.png'),
   sunglasses1: require('../assets/accessories/sunglasses.png'),
