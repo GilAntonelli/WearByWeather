@@ -648,7 +648,7 @@
                     "top": "Low cut or sleeveless tank top",
                     "bottom": "Light shorts",
                     "accessories": [
-                        "scarf_head_control"
+                        "scarfHead"
                     ],
                     "shoes": "Light flip-flops",
                     "recommendation": "With high heat, wear minimal and airy outfits like sleeveless tops and light shorts to stay ventilated and avoid overheating."
@@ -935,7 +935,7 @@
                     "bottom": "Light shorts",
                     "accessories": [
                         "hairUp",
-                        "scarf_head_control"
+                        "scarfHead"
                     ],
                     "shoes": "Light flip-flops",
                     "recommendation": "With high temperatures, stick to minimal and breathable outfits like sleeveless tops and light shorts to keep cool all day long."

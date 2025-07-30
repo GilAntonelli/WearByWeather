@@ -648,7 +648,7 @@
                     "top": "Camisola de alças cavada ou sem mangas",
                     "bottom": "Shorts leve",
                     "accessories": [
-                        "scarf_head_control"
+                        "scarfHead"
                     ],
                     "shoes": "Chinelo leve",
                     "recommendation": "Com temperaturas elevadas, opte por peças mínimas e tecidos frescos como regatas cavadas e calções leves para manter o corpo fresco e ventilado."
@@ -935,7 +935,7 @@
                     "bottom": "Shorts leve",
                     "accessories": [
                         "hairUp",
-                        "scarf_head_control"
+                        "scarfHead"
                     ],
                     "shoes": "Chinelo leve",
                     "recommendation": "Com temperaturas elevadas, privilegie peças mínimas como regatas cavadas e calções leves para maximizar a ventilação e o conforto."
