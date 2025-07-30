@@ -7,40 +7,40 @@
     "preferences": {
         "title": "As Suas Preferências",
         "subtitle": "Vamos personalizar a sua experiência!",
-        "description": "Estas informações vão ajudar-nos a recomendar roupas que combinam com o seu estilo.",
+        "description": "Estas informações vão ajudar-nos a recomendar roupas que melhor se adequam ao seu estilo.",
         "editLater": "Poderá editar estas preferências mais tarde.",
         "nameLabel": "Escreva o seu nome ou alcunha (opcional)",
-        "nameNote": "Pode deixar este campo em branco se preferir não ser tratado pelo nome.",
+        "nameNote": "Pode deixar este campo em branco se preferir não ser tratado(a) pelo nome.",
         "namePlaceholder": "Como prefere ser tratado(a)?",
         "genderQuestion": "Estilo de vestuário preferido",
         "optionMale": "Masculino",
         "optionFemale": "Feminino",
         "optionUnisex": "Unissexo",
         "genderNote": "Esta informação ajuda-nos a sugerir roupas mais adequadas ao seu estilo.",
-        "sugestionsMale": "Sugestões com calções, polo, etc.",
+        "sugestionsMale": "Sugestões com calções, pólo, etc.",
         "sugestionsFemale": "Sugestões com vestidos, saias, etc.",
-        "sugestionsUnisex": "Roupas neutras como jeans, t-shirt, etc.",
+        "temperatureNote": "Estas informações ajudam-nos a sugerir roupas mais adequadas ao seu conforto térmico.",
+        "sugestionsUnisex": "Roupas neutras como calças de ganga, t-shirt, etc.",
         "comfortQuestion": "Temperatura de conforto",
         "comfortColdTitle": "Prefiro vestir-me mais quente",
         "comfortColdDesc": "Tende a sentir frio com facilidade",
         "comfortHotTitle": "Tenho muito calor",
         "comfortHotDesc": "Prefere roupas mais leves e frescas",
         "comfortNeutralTitle": "Prefiro equilíbrio térmico",
-        "comfortNeutralDesc": "Costuma adaptar-se bem ao clima e prefere roupas de acordo com a temperatura",
-        "button": "Guardar preferências e continuar",
-        "temperatureNote": "Estas informações ajudam-nos a sugerir roupas mais adequadas ao seu conforto térmico."
+        "comfortNeutralDesc": "Costuma adaptar-se bem ao clima e prefere roupas adequadas à temperatura",
+        "button": "Guardar preferências e continuar"
     },
     "home": {
         "greeting": "Olá",
-        "suggestionTitle": "Look Sugerido do Dia",
+        "suggestionTitle": "Look sugerido do dia",
         "forecastButton": "Ver previsão detalhada",
         "selectCity": "Selecione uma cidade para continuar...",
-        "detectingLocation": "A detetar localização...",
-        "trydetectingLocation": "Tentar detetar a cidade novamente"
+        "detectingLocation": "A localizar a sua posição...",
+        "trydetectingLocation": "Tentar localizar a cidade novamente"
     },
     "cityModal": {
         "title": "Escolha uma cidade",
-        "searchPlaceholder": "Procurar cidade",
+        "searchPlaceholder": "Procurar uma cidade",
         "currentLocation": "Localização atual"
     },
     "language": {
@@ -55,42 +55,42 @@
         "begin": "Início",
         "language": "Idioma",
         "reset": "Repor",
-        "refreshWeather": "Atualizar clima"
+        "refreshWeather": "Atualizar tempo"
     },
     "Forecast": {
         "condition": "A carregar...",
         "sectionTitle": "Próximas 24h (intervalos de 3h)",
-        "sectionTitleDetais": "Detalhes Climáticos",
+        "sectionTitleDetais": "Detalhes do estado do tempo",
         "detailTitle": "Temperatura",
         "temperatureMax": "Máx",
         "temperatureMin": "Mín",
         "rainDetail": "Chuva",
-        "possibleRain": "Possível chuva",
+        "possibleRain": "Possibilidade de chuva",
         "withoutRain": "Sem chuva",
         "windDetail": "Vento",
         "humidityDetail": "Humidade",
         "humidityAir": "Humidade relativa do ar",
         "ThermalSenation": "Sensação térmica",
         "backButton": "Voltar ao look do dia",
-        "errorMessage": "Não foi possível carregar os dados climáticos.",
+        "errorMessage": "Não foi possível carregar os dados meteorológicos.",
         "retryButton": "Tentar novamente",
         "rainTemperature15-": "Dia chuvoso e frio. Leve um guarda-chuva e agasalhe-se bem.",
         "rain": "Previsão de chuva. Não se esqueça do guarda-chuva!",
         "wind20+": "Vento forte hoje. Proteja-se bem ao sair.",
-        "wind30+": "Rajadas de vento intensas hoje. Tenha atenção ao sair de casa.",
-        "temperature30+": "Dia quente. Use roupa leve e beba bastante água!",
+        "wind30+": "Rajadas de vento intensas. Tenha atenção ao sair de casa.",
+        "temperature30+": "Dia quente. Use roupa leve e beba bastante água.",
         "temperature35+": "Muito sol e calor. Hidrate-se bem!",
-        "cold5-": "Frio intenso hoje. Vista roupas térmicas.",
+        "cold5-": "Frio intenso. Vista roupas térmicas.",
         "temperature10-": "Temperaturas baixas. Use várias camadas de roupa quente.",
         "clearSkyCold5-": "Céu limpo, mas muito frio. Agasalhe-se bem.",
         "cloudsTemperature15-": "Tempo nublado e frio. Um casaco será útil.",
         "clouds": "Tempo parcialmente nublado. Aproveite com moderação.",
-        "fog": "Nevoeiro no ar. Atenção à visibilidade na condução.",
+        "fog": "Nevoeiro no ar. Atenção à visibilidade ao conduzir.",
         "mist": "Neblina ligeira. Pode ser desconfortável de manhã.",
-        "humidity30-": "Ar seco hoje. Hidrate-se e evite exposição prolongada.",
+        "humidity30-": "Ar seco. Hidrate-se e evite exposição prolongada.",
         "humidity90+": "Humidade muito elevada. Pode causar desconforto.",
-        "clearSky": "Céu limpo e clima estável. Bom dia para atividades ao ar livre.",
-        "fallback": "Clima estável hoje. Esteja atento a possíveis alterações ao longo do dia."
+        "clearSky": "Céu limpo e tempo estável. Bom dia para atividades ao ar livre.",
+        "fallback": "Tempo estável. Esteja atento a possíveis alterações ao longo do dia."
     },
     "localTimeLabel": "Hora local",
     "LookSuggestionCard": {
@@ -100,7 +100,7 @@
     "buttons": {
         "close": "Fechar"
     },
-    "textLookDescription": "Look sugerido para hoje:",
+    "textLookDescription": "Sugestão de look para hoje:",
     "suggestions": {
         "female": {
             "freezing": {
@@ -112,8 +112,6 @@
                         "scarfThick",
                         "hatWool",
                         "gloves",
-                        "face_covering_scarf",
-                        "faux_fur_earmuffs",
                         "thermal_socks"
                     ],
                     "shoes": "Bota forrada impermeável",
@@ -154,8 +152,7 @@
                         "scarfThick",
                         "hatWool",
                         "gloves",
-                        "thermal_socks",
-                        "leather_bag_with_wide_strap"
+                        "thermal_socks"
                     ],
                     "shoes": "Bota de couro",
                     "recommendation": "Com o tempo frio, aposte em casacos acolchoados, camisolas de manga comprida e acessórios térmicos para manter-se quente."
@@ -178,7 +175,7 @@
                     "top": "Casaco leve e camisa",
                     "bottom": "Calça de sarja",
                     "accessories": [
-                        "scarf1",
+                        "scarf_new",
                         "thick_fabric_beret",
                         "leather_bag_with_wide_strap"
                     ],
@@ -205,7 +202,7 @@
                     "top": "Moletom ou cardigan",
                     "bottom": "Calças de ganga",
                     "accessories": [
-                        "scarf1",
+                        "scarf_new",
                         "rings",
                         "leather_bag_with_wide_strap"
                     ],
@@ -232,11 +229,9 @@
                     "bottom": "Calças de ganga ou saia pelo joelho com meia",
                     "accessories": [
                         "scarfLight",
-                        "sunglasses",
                         "thermal_vest",
-                        "small_crossbody_bag",
-                        "rings",
-                        "earrings"
+                        "sunglasses",
+                        "small_crossbody_bag"
                     ],
                     "shoes": "Oxford ou ténis fechado",
                     "recommendation": "Com o tempo ameno, opte por camisolas finas com sobreposição leve para manter-se aquecida de forma confortável."
@@ -271,11 +266,9 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido midi de manga ¾ e blazer leve",
                     "accessories": [
-                        "scarfNeck",
-                        "watch",
-                        "rings",
-                        "straw_or_raffia_bag",
                         "panama_hat",
+                        "scarfNeck",
+                        "straw_or_raffia_bag",
                         "sunglasses"
                     ],
                     "shoes": "Ténis casual ou oxford",
@@ -323,10 +316,8 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido curto com alça larga ou manga japonesa",
                     "accessories": [
-                        "earrings",
-                        "sunglasses",
-                        "light_earrings",
                         "wide_brim_hat",
+                        "sunglasses",
                         "womens_light_necklaces",
                         "scarfDecorative"
                     ],
@@ -337,7 +328,7 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido leve de alças fina ou frente única",
                     "accessories": [
-                        "hair Tie",
+                        "hair_tie",
                         "sunglasses",
                         "light_earrings",
                         "womens_light_necklaces"
@@ -365,7 +356,7 @@
                         "light_earrings",
                         "hairUp",
                         "cooling_neck_bands",
-                        "sunglasses1"
+                        "sunglasses_new"
                     ],
                     "shoes": "Rasteira ou chinelos",
                     "recommendation": "O dia está quente. Prefira vestidos fluidos com tecidos leves e acessórios frescos para manter-se confortável e elegante."
@@ -387,7 +378,7 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido leve de algodão",
                     "accessories": [
-                        "femaleSunHat",
+                        "womens_straw_hat",
                         "sunglasses",
                         "waterBottle"
                     ],
@@ -590,7 +581,7 @@
                     "top": "Camisola de alças ou camiseta de tecido leve",
                     "bottom": "Bermuda ou short de sarja",
                     "accessories": [
-                        "hairTie"
+                        "hair_tie"
                     ],
                     "shoes": "Ténis leve ou chinelos",
                     "recommendation": "Mesmo com o tempo ameno, se costuma sentir calor, escolha tecidos leves e respiráveis como camisolas de alças e bermudas para maior frescura."
@@ -657,7 +648,7 @@
                     "top": "Camisola de alças cavada ou sem mangas",
                     "bottom": "Shorts leve",
                     "accessories": [
-                        "headscarfhaircontrol"
+                        "scarf_head_control"
                     ],
                     "shoes": "Chinelo leve",
                     "recommendation": "Com temperaturas elevadas, opte por peças mínimas e tecidos frescos como regatas cavadas e calções leves para manter o corpo fresco e ventilado."
@@ -944,7 +935,7 @@
                     "bottom": "Shorts leve",
                     "accessories": [
                         "hairUp",
-                        "headscarfhaircontrol"
+                        "scarf_head_control"
                     ],
                     "shoes": "Chinelo leve",
                     "recommendation": "Com temperaturas elevadas, privilegie peças mínimas como regatas cavadas e calções leves para maximizar a ventilação e o conforto."
@@ -1001,7 +992,7 @@
         "hat": "Gorro",
         "beanie": "Gorro",
         "cap": "Boné",
-        "femaleSunHat": "Chapéu de sol",
+        "womens_straw_hat": "Chapéu de sol (feminino)",
         "gloves": "Luvas",
         "waterBottle": "Garrafa de água",
         "sunglasses": "Óculos de sol",
@@ -1011,15 +1002,15 @@
         "bracelet": "Pulseira",
         "earrings": "Brincos",
         "watch": "Relógio",
-        "hairTie": "Elástico de cabelo",
+        "hair_tie": "Elástico de cabelo",
         "hairUp": "Cabelo preso",
-        "headscarfhaircontrol": "Lenço de controlo capilar",
+        "scarf_head_control": "Lenço de controlo do cabelo",
         "scarfHead": "Lenço de cabeça",
         "raincoat": "Capa de chuva",
         "umbrella": "Guarda-chuva",
         "rain_boots": "Botas impermeáveis",
         "windbreaker": "Corta-vento",
-        "hair_control": "Controlo capilar",
+        "hair_control": "Controlo do cabelo",
         "rings": "Anéis",
         "head_bandana_or_scarf": "Bandolete ou lenço na cabeça",
         "cooling_neck_bands": "Faixas refrigerantes para o pescoço",
@@ -1033,26 +1024,26 @@
         "cap1": "Boné",
         "light_earrings": "Brincos leves",
         "scarf": "Cachecol",
-        "face_covering_scarf": "Cachecol cobrindo parte do rosto",
+        "face_covering_scarf": "Cachecol que cobre o rosto",
         "wool_scarf": "Cachecol de lã",
-        "female_lined_raincoat": "Capa de chuva com forro",
-        "mens_lined_raincoat": "Capa de chuva com forro",
+        "female_lined_raincoat": "Capa de chuva com forro (feminina)",
+        "mens_lined_raincoat": "Capa de chuva com forro (masculina)",
         "panama_hat": "Chapéu Panamá",
-        "bucket_hat": "Chapéu tipo pescador",
-        "womens_wide_brim_hat": "Chapéu de aba larga",
-        "womens_straw_hat": "Chapéu de palha",
-        "womens_light_necklaces": "Colares leves",
-        "thermal_vest": "Colete térmico",
+        "bucket_hat": "Chapéu tipo balde",
+        "womens_wide_brim_hat": "Chapéu de aba larga (feminino)",
+        "womens_straw_hat": "Chapéu de palha (feminino)",
+        "womens_light_necklaces": "Colares leves (femininos)",
+        "thermal_vest": "Colete térmico unissexo",
         "ultra_thin_scarf": "Écharpe ultrafina",
-        "wool_beanie": "Gorro de lã unissex",
+        "wool_beanie": "Gorro de lã unissexo",
         "faux_fur_earmuffs": "Protetores de orelha com lã sintética",
-        "uv_protection_sleeveless_shirt": "Regata com proteção UV",
+        "uv_protection_sleeveless_shirt": "Camisola sem mangas com proteção UV",
         "handheld_fan": "Ventilador de mão",
         "mini_folding_fan": "Mini leque",
         "visor_hat": "Viseira",
-        "sunglasses1": "Óculos de sol",
+        "sunglasses_new": "Óculos de sol",
         "thermal_socks": "Meias térmicas",
-        "wide_Brim_Hat": "Chapéu de aba larga"
+        "wide_brim_hat": "Chapéu de aba larga"
     },
     "overlays": {
         "rain": {
@@ -1069,7 +1060,6 @@
                     "mens_lined_raincoat",
                     "umbrella",
                     "waterproof_crossbody_fabric_bag"
-
                 ]
             },
             "rain_5e": {
@@ -1119,13 +1109,13 @@
         }
     },
     "alerts": {
-        "preferencesAlert": "Por favor, selecione o estilo e a temperatura de conforto.",
+        "preferencesAlert": "Por favor, selecione o estilo de vestuário e a temperatura de conforto.",
         "resetAlert": "Tem a certeza de que pretende apagar as suas preferências e reiniciar a aplicação?",
         "cancelbutton": "Cancelar",
         "resetbutton": "Repor",
         "typePermission": "Permissão necessária",
         "detectCityAlert": "Para detetar automaticamente a sua cidade, permita o acesso à localização nas definições do sistema.",
-        "text": "Abrir Configurações",
+        "text": "Abrir definições",
         "typeError": "Erro",
         "localizationAlert": "Não foi possível detetar a sua localização.",
         "typeInvalidCity": "Cidade inválida",

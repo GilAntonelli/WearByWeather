@@ -16,10 +16,11 @@
         "optionMale": "Masculino",
         "optionFemale": "Feminino",
         "optionUnisex": "Unissex",
-        "genderNote": "Esta informação ajuda-nos a sugerir roupas mais adequadas ao seu estilo.",
+        "genderNote": "Esta informação nos ajuda a sugerir roupas mais adequadas ao seu estilo.",
         "sugestionsMale": "Sugestões com bermuda, camisa polo, etc.",
         "sugestionsFemale": "Sugestões com vestidos, saias, etc.",
         "sugestionsUnisex": "Roupas neutras como jeans, t-shirt, etc.",
+        "temperatureNote": "Essas informações nos ajudam a sugerir roupas mais adequadas ao seu conforto térmico.",
         "comfortQuestion": "Temperatura de conforto",
         "comfortColdTitle": "Prefiro me agasalhar mais",
         "comfortColdDesc": "Você geralmente sente frio com facilidade",
@@ -27,8 +28,7 @@
         "comfortHotDesc": "Você prefere roupas mais leves e frescas",
         "comfortNeutralTitle": "Prefiro equilíbrio térmico",
         "comfortNeutralDesc": "Você se adapta bem ao clima e escolhe roupas conforme a temperatura do dia",
-        "button": "Salvar preferências e continuar",
-        "temperatureNote": "Essas informações nos ajudam a sugerir roupas mais adequadas ao seu conforto térmico."
+        "button": "Salvar preferências e continuar"
     },
     "home": {
         "greeting": "Olá",
@@ -112,8 +112,6 @@
                         "scarfThick",
                         "hatWool",
                         "gloves",
-                        "face_covering_scarf",
-                        "faux_fur_earmuffs",
                         "thermal_socks"
                     ],
                     "shoes": "Bota forrada impermeável",
@@ -154,8 +152,7 @@
                         "scarfThick",
                         "hatWool",
                         "gloves",
-                        "thermal_socks",
-                        "leather_bag_with_wide_strap"
+                        "thermal_socks"
                     ],
                     "shoes": "Bota de couro",
                     "recommendation": "Está fazendo frio. Use casacos quentinhos, roupas de manga longa e acessórios que ajudem a manter o corpo aquecido."
@@ -178,7 +175,7 @@
                     "top": "Blusão leve e camisa",
                     "bottom": "Calça de sarja",
                     "accessories": [
-                        "scarf1",
+                        "scarf_new",
                         "thick_fabric_beret",
                         "leather_bag_with_wide_strap"
                     ],
@@ -205,7 +202,7 @@
                     "top": "Moletom ou cardigan",
                     "bottom": "Calça jeans",
                     "accessories": [
-                        "scarf1",
+                        "scarf_new",
                         "rings",
                         "leather_bag_with_wide_strap"
                     ],
@@ -232,11 +229,9 @@
                     "bottom": "Calça jeans ou saia midi com meia",
                     "accessories": [
                         "scarfLight",
-                        "sunglasses",
                         "thermal_vest",
-                        "small_crossbody_bag",
-                        "rings",
-                        "earrings"
+                        "sunglasses",
+                        "small_crossbody_bag"
                     ],
                     "shoes": "Oxford ou tênis fechado",
                     "recommendation": "O clima está ameno. Use camiseta com suéter leve e complemente com peças que ajudem a manter o corpo aquecido."
@@ -271,11 +266,9 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido midi de manga ¾ e blazer leve",
                     "accessories": [
-                        "scarfNeck",
-                        "watch",
-                        "rings",
-                        "straw_or_raffia_bag",
                         "panama_hat",
+                        "scarfNeck",
+                        "straw_or_raffia_bag",
                         "sunglasses"
                     ],
                     "shoes": "Tênis casual ou oxford",
@@ -323,10 +316,8 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido curto com alça larga ou manga japonesa",
                     "accessories": [
-                        "earrings",
-                        "sunglasses",
-                        "light_earrings",
                         "wide_brim_hat",
+                        "sunglasses",
                         "womens_light_necklaces",
                         "scarfDecorative"
                     ],
@@ -337,7 +328,7 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido leve de alça fina ou frente única",
                     "accessories": [
-                        "hair Tie",
+                        "hair_tie",
                         "sunglasses",
                         "light_earrings",
                         "womens_light_necklaces"
@@ -365,7 +356,7 @@
                         "light_earrings",
                         "hairUp",
                         "cooling_neck_bands",
-                        "sunglasses1"
+                        "sunglasses_new"
                     ],
                     "shoes": "Rasteira ou chinelo",
                     "recommendation": "O dia está quente. Prefira vestidos soltos, tecidos leves e acessórios frescos para manter o conforto ao longo do dia."
@@ -387,7 +378,7 @@
                     "isSinglePiece": true,
                     "singlePiece": "Vestido leve de algodão",
                     "accessories": [
-                        "femaleSunHat",
+                        "womens_straw_hat",
                         "sunglasses",
                         "waterBottle"
                     ],
@@ -589,7 +580,7 @@
                     "top": "Regata ou camiseta de tecido leve",
                     "bottom": "Bermuda ou short de sarja",
                     "accessories": [
-                        "hairTie"
+                        "hair_tie"
                     ],
                     "shoes": "Tênis leve ou chinelo",
                     "recommendation": "Se tende a sentir calor, mesmo em dias amenos, prefira camisetas leves ou regatas com bermudas para garantir frescor e mobilidade."
@@ -656,7 +647,7 @@
                     "top": "Regata cavada ou sem mangas",
                     "bottom": "Shorts leve",
                     "accessories": [
-                        "headscarfhaircontrol"
+                        "scarf_head_control"
                     ],
                     "shoes": "Chinelo leve",
                     "recommendation": "Com o calor intenso, escolha roupas bem leves como regatas cavadas e shorts de tecido fino para garantir ventilação e conforto térmico."
@@ -943,49 +934,49 @@
                     "bottom": "Shorts leve",
                     "accessories": [
                         "hairUp",
-                        "headscarfhaircontrol"
+                        "scarf_head_control"
                     ],
                     "shoes": "Chinelo leve",
                     "recommendation": "Com o calor elevado, prefira roupas mínimas como regatas cavadas e shorts leves para se manter fresco e ventilado o dia todo."
                 }
-            }
-        },
-        "extreme_heat": {
-            "feel_cold": {
-                "isSinglePiece": false,
-                "top": "Camiseta solta de algodão",
-                "bottom": "Shorts de linho ou saia fluida",
-                "accessories": [
-                    "femaleSunHat",
-                    "sunglasses",
-                    "waterBottle"
-                ],
-                "shoes": "Sandálias abertas",
-                "recommendation": "Use roupas claras e soltas para minimizar o impacto do calor."
             },
-            "neutral": {
-                "isSinglePiece": false,
-                "top": "Top leve ou regata unissex",
-                "bottom": "Shorts curtos ou bermuda leve",
-                "accessories": [
-                    "sunglasses",
-                    "waterBottle",
-                    "bucketHat"
-                ],
-                "shoes": "Tênis ventilado ou chinelo",
-                "recommendation": "Opte por praticidade e conforto com peças leves e respiráveis."
-            },
-            "feel_hot": {
-                "isSinglePiece": false,
-                "top": "Regata esportiva ou cropped curto",
-                "bottom": "Shorts esportivos unissex",
-                "accessories": [
-                    "sunglasses",
-                    "cap",
-                    "waterBottle"
-                ],
-                "shoes": "Chinelo ou tênis ultraleve",
-                "recommendation": "Mantenha-se hidratado e escolha o mínimo necessário para aguentar o calor."
+            "extreme_heat": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camiseta solta de algodão",
+                    "bottom": "Shorts de linho ou saia fluida",
+                    "accessories": [
+                        "womens_straw_hat",
+                        "sunglasses",
+                        "waterBottle"
+                    ],
+                    "shoes": "Sandálias abertas",
+                    "recommendation": "Use roupas claras e soltas para minimizar o impacto do calor."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Top leve ou regata unissex",
+                    "bottom": "Shorts curtos ou bermuda leve",
+                    "accessories": [
+                        "sunglasses",
+                        "waterBottle",
+                        "bucketHat"
+                    ],
+                    "shoes": "Tênis ventilado ou chinelo",
+                    "recommendation": "Opte por praticidade e conforto com peças leves e respiráveis."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Regata esportiva ou cropped curto",
+                    "bottom": "Shorts esportivos unissex",
+                    "accessories": [
+                        "sunglasses",
+                        "cap",
+                        "waterBottle"
+                    ],
+                    "shoes": "Chinelo ou tênis ultraleve",
+                    "recommendation": "Mantenha-se hidratado e escolha o mínimo necessário para aguentar o calor."
+                }
             }
         }
     },
@@ -1001,7 +992,7 @@
         "hat": "Touca",
         "beanie": "Touca",
         "cap": "Boné",
-        "femaleSunHat": "Chapéu de sol",
+        "womens_straw_hat": "Chapéu de sol",
         "gloves": "Luvas",
         "waterBottle": "Garrafa de água",
         "sunglasses": "Óculos de sol",
@@ -1011,9 +1002,9 @@
         "bracelet": "Pulseira",
         "earrings": "Brincos",
         "watch": "Relógio",
-        "hairTie": "Elástico de cabelo",
+        "hair_tie": "Elástico de cabelo",
         "hairUp": "Cabelo preso",
-        "headscarfhaircontrol": "Lenço de controle capilar",
+        "scarf_head_control": "Lenço de controle capilar",
         "scarfHead": "Lenço de cabeça",
         "raincoat": "Capa de chuva",
         "umbrella": "Guarda-chuva",
@@ -1050,9 +1041,9 @@
         "handheld_fan": "Ventilador de mão",
         "mini_folding_fan": "Mini leque dobrável",
         "visor_hat": "Viseira",
-        "sunglasses1": "Óculos de sol",
+        "sunglasses_new": "Óculos de sol",
         "thermal_socks": "Meias térmicas",
-        "wide_Brim_Hat": "Chapéu de aba larga"
+        "wide_brim_hat": "Chapéu de aba larga"
     },
     "overlays": {
         "rain": {
@@ -1069,7 +1060,6 @@
                     "mens_lined_raincoat",
                     "umbrella",
                     "waterproof_crossbody_fabric_bag"
-
                 ]
             },
             "rain_5e": {

@@ -7,55 +7,55 @@
     "preferences": {
         "title": "Your Preferences",
         "subtitle": "Let's personalize your experience!",
-        "description": "This information will help us recommend clothing that fits your style.",
+        "description": "This information will help us recommend clothing that matches your style.",
         "editLater": "You can edit these preferences later.",
         "nameLabel": "Enter your name or nickname (optional)",
-        "nameNote": "You can leave this field blank if you prefer not to be called by name.",
+        "nameNote": "You can leave this field blank if you prefer not to be addressed by name.",
         "namePlaceholder": "How would you like to be addressed?",
         "genderQuestion": "Preferred clothing style",
         "optionMale": "Male",
         "optionFemale": "Female",
         "optionUnisex": "Unisex",
-        "genderNote": "This helps us suggest looks that best suit your style.",
+        "genderNote": "This helps us suggest outfits that best match your style.",
         "sugestionsMale": "Suggestions with shorts, polo shirts, etc.",
         "sugestionsFemale": "Suggestions with dresses, skirts, etc.",
         "sugestionsUnisex": "Neutral clothing like jeans, t-shirts, etc.",
         "comfortQuestion": "Comfort temperature",
-        "comfortColdTitle": "I prefer to dress warmer",
+        "comfortColdTitle": "I prefer to dress warmly",
         "comfortColdDesc": "You tend to feel cold easily",
-        "comfortHotTitle": "I feel very hot",
+        "comfortHotTitle": "I get hot easily",
         "comfortHotDesc": "You prefer lighter, cooler clothing",
-        "comfortNeutralTitle": "I prefer balanced temperature",
-        "comfortNeutralDesc": "You usually adapt well to the weather and choose outfits according to the temperature",
+        "comfortNeutralTitle": "I prefer a balanced temperature",
+        "comfortNeutralDesc": "You usually adapt well to the weather and choose outfits accordingly",
         "button": "Save preferences and continue",
         "temperatureNote": "This information helps us suggest clothes that better match your thermal comfort."
     },
     "home": {
         "greeting": "Hello",
-        "suggestionTitle": "Suggested Look of the Day",
-        "forecastButton": "See detailed forecast",
+        "suggestionTitle": "Suggested Outfit of the Day",
+        "forecastButton": "View detailed forecast",
         "selectCity": "Select a city to continue...",
         "detectingLocation": "Detecting location...",
         "trydetectingLocation": "Try detecting city again"
     },
     "cityModal": {
-        "title": "Choose a city",
-        "searchPlaceholder": "Search city",
-        "currentLocation": "Current location"
+        "title": "Choose a City",
+        "searchPlaceholder": "Search for a city",
+        "currentLocation": "Current Location"
     },
     "language": {
-        "auto": "Detect automatically",
-        "title": "Choose your language"
+        "auto": "Detect Automatically",
+        "title": "Choose Your Language"
     },
     "BackButton": {
         "label": "Back"
     },
     "SettingsMenu": {
-        "preferences": "Edit preferences",
+        "preferences": "Edit Preferences",
         "begin": "Home",
         "language": "Language",
         "reset": "Reset",
-        "refreshWeather": "Update weather"
+        "refreshWeather": "Update Weather"
     },
     "Forecast": {
         "condition": "Loading...",
@@ -69,11 +69,11 @@
         "withoutRain": "No rain",
         "windDetail": "Wind",
         "humidityDetail": "Humidity",
-        "humidityAir": "Relative humidity",
-        "ThermalSenation": "Feels like",
-        "backButton": "Back to today's look",
+        "humidityAir": "Relative Humidity",
+        "ThermalSenation": "Feels Like",
+        "backButton": "Back to Today's Outfit",
         "errorMessage": "Unable to load weather data.",
-        "retryButton": "Try again",
+        "retryButton": "Try Again",
         "rainTemperature15-": "Rainy and cold day. Bring an umbrella and dress warmly.",
         "rain": "Rain expected. Don’t forget your umbrella!",
         "wind20+": "Strong winds today. Stay protected when going out.",
@@ -82,7 +82,7 @@
         "temperature35+": "Very sunny and hot. Keep yourself well hydrated!",
         "cold5-": "Very cold today. Wear thermal clothing.",
         "temperature10-": "Low temperatures. Dress in warm layers.",
-        "clearSkyCold5-": "Clear sky but very cold. Bundle up properly.",
+        "clearSkyCold5-": "Clear skies but very cold. Bundle up properly.",
         "cloudsTemperature15-": "Cloudy and cold. A jacket will help.",
         "clouds": "Partly cloudy weather. Enjoy with moderation.",
         "fog": "Foggy conditions. Watch out for low visibility.",
@@ -90,9 +90,9 @@
         "humidity30-": "Dry air today. Stay hydrated and avoid long exposure.",
         "humidity90+": "Very high humidity. It might feel uncomfortable.",
         "clearSky": "Clear skies and stable weather. Great day for outdoor activities.",
-        "fallback": "Stable weather today. Keep an eye on possible changes."
+        "fallback": "Stable weather today. Keep an eye out for possible changes."
     },
-    "localTimeLabel": "Local time",
+    "localTimeLabel": "Local Time",
     "LookSuggestionCard": {
         "accessoryTitle": "Accessories"
     },
@@ -100,7 +100,7 @@
     "buttons": {
         "close": "Close"
     },
-    "textLookDescription": "Suggested look for today:",
+    "textLookDescription": "Suggested Outfit for Today:",
     "suggestions": {
         "female": {
             "freezing": {
@@ -112,8 +112,6 @@
                         "scarfThick",
                         "hatWool",
                         "gloves",
-                        "face_covering_scarf",
-                        "faux_fur_earmuffs",
                         "thermal_socks"
                     ],
                     "shoes": "Lined waterproof boots",
@@ -154,8 +152,7 @@
                         "scarfThick",
                         "hatWool",
                         "gloves",
-                        "thermal_socks",
-                        "leather_bag_with_wide_strap"
+                        "thermal_socks"
                     ],
                     "shoes": "Leather boots",
                     "recommendation": "It’s cold outside. Wear padded coats, long sleeves, and thermal accessories to stay warm and comfortable."
@@ -178,7 +175,7 @@
                     "top": "Light sweatshirt and shirt",
                     "bottom": "Twill pants",
                     "accessories": [
-                        "scarf1",
+                        "scarf_new",
                         "thick_fabric_beret",
                         "leather_bag_with_wide_strap"
                     ],
@@ -205,7 +202,7 @@
                     "top": "Sweatshirt or cardigan",
                     "bottom": "Jeans",
                     "accessories": [
-                        "scarf1",
+                        "scarf_new",
                         "rings",
                         "leather_bag_with_wide_strap"
                     ],
@@ -232,11 +229,9 @@
                     "bottom": "Jeans or midi skirt with tights",
                     "accessories": [
                         "scarfLight",
-                        "sunglasses",
                         "thermal_vest",
-                        "small_crossbody_bag",
-                        "rings",
-                        "earrings"
+                        "sunglasses",
+                        "small_crossbody_bag"
                     ],
                     "shoes": "Oxford or closed sneakers",
                     "recommendation": "It’s a mild day. Choose a light sweater over a t-shirt to stay comfortably warm without overheating."
@@ -271,11 +266,9 @@
                     "isSinglePiece": true,
                     "singlePiece": "Midi dress with ¾ sleeves and light blazer",
                     "accessories": [
-                        "scarfNeck",
-                        "watch",
-                        "rings",
-                        "straw_or_raffia_bag",
                         "panama_hat",
+                        "scarfNeck",
+                        "straw_or_raffia_bag",
                         "sunglasses"
                     ],
                     "shoes": "Casual sneakers or oxfords",
@@ -323,10 +316,8 @@
                     "isSinglePiece": true,
                     "singlePiece": "Short dress with wide straps or Japanese sleeves",
                     "accessories": [
-                        "earrings",
-                        "sunglasses",
-                        "light_earrings",
                         "wide_brim_hat",
+                        "sunglasses",
                         "womens_light_necklaces",
                         "scarfDecorative"
                     ],
@@ -337,7 +328,7 @@
                     "isSinglePiece": true,
                     "singlePiece": "Light dress with thin straps or halter neck",
                     "accessories": [
-                        "hair Tie",
+                        "hair_tie",
                         "sunglasses",
                         "light_earrings",
                         "womens_light_necklaces"
@@ -365,7 +356,7 @@
                         "light_earrings",
                         "hairUp",
                         "cooling_neck_bands",
-                        "sunglasses1"
+                        "sunglasses_new"
                     ],
                     "shoes": "Flat sandals or flip-flops",
                     "recommendation": "It’s a hot day. Choose flowy dresses made from light fabrics and fresh accessories to stay cool and comfortable."
@@ -387,7 +378,7 @@
                     "isSinglePiece": true,
                     "singlePiece": "Light cotton dress",
                     "accessories": [
-                        "femaleSunHat",
+                        "womens_straw_hat",
                         "sunglasses",
                         "waterBottle"
                     ],
@@ -657,7 +648,7 @@
                     "top": "Low cut or sleeveless tank top",
                     "bottom": "Light shorts",
                     "accessories": [
-                        "headscarfhaircontrol"
+                        "scarf_head_control"
                     ],
                     "shoes": "Light flip-flops",
                     "recommendation": "With high heat, wear minimal and airy outfits like sleeveless tops and light shorts to stay ventilated and avoid overheating."
@@ -944,7 +935,7 @@
                     "bottom": "Light shorts",
                     "accessories": [
                         "hairUp",
-                        "headscarfhaircontrol"
+                        "scarf_head_control"
                     ],
                     "shoes": "Light flip-flops",
                     "recommendation": "With high temperatures, stick to minimal and breathable outfits like sleeveless tops and light shorts to keep cool all day long."
@@ -990,69 +981,69 @@
         }
     },
     "accessoryNames": {
-        "scarfThick": "Thick scarf",
-        "scarfMedium": "Medium scarf",
-        "scarfLight": "Light scarf",
-        "scarfNeck": "Neck scarf",
-        "scarfDecorative": "Decorative scarf",
-        "hatTight": "Tight beanie",
-        "hatLight": "Light hat",
-        "hatWool": "Wool hat",
+        "scarfThick": "Thick Scarf",
+        "scarfMedium": "Medium Scarf",
+        "scarfLight": "Light Scarf",
+        "scarfNeck": "Neck Scarf",
+        "scarfDecorative": "Decorative Scarf",
+        "hatTight": "Tight Beanie",
+        "hatLight": "Light Hat",
+        "hatWool": "Wool Hat",
         "hat": "Beanie",
         "beanie": "Beanie",
         "cap": "Cap",
-        "femaleSunHat": "Sun hat",
+        "womens_straw_hat": "Sun Hat",
         "gloves": "Gloves",
-        "waterBottle": "Water bottle",
+        "waterBottle": "Water Bottle",
         "sunglasses": "Sunglasses",
         "glasses": "Glasses",
         "necklace": "Necklace",
-        "simpleNecklace": "Simple necklace",
+        "simpleNecklace": "Simple Necklace",
         "bracelet": "Bracelet",
         "earrings": "Earrings",
         "watch": "Watch",
-        "hairTie": "Hair tie",
-        "hairUp": "Hair up",
-        "headscarfhaircontrol": "Hair control scarf",
-        "scarfHead": "Head scarf",
+        "hair_tie": "hair_tie",
+        "hairUp": "Hair Up",
+        "scarf_head_control": "Hair Control Scarf",
+        "scarfHead": "Head Scarf",
         "raincoat": "Raincoat",
         "umbrella": "Umbrella",
-        "rain_boots": "Rain boots",
+        "rain_boots": "Rain Boots",
         "windbreaker": "Windbreaker",
-        "hair_control": "Hair control",
+        "hair_control": "Hair Control",
         "rings": "Rings",
-        "head_bandana_or_scarf": "Head bandana or scarf",
-        "cooling_neck_bands": "Cooling neck bands",
-        "thick_fabric_beret": "Thick fabric beret",
-        "wool_beret": "Wool beret",
-        "leather_bag_with_wide_strap": "Leather bag with wide strap",
-        "straw_or_raffia_bag": "Straw or raffia bag",
-        "waterproof_crossbody_fabric_bag": "Waterproof crossbody fabric bag",
-        "light_crossbody_bag": "Light crossbody bag",
-        "small_crossbody_bag": "Small crossbody bag",
+        "head_bandana_or_scarf": "Head Bandana or Scarf",
+        "cooling_neck_bands": "Cooling Neck Bands",
+        "thick_fabric_beret": "Thick Fabric Beret",
+        "wool_beret": "Wool Beret",
+        "leather_bag_with_wide_strap": "Leather Bag with Wide Strap",
+        "straw_or_raffia_bag": "Straw or Raffia Bag",
+        "waterproof_crossbody_fabric_bag": "Waterproof Crossbody Fabric Bag",
+        "light_crossbody_bag": "Light Crossbody Bag",
+        "small_crossbody_bag": "Small Crossbody Bag",
         "cap1": "Cap",
-        "light_earrings": "Light earrings",
+        "light_earrings": "Light Earrings",
         "scarf": "Scarf",
-        "face_covering_scarf": "Face-covering scarf",
-        "wool_scarf": "Wool scarf",
-        "female_lined_raincoat": "Lined raincoat",
-        "mens_lined_raincoat": "Lined raincoat",
-        "panama_hat": "Panama hat",
-        "bucket_hat": "Bucket hat",
-        "womens_wide_brim_hat": "Women's wide-brim hat",
-        "womens_straw_hat": "Straw hat",
-        "womens_light_necklaces": "Light necklaces",
+        "face_covering_scarf": "Face-Covering Scarf",
+        "wool_scarf": "Wool Scarf",
+        "female_lined_raincoat": "Lined Raincoat",
+        "mens_lined_raincoat": "Lined Raincoat",
+        "panama_hat": "Panama Hat",
+        "bucket_hat": "Bucket Hat",
+        "womens_wide_brim_hat": "Women's Wide-Brim Hat",
+        "womens_straw_hat": "Straw Hat",
+        "womens_light_necklaces": "Light Necklaces",
         "thermal_vest": "Thermal Vest",
-        "ultra_thin_scarf": "Ultra-thin scarf",
-        "wool_beanie": "Wool beanie",
-        "faux_fur_earmuffs": "Faux fur earmuffs",
-        "uv_protection_sleeveless_shirt": "Sleeveless UV-protection shirt",
-        "handheld_fan": "Handheld fan",
-        "mini_folding_fan": "Mini folding fan",
-        "visor_hat": "Visor hat",
-        "sunglasses1": "Sunglasses",
-        "thermal_socks": "Thermal socks",
-        "wide_Brim_Hat": "Wide brim hat"
+        "ultra_thin_scarf": "Ultra-Thin Scarf",
+        "wool_beanie": "Wool Beanie",
+        "faux_fur_earmuffs": "Faux Fur Earmuffs",
+        "uv_protection_sleeveless_shirt": "Sleeveless UV-Protection Shirt",
+        "handheld_fan": "Handheld Fan",
+        "mini_folding_fan": "Mini Folding Fan",
+        "visor_hat": "Visor Hat",
+        "sunglasses_new": "Sunglasses",
+        "thermal_socks": "Thermal Socks",
+        "wide_brim_hat": "Wide-Brim Hat"
     },
     "overlays": {
         "rain": {
@@ -1061,7 +1052,6 @@
                 "accessories": [
                     "umbrella",
                     "waterproof_crossbody_fabric_bag"
-
                 ]
             },
             "rain_3and": {
@@ -1070,7 +1060,6 @@
                     "mens_lined_raincoat",
                     "umbrella",
                     "waterproof_crossbody_fabric_bag"
-
                 ]
             },
             "rain_5and": {
@@ -1085,7 +1074,7 @@
         },
         "wind": {
             "wind_30_45": {
-                "description": "Moderate wind (30–45 km/h): add windbreaker, fitted beanie, and hair tie.",
+                "description": "Moderate wind (30–45 km/h): add windbreaker, fitted beanie, and hair_tie.",
                 "accessories": [
                     "windbreaker",
                     "beanie",
@@ -1093,7 +1082,7 @@
                 ]
             },
             "wind_45and": {
-                "description": "Strong wind (> 45 km/h): add windbreaker, thick scarf, light gloves, and hair tie.",
+                "description": "Strong wind (> 45 km/h): add windbreaker, thick scarf, light gloves, and hair_tie.",
                 "accessories": [
                     "windbreaker",
                     "scarf",
@@ -1124,12 +1113,12 @@
         "resetAlert": "Are you sure you want to delete your preferences and restart the app?",
         "cancelbutton": "Cancel",
         "resetbutton": "Reset",
-        "typePermission": "Permission required",
+        "typePermission": "Permission Required",
         "detectCityAlert": "To automatically detect your city, allow location access in your system settings.",
-        "text": "Open settings",
+        "text": "Open Settings",
         "typeError": "Error",
         "localizationAlert": "Unable to detect your location.",
-        "typeInvalidCity": "Invalid city",
+        "typeInvalidCity": "Invalid City",
         "invalidCityAlert": "Weather data could not be retrieved for this city.",
         "typeAttention": "Attention!"
     }

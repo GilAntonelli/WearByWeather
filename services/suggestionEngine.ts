@@ -6,9 +6,11 @@ const avatarMap: Record<string, any> = {
   'freezing_male_feel_cold': require('../assets/avatars/freezing/male/feel_colder/avatar.png'),
   'freezing_male_feel_hot': require('../assets/avatars/freezing/male/feel_hot/avatar.png'),
   'freezing_male_neutral': require('../assets/avatars/freezing/male/neutral/avatar.png'),
+
   'freezing_female_feel_cold': require('../assets/avatars/freezing/female/feel_colder/avatar.png'),
   'freezing_female_feel_hot': require('../assets/avatars/freezing/female/feel_hot/avatar.png'),
   'freezing_female_neutral': require('../assets/avatars/freezing/female/neutral/avatar.png'),
+
   'freezing_unisex_feel_cold': require('../assets/avatars/freezing/unisex/feel_colder/avatar.png'),
   'freezing_unisex_feel_hot': require('../assets/avatars/freezing/unisex/feel_hot/avatar.png'),
   'freezing_unisex_neutral': require('../assets/avatars/freezing/unisex/neutral/avatar.png'),
@@ -63,15 +65,15 @@ const avatarMap: Record<string, any> = {
   'warm_unisex_feel_hot': require('../assets/avatars/warm/unisex/feel_hot/avatar.png'),
   'warm_unisex_neutral': require('../assets/avatars/warm/unisex/neutral/avatar.png'),
 
-  'hot_male_feel_cold': require('../assets/avatars/freezing/male/feel_colder/avatar.png'),
-  'hot_male_feel_hot': require('../assets/avatars/freezing/male/feel_hot/avatar.png'),
-  'hot_male_neutral': require('../assets/avatars/freezing/male/neutral/avatar.png'),
-  'hot_female_feel_cold': require('../assets/avatars/freezing/female/feel_colder/avatar.png'),
-  'hot_female_feel_hot': require('../assets/avatars/freezing/female/feel_hot/avatar.png'),
-  'hot_female_neutral': require('../assets/avatars/freezing/female/neutral/avatar.png'),
-  'hot_unisex_feel_cold': require('../assets/avatars/freezing/unisex/feel_colder/avatar.png'),
-  'hot_unisex_feel_hot': require('../assets/avatars/freezing/unisex/feel_hot/avatar.png'),
-  'hot_unisex_neutral': require('../assets/avatars/freezing/unisex/neutral/avatar.png'),
+  'hot_male_feel_cold': require('../assets/avatars/hot/male/feel_colder/avatar.png'),
+  'hot_male_feel_hot': require('../assets/avatars/hot/male/feel_hot/avatar.png'),
+  'hot_male_neutral': require('../assets/avatars/hot/male/neutral/avatar.png'),
+  'hot_female_feel_cold': require('../assets/avatars/hot/female/feel_colder/avatar.png'),
+  'hot_female_feel_hot': require('../assets/avatars/hot/female/feel_hot/avatar.png'),
+  'hot_female_neutral': require('../assets/avatars/hot/female/neutral/avatar.png'),
+  'hot_unisex_feel_cold': require('../assets/avatars/hot/unisex/feel_colder/avatar.png'),
+  'hot_unisex_feel_hot': require('../assets/avatars/hot/unisex/feel_hot/avatar.png'),
+  'hot_unisex_neutral': require('../assets/avatars/hot/unisex/neutral/avatar.png'),
 
   'extreme_heat_male_feel_cold': require('../assets/avatars/extreme_heat/male/feel_colder/avatar.png'),
   'extreme_heat_male_feel_hot': require('../assets/avatars/extreme_heat/male/feel_hot/avatar.png'),
@@ -140,12 +142,18 @@ function getAvatar(faixa: string, genero: string, conforto: string): any {
 }
 
 export function getSuggestionsJson(
+  
   gender: string,
   rangeDescription: string,
   comfort: string,
   t: TFunction
 ): LookSuggestion {
   console.log('chave', `suggestions.${gender}.${rangeDescription}.${comfort}`);
+console.log('[getSuggestionsJson] Faixa térmica:', rangeDescription);
+console.log('[getSuggestionsJson] Gênero:', gender);
+console.log('[getSuggestionsJson] Conforto:', comfort);
+
+
   let suggestions = t(`suggestions.${gender}.${rangeDescription}.${comfort}`, {
     returnObjects: true,
   }) as LookSuggestionJson;
