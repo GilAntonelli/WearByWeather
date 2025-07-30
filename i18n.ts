@@ -10,7 +10,7 @@ export async function initI18n(language: string) {
   await i18n.init({
     compatibilityJSON: 'v4',
     lng: language,
-    fallbackLng: 'pt-BR',
+    fallbackLng: 'en',
     resources: {
       'pt-BR': { translation: ptBR },
       'pt-PT': { translation: ptPT },
