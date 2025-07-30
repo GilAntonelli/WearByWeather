@@ -624,39 +624,6 @@
             "hot": {
                 "feel_cold": {
                     "isSinglePiece": false,
-                    "top": "Camisola de alças ou camiseta leve de algodão",
-                    "bottom": "Shorts de linho ou tactel",
-                    "accessories": [
-                        "sunglasses"
-                    ],
-                    "shoes": "Sandália leve",
-                    "recommendation": "Mesmo com o calor, se sente algum desconforto térmico, use peças leves com alguma cobertura, como camisolas de alças largas e calções de algodão."
-                },
-                "neutral": {
-                    "isSinglePiece": false,
-                    "top": "Camisola de alças ou top leve",
-                    "bottom": "Shorts",
-                    "accessories": [
-                        "necklace",
-                        "glasses"
-                    ],
-                    "shoes": "Chinelo ou sandália",
-                    "recommendation": "O dia está quente. Prefira roupas leves e respiráveis como camisolas de alças ou t-shirts largas combinadas com calções frescos."
-                },
-                "feel_hot": {
-                    "isSinglePiece": false,
-                    "top": "Camisola de alças cavada ou sem mangas",
-                    "bottom": "Shorts leve",
-                    "accessories": [
-                        "scarf_head_control"
-                    ],
-                    "shoes": "Chinelo leve",
-                    "recommendation": "Com temperaturas elevadas, opte por peças mínimas e tecidos frescos como regatas cavadas e calções leves para manter o corpo fresco e ventilado."
-                }
-            },
-            "extreme_heat": {
-                "feel_cold": {
-                    "isSinglePiece": false,
                     "top": "T-shirt leve de algodão",
                     "bottom": "Calções de tecido natural",
                     "accessories": [
@@ -689,6 +656,39 @@
                     ],
                     "shoes": "Chinelos ou sandálias leves",
                     "recommendation": "Minimiza o vestuário e privilegia a ventilação para maior conforto térmico."
+                }
+            },
+            "extreme_heat": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camisola de alças ou camiseta leve de algodão",
+                    "bottom": "Shorts de linho ou tactel",
+                    "accessories": [
+                        "sunglasses"
+                    ],
+                    "shoes": "Sandália leve",
+                    "recommendation": "Mesmo com o calor, se sente algum desconforto térmico, use peças leves com alguma cobertura, como camisolas de alças largas e calções de algodão."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Camisola de alças ou top leve",
+                    "bottom": "Shorts",
+                    "accessories": [
+                        "necklace",
+                        "glasses"
+                    ],
+                    "shoes": "Chinelo ou sandália",
+                    "recommendation": "O dia está quente. Prefira roupas leves e respiráveis como camisolas de alças ou t-shirts largas combinadas com calções frescos."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Camisola de alças cavada ou sem mangas",
+                    "bottom": "Shorts leve",
+                    "accessories": [
+                        "scarf_head_control"
+                    ],
+                    "shoes": "Chinelo leve",
+                    "recommendation": "Com temperaturas elevadas, opte por peças mínimas e tecidos frescos como regatas cavadas e calções leves para manter o corpo fresco e ventilado."
                 }
             }
         },

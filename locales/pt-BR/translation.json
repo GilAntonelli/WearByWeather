@@ -623,39 +623,6 @@
             "hot": {
                 "feel_cold": {
                     "isSinglePiece": false,
-                    "top": "Regata ou camiseta leve de algodão",
-                    "bottom": "Shorts de linho ou tactel",
-                    "accessories": [
-                        "sunglasses"
-                    ],
-                    "shoes": "Sandália leve",
-                    "recommendation": "Mesmo com o tempo quente, se você sente desconforto térmico, use regatas largas ou camisetas leves com tecidos frescos que ainda ofereçam alguma cobertura."
-                },
-                "neutral": {
-                    "isSinglePiece": false,
-                    "top": "Regata ou top leve",
-                    "bottom": "Shorts",
-                    "accessories": [
-                        "necklace",
-                        "glasses"
-                    ],
-                    "shoes": "Chinelo ou sandália",
-                    "recommendation": "O dia está quente. Aposte em peças leves como regatas, camisetas soltas e shorts para manter o frescor e a liberdade de movimento."
-                },
-                "feel_hot": {
-                    "isSinglePiece": false,
-                    "top": "Regata cavada ou sem mangas",
-                    "bottom": "Shorts leve",
-                    "accessories": [
-                        "scarf_head_control"
-                    ],
-                    "shoes": "Chinelo leve",
-                    "recommendation": "Com o calor intenso, escolha roupas bem leves como regatas cavadas e shorts de tecido fino para garantir ventilação e conforto térmico."
-                }
-            },
-            "extreme_heat": {
-                "feel_cold": {
-                    "isSinglePiece": false,
                     "top": "Camiseta leve de algodão",
                     "bottom": "Bermuda de tecido natural",
                     "accessories": [
@@ -688,6 +655,39 @@
                     ],
                     "shoes": "Chinelo ou sandália leve",
                     "recommendation": "Quanto menos tecido e mais ventilação, melhor será sua experiência térmica."
+                }
+            },
+            "extreme_heat": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Regata ou camiseta leve de algodão",
+                    "bottom": "Shorts de linho ou tactel",
+                    "accessories": [
+                        "sunglasses"
+                    ],
+                    "shoes": "Sandália leve",
+                    "recommendation": "Mesmo com o tempo quente, se você sente desconforto térmico, use regatas largas ou camisetas leves com tecidos frescos que ainda ofereçam alguma cobertura."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Regata ou top leve",
+                    "bottom": "Shorts",
+                    "accessories": [
+                        "necklace",
+                        "glasses"
+                    ],
+                    "shoes": "Chinelo ou sandália",
+                    "recommendation": "O dia está quente. Aposte em peças leves como regatas, camisetas soltas e shorts para manter o frescor e a liberdade de movimento."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Regata cavada ou sem mangas",
+                    "bottom": "Shorts leve",
+                    "accessories": [
+                        "scarf_head_control"
+                    ],
+                    "shoes": "Chinelo leve",
+                    "recommendation": "Com o calor intenso, escolha roupas bem leves como regatas cavadas e shorts de tecido fino para garantir ventilação e conforto térmico."
                 }
             }
         },

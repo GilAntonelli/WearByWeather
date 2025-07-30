@@ -624,39 +624,6 @@
             "hot": {
                 "feel_cold": {
                     "isSinglePiece": false,
-                    "top": "Cotton light tank top or T-shirt",
-                    "bottom": "Linen or nylon shorts",
-                    "accessories": [
-                        "sunglasses"
-                    ],
-                    "shoes": "Light sandals",
-                    "recommendation": "Even on hot days, if you feel some thermal discomfort, go for light pieces with some coverage, like wide-strap tanks and cotton shorts."
-                },
-                "neutral": {
-                    "isSinglePiece": false,
-                    "top": "Tank top or light top",
-                    "bottom": "Shorts",
-                    "accessories": [
-                        "necklace",
-                        "glasses"
-                    ],
-                    "shoes": "Flip-flops or sandals",
-                    "recommendation": "It’s a hot day. Choose light and breathable clothing like tanks or loose t-shirts paired with cool shorts to stay comfortable."
-                },
-                "feel_hot": {
-                    "isSinglePiece": false,
-                    "top": "Low cut or sleeveless tank top",
-                    "bottom": "Light shorts",
-                    "accessories": [
-                        "scarf_head_control"
-                    ],
-                    "shoes": "Light flip-flops",
-                    "recommendation": "With high heat, wear minimal and airy outfits like sleeveless tops and light shorts to stay ventilated and avoid overheating."
-                }
-            },
-            "extreme_heat": {
-                "feel_cold": {
-                    "isSinglePiece": false,
                     "top": "Light cotton t-shirt",
                     "bottom": "Natural fabric shorts",
                     "accessories": [
@@ -689,6 +656,39 @@
                     ],
                     "shoes": "Flip-flops or light sandals",
                     "recommendation": "Keep layers to a minimum and prioritize airflow to stay comfortable."
+                }
+            },
+            "extreme_heat": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Cotton light tank top or T-shirt",
+                    "bottom": "Linen or nylon shorts",
+                    "accessories": [
+                        "sunglasses"
+                    ],
+                    "shoes": "Light sandals",
+                    "recommendation": "Even on hot days, if you feel some thermal discomfort, go for light pieces with some coverage, like wide-strap tanks and cotton shorts."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Tank top or light top",
+                    "bottom": "Shorts",
+                    "accessories": [
+                        "necklace",
+                        "glasses"
+                    ],
+                    "shoes": "Flip-flops or sandals",
+                    "recommendation": "It’s a hot day. Choose light and breathable clothing like tanks or loose t-shirts paired with cool shorts to stay comfortable."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Low cut or sleeveless tank top",
+                    "bottom": "Light shorts",
+                    "accessories": [
+                        "scarf_head_control"
+                    ],
+                    "shoes": "Light flip-flops",
+                    "recommendation": "With high heat, wear minimal and airy outfits like sleeveless tops and light shorts to stay ventilated and avoid overheating."
                 }
             }
         },
