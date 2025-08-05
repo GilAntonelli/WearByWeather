@@ -206,7 +206,7 @@
                         "rings",
                         "leather_bag_with_wide_strap"
                     ],
-                    "shoes": "Ténis ou bota leve",
+                    "shoes": "Ténis ou botas leves",
                     "recommendation": "Dia fresco. Um sweatshirt ou cardigan leve é suficiente para manter o conforto sem exageros."
                 },
                 "feel_hot": {
@@ -420,7 +420,8 @@
                     "accessories": [
                         "scarfThick",
                         "hatTight",
-                        "gloves"
+                        "gloves",
+                        "thermal_socks"
                     ],
                     "shoes": "Bota forrada impermeável",
                     "recommendation": "Está extremamente frio. Use casacos acolchoados, peças térmicas e proteja bem cabeça, mãos e pés."
@@ -443,7 +444,8 @@
                     "bottom": "Calças de ganga",
                     "accessories": [
                         "hat",
-                        "gloves"
+                        "gloves",
+                        "scarfMedium"
                     ],
                     "shoes": "Bota simples",
                     "recommendation": "Mesmo com o frio intenso, escolha camadas mais leves e respiráveis se tende a sentir calor com facilidade."
@@ -455,9 +457,10 @@
                     "top": "Jaqueta térmica e camisola de manga",
                     "bottom": "Calça grossa ou sweatshirt",
                     "accessories": [
-                        "scarfLight",
-                        "beanie",
-                        "gloves"
+                        "scarfMedium",
+                        "wool_beanie",
+                        "gloves",
+                        "thermal_socks"
                     ],
                     "shoes": "Bota de couro",
                     "recommendation": "Com o tempo frio, utilize casacos térmicos e camisolas de manga para garantir aquecimento e proteção durante o dia."
@@ -467,7 +470,7 @@
                     "top": "Casaco de inverno médio e suéter",
                     "bottom": "Calças de ganga",
                     "accessories": [
-                        "hat",
+                        "hatLight",
                         "watch"
                     ],
                     "shoes": "Bota cano curto",
@@ -478,7 +481,8 @@
                     "top": "Casaco leve e camisa",
                     "bottom": "Calça de sarja",
                     "accessories": [
-                        "hatLight"
+                        "hat",
+                        "watch"
                     ],
                     "shoes": "Ténis fechado",
                     "recommendation": "Mesmo com temperaturas frias, opte por camadas leves e respiráveis para evitar desconforto térmico."
@@ -761,7 +765,7 @@
                     "accessories": [
                         "hat"
                     ],
-                    "shoes": "Ténis ou bota leve",
+                    "shoes": "Ténis ou botas leves",
                     "recommendation": "Com o frio, escolha sobreposições leves e respiráveis se tende a aquecer facilmente ao longo do dia."
                 }
             },

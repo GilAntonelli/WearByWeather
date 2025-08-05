@@ -420,7 +420,8 @@
                     "accessories": [
                         "scarfThick",
                         "hatTight",
-                        "gloves"
+                        "gloves",
+                        "thermal_socks"
                     ],
                     "shoes": "Lined waterproof boots",
                     "recommendation": "It’s extremely cold. Wear padded coats, thermal layers, and protect your head, hands, and feet."
@@ -443,7 +444,8 @@
                     "bottom": "Jeans",
                     "accessories": [
                         "hat",
-                        "gloves"
+                        "gloves",
+                        "scarfMedium"
                     ],
                     "shoes": "Simple boots",
                     "recommendation": "Even in freezing weather, go for warm but breathable layers if you tend to feel hot easily."
@@ -455,9 +457,10 @@
                     "top": "Thermal jacket and long sleeve blouse",
                     "bottom": "Thick pants or sweatpants",
                     "accessories": [
-                        "scarfLight",
-                        "beanie",
-                        "gloves"
+                        "scarfMedium",
+                        "wool_beanie",
+                        "gloves",
+                        "thermal_socks"
                     ],
                     "shoes": "Leather boots",
                     "recommendation": "It’s cold out. Wear thermal jackets and warm layers to stay fully protected throughout the day."
@@ -467,7 +470,7 @@
                     "top": "Mid winter coat and sweater",
                     "bottom": "Jeans",
                     "accessories": [
-                        "hat",
+                        "hatLight",
                         "watch"
                     ],
                     "shoes": "Short boots",
@@ -478,7 +481,8 @@
                     "top": "Light sweatshirt and shirt",
                     "bottom": "Twill pants",
                     "accessories": [
-                        "hat"
+                        "hat",
+                        "watch"
                     ],
                     "shoes": "Closed sneakers",
                     "recommendation": "Although it’s cold, wear light and breathable clothing to avoid feeling too warm."
@@ -491,21 +495,22 @@
                     "bottom": "Jeans",
                     "accessories": [
                         "scarfLight",
-                        "cap"
+                        "cap",
+                        "watch"
                     ],
                     "shoes": "Light boots",
-                    "recommendation": "On a chilly day, wear a sweatshirt and light jacket to stay warm without sacrificing comfort."
+                    "recommendation": "Chilly days call for layered comfort. Combine a sweatshirt with a light jacket and add a scarf and cap to stay protected while keeping your look casual."
                 },
                 "neutral": {
                     "isSinglePiece": false,
-                    "top": "Light jacket or sweater",
+                    "top": "Light jacket or knit sweater",
                     "bottom": "Jeans or chino pants",
                     "accessories": [
                         "watch",
                         "sunglasses"
                     ],
                     "shoes": "Casual sneakers",
-                    "recommendation": "It’s a mild day. Pair a light jacket or sweater with comfortable pants for a practical and balanced outfit."
+                    "recommendation": "With cool temperatures, opt for a light sweater or jacket paired with chinos or jeans. Stylish and easy for everyday wear."
                 },
                 "feel_hot": {
                     "isSinglePiece": false,
@@ -516,7 +521,7 @@
                         "sunglasses"
                     ],
                     "shoes": "Sport sneakers",
-                    "recommendation": "Even on a cool day, choose light layers like long-sleeve shirts and thin vests to avoid overheating."
+                    "recommendation": "If you feel warm easily, even on chilly days, go for long sleeves paired with a breathable vest. It keeps you fresh and functional without losing protection."
                 }
             },
             "mild": {
