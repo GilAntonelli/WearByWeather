@@ -986,130 +986,62 @@
         }
     },
     "accessoryNames": {
-        "scarfThick": "Cachecol grosso",
-        "scarfMedium": "Cachecol médio",
-        "scarfLight": "Cachecol leve",
-        "scarfNeck": "Lenço de pescoço",
-        "scarfDecorative": "Lenço decorativo",
-        "hatTight": "Touca justa",
-        "hatLight": "Chapéu leve",
-        "hatWool": "Touca de lã",
-        "hat": "Touca",
-        "beanie": "Touca",
-        "cap": "Boné",
-        "womens_straw_hat": "Chapéu de sol",
-        "gloves": "Luvas",
-        "waterBottle": "Garrafa de água",
-        "sunglasses": "Óculos de sol",
-        "glasses": "Óculos",
-        "necklace": "Colar",
-        "simpleNecklace": "Colar simples",
-        "bracelet": "Pulseira",
-        "earrings": "Brincos",
-        "watch": "Relógio",
-        "hair_tie": "Elástico de cabelo",
-        "hairUp": "Cabelo preso",
-        "scarf_head_control": "Lenço de controle capilar",
-        "scarfHead": "Lenço de cabeça",
-        "raincoat": "Capa de chuva",
-        "umbrella": "Guarda-chuva",
-        "rain_boots": "Botas impermeáveis",
-        "windbreaker": "Corta-vento",
-        "hair_control": "Controle capilar",
-        "rings": "Anéis",
-        "head_bandana_or_scarf": "Bandana ou lenço na cabeça",
-        "cooling_neck_bands": "Faixas refrescantes para o pescoço",
-        "thick_fabric_beret": "Boina de tecido grosso",
-        "wool_beret": "Boina ou boné de lã",
-        "leather_bag_with_wide_strap": "Bolsa de couro com alça larga",
-        "straw_or_raffia_bag": "Bolsa de palha ou ráfia",
-        "waterproof_crossbody_fabric_bag": "Bolsa tiracolo impermeável",
-        "light_crossbody_bag": "Bolsa tiracolo leve",
-        "small_crossbody_bag": "Bolsa transversal pequena",
-        "cap1": "Boné",
-        "light_earrings": "Brincos leves",
-        "scarf": "Cachecol",
-        "face_covering_scarf": "Cachecol cobrindo o rosto",
-        "wool_scarf": "Cachecol de lã",
-        "female_lined_raincoat": "Capa de chuva com forro",
-        "mens_lined_raincoat": "Capa de chuva com forro",
-        "panama_hat": "Chapéu Panamá",
-        "bucket_hat": "Chapéu tipo bucket",
-        "womens_wide_brim_hat": "Chapéu de aba larga",
-        "womens_straw_hat": "Chapéu de palha",
-        "womens_light_necklaces": "Colares leves",
-        "thermal_vest": "Colete térmico",
-        "ultra_thin_scarf": "Echarpe ultrafina",
-        "wool_beanie": "Gorro de lã unissex",
+        "beanie": "Touca Térmica",
+        "bucket_hat": "Chapéu bucket",
+        "cap": "Boné leve",
+        "cooling_neck_bands": "Faixa refrescante para pescoço",
+        "face_covering_scarf": "Lenço para rosto",
         "faux_fur_earmuffs": "Protetores de orelha com pelo sintético",
-        "uv_protection_sleeveless_shirt": "Regata com proteção UV",
-        "handheld_fan": "Ventilador de mão",
-        "mini_folding_fan": "Mini leque dobrável",
-        "visor_hat": "Viseira",
-        "sunglasses_new": "Óculos de sol",
+        "gloves": "Luvas",
+        "head_bandana": "Bandana",
+        "head_scarf": "Lenço de cabeça",
+        "lined_raincoat": "Capa de chuva forrada",
+        "panama_hat": "Chapéu Panamá",
+        "portable_handheld_fan": "Ventilador portátil de mão",
+        "rain_boots": "Galochas",
+        "raincoat": "Capa de chuva",
+        "scarfChunky": "Cachecol grosso e quente",
+        "scarfLight": "Cachecol leve",
+        "scarfMedium": "Cachecol confortável",
+        "sunglasses": "Óculos de sol",
         "thermal_socks": "Meias térmicas",
-        "wide_brim_hat": "Chapéu de aba larga"
+        "thermal_vest": "Colete térmico",
+        "umbrella": "Guarda-chuva",
+        "waterBottle": "Garrafa de água",
+        "windbreaker": "Jaqueta corta-vento",
+        "sun_protection_sleeves": "Mangas de proteção solar",
+        "ear_cover_band": "Faixa cobre-orelhas",
+        "cooling_towel": "Toalha refrescante"
     },
+
     "overlays": {
         "rain": {
             "rain_1e": {
-                "description": "Chuva leve (≥ 1mm): incluir guarda-chuva.",
-                "accessories": [
-                    "umbrella",
-                    "waterproof_crossbody_fabric_bag"
-                ]
+                "description": "Chuva leve (≥ 1mm): incluir guarda-chuva."
             },
             "rain_3e": {
-                "description": "Chuva moderada (≥ 3mm): usar capa de chuva. Se vento ≥ 20km/h, substituir por capa impermeável.",
-                "accessories": [
-                    "mens_lined_raincoat",
-                    "umbrella",
-                    "waterproof_crossbody_fabric_bag"
-                ]
+                "description": "Chuva moderada (≥ 3mm): usar capa de chuva. Se vento ≥ 20km/h, substituir por capa impermeável."
             },
             "rain_5e": {
-                "description": "Chuva forte (≥ 5mm): adicionar bota impermeável.",
-                "accessories": [
-                    "rain_boots",
-                    "mens_lined_raincoat",
-                    "umbrella",
-                    "waterproof_crossbody_fabric_bag"
-                ]
+                "description": "Chuva forte (≥ 5mm): adicionar bota impermeável."
             }
         },
         "wind": {
             "wind_30_45": {
-                "description": "Vento moderado (30–45 km/h): adicionar corta-vento, gorro ajustado e elástico de cabelo.",
-                "accessories": [
-                    "windbreaker",
-                    "beanie",
-                    "hatTight"
-                ]
+                "description": "Vento moderado (30–45 km/h): adicionar corta-vento, gorro ajustado e elástico de cabelo."
             },
             "wind_45e": {
-                "description": "Vento forte (> 45 km/h): adicionar corta-vento, cachecol reforçado, luvas leves e elástico de cabelo.",
-                "accessories": [
-                    "windbreaker",
-                    "scarf",
-                    "gloves",
-                    "hatTight"
-                ]
+                "description": "Vento forte (> 45 km/h): adicionar corta-vento, cachecol reforçado, luvas leves e elástico de cabelo."
             }
         },
         "windandrain": {
             "wind_20e_and_rain_3e": {
-                "description": "Chuva com vento (chuva ≥ 3mm e vento ≥ 20 km/h): substituir capa comum por capa impermeável (windproof).",
-                "accessories": [
-                    "raincoat"
-                ]
+                "description": "Chuva com vento (chuva ≥ 3mm e vento ≥ 20 km/h): substituir capa comum por capa impermeável (windproof)."
             }
         },
         "windandwarm": {
             "temp_23e_and_wind_30e": {
-                "description": "Vento com calor (temp > 23°C e vento > 30 km/h): substituir peças esvoaçantes por coladas e adicionar controle capilar.",
-                "accessories": [
-                    "hair_control"
-                ]
+                "description": "Vento com calor (temp > 23°C e vento > 30 km/h): substituir peças esvoaçantes por coladas e adicionar controle capilar."
             }
         }
     },

@@ -38,3 +38,15 @@ export interface OverlaysJson {
   accessories: string;
   recommendation: string;
 }
+export type TemperatureRange =
+  | 'freezing'
+  | 'cold'
+  | 'chilly'
+  | 'mild'
+  | 'comfortable'
+  | 'warm'
+  | 'hot'
+  | 'extreme_heat'; // cuidado: você usava "extremely_hot", mas o correto no projeto é "extreme_heat"
+
+export type ComfortLevel = 'feel_cold' | 'neutral' | 'feel_hot';
+

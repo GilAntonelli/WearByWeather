@@ -1,5 +1,12 @@
-import { LookSuggestion, LookSuggestionJson, WeatherContext, OverlaysJson } from '../types/suggestion';
+import {
+  LookSuggestion,
+  LookSuggestionJson, WeatherContext, OverlaysJson,
+  TemperatureRange,
+  ComfortLevel
+
+} from '../types/suggestion';
 import { TFunction } from 'i18next';
+import { accessoriesByTemperature } from '../assets/data/accessoriesByTemperature';
 
 //#region Avatar Map
 const avatarMap: Record<string, any> = {
@@ -142,27 +149,35 @@ function getAvatar(faixa: string, genero: string, conforto: string): any {
 }
 
 export function getSuggestionsJson(
-  
+
   gender: string,
   rangeDescription: string,
   comfort: string,
   t: TFunction
 ): LookSuggestion {
   console.log('chave', `suggestions.${gender}.${rangeDescription}.${comfort}`);
-console.log('[getSuggestionsJson] Faixa térmica:', rangeDescription);
-console.log('[getSuggestionsJson] Gênero:', gender);
-console.log('[getSuggestionsJson] Conforto:', comfort);
+  console.log('[getSuggestionsJson] Faixa térmica:', rangeDescription);
+  console.log('[getSuggestionsJson] Gênero:', gender);
+  console.log('[getSuggestionsJson] Conforto:', comfort);
 
 
   let suggestions = t(`suggestions.${gender}.${rangeDescription}.${comfort}`, {
     returnObjects: true,
   }) as LookSuggestionJson;
 
+
+  let thermal = rangeDescription as TemperatureRange;
+  let comfortLevel = comfort as ComfortLevel;
+
+  let accessories =
+    accessoriesByTemperature?.[thermal]?.[comfortLevel]?.accessories || [];
+
+
   return {
     roupaSuperior: suggestions.top || suggestions.singlePiece,
     roupaInferior: suggestions.bottom || '',
     shoes: suggestions.shoes || '',
-    acessórios: suggestions.accessories || [],
+    acessórios: accessories,
     recommendation: suggestions.recommendation || '',
     image: getAvatar(rangeDescription, gender, comfort),
   };

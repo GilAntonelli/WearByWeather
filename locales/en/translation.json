@@ -108,12 +108,6 @@
                     "isSinglePiece": false,
                     "top": "Thick coat and thermal sweater",
                     "bottom": "Thermal pants and jeans",
-                    "accessories": [
-                        "scarfThick",
-                        "hatWool",
-                        "gloves",
-                        "thermal_socks"
-                    ],
                     "shoes": "Lined waterproof boots",
                     "recommendation": "It’s freezing outside. Layer up with thermal pieces and insulated accessories to stay warm and protected."
                 },
@@ -123,7 +117,7 @@
                     "bottom": "Jeans or heavy twill",
                     "accessories": [
                         "scarfMedium",
-                        "hatTight",
+                        "beanie",
                         "gloves",
                         "thermal_socks"
                     ],
@@ -135,9 +129,9 @@
                     "top": "Structured coat and light blouse",
                     "bottom": "Jeans",
                     "accessories": [
-                        "hat",
-                        "gloves",
-                        "scarfMedium"
+                        "scarfLight",
+                        "cap",
+                        "gloves"
                     ],
                     "shoes": "Simple boots",
                     "recommendation": "Even in the extreme cold, go for lighter thermal layers if you tend to overheat easily."
@@ -418,10 +412,14 @@
                     "top": "Padded coat and thermal sweater",
                     "bottom": "Thermal pants and jeans",
                     "accessories": [
-                        "scarfThick",
-                        "hatTight",
+                        "scarfChunky",
+                        "beanie",
+                        "faux_fur_earmuffs",
                         "gloves",
-                        "thermal_socks"
+                        "thermal_socks",
+                        "thermal_vest",
+                        "face_covering_scarf",
+                        "lined_raincoat"
                     ],
                     "shoes": "Lined waterproof boots",
                     "recommendation": "It’s extremely cold. Wear padded coats, thermal layers, and protect your head, hands, and feet."
@@ -986,130 +984,61 @@
         }
     },
     "accessoryNames": {
-        "scarfThick": "Thick Scarf",
-        "scarfMedium": "Medium Scarf",
-        "scarfLight": "Light Scarf",
-        "scarfNeck": "Neck Scarf",
-        "scarfDecorative": "Decorative Scarf",
-        "hatTight": "Tight Beanie",
-        "hatLight": "Light Hat",
-        "hatWool": "Wool Hat",
-        "hat": "Beanie",
-        "beanie": "Beanie",
-        "cap": "Cap",
-        "womens_straw_hat": "Sun Hat",
-        "gloves": "Gloves",
-        "waterBottle": "Water Bottle",
-        "sunglasses": "Sunglasses",
-        "glasses": "Glasses",
-        "necklace": "Necklace",
-        "simpleNecklace": "Simple Necklace",
-        "bracelet": "Bracelet",
-        "earrings": "Earrings",
-        "watch": "Watch",
-        "hair_tie": "hair_tie",
-        "hairUp": "Hair Up",
-        "scarf_head_control": "Hair Control Scarf",
-        "scarfHead": "Head Scarf",
-        "raincoat": "Raincoat",
-        "umbrella": "Umbrella",
-        "rain_boots": "Rain Boots",
-        "windbreaker": "Windbreaker",
-        "hair_control": "Hair Control",
-        "rings": "Rings",
-        "head_bandana_or_scarf": "Head Bandana or Scarf",
-        "cooling_neck_bands": "Cooling Neck Bands",
-        "thick_fabric_beret": "Thick Fabric Beret",
-        "wool_beret": "Wool Beret",
-        "leather_bag_with_wide_strap": "Leather Bag with Wide Strap",
-        "straw_or_raffia_bag": "Straw or Raffia Bag",
-        "waterproof_crossbody_fabric_bag": "Waterproof Crossbody Fabric Bag",
-        "light_crossbody_bag": "Light Crossbody Bag",
-        "small_crossbody_bag": "Small Crossbody Bag",
-        "cap1": "Cap",
-        "light_earrings": "Light Earrings",
-        "scarf": "Scarf",
+        "beanie": "Thermal Beanie",
+        "bucket_hat": "Wide-Brim Hat",
+        "cap": "Light Cap",
+        "cooling_neck_bands": "Cooling Neck Wrap",
         "face_covering_scarf": "Face-Covering Scarf",
-        "wool_scarf": "Wool Scarf",
-        "female_lined_raincoat": "Lined Raincoat",
-        "mens_lined_raincoat": "Lined Raincoat",
-        "panama_hat": "Panama Hat",
-        "bucket_hat": "Bucket Hat",
-        "womens_wide_brim_hat": "Women's Wide-Brim Hat",
-        "womens_straw_hat": "Straw Hat",
-        "womens_light_necklaces": "Light Necklaces",
-        "thermal_vest": "Thermal Vest",
-        "ultra_thin_scarf": "Ultra-Thin Scarf",
-        "wool_beanie": "Wool Beanie",
         "faux_fur_earmuffs": "Faux Fur Earmuffs",
-        "uv_protection_sleeveless_shirt": "Sleeveless UV-Protection Shirt",
-        "handheld_fan": "Handheld Fan",
-        "mini_folding_fan": "Mini Folding Fan",
-        "visor_hat": "Visor Hat",
-        "sunglasses_new": "Sunglasses",
+        "gloves": "Thermal Gloves",
+        "head_bandana": "Light Bandana",
+        "head_scarf": "Head Scarf",
+        "lined_raincoat": "Lined Raincoat",
+        "panama_hat": "Panama Hat",
+        "portable_handheld_fan": "Handheld Fan",
+        "rain_boots": "Rain Boots",
+        "raincoat": "Light Raincoat",
+        "scarfChunky": "Heavy Scarf",
+        "scarfLight": "Lightweight Scarf",
+        "scarfMedium": "Cozy Scarf",
+        "sunglasses": "Sunglasses",
         "thermal_socks": "Thermal Socks",
-        "wide_brim_hat": "Wide-Brim Hat"
+        "thermal_vest": "Thermal Vest",
+        "umbrella": "Umbrella",
+        "waterBottle": "Water Bottle",
+        "windbreaker": "Windbreaker",
+        "sun_protection_sleeves": "UV Protection Sleeves",
+        "ear_cover_band": "Ear Cover Band",
+        "cooling_towel": "Cooling Towel"
     },
     "overlays": {
         "rain": {
             "rain_1and": {
-                "description": "Light rain (≥ 1mm): include umbrella.",
-                "accessories": [
-                    "umbrella",
-                    "waterproof_crossbody_fabric_bag"
-                ]
+                "description": "Light rain (≥ 1mm): include umbrella."
             },
             "rain_3and": {
-                "description": "Moderate rain (≥ 3mm): wear raincoat. If wind ≥ 20km/h, switch to waterproof raincoat.",
-                "accessories": [
-                    "mens_lined_raincoat",
-                    "umbrella",
-                    "waterproof_crossbody_fabric_bag"
-                ]
+                "description": "Moderate rain (≥ 3mm): wear raincoat. If wind ≥ 20km/h, switch to waterproof raincoat."
             },
             "rain_5and": {
-                "description": "Heavy rain (≥ 5mm): add waterproof boots.",
-                "accessories": [
-                    "rain_boots",
-                    "mens_lined_raincoat",
-                    "umbrella",
-                    "waterproof_crossbody_fabric_bag"
-                ]
+                "description": "Heavy rain (≥ 5mm): add waterproof boots."
             }
         },
         "wind": {
             "wind_30_45": {
-                "description": "Moderate wind (30–45 km/h): add windbreaker, fitted beanie, and hair_tie.",
-                "accessories": [
-                    "windbreaker",
-                    "beanie",
-                    "hatTight"
-                ]
+                "description": "Moderate wind (30–45 km/h): add windbreaker, fitted beanie, and hair_tie."
             },
             "wind_45and": {
-                "description": "Strong wind (> 45 km/h): add windbreaker, thick scarf, light gloves, and hair_tie.",
-                "accessories": [
-                    "windbreaker",
-                    "scarf",
-                    "gloves",
-                    "hatTight"
-                ]
+                "description": "Strong wind (> 45 km/h): add windbreaker, thick scarf, light gloves, and hair_tie."
             }
         },
         "windandrain": {
             "wind_20and_and_rain_3and": {
-                "description": "Rain with wind (rain ≥ 3mm and wind ≥ 20 km/h): replace standard raincoat with windproof version.",
-                "accessories": [
-                    "raincoat"
-                ]
+                "description": "Rain with wind (rain ≥ 3mm and wind ≥ 20 km/h): replace standard raincoat with windproof version."
             }
         },
         "windandwarm": {
             "temp_23and_and_wind_30and": {
-                "description": "Wind with heat (temp > 23°C and wind > 30 km/h): avoid flowy clothes, prefer fitted ones, and apply hair control.",
-                "accessories": [
-                    "hair_control"
-                ]
+                "description": "Wind with heat (temp > 23°C and wind > 30 km/h): avoid flowy clothes, prefer fitted ones, and apply hair control."
             }
         }
     },
