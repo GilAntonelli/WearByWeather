@@ -206,7 +206,7 @@
                         "rings",
                         "leather_bag_with_wide_strap"
                     ],
-                    "shoes": "Ténis ou bota leve",
+                    "shoes": "Ténis ou botas leves",
                     "recommendation": "Dia fresco. Um sweatshirt ou cardigan leve é suficiente para manter o conforto sem exageros."
                 },
                 "feel_hot": {
@@ -420,7 +420,8 @@
                     "accessories": [
                         "scarfThick",
                         "hatTight",
-                        "gloves"
+                        "gloves",
+                        "thermal_socks"
                     ],
                     "shoes": "Bota forrada impermeável",
                     "recommendation": "Está extremamente frio. Use casacos acolchoados, peças térmicas e proteja bem cabeça, mãos e pés."
@@ -443,7 +444,8 @@
                     "bottom": "Calças de ganga",
                     "accessories": [
                         "hat",
-                        "gloves"
+                        "gloves",
+                        "scarfMedium"
                     ],
                     "shoes": "Bota simples",
                     "recommendation": "Mesmo com o frio intenso, escolha camadas mais leves e respiráveis se tende a sentir calor com facilidade."
@@ -455,9 +457,10 @@
                     "top": "Jaqueta térmica e camisola de manga",
                     "bottom": "Calça grossa ou sweatshirt",
                     "accessories": [
-                        "scarfLight",
-                        "beanie",
-                        "gloves"
+                        "scarfMedium",
+                        "wool_beanie",
+                        "gloves",
+                        "thermal_socks"
                     ],
                     "shoes": "Bota de couro",
                     "recommendation": "Com o tempo frio, utilize casacos térmicos e camisolas de manga para garantir aquecimento e proteção durante o dia."
@@ -467,7 +470,7 @@
                     "top": "Casaco de inverno médio e suéter",
                     "bottom": "Calças de ganga",
                     "accessories": [
-                        "hat",
+                        "hatLight",
                         "watch"
                     ],
                     "shoes": "Bota cano curto",
@@ -478,7 +481,8 @@
                     "top": "Casaco leve e camisa",
                     "bottom": "Calça de sarja",
                     "accessories": [
-                        "hatLight"
+                        "hat",
+                        "watch"
                     ],
                     "shoes": "Ténis fechado",
                     "recommendation": "Mesmo com temperaturas frias, opte por camadas leves e respiráveis para evitar desconforto térmico."
@@ -624,39 +628,6 @@
             "hot": {
                 "feel_cold": {
                     "isSinglePiece": false,
-                    "top": "Camisola de alças ou camiseta leve de algodão",
-                    "bottom": "Shorts de linho ou tactel",
-                    "accessories": [
-                        "sunglasses"
-                    ],
-                    "shoes": "Sandália leve",
-                    "recommendation": "Mesmo com o calor, se sente algum desconforto térmico, use peças leves com alguma cobertura, como camisolas de alças largas e calções de algodão."
-                },
-                "neutral": {
-                    "isSinglePiece": false,
-                    "top": "Camisola de alças ou top leve",
-                    "bottom": "Shorts",
-                    "accessories": [
-                        "necklace",
-                        "glasses"
-                    ],
-                    "shoes": "Chinelo ou sandália",
-                    "recommendation": "O dia está quente. Prefira roupas leves e respiráveis como camisolas de alças ou t-shirts largas combinadas com calções frescos."
-                },
-                "feel_hot": {
-                    "isSinglePiece": false,
-                    "top": "Camisola de alças cavada ou sem mangas",
-                    "bottom": "Shorts leve",
-                    "accessories": [
-                        "scarfHead"
-                    ],
-                    "shoes": "Chinelo leve",
-                    "recommendation": "Com temperaturas elevadas, opte por peças mínimas e tecidos frescos como regatas cavadas e calções leves para manter o corpo fresco e ventilado."
-                }
-            },
-            "extreme_heat": {
-                "feel_cold": {
-                    "isSinglePiece": false,
                     "top": "T-shirt leve de algodão",
                     "bottom": "Calções de tecido natural",
                     "accessories": [
@@ -689,6 +660,39 @@
                     ],
                     "shoes": "Chinelos ou sandálias leves",
                     "recommendation": "Minimiza o vestuário e privilegia a ventilação para maior conforto térmico."
+                }
+            },
+            "extreme_heat": {
+                "feel_cold": {
+                    "isSinglePiece": false,
+                    "top": "Camisola de alças ou camiseta leve de algodão",
+                    "bottom": "Shorts de linho ou tactel",
+                    "accessories": [
+                        "sunglasses"
+                    ],
+                    "shoes": "Sandália leve",
+                    "recommendation": "Mesmo com o calor, se sente algum desconforto térmico, use peças leves com alguma cobertura, como camisolas de alças largas e calções de algodão."
+                },
+                "neutral": {
+                    "isSinglePiece": false,
+                    "top": "Camisola de alças ou top leve",
+                    "bottom": "Shorts",
+                    "accessories": [
+                        "necklace",
+                        "glasses"
+                    ],
+                    "shoes": "Chinelo ou sandália",
+                    "recommendation": "O dia está quente. Prefira roupas leves e respiráveis como camisolas de alças ou t-shirts largas combinadas com calções frescos."
+                },
+                "feel_hot": {
+                    "isSinglePiece": false,
+                    "top": "Camisola de alças cavada ou sem mangas",
+                    "bottom": "Shorts leve",
+                    "accessories": [
+                        "scarf_head_control"
+                    ],
+                    "shoes": "Chinelo leve",
+                    "recommendation": "Com temperaturas elevadas, opte por peças mínimas e tecidos frescos como regatas cavadas e calções leves para manter o corpo fresco e ventilado."
                 }
             }
         },
@@ -761,7 +765,7 @@
                     "accessories": [
                         "hat"
                     ],
-                    "shoes": "Ténis ou bota leve",
+                    "shoes": "Ténis ou botas leves",
                     "recommendation": "Com o frio, escolha sobreposições leves e respiráveis se tende a aquecer facilmente ao longo do dia."
                 }
             },
@@ -935,7 +939,7 @@
                     "bottom": "Shorts leve",
                     "accessories": [
                         "hairUp",
-                        "scarfHead"
+                        "scarf_head_control"
                     ],
                     "shoes": "Chinelo leve",
                     "recommendation": "Com temperaturas elevadas, privilegie peças mínimas como regatas cavadas e calções leves para maximizar a ventilação e o conforto."
@@ -1031,6 +1035,7 @@
         "panama_hat": "Chapéu Panamá",
         "bucket_hat": "Chapéu tipo balde",
         "womens_wide_brim_hat": "Chapéu de aba larga (feminino)",
+        "womens_straw_hat": "Chapéu de palha (feminino)",
         "womens_light_necklaces": "Colares leves (femininos)",
         "thermal_vest": "Colete térmico unissexo",
         "ultra_thin_scarf": "Écharpe ultrafina",

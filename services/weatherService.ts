@@ -9,7 +9,7 @@ import tzLookup from 'tz-lookup';
 
 const WEATHER_CACHE_KEY = 'cached_weather';
 const WEATHER_CACHE_TTL = 15 * 60 * 1000; // 15 minutos
-const USE_MOCK = false; // ✅ Altere para false para usar a API real
+const USE_MOCK = true; // ✅ Altere para false para usar a API real
 const lang = mapLanguageToOpenWeather(i18n.language);
 
 export async function getWeatherByCity(city: string) {
