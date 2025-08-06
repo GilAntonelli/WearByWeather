@@ -1,10 +1,7 @@
 import InfoIconText from '../components/ui/InfoIconText';
-
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState, useEffect } from 'react';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   Alert,
@@ -12,7 +9,6 @@ import {
   Keyboard,
   KeyboardAvoidingView,
   Platform,
-  Pressable,
   ScrollView,
   Text,
   TextInput,
@@ -35,7 +31,6 @@ export const options = {
 
 export default function PreferencesScreen() {
   const router = useRouter();
-  const insets = useSafeAreaInsets();
   const [name, setName] = useState('');
   const [stylePreference, setStylePreference] = useState<'female' | 'male' | 'unisex' | null>(null);
   const { t } = useTranslation();
@@ -60,13 +55,6 @@ export default function PreferencesScreen() {
 
     loadPreferences();
   }, []);
-
-  // const handleInfoPress = () => {
-  //   Alert.alert(
-  //     'Preferências editáveis',
-  //     'Você poderá alterar suas preferências a qualquer momento acessando o menu de configurações.'
-  //   );
-  // };
 
   const handleSave = async () => {
     if (!stylePreference || !comfort) {
@@ -142,6 +130,7 @@ export default function PreferencesScreen() {
                       setIsFocused(false);
                       setTouchedName(true);
                     }}
+                    maxLength={20}
                   />
                   {isFocused && (
                     <Ionicons

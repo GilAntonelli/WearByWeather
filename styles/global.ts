@@ -986,5 +986,21 @@ export const globalStyles = StyleSheet.create({
     marginTop: 8,
     color: '#333' // ajuste se você estiver usando tema escuro ou claro
   },
- 
+  containerSplash: {
+    flex: 1,
+    backgroundColor: theme.colors.background,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 280,
+    height: 280,
+    resizeMode: 'contain',
+  },
+  titleSplash: {
+    marginTop: 20,
+    fontSize: 24,
+    fontWeight: '600',
+    color: theme.colors.text,
+  },
 });

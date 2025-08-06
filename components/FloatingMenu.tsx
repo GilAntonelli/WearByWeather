@@ -29,7 +29,7 @@ export default function FloatingMenu({ reloadWeather }: Props) {
       <Menu.Item
         onPress={() => {
           setMenuVisible(false);
-          router.replace('/?force=true');
+          router.replace('/welcome?force=true');
         }}
         title={t('SettingsMenu.begin')}
         leadingIcon={() => <Ionicons name="home-outline" size={20} color="#333" />}
