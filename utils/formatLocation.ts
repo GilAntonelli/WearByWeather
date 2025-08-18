@@ -2,9 +2,9 @@ export function formatLocationName(name: string, state?: string, country?: strin
   if (!name) return '';
 
   // 🇧🇷 Exibe estado apenas se for Brasil
-  if (country?.toLowerCase() === 'brasil' && state) {
+  /*if (country?.toLowerCase() === 'brasil' && state) {
     return `${name}, ${state}`;
-  }
+  }*/
 
   // 🌍 Para os demais, exibe apenas cidade e país
   if (country) {
