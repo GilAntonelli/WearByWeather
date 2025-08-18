@@ -34,10 +34,9 @@ export interface LookSuggestionJson {
 }
 
 export interface OverlaysJson {
-  description: string;
-  accessories: string;
-  recommendation: string;
+  description: string; 
 }
+
 export type TemperatureRange =
   | 'freezing'
   | 'cold'

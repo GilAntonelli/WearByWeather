@@ -1,5 +1,3 @@
-// services/homePrefetch.ts
-// Purpose: Preload Home screen data (weather + look suggestion) and avatar image to avoid visible loading flicker.
 
 import { Image, ImageSourcePropType } from 'react-native';
 import { Asset } from 'expo-asset';
@@ -7,7 +5,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getWeatherByCity } from './weatherService';
 import { getSuggestionByWeather } from './suggestionEngine';
 
-// Align this with your actual LookSuggestion type if available.
 export type HomePrefetchData = {
   weather: {
     temperatura: number;
@@ -20,10 +17,9 @@ export type HomePrefetchData = {
     tempMax?: number;
     id?: number;
   };
-  suggestion: any; // replace with LookSuggestion if you have the type
+  suggestion: any; 
 };
 
-// ---- In-memory cache so Home can render instantly when regaining focus ----
 let inMemoryCache: HomePrefetchData | null = null;
 
 export function getCachedHomeData(): HomePrefetchData | null {
@@ -34,11 +30,9 @@ export function clearCachedHomeData(): void {
   inMemoryCache = null;
 }
 
-// ---- Helper: prefetch any React Native image source (require, {uri}, or array) ----
 async function prefetchImageSource(src: ImageSourcePropType): Promise<void> {
   try {
     if (typeof src === 'number') {
-      // Local asset from require('...'): RN turns it into a numeric module id
       await Asset.fromModule(src).downloadAsync();
       return;
     }
@@ -51,12 +45,10 @@ async function prefetchImageSource(src: ImageSourcePropType): Promise<void> {
     const maybe = src as { uri?: string };
     if (maybe?.uri) {
       const uri = maybe.uri;
-      // Remote URL: prefetch via Image.prefetch
       if (uri.startsWith('http://') || uri.startsWith('https://')) {
         await Image.prefetch(uri);
         return;
       }
-      // Local/asset file URI
       await Asset.fromURI(uri).downloadAsync();
     }
   } catch {
@@ -81,7 +73,6 @@ export async function prefetchHomeData(
   prefs: { gender: string; comfort: string },
   t: any
 ): Promise<HomePrefetchData> {
-  // 1) Normalize city (support stored shape { raw, label })
   let raw = city;
   try {
     const savedCity = await AsyncStorage.getItem('lastCity');
@@ -94,32 +85,28 @@ export async function prefetchHomeData(
       }
     }
   } catch {
+    console.log('Error reading lastCity from storage, using provided city:', city);
     // ignore normalization errors; we still try with provided "city"
   }
 
-  // 2) Fetch weather
   const weather = await getWeatherByCity(raw);
   if (!weather || typeof weather.temperatura !== 'number') {
     throw new Error('Weather not available or invalid');
   }
 
-  // 3) Build context for suggestion engine
   const clima = {
     ...weather,
     genero: prefs.gender,  // keep these keys aligned with your engine
     conforto: prefs.comfort,
     t,
   };
-
-  // 4) Compute suggestion
+  
   const suggestion = getSuggestionByWeather(clima);
 
-  // 5) Prefetch avatar image (supports require(...) and { uri })
   if (suggestion?.image) {
     await prefetchImageSource(suggestion.image as ImageSourcePropType);
   }
 
-  // 6) Save in-memory for instant render on Home
   inMemoryCache = { weather, suggestion };
   return inMemoryCache;
 }

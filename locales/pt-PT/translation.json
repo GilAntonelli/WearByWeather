@@ -1014,13 +1014,13 @@
     },
     "overlays": {
         "rain": {
-            "rain_1e": {
+            "rain_1+": {
                 "description": "Chuva ligeira (≥ 1mm): incluir guarda-chuva."
             },
-            "rain_3e": {
+            "rain_3+": {
                 "description": "Chuva moderada (≥ 3mm): usar capa de chuva. Se vento ≥ 20km/h, substituir por capa impermeável."
             },
-            "rain_5e": {
+            "rain_5+": {
                 "description": "Chuva intensa (≥ 5mm): adicionar botas impermeáveis."
             }
         },
@@ -1028,17 +1028,17 @@
             "wind_30_45": {
                 "description": "Vento moderado (30–45 km/h): adicionar corta-vento, gorro ajustado e elástico para cabelo."
             },
-            "wind_45e": {
+            "wind_45+": {
                 "description": "Vento forte (> 45 km/h): adicionar corta-vento, cachecol reforçado, luvas leves e elástico para cabelo."
             }
         },
         "windandrain": {
-            "wind_20e_and_rain_3e": {
+            "wind_20+_and_rain_3+": {
                 "description": "Chuva com vento (chuva ≥ 3mm e vento ≥ 20 km/h): substituir capa comum por capa impermeável (à prova de vento)."
             }
         },
         "windandwarm": {
-            "temp_23e_and_wind_30e": {
+            "temp_23+_and_wind_30+": {
                 "description": "Vento com calor (temp > 23°C e vento > 30 km/h): evitar peças esvoaçantes; optar por roupa ajustada e controlo capilar."
             }
         }

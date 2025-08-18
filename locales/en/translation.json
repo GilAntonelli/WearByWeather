@@ -1013,13 +1013,13 @@
     },
     "overlays": {
         "rain": {
-            "rain_1and": {
+            "rain_1+": {
                 "description": "Light rain (≥ 1mm): include umbrella."
             },
-            "rain_3and": {
+            "rain_3+": {
                 "description": "Moderate rain (≥ 3mm): wear raincoat. If wind ≥ 20km/h, switch to waterproof raincoat."
             },
-            "rain_5and": {
+            "rain_5+": {
                 "description": "Heavy rain (≥ 5mm): add waterproof boots."
             }
         },
@@ -1027,17 +1027,17 @@
             "wind_30_45": {
                 "description": "Moderate wind (30–45 km/h): add windbreaker, fitted beanie, and hair_tie."
             },
-            "wind_45and": {
+            "wind_45+": {
                 "description": "Strong wind (> 45 km/h): add windbreaker, thick scarf, light gloves, and hair_tie."
             }
         },
         "windandrain": {
-            "wind_20and_and_rain_3and": {
+            "wind_20+_and_rain_3+": {
                 "description": "Rain with wind (rain ≥ 3mm and wind ≥ 20 km/h): replace standard raincoat with windproof version."
             }
         },
         "windandwarm": {
-            "temp_23and_and_wind_30and": {
+            "temp_23+_and_wind_30+": {
                 "description": "Wind with heat (temp > 23°C and wind > 30 km/h): avoid flowy clothes, prefer fitted ones, and apply hair control."
             }
         }

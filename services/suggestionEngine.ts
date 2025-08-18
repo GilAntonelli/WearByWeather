@@ -128,8 +128,7 @@ export function getSuggestionByWeather({
 
   let overlays = getOverlays(chuva, vento, tempAjustada, 5, t); //Para o valor 5 deverá ser obtido o volume de chuva em mm
   if (overlays) {
-    console.log('Overlays:', overlays);
-    acessórios.push(...overlays.accessories);
+    console.log('Overlays:', overlays.description);
     recommendation += overlays.description;
   }
 
@@ -230,9 +229,7 @@ export function getWindAndWarmDescription(): string {
 
 export function getOverlays(chuva: boolean, vento: number, tempAjustada: number, rainMM: number, t: TFunction): OverlaysJson {
   let overlays: OverlaysJson = {
-    description: '',
-    accessories: '',
-    recommendation: ''
+    description: ''
   }
   console.log('chuva:', chuva);
   console.log('vento:', vento);
