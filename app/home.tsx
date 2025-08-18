@@ -1,31 +1,25 @@
-
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { router, useRouter } from 'expo-router';
 import WeatherSummaryCard from '../components/WeatherSummaryCard';
-import { getWeatherByCity } from '../services/weatherService';
-import { TopHeader } from '../components/TopHeader'; // certifique-se de adicionar no topo
+import { TopHeader } from '../components/TopHeader';
 import { spacing } from '../styles/global';
 import { LookSuggestionCard } from '../components/LookSuggestionCard';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import {
   Alert,
   Dimensions,
-  Image,
   Linking,
   ScrollView,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Divider, Menu } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Location from 'expo-location';
 import { CitySelectorModal } from '../components/CitySelectorModal';
 import { PrimaryButton } from '../components/PrimaryButton';
-import { accessoryImages } from '../constants/accessoryImages';
 import { getdetectedCity } from '../services/LocationService';
-import { getSuggestionByWeather } from '../services/suggestionEngine';
 import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
 import { UserPreferences } from '../types/preferences';
@@ -33,18 +27,22 @@ import { LookSuggestion } from '../types/suggestion';
 import { useTranslation } from 'react-i18next';
 import FloatingMenu from '../components/FloatingMenu';
 
+import {
+  prefetchHomeData,
+  getCachedHomeData,
+  HomePrefetchData,
+} from '../services/homePrefetch';
+
 const resetApp = async () => {
   await AsyncStorage.clear();
-  router.replace('/'); // volta para a WelcomeScreen
+  router.replace('/'); // back to WelcomeScreen
 };
 
 const screenHeight = Dimensions.get('window').height;
 
-
 export default function HomeScreen() {
   const isLoadingRef = useRef<boolean>(false);
   const router = useRouter();
-  const [menuVisible, setMenuVisible] = useState(false);
   const [city, setSelectedCity] = useState<string>('Lisboa');
   const [modalVisible, setModalVisible] = useState(false);
   const [suggestion, setSuggestion] = useState<LookSuggestion | null>(null);
@@ -82,15 +80,15 @@ export default function HomeScreen() {
     }
     try {
       const { status } = await Location.requestForegroundPermissionsAsync();
-      const savedCity = await AsyncStorage.getItem('lastCity');
+      const saved = await AsyncStorage.getItem('lastCity');
 
-      if (savedCity) {
-        setSelectedCity(savedCity);
+      if (saved) {
+        setSelectedCity(saved);
         return true;
       }
 
       if (status !== 'granted') {
-        console.log('Permissão de localização negada');
+        console.log('Location permission denied');
         return false;
       }
 
@@ -104,7 +102,7 @@ export default function HomeScreen() {
 
       return false;
     } catch (error) {
-      console.error('Erro ao detectar cidade:', error);
+      console.error('Error detecting city:', error);
       return false;
     }
   };
@@ -112,17 +110,11 @@ export default function HomeScreen() {
   const handleLocationPermissionRetry = async () => {
     const { status, canAskAgain } = await Location.getForegroundPermissionsAsync();
 
-    if (status === 'granted') {
-      return true;
-    }
+    if (status === 'granted') return true;
 
     if (canAskAgain) {
       const { status: newStatus } = await Location.requestForegroundPermissionsAsync();
-      if (newStatus === 'granted') {
-        return true;
-      } else {
-        return false;
-      }
+      return newStatus === 'granted';
     }
 
     Alert.alert(
@@ -130,67 +122,13 @@ export default function HomeScreen() {
       t('alerts.detectCityAlert'),
       [
         { text: t('alerts.cancelbutton'), style: 'cancel' },
-        {
-          text: t('alerts.text'),
-          onPress: () => Linking.openSettings(),
-        },
+        { text: t('alerts.text'), onPress: () => Linking.openSettings() },
       ]
     );
 
     return false;
   };
-
-  const reloadWeather = useCallback(async () => {
-    if (isLoadingRef.current) return;
-    isLoadingRef.current = true;
-
-    try {
-      const savedCity = await AsyncStorage.getItem('lastCity');
-      let raw = city;
-      let label = city;
-      if (savedCity) {
-        try {
-          const parsed = JSON.parse(savedCity);
-          raw = parsed.raw || parsed;
-          label = parsed.label || parsed;
-        } catch {
-          raw = savedCity;
-          label = savedCity;
-        }
-      }
-      setSelectedCity(label);
-
-      const weather = await getWeatherByCity(raw);
-      if (!weather) return;
-
-      setWeatherData({
-        temperatura: weather.temperatura,
-        sensacaoTermica: weather.sensacaoTermica,
-        condicao: weather.condicao,
-        tempMin: weather.tempMin,
-        tempMax: weather.tempMax,
-        chuva: weather.chuva,
-        vento: weather.vento,
-        icon: weather.icon,
-        id: weather.id,
-      });
-
-      const clima = {
-        ...weather,
-        genero: userPreferences.gender,
-        conforto: userPreferences.comfort,
-        t: t,
-      };
-
-      const result = getSuggestionByWeather(clima);
-      console.log('Sugestão recarregada:', result);
-      setSuggestion(result);
-    } catch (e) {
-      console.error('Erro ao recarregar sugestão:', e);
-    } finally {
-      isLoadingRef.current = false;
-    }
-  }, [city, userPreferences, t]);
+  
 
   useEffect(() => {
     const loadPreferences = async () => {
@@ -210,79 +148,91 @@ export default function HomeScreen() {
           }
         }
       } catch (error) {
-        console.error('Erro ao carregar preferências:', error);
+        console.error('Error loading preferences:', error);
       }
     };
-
     loadPreferences();
   }, []);
 
   useEffect(() => {
-    const loadSuggestion = async () => {
+    const cached = getCachedHomeData();
+    if (cached && !suggestion) {
+      applyPrefetchResult(cached);
+    }
+  }, []);
+
+  const applyPrefetchResult = (data: HomePrefetchData) => {
+    setWeatherData({
+      temperatura: data.weather.temperatura,
+      sensacaoTermica: data.weather.sensacaoTermica,
+      condicao: data.weather.condicao,
+      tempMin: data.weather.tempMin,
+      tempMax: data.weather.tempMax,
+      chuva: data.weather.chuva,
+      vento: data.weather.vento,
+      icon: data.weather.icon,
+      id: data.weather.id,
+    });
+    setSuggestion(data.suggestion);
+  };
+
+  const runPrefetch = useCallback(
+    async (rawOrLabelCity: string) => {
       if (isLoadingRef.current) return;
       isLoadingRef.current = true;
-
       try {
-        const savedCity = await AsyncStorage.getItem('lastCity');
-        let raw = city;
-        let label = city;
-        if (savedCity) {
-          try {
-            const parsed = JSON.parse(savedCity);
-            raw = parsed.raw || parsed;
-            label = parsed.label || parsed;
-          } catch {
-            raw = savedCity;
-            label = savedCity;
+        const result = await prefetchHomeData(
+          rawOrLabelCity,
+          { gender: userPreferences.gender, comfort: userPreferences.comfort },
+          t
+        );
+        
+        applyPrefetchResult(result);
+        
+        try {
+          const savedCity = await AsyncStorage.getItem('lastCity');
+          let label = rawOrLabelCity;
+          if (savedCity) {
+            try {
+              const parsed = JSON.parse(savedCity);
+              label = parsed.label || parsed.raw || savedCity;
+            } catch {
+              label = savedCity;
+            }
           }
-        }
-        setSelectedCity(label);
-
-        const weather = await getWeatherByCity(raw);
-        if (!weather) return;
-
-        setWeatherData({
-          temperatura: weather.temperatura,
-          sensacaoTermica: weather.sensacaoTermica,
-          condicao: weather.condicao,
-          tempMin: weather.tempMin,
-          tempMax: weather.tempMax,
-          chuva: weather.chuva,
-          vento: weather.vento,
-          icon: weather.icon,
-          id: weather.id,
-        });
-
-        const clima = {
-          ...weather,
-          genero: userPreferences.gender,
-          conforto: userPreferences.comfort,
-          t: t,
-        };
-
-        const result = getSuggestionByWeather(clima);
-        console.log('Sugestão carregada:', result);
-        setSuggestion(result);
+          setSelectedCity(label);
+        } catch { /* noop */ }
       } catch (e) {
-        console.error('Erro ao carregar sugestão:', e);
+        console.error('Error prefetching home data:', e);
       } finally {
         isLoadingRef.current = false;
       }
-    };
+    },
+    [t, userPreferences]
+  );
 
-    if (isCityReady && city && userPreferences.gender && userPreferences.comfort) {
-      loadSuggestion();
-    }
-  }, [isCityReady, city, userPreferences]);
 
   useEffect(() => {
-    const loadCity = async () => {
+    const init = async () => {
       const granted = await detectCityFromLocation();
-      if (!granted) setModalVisible(true);
-      else setIsCityReady(true);
+      if (!granted) {
+        setModalVisible(true);
+      } else {
+        setIsCityReady(true);
+      }
     };
-    loadCity();
+    init();
   }, []);
+
+  useEffect(() => {
+    if (isCityReady && city && userPreferences.gender && userPreferences.comfort) {
+      runPrefetch(city);
+    }
+  }, [isCityReady, city, userPreferences, runPrefetch]);
+
+  const reloadWeather = useCallback(async () => {
+    await runPrefetch(city);
+  }, [runPrefetch, city]);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
@@ -305,8 +255,8 @@ export default function HomeScreen() {
               onPress={async () => {
                 const granted = await handleLocationPermissionRetry();
                 if (granted) {
-                  const sucesso = await detectCityFromLocation();
-                  if (sucesso) setIsCityReady(true);
+                  const ok = await detectCityFromLocation();
+                  if (ok) setIsCityReady(true);
                 }
               }}
               style={{ marginTop: 16 }}
@@ -323,7 +273,6 @@ export default function HomeScreen() {
               renderAnchor={() => <FloatingMenu reloadWeather={reloadWeather} />}
             />
 
-
             <TouchableOpacity
               style={globalStyles.fakeSearchInput}
               onPress={() => setModalVisible(true)}
@@ -331,8 +280,6 @@ export default function HomeScreen() {
               <Ionicons name="search" size={18} color="#999" style={{ marginRight: 8 }} />
               <Text style={globalStyles.fakeSearchText}>{t('cityModal.searchPlaceholder')}</Text>
             </TouchableOpacity>
-
-
 
             {weatherData && (
               <WeatherSummaryCard
@@ -347,27 +294,62 @@ export default function HomeScreen() {
                 onPress={() => router.push('/forecast')}
               />
             )}
-            <Text style={[globalStyles.firstSectionTitle, {
-              marginTop: spacing.section
-            }]}>
+
+            <Text
+              style={[
+                globalStyles.firstSectionTitle,
+                { marginTop: spacing.section },
+              ]}
+            >
               {t('home.suggestionTitle')}
             </Text>
 
-            {suggestion && <LookSuggestionCard suggestion={suggestion} />}
-
+            {suggestion ? (
+              <LookSuggestionCard suggestion={suggestion} />
+            ) : (
+              <View
+                style={{
+                  height: 220,
+                  borderRadius: 16,
+                  backgroundColor: '#eee',
+                }}
+              />
+            )}
           </>
         )}
+
         <CitySelectorModal
           visible={modalVisible}
           onClose={() => setModalVisible(false)}
-          onSelect={(newCity) => {
+          onSelect={async (newCity) => {
             setIsDetectedLocation(false);
             setSelectedCity(newCity);
+            await AsyncStorage.setItem(
+              'lastCity',
+              JSON.stringify({ raw: newCity, label: newCity })
+            );
+
+            try {
+              const json = await AsyncStorage.getItem('@user_preferences');
+              const prefs = json
+                ? JSON.parse(json)
+                : { gender: 'male', comfort: 'neutral' };
+              const result = await prefetchHomeData(
+                newCity,
+                { gender: prefs.gender, comfort: prefs.comfort },
+                t
+              );
+              applyPrefetchResult(result);
+            } catch (e) {
+              console.warn('Prefetch on city change failed:', e);
+            }
+
             setModalVisible(false);
             setIsCityReady(true);
           }}
         />
       </ScrollView>
+
       {isCityReady && (
         <View
           style={{
@@ -378,7 +360,6 @@ export default function HomeScreen() {
             paddingHorizontal: 20,
             paddingVertical: 20,
             backgroundColor: theme.colors.background,
-
           }}
         >
           <PrimaryButton
@@ -387,7 +368,6 @@ export default function HomeScreen() {
           />
         </View>
       )}
-
     </SafeAreaView>
   );
 }

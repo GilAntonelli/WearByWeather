@@ -29,10 +29,10 @@ Como usar:
 // 🧊 COLD
  
 export const mockWeather = {
-  temperatura: 10,
-  sensacaoTermica: 8,
-  tempMin: 7,
-  tempMax: 12,
+  temperatura: 24,
+  sensacaoTermica: 24,
+  tempMin: 22,
+  tempMax: 26,
   umidade: 80,
   chuva: false,
   vento: 12,

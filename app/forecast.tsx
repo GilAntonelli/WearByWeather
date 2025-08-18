@@ -1,4 +1,3 @@
-
 import { Feather, Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
@@ -24,6 +23,8 @@ import HourlyForecastCard from '../components/HourlyForecastCard';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import i18n from 'i18next';
 
+import { prefetchHomeData } from '../services/homePrefetch';
+
 export default function ForecastScreen() {
   const router = useRouter();
   const [city, setCity] = useState<string>('Carregando...');
@@ -31,6 +32,28 @@ export default function ForecastScreen() {
   const [hourlyData, setHourlyData] = useState<any[]>([]);
   const { t } = useTranslation();
   const [hasError, setHasError] = useState(false);
+
+  const prefetchForHome = React.useCallback(async () => {
+    try {
+      const prefsRaw = await AsyncStorage.getItem('@user_preferences');
+      const prefs = prefsRaw ? JSON.parse(prefsRaw) : { gender: 'male', comfort: 'neutral' };
+
+      const saved = await AsyncStorage.getItem('lastCity');
+      let rawCity = city || 'Lisboa';
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          rawCity = parsed.raw || parsed.label || saved;
+        } catch {
+          rawCity = saved;
+        }
+      }
+
+      await prefetchHomeData(rawCity, { gender: prefs.gender, comfort: prefs.comfort }, t);
+    } catch (e) {
+      console.warn('prefetchForHome failed:', e);
+    }
+  }, [city, t]);
 
   useEffect(() => {
     const load = async () => {
@@ -48,24 +71,25 @@ export default function ForecastScreen() {
         }
       }
       setCity(label);
+
       try {
         const clima = await getWeatherByCity(raw);
         const horas = await getHourlyForecastByCity(raw);
 
         setWeather(clima);
         setHourlyData(horas);
+
+        await prefetchForHome();
       } catch (e) {
         console.error('Erro ao buscar clima ou previsão horária:', e);
-        // opcional: setar estado para fallback visual
         setHasError(true);
         setWeather(null);
         setHourlyData([]);
       }
-
     };
 
     load();
-  }, []);
+  }, [prefetchForHome]);
 
   const frase =
     weather &&
@@ -96,12 +120,10 @@ export default function ForecastScreen() {
         >
           <Ionicons name="refresh" size={16} color={theme.colors.textDark} />
           <Text style={globalStyles.bottomButtonText}>{t('Forecast.retryButton')}</Text>
-
         </TouchableOpacity>
       </SafeAreaView>
     );
   }
-
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
@@ -110,8 +132,6 @@ export default function ForecastScreen() {
           <ScrollView style={{ backgroundColor: theme.colors.background }}>
             <ForecastHeader
               city={city}
-              //           localDateFormatted={weather?.localDateFormatted ?? '--'}
-              //
               temperature={`${weather?.temperatura ?? '--'}°C`}
               condition={weather?.condicao ?? t('Forecast.condition')}
               smartPhrase={frase ?? ''}
@@ -179,10 +199,12 @@ export default function ForecastScreen() {
             </View>
           </ScrollView>
 
-          {/* ✅ Botão agora dentro da SafeArea */}
           <TouchableOpacity
             style={globalStyles.bottomButton}
-            onPress={() => router.push('/home')}
+            onPress={async () => {
+              await prefetchForHome();
+              router.push('/home');
+            }}
           >
             <Ionicons name="arrow-back" size={16} color={theme.colors.textDark} />
             <Text style={globalStyles.bottomButtonText}>{t('Forecast.backButton')}</Text>
