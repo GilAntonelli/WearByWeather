@@ -92,6 +92,68 @@
         "clearSky": "Céu limpo e tempo estável. Bom dia para atividades ao ar livre.",
         "fallback": "Tempo estável. Esteja atento a possíveis alterações ao longo do dia."
     },
+    "cities": {
+        "lisbon": {
+            "name": "Lisboa",
+            "state": "Lisboa",
+            "country": "Portugal"
+        },
+        "porto": {
+            "name": "Porto",
+            "state": "Porto",
+            "country": "Portugal"
+        },
+        "madrid": {
+            "name": "Madrid",
+            "state": "Comunidade de Madrid",
+            "country": "Espanha"
+        },
+        "barcelona": {
+            "name": "Barcelona",
+            "state": "Catalunha",
+            "country": "Espanha"
+        },
+        "paris": {
+            "name": "Paris",
+            "state": "Île-de-France",
+            "country": "França"
+        },
+        "london": {
+            "name": "Londres",
+            "state": "Inglaterra",
+            "country": "Reino Unido"
+        },
+        "berlin": {
+            "name": "Berlim",
+            "state": "Berlim",
+            "country": "Alemanha"
+        },
+        "rome": {
+            "name": "Roma",
+            "state": "Lácio",
+            "country": "Itália"
+        },
+        "brussels": {
+            "name": "Bruxelas",
+            "state": "Bruxelas",
+            "country": "Bélgica"
+        },
+        "amsterdam": {
+            "name": "Amesterdão",
+            "state": "Holanda do Norte",
+            "country": "Países Baixos"
+        },
+        "sao_paulo": {
+            "name": "São Paulo",
+            "state": "SP",
+            "country": "Brasil"
+        },
+        "rio": {
+            "name": "Rio de Janeiro",
+            "state": "RJ",
+            "country": "Brasil"
+        }
+    },
     "localTimeLabel": "Hora local",
     "LookSuggestionCard": {
         "accessoryTitle": "Acessórios"

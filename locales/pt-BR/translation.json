@@ -92,6 +92,68 @@
         "clearSky": "Céu limpo e clima estável. Bom dia para atividades ao ar livre.",
         "fallback": "Clima estável hoje. Fique de olho nas variações ao longo do dia."
     },
+    "cities": {
+        "lisbon": {
+            "name": "Lisboa",
+            "state": "Lisboa",
+            "country": "Portugal"
+        },
+        "porto": {
+            "name": "Porto",
+            "state": "Porto",
+            "country": "Portugal"
+        },
+        "madrid": {
+            "name": "Madri",
+            "state": "Comunidade de Madri",
+            "country": "Espanha"
+        },
+        "barcelona": {
+            "name": "Barcelona",
+            "state": "Catalunha",
+            "country": "Espanha"
+        },
+        "paris": {
+            "name": "Paris",
+            "state": "Île-de-France",
+            "country": "França"
+        },
+        "london": {
+            "name": "Londres",
+            "state": "Inglaterra",
+            "country": "Reino Unido"
+        },
+        "berlin": {
+            "name": "Berlim",
+            "state": "Berlim",
+            "country": "Alemanha"
+        },
+        "rome": {
+            "name": "Roma",
+            "state": "Lácio",
+            "country": "Itália"
+        },
+        "brussels": {
+            "name": "Bruxelas",
+            "state": "Bruxelas",
+            "country": "Bélgica"
+        },
+        "amsterdam": {
+            "name": "Amsterdã",
+            "state": "Holanda do Norte",
+            "country": "Países Baixos"
+        },
+        "sao_paulo": {
+            "name": "São Paulo",
+            "state": "SP",
+            "country": "Brasil"
+        },
+        "rio": {
+            "name": "Rio de Janeiro",
+            "state": "RJ",
+            "country": "Brasil"
+        }
+    },
     "localTimeLabel": "Hora local",
     "LookSuggestionCard": {
         "accessoryTitle": "Acessórios"
@@ -1013,7 +1075,6 @@
         "ear_cover_band": "Faixa cobre-orelhas",
         "cooling_towel": "Toalha refrescante"
     },
-
     "overlays": {
         "rain": {
             "rain_1+": {
@@ -1047,7 +1108,7 @@
     },
     "alerts": {
         "preferencesAlert": "Por favor, selecione o estilo e a temperatura de conforto.",
-        "resetAlert": "Tem certeza que deseja apagar suas preferências e reiniciar o app",
+        "resetAlert": "Tem certeza que deseja apagar suas preferências e reiniciar o app?",
         "cancelbutton": "Cancelar",
         "resetbutton": "Redefinir",
         "typePermission": "Permissão necessária",

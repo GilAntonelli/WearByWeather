@@ -92,6 +92,68 @@
         "clearSky": "Clear skies and stable weather. Great day for outdoor activities.",
         "fallback": "Stable weather today. Keep an eye out for possible changes."
     },
+    "cities": {
+        "lisbon": {
+            "name": "Lisbon",
+            "state": "Lisbon",
+            "country": "Portugal"
+        },
+        "porto": {
+            "name": "Porto",
+            "state": "Porto",
+            "country": "Portugal"
+        },
+        "madrid": {
+            "name": "Madrid",
+            "state": "Community of Madrid",
+            "country": "Spain"
+        },
+        "barcelona": {
+            "name": "Barcelona",
+            "state": "Catalonia",
+            "country": "France"
+        },
+        "paris": {
+            "name": "Paris",
+            "state": "Île-de-France",
+            "country": "France"
+        },
+        "london": {
+            "name": "London",
+            "state": "England",
+            "country": "United Kingdom"
+        },
+        "berlin": {
+            "name": "Berlin",
+            "state": "Berlin",
+            "country": "Germany"
+        },
+        "rome": {
+            "name": "Rome",
+            "state": "Lazio",
+            "country": "Italy"
+        },
+        "brussels": {
+            "name": "Brussels",
+            "state": "Brussels",
+            "country": "Belgium"
+        },
+        "amsterdam": {
+            "name": "Amsterdam",
+            "state": "North Holland",
+            "country": "Netherlands"
+        },
+        "sao_paulo": {
+            "name": "São Paulo",
+            "state": "SP",
+            "country": "Brazil"
+        },
+        "rio": {
+            "name": "Rio de Janeiro",
+            "state": "RJ",
+            "country": "Brazil"
+        }
+    },
     "localTimeLabel": "Local Time",
     "LookSuggestionCard": {
         "accessoryTitle": "Accessories"

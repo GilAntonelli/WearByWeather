@@ -1,3 +1,4 @@
+// components/CitySelectorModal.tsx
 import React, { useEffect, useState } from 'react';
 import {
   Modal,
@@ -6,12 +7,12 @@ import {
   TextInput,
   TouchableOpacity,
   FlatList,
-  Pressable,
   ActivityIndicator,
   KeyboardAvoidingView,
   Platform,
   Alert,
   SafeAreaView,
+  Linking,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { globalStyles } from '../styles/global';
@@ -20,10 +21,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getWeatherByCity } from '../services/weatherService';
 import { API_KEY, GEO_URL } from '../config/apiConfig';
 import { getPreferredCityName } from '../utils/getPreferredCityName';
-import * as Location from 'expo-location';
 import { getdetectedCity } from '../services/LocationService';
 import { formatLocationName } from '../utils/formatLocation';
 import { useTranslation } from 'react-i18next';
+import * as Location from 'expo-location';
 
 interface CitySelectorModalProps {
   visible: boolean;
@@ -32,11 +33,12 @@ interface CitySelectorModalProps {
 }
 
 interface Suggestion {
-  name: string;
-  country?: string;
-  state?: string;
+  name: string;           // localized label for UI
+  country?: string;       // localized
+  state?: string;         // localized
+  apiName?: string;       // canonical name for API (usually English)
+  id?: string;            // optional stable id (e.g., 'lisbon')
 }
-
 export const CitySelectorModal = ({
   visible,
   onClose,
@@ -45,40 +47,44 @@ export const CitySelectorModal = ({
   const [search, setSearch] = useState('');
   const [results, setResults] = useState<Suggestion[]>([]);
   const [loading, setLoading] = useState(false);
-  const [hasLocationPermission, setHasLocationPermission] = useState(false);
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const checkPermission = async () => {
-      const { status } = await Location.getForegroundPermissionsAsync();
-      setHasLocationPermission(status === 'granted');
-    };
+// Canonical static cities (stable ids + API names)
+type StaticCity = { id: string; apiName: string };
+const STATIC_CITIES: StaticCity[] = [
+  { id: 'lisbon',      apiName: 'Lisbon' },
+  { id: 'porto',       apiName: 'Porto' },
+  { id: 'madrid',      apiName: 'Madrid' },
+  { id: 'barcelona',   apiName: 'Barcelona' },
+  { id: 'paris',       apiName: 'Paris' },
+  { id: 'london',      apiName: 'London' },
+  { id: 'berlin',      apiName: 'Berlin' },
+  { id: 'rome',        apiName: 'Rome' },
+  { id: 'brussels',    apiName: 'Brussels' },
+  { id: 'amsterdam',   apiName: 'Amsterdam' },
+  { id: 'sao_paulo',   apiName: 'Sao Paulo' },
+  { id: 'rio',         apiName: 'Rio de Janeiro' },
+];
+// Build localized suggestions for UI
+const buildLocalizedStaticList = (): Suggestion[] =>
+  STATIC_CITIES.map((c) => ({
+    id: c.id,
+    apiName: c.apiName,
+    name: t(`cities.${c.id}.name`) as string,
+    state: t(`cities.${c.id}.state`) as string,
+    country: t(`cities.${c.id}.country`) as string,
+  }));
 
-    checkPermission();
-  }, [visible]);
+// Always prepend the sentinel ("Use current location")
+const fullCityList: Suggestion[] = [
+  { id: ':current', name: t('cityModal.currentLocation') as string },
+  ...buildLocalizedStaticList(),
+];
 
-  const cityList: Suggestion[] = [
-    { name: 'Lisboa', state: 'Lisboa', country: 'Portugal' },
-    { name: 'Porto', state: 'Porto', country: 'Portugal' },
-    { name: 'Madrid', state: 'Comunidad de Madrid', country: 'Espanha' },
-    { name: 'Barcelona', state: 'Catalunha', country: 'Espanha' },
-    { name: 'Paris', state: 'Île-de-France', country: 'França' },
-    { name: 'Londres', state: 'Inglaterra', country: 'Reino Unido' },
-    { name: 'Berlim', state: 'Berlim', country: 'Alemanha' },
-    { name: 'Roma', state: 'Lácio', country: 'Itália' },
-    { name: 'Bruxelas', state: 'Bruxelas', country: 'Bélgica' },
-    { name: 'Amsterdã', state: 'Holanda do Norte', country: 'Países Baixos' },
-    { name: 'São Paulo', state: 'SP', country: 'Brasil' },
-    { name: 'Rio de Janeiro', state: 'RJ', country: 'Brasil' },
-  ];
-
-  const fullCityList: Suggestion[] = hasLocationPermission
-    ? [{ name:  t('cityModal.currentLocation') }, ...cityList]
-    : cityList;
-
+  // Debounced search against OpenWeather Geocoding
   useEffect(() => {
     const fetchSuggestions = async () => {
-      if (search.length < 3) {
+      if (search.trim().length < 3) {
         setResults([]);
         return;
       }
@@ -86,12 +92,18 @@ export const CitySelectorModal = ({
       setLoading(true);
       try {
         const response = await fetch(
-          `${GEO_URL}/direct?q=${encodeURIComponent(search)}&limit=5&appid=${API_KEY}`
+          `${GEO_URL}/direct?q=${encodeURIComponent(search.trim())}&limit=5&appid=${API_KEY}`
         );
-        const data = await response.json();
-        setResults(data);
-      } catch (err) {
-        console.error('Erro ao buscar sugestões:', err);
+        const data = (await response.json()) as any[];
+        const mapped: Suggestion[] = Array.isArray(data)
+          ? data.map((d) => ({
+              name: d?.name,
+              state: d?.state,
+              country: d?.country,
+            }))
+          : [];
+        setResults(mapped);
+      } catch {
         setResults([]);
       } finally {
         setLoading(false);
@@ -104,53 +116,99 @@ export const CitySelectorModal = ({
 
   const handleSelectCity = async (selectedItem: Suggestion) => {
     setLoading(true);
+    try {
+      let label = '';
+      let nomeParaApi = '';
 
-    let label = '';
-    let nomeParaApi = '';
+      const sentinelLabel = t('cityModal.currentLocation') as string;
+      const FALLBACK_SENTINEL = '__WW_UNKNOWN_CITY__'; // fixed sentinel to avoid i18n coupling
 
-    if (selectedItem.name === t('cityModal.currentLocation')) {
-      const detectedCity = await getdetectedCity();
-      if (!detectedCity) {
-        Alert.alert(t('alerts.typeError'), t('alerts.localizationAlert'));
-        setLoading(false);
+      if (selectedItem.name === sentinelLabel) {
+        // Detect location; if permission is denied, service returns the sentinel
+        const detectedCity = await getdetectedCity({
+          fallbackLabel: FALLBACK_SENTINEL,
+          preferLocal: true,
+          desiredAccuracyMeters: 30,
+          lastKnownMaxAgeMs: 2 * 60 * 1000,
+          forceFresh: false,
+        });
+
+        // If fallback (permission denied / no coords), decide which alert to show under alerts.*
+        if (detectedCity === FALLBACK_SENTINEL) {
+          const perm = await Location.getForegroundPermissionsAsync();
+          const servicesOn = await Location.hasServicesEnabledAsync();
+
+          if (perm.status !== Location.PermissionStatus.GRANTED) {
+            // Permission denied → show "typePermission" + "detectCityAlert" with a button to open settings
+            Alert.alert(
+              t('alerts.typePermission'),
+              t('alerts.detectCityAlert'),
+              [
+                { text: t('alerts.cancelbutton'), style: 'cancel' },
+                { text: t('alerts.text'), onPress: () => Linking.openSettings() }, // "Abrir Configurações"
+              ],
+              { cancelable: true }
+            );
+          } else if (!servicesOn) {
+            // Services (GPS) off → show generic localization alert
+            Alert.alert(t('alerts.typeAttention'), t('alerts.localizationAlert'));
+          } else {
+            // Any other cause → generic
+            Alert.alert(t('alerts.typeError'), t('alerts.localizationAlert'));
+          }
+          return;
+        }
+
+        // Resolve detectedCity via geocoding (to normalize state/country)
+        try {
+          const response = await fetch(
+            `${GEO_URL}/direct?q=${encodeURIComponent(detectedCity)}&limit=1&appid=${API_KEY}`
+          );
+          const data = await response.json();
+          const full = data?.[0];
+
+          if (!full?.name) {
+            Alert.alert(t('alerts.typeInvalidCity'), t('alerts.invalidCityAlert'));
+            return;
+          }
+
+          const displayName = getPreferredCityName(full);
+          label = formatLocationName(displayName, full.state, full.country);
+          nomeParaApi = full.name;
+        } catch {
+          Alert.alert(t('alerts.typeError'), t('alerts.localizationAlert'));
+          return;
+        }
+      } else {
+        // Static/searched city
+const displayName = getPreferredCityName(selectedItem);
+label = formatLocationName(displayName, selectedItem.state, selectedItem.country);
+// Use canonical apiName if present; fallback to name
+nomeParaApi = selectedItem.apiName || selectedItem.name;
+      }
+
+      // Validate city by fetching its weather (guard against throws)
+      let weather: any = null;
+      try {
+        weather = await getWeatherByCity(nomeParaApi);
+      } catch {
+        weather = null;
+      }
+
+      if (!weather) {
+        Alert.alert(t('alerts.typeInvalidCity'), t('alerts.invalidCityAlert'));
         return;
       }
 
-      try {
-        const response = await fetch(
-          `${GEO_URL}/direct?q=${encodeURIComponent(detectedCity)}&limit=1&appid=${API_KEY}`
-        );
-        const data = await response.json();
-        const full = data[0];
-
-        const displayName = getPreferredCityName(full);
-        label = formatLocationName(displayName, full.state, full.country);
-        nomeParaApi = full.name;
-      } catch (err) {
-        console.error('Erro ao obter info da localização atual:', err);
-        label = detectedCity;
-        nomeParaApi = detectedCity;
-      }
-    } else {
-      const displayName = getPreferredCityName(selectedItem);
-      label = formatLocationName(displayName, selectedItem.state, selectedItem.country);
-      nomeParaApi = selectedItem.name;
+      await AsyncStorage.setItem('lastCity', JSON.stringify({ label, raw: nomeParaApi }));
+      onSelect(label);
+      onClose();
+    } finally {
+      setLoading(false);
     }
-
-    const clima = await getWeatherByCity(nomeParaApi);
-    setLoading(false);
-
-    if (!clima) {
-      Alert.alert(t('alerts.typeInvalidCity'), t('alerts.invalidCityAlert'));
-      return;
-    }
-
-    await AsyncStorage.setItem('lastCity', JSON.stringify({ label, raw: nomeParaApi }));
-    onSelect(label);
-    onClose();
   };
 
-   return (
+  return (
     <Modal visible={visible} animationType="fade" statusBarTranslucent>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -158,13 +216,7 @@ export const CitySelectorModal = ({
       >
         <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
           <View style={{ paddingHorizontal: 16, paddingTop: 8, marginBottom: 13 }}>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                height: 44,
-              }}
-            >
+            <View style={{ flexDirection: 'row', alignItems: 'center', height: 44 }}>
               <View
                 style={[
                   globalStyles.fakeSearchInput,
@@ -181,16 +233,11 @@ export const CitySelectorModal = ({
               >
                 <Ionicons name="search" size={20} color={theme.colors.textLight} style={{ marginRight: 8 }} />
                 <TextInput
-                  placeholder={t('cityModal.searchPlaceholder')}
+                  placeholder={t('cityModal.searchPlaceholder') as string}
                   value={search}
                   onChangeText={setSearch}
                   autoFocus
-                  style={{
-                    flex: 1,
-                    color: theme.colors.textMedium,
-                    fontSize: 16,
-                    paddingVertical: 0,
-                  }}
+                  style={{ flex: 1, color: theme.colors.textMedium, fontSize: 16, paddingVertical: 0 }}
                   placeholderTextColor={theme.colors.textLight}
                 />
                 {search.length > 0 && (
@@ -202,12 +249,7 @@ export const CitySelectorModal = ({
 
               <TouchableOpacity
                 onPress={onClose}
-                style={{
-                  marginLeft: 4,
-                  height: 18,
-                  justifyContent: 'center',
-                  paddingHorizontal: 4,
-                }}
+                style={{ marginLeft: 4, height: 18, justifyContent: 'center', paddingHorizontal: 4 }}
               >
                 <Text
                   style={{
@@ -230,25 +272,27 @@ export const CitySelectorModal = ({
             <ActivityIndicator color={theme.colors.primary} style={{ marginTop: 32 }} />
           ) : (
             <FlatList
-              data={search.length < 3 ? fullCityList : results}
+              data={
+                search.trim().length < 3
+                  ? fullCityList
+                  : [{ name: t('cityModal.currentLocation') as string }, ...results]
+              }
               keyExtractor={(item, index) =>
                 `${item.name}-${item.state ?? ''}-${item.country ?? ''}-${index}`
               }
               keyboardShouldPersistTaps="handled"
               contentContainerStyle={{ paddingBottom: 32, paddingHorizontal: 16 }}
               renderItem={({ item }) => {
-                const isFromSearch = search.length >= 3;
+                const isFromSearch = search.trim().length >= 3;
                 const label =
-                  item.name === t('cityModal.currentLocation')
+                  item.name === (t('cityModal.currentLocation') as string)
                     ? item.name
                     : isFromSearch
                       ? `${getPreferredCityName(item)}, ${item.state ?? ''}, ${item.country ?? ''}`
                       : formatLocationName(getPreferredCityName(item), item.state, item.country);
+
                 return (
-                  <TouchableOpacity
-                    style={globalStyles.cityItem}
-                    onPress={() => handleSelectCity(item)}
-                  >
+                  <TouchableOpacity style={globalStyles.cityItem} onPress={() => handleSelectCity(item)}>
                     <Ionicons
                       name="location-outline"
                       size={20}
