@@ -154,10 +154,10 @@ export function getSuggestionByWeather(input: SuggestionInput): LookSuggestion {
   const suggestions = getSuggestionsJson(genderNorm, range, comfortNorm, t);
 
   roupaSuperior = suggestions.roupaSuperior;
-  roupaInferior = suggestions.roupaInferior;
-  shoes = suggestions.shoes;
+  roupaInferior = suggestions.roupaInferior ?? '';
+  shoes = suggestions.shoes ?? '';
   acessórios = suggestions.acessórios || [];
-  recommendation = suggestions.recommendation;
+  recommendation = suggestions.recommendation ?? '';
   const overlays = getOverlays(chuva, vento, tempAjustada, rainMM, t);
 
   if (overlays) {
