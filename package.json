@@ -3,13 +3,16 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
-"start": "env-cmd -f .env expo start",
+    "start": "env-cmd -f .env expo start",
     "reset-project": "node ./scripts/reset-project.js",
-"android": "env-cmd -f .env expo start --android",
-"ios": "env-cmd -f .env expo start --ios",
-"web": "env-cmd -f .env expo start --web",
+    "android": "env-cmd -f .env expo start --android",
+    "ios": "env-cmd -f .env expo start --ios",
+    "web": "env-cmd -f .env expo start --web",
     "lint": "expo lint",
-    "test": "jest"
+    "test": "jest",
+    "test:unit": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",

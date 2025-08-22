@@ -74,23 +74,25 @@
         "backButton": "Voltar ao look do dia",
         "errorMessage": "Não foi possível carregar os dados meteorológicos.",
         "retryButton": "Tentar novamente",
-        "rainTemperature15-": "Dia chuvoso e frio. Leve um guarda-chuva e agasalhe-se bem.",
-        "rain": "Previsão de chuva. Não se esqueça do guarda-chuva!",
-        "wind20+": "Vento forte hoje. Proteja-se bem ao sair.",
-        "wind30+": "Rajadas de vento intensas. Tenha atenção ao sair de casa.",
-        "temperature30+": "Dia quente. Use roupa leve e beba bastante água.",
-        "temperature35+": "Muito sol e calor. Hidrate-se bem!",
-        "cold5-": "Frio intenso. Vista roupas térmicas.",
-        "temperature10-": "Temperaturas baixas. Use várias camadas de roupa quente.",
-        "clearSkyCold5-": "Céu limpo, mas muito frio. Agasalhe-se bem.",
-        "cloudsTemperature15-": "Tempo nublado e frio. Um casaco será útil.",
-        "clouds": "Tempo parcialmente nublado. Aproveite com moderação.",
-        "fog": "Nevoeiro no ar. Atenção à visibilidade ao conduzir.",
-        "mist": "Neblina ligeira. Pode ser desconfortável de manhã.",
-        "humidity30-": "Ar seco. Hidrate-se e evite exposição prolongada.",
-        "humidity90+": "Humidade muito elevada. Pode causar desconforto.",
-        "clearSky": "Céu limpo e tempo estável. Bom dia para atividades ao ar livre.",
-        "fallback": "Tempo estável. Esteja atento a possíveis alterações ao longo do dia."
+        "thunderstorm": "Trovoadas previstas. Mantém-te em segurança e considera adiar atividades ao ar livre.",
+        "snow": "Condições de neve. Agasalha-te e tem atenção a pavimentos escorregadios.",
+        "rainTemperature15-": "Dia chuvoso e frio (≤ 15°C). Leva chapéu de chuva e agasalha-te.",
+        "rain": "Chuva prevista. Leva impermeável ou chapéu de chuva.",
+        "wind20+": "Vento moderado a forte (> 20 km/h). Um corta-vento pode ajudar.",
+        "wind30+": "Vento muito forte (> 30 km/h). Evita objetos soltos e protege-te.",
+        "temperature30+": "Dia quente (> 30°C). Prefere tecidos leves e hidrata-te.",
+        "temperature35+": "Calor extremo (≥ 35°C). Evita o sol direto e hidrata-te com frequência.",
+        "cold5-": "Frio intenso (≤ 5°C). Veste camadas quentes.",
+        "temperature10-": "Tempo fresco (< 10°C). Um casaco ou camisola leve ajuda.",
+        "clearSkyCold5-": "Céu limpo, porém muito frio (≤ 5°C). Agasalha-te bem.",
+        "cloudsTemperature15-": "Tempo nublado e fresco (< 15°C).",
+        "clouds": "Céu nublado.",
+        "fog": "Visibilidade reduzida (nevoeiro/névoa). Conduz com cuidado.",
+        "humidity30-": "Ar seco (≤ 30%). Hidrata-te e usa creme.",
+        "humidity90+": "Humidade elevada (≥ 90%). Prefere tecidos respiráveis.",
+        "clearSky": "Céu limpo.",
+        "fallback": "O tempo pode variar. Vê os detalhes abaixo.",
+        "mist": "Névoa ligeira. Pode ser desconfortável de manhã."
     },
     "cities": {
         "lisbon": {
@@ -1077,7 +1079,7 @@
     "overlays": {
         "rain": {
             "rain_1+": {
-                "description": "Chuva ligeira (≥ 1mm): incluir guarda-chuva."
+                "description": "Chuva ligeira (≥ 1mm): incluir chapéu de chuva."
             },
             "rain_3+": {
                 "description": "Chuva moderada (≥ 3mm): usar capa de chuva. Se vento ≥ 20km/h, substituir por capa impermeável."

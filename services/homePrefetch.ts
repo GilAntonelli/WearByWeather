@@ -1,4 +1,4 @@
-
+// services/homePrefetch.ts
 import { Image, ImageSourcePropType } from 'react-native';
 import { Asset } from 'expo-asset';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -16,8 +16,10 @@ export type HomePrefetchData = {
     tempMin?: number;
     tempMax?: number;
     id?: number;
+    rainMM?: number; // NEW: precipitation volume in mm
+
   };
-  suggestion: any; 
+  suggestion: any;
 };
 
 let inMemoryCache: HomePrefetchData | null = null;
@@ -96,11 +98,12 @@ export async function prefetchHomeData(
 
   const clima = {
     ...weather,
-    genero: prefs.gender,  // keep these keys aligned with your engine
+    genero: prefs.gender,
+    rainMM: weather.rainMM ?? 0,
     conforto: prefs.comfort,
     t,
   };
-  
+
   const suggestion = getSuggestionByWeather(clima);
 
   if (suggestion?.image) {

@@ -6,6 +6,30 @@ import i18n from 'i18next';
 import { DateTime } from 'luxon';
 import tzLookup from 'tz-lookup';
 
+// Heuristic fallback: map OpenWeather condition codes to an estimated mm
+function fallbackRainMmFromWeatherId(id: number): number {
+  // Thunderstorm (200–232): usually some rain
+  if (id >= 200 && id <= 232) return 2;
+
+  // Drizzle (300–321)
+  if (id >= 300 && id <= 321) return 0.5;
+
+  // Rain (500–531)
+  if (id === 500) return 1;   // light
+  if (id === 501) return 3;   // moderate
+  if (id === 502) return 6;   // heavy
+  if (id === 503) return 10;  // very heavy
+  if (id === 504) return 16;  // extreme
+  if (id === 511) return 1;   // freezing rain
+  if (id >= 520 && id <= 531) return 3; // shower rain
+
+  // Snow (600–622): rough water equivalent
+  if (id >= 600 && id <= 622) return 1;
+
+  return 0;
+}
+
+
 const WEATHER_CACHE_KEY = 'cached_weather';
 const WEATHER_CACHE_TTL = 15 * 60 * 1000; // 15 minutos
 const USE_MOCK = false; // ✅ Altere para false para usar a API real
@@ -79,11 +103,10 @@ export async function getWeatherByCity(city: string) {
     const weatherMain = data.weather?.[0]?.main ?? '';
     const weatherId = data.weather?.[0]?.id ?? 0;
 
-    // Robust precipitation detection
     // Robust precipitation/precip detection (rain or snow)
     const rainVolume = data?.rain?.['1h'] ?? data?.rain?.['3h'] ?? 0;
     const snowVolume = data?.snow?.['1h'] ?? data?.snow?.['3h'] ?? 0;
-
+    let rainMM = Math.max(rainVolume, snowVolume);
     const weatherMainLower = String(weatherMain).toLowerCase();
 
     // Rain families
@@ -104,7 +127,9 @@ export async function getWeatherByCity(city: string) {
 
     // Final flag: any precipitation counts as "chuva" for the app logic
     const chuva = isRainByMain || isRainById || isSnowByMain || isSnowById || rainVolume > 0 || snowVolume > 0;
-
+    if (rainMM === 0 && chuva) {
+      rainMM = fallbackRainMmFromWeatherId(weatherId);
+    }
 
     const result = {
       temperatura: Math.round(data.main.temp),
@@ -122,6 +147,7 @@ export async function getWeatherByCity(city: string) {
       idioma: lang,
       localTime,
       timezone,
+      rainMM,
     };
 
     await AsyncStorage.setItem(
@@ -142,8 +168,6 @@ export async function getWeatherByCity(city: string) {
     throw error;
   }
 }
-
-
 
 
 // ✅ Função de previsão por hora
@@ -170,14 +194,27 @@ export async function getHourlyForecastByCity(city: string) {
         .setZone(timezone)
         .toFormat('HH:mm');
 
+      // --- NEW: enrich each 3h block with feels-like, wind (km/h) and precipitation volume ---
+      const feels = Math.round(entry?.main?.feels_like ?? entry?.main?.temp ?? 0);
+      const windKmH = Math.round((entry?.wind?.speed ?? 0) * 3.6); // OpenWeather returns m/s
+      const rain3h = entry?.rain?.['3h'] ?? 0;
+      const snow3h = entry?.snow?.['3h'] ?? 0;
+      const rainMM = Math.max(rain3h, snow3h); // mm in this 3h window (use snow if bigger)
+      const chuva = rainMM > 0;
+
       return {
         hora,
         temperatura: Math.round(entry?.main?.temp ?? 0),
+        sensacaoTermica: feels,        // NEW
+        vento: windKmH,                // NEW (km/h)
+        chuva,                         // NEW (boolean)
+        rainMM,                        // NEW (mm for this 3h block)
         condicao: entry?.weather?.[0]?.description ?? '',
         icon: iconCode,
         iconUrl: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
       };
     });
+
 
     return forecast;
   } catch (error) {

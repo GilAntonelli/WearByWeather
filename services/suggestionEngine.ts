@@ -1,12 +1,32 @@
 import {
   LookSuggestion,
-  LookSuggestionJson, WeatherContext, OverlaysJson,
+  LookSuggestionJson, SuggestionInput, OverlaysJson,
   TemperatureRange,
   ComfortLevel
-
 } from '../types/suggestion';
 import { TFunction } from 'i18next';
 import { accessoriesByTemperature } from '../assets/data/accessoriesByTemperature';
+type GenderEN = 'male' | 'female' | 'unisex';
+
+const GENDER_MAP: Record<string, GenderEN> = {
+  masculino: 'male',
+  feminino: 'female',
+  unissex: 'unisex',
+  male: 'male',
+  female: 'female',
+  unisex: 'unisex',
+};
+
+const COMFORT_MAP: Record<string, ComfortLevel> = {
+  frio: 'feel_cold',
+  neutro: 'neutral',
+  calor: 'feel_hot',
+  feel_cold: 'feel_cold',
+  neutral: 'neutral',
+  feel_hot: 'feel_hot',
+};
+
+
 
 //#region Avatar Map
 const avatarMap: Record<string, any> = {
@@ -94,42 +114,66 @@ const avatarMap: Record<string, any> = {
 };
 //#endregion
 
-export function getSuggestionByWeather({
-  temperatura,
-  sensacaoTermica,
-  chuva,
-  vento,
-  genero,
-  conforto,
-  t
-}: WeatherContext): LookSuggestion {
+export function getSuggestionByWeather(input: SuggestionInput): LookSuggestion {
+  const {
+    temperatura,
+    sensacaoTermica,
+    chuva,
+    vento,
+    genero,
+    conforto,
+    t,
+    rainMM = 0,
+  } = input;
+
+
+
   const tempBase = (temperatura + sensacaoTermica) / 2;
-  const confortoAjuste: Record<string, number> = {
-    frio: -2,
-    calor: 2,
-    neutro: 0,
+
+
+  const comfortNorm: ComfortLevel = COMFORT_MAP[conforto] ?? 'neutral';
+  const genderNorm: GenderEN = GENDER_MAP[genero] ?? 'unisex';
+
+  const confortoAjuste: Record<ComfortLevel, number> = {
+    feel_cold: -2,
+    neutral: 0,
+    feel_hot: 2,
   };
-  const tempAjustada = tempBase + (confortoAjuste[conforto] ?? 0);
+  const tempAjustada = tempBase + (confortoAjuste[comfortNorm] ?? 0);
 
   let roupaSuperior = '';
+
+
   let roupaInferior = '';
   let shoes = '';
   let acessórios: string[] = [];
   let recommendation = '';
-  let image = null;
 
-  let suggestions = getSuggestionsJson(genero, getThermalRangeDecription(tempAjustada), conforto, t);
+
+  const range = getThermalRangeDecription(tempAjustada);
+  const suggestions = getSuggestionsJson(genderNorm, range, comfortNorm, t);
+
   roupaSuperior = suggestions.roupaSuperior;
   roupaInferior = suggestions.roupaInferior;
   shoes = suggestions.shoes;
   acessórios = suggestions.acessórios || [];
   recommendation = suggestions.recommendation;
-  image = suggestions.image;
+  const overlays = getOverlays(chuva, vento, tempAjustada, rainMM, t);
 
-  let overlays = getOverlays(chuva, vento, tempAjustada, 5, t); //Para o valor 5 deverá ser obtido o volume de chuva em mm
   if (overlays) {
     console.log('Overlays:', overlays.description);
-    recommendation += overlays.description;
+
+    if (overlays.description) {
+      recommendation = `${recommendation} ${overlays.description}`.trim();
+    }
+
+    const overlayAccessories = overlays.accessories;
+
+
+    if (Array.isArray(overlayAccessories) && overlayAccessories.length) {
+      const merged = new Set<string>([...acessórios, ...overlayAccessories]);
+      acessórios = Array.from(merged);
+    }
   }
 
   return {
@@ -138,7 +182,8 @@ export function getSuggestionByWeather({
     acessórios,
     shoes,
     recommendation,
-    image: image,
+    image: suggestions.image,
+
   };
 }
 
@@ -227,7 +272,14 @@ export function getWindAndWarmDescription(): string {
   return 'temp_23+_and_wind_30+';
 }
 
-export function getOverlays(chuva: boolean, vento: number, tempAjustada: number, rainMM: number, t: TFunction): OverlaysJson {
+export function getOverlays(
+  chuva: boolean,
+  vento: number,
+  tempAjustada: number,
+  rainMM: number,
+  t: TFunction
+): OverlaysJson {
+
   let overlays: OverlaysJson = {
     description: ''
   }

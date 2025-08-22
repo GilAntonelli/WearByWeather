@@ -1,3 +1,4 @@
+// app/forecast.tsx
 import { Feather, Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
@@ -96,8 +97,12 @@ export default function ForecastScreen() {
     getFraseClimatica(t, {
       temperatura: weather.temperatura,
       condicao: weather.condicao,
+      descricao: weather.descricao,   // <— novo
+
       chuva: weather.chuva,
       vento: weather.vento,
+      umidade: weather.umidade,       // <— novo
+
     });
 
   function formatCompactLabel(name: string, state?: string, country?: string): string {
@@ -162,8 +167,14 @@ export default function ForecastScreen() {
                     time={item.hora}
                     icon={item.icon}
                     temperature={item.temperatura}
+                    // NEW: show rain volume & flag on hourly cards
+                    rainMM={item?.rainMM}
+                    willRain={item?.chuva === true}
+                  // Optional: if later you add forecast POP in the service:
+                  // popPct={typeof item?.popPct === 'number' ? item.popPct : undefined}
                   />
                 ))}
+
               </ScrollView>
 
               <Text style={globalStyles.sectionTitle}>{t('Forecast.sectionTitleDetais')}</Text>
@@ -178,7 +189,10 @@ export default function ForecastScreen() {
                 <WeatherDetailCard
                   icon={<Ionicons name="rainy-outline" size={20} color={theme.colors.primary} />}
                   title={t('Forecast.rainDetail')}
-                  value={`${weather?.chuva ? t('Forecast.possibleRain') : t('Forecast.withoutRain')} (estimativa)`}
+                  value={
+                    `${weather?.chuva ? t('Forecast.possibleRain') : t('Forecast.withoutRain')}`
+                    + (typeof weather?.rainMM === 'number' ? ` • ${weather.rainMM.toFixed(1)} mm` : '')
+                  }
                 />
                 <WeatherDetailCard
                   icon={<Feather name="wind" size={20} color={theme.colors.primary} />}

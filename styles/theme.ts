@@ -37,7 +37,7 @@ export const theme = {
     primary: '#FFD700',
     //   primaryLight: '#F1F5FE', // <-- adicionado aqui
     forecastBackground: '#A4D4FF',
-
+    textMuted: '#777777', // <-- adicionado aqui
     background: '#F6F6F6',
     borderLight: '#E0E0E0', // tom de cinza claro suave, visualmente neutro
 
@@ -75,7 +75,7 @@ export const theme = {
   fontSize: {
     small: 13,                   // fixo
     medium: 15,                  // fixo
-    large: 22,  
+    large: 22,
     titleWelcome: 32,                 // fixo
     extralarge: RFValue(34),     // responsivo (p/ títulos maiores)
     title: RFValue(28),          // responsivo (p/ grandes destaques)

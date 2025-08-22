@@ -25,30 +25,121 @@ Como usar:
 
 
 // services/mockWeather.ts
+// export const mockWeather = {
+//   temperatura: 24,
+//   sensacaoTermica: 24,
+//   tempMin: 22,
+//   tempMax: 26,
+//   umidade: 80,
+//   chuva: false,
+//   vento: 12,
+//   condicao: 'céu nublado',
+//   descricao: 'Clouds',
+//   icon: '03d',
+//   iconUrl: 'https://openweathermap.org/img/wn/03d@2x.png',
+//   id: 802,
+//   localTime: '18:30',
+//   rainMM: 0,         // <-- ADICIONE ESTA LINHA
+// };
 
-// 🧊 COLD
- 
+
+// --- RAIN LIGHT (1 mm) ---
+// export const mockWeather = {
+//   temperatura: 20,
+//   sensacaoTermica: 20,
+//   tempMin: 18,
+//   tempMax: 22,
+//   umidade: 78,
+//   chuva: true,
+//   vento: 10,
+//   condicao: 'chuva leve',
+//   descricao: 'Rain',
+//   icon: '10d',
+//   iconUrl: 'https://openweathermap.org/img/wn/10d@2x.png',
+//   id: 500,          // Light rain
+//   localTime: '18:30',
+//   rainMM: 1,        // <-- ativa overlays rain_1+
+// };
+
+//--- RAIN MODERATE (3 mm) ---
 export const mockWeather = {
-  temperatura: 24,
-  sensacaoTermica: 24,
-  tempMin: 22,
-  tempMax: 26,
-  umidade: 80,
-  chuva: false,
+  temperatura: 20,
+  sensacaoTermica: 20,
+  tempMin: 18,
+  tempMax: 22,
+  umidade: 82,
+  chuva: true,
   vento: 12,
-  condicao: 'céu nublado',
-  descricao: 'Clouds',
-  icon: '03d',
-  iconUrl: 'https://openweathermap.org/img/wn/03d@2x.png',
-  id: 802,
+  condicao: 'chuva moderada',
+  descricao: 'Rain',
+  icon: '10d',
+  iconUrl: 'https://openweathermap.org/img/wn/10d@2x.png',
+  id: 501,          // Moderate rain
   localTime: '18:30',
+  rainMM: 3,        // <-- ativa overlays rain_3+
 };
- 
+
+// --- RAIN HEAVY (5 mm) ---
+// export const mockWeather = {
+//   temperatura: 20,
+//   sensacaoTermica: 20,
+//   tempMin: 18,
+//   tempMax: 22,
+//   umidade: 90,
+//   chuva: true,
+//   vento: 14,
+//   condicao: 'chuva forte',
+//   descricao: 'Rain',
+//   icon: '10d',
+//   iconUrl: 'https://openweathermap.org/img/wn/10d@2x.png',
+//   id: 502,          // Heavy rain
+//   localTime: '18:30',
+//   rainMM: 5,        // <-- ativa overlays rain_5+
+// };
+
+// --- WIND + RAIN (vento >= 20 & chuva=true) -> windandrain ---
+// export const mockWeather = {
+//   temperatura: 21,
+//   sensacaoTermica: 21,
+//   tempMin: 19,
+//   tempMax: 23,
+//   umidade: 85,
+//   chuva: true,
+//   vento: 26,        // >= 20
+//   condicao: 'chuva com vento',
+//   descricao: 'Rain',
+//   icon: '10d',
+//   iconUrl: 'https://openweathermap.org/img/wn/10d@2x.png',
+//   id: 501,
+//   localTime: '18:30',
+//   rainMM: 3,
+// };
 
 
 
- // ❄️ FREEZING
- 
+// // 🧊 COLD
+
+// export const mockWeather = {
+//   temperatura: 24,
+//   sensacaoTermica: 24,
+//   tempMin: 22,
+//   tempMax: 26,
+//   umidade: 80,
+//   chuva: true,
+//   vento: 12,
+//   condicao: 'céu nublado',
+//   descricao: 'Clouds',
+//   icon: '03d',
+//   iconUrl: 'https://openweathermap.org/img/wn/03d@2x.png',
+//   id: 802,
+//   localTime: '18:30',
+// };
+
+
+
+
+// ❄️ FREEZING
+
 // export const mockWeather = {
 //   temperatura: 1,
 //   sensacaoTermica: -3,
@@ -63,9 +154,9 @@ export const mockWeather = {
 //   iconUrl: 'https://openweathermap.org/img/wn/13d@2x.png',
 //   id: 600,
 // };
- 
 
- // 🌀 CHILLY
+
+// 🌀 CHILLY
 // export const mockWeather = {
 //   temperatura: 14,
 //   sensacaoTermica: 13,
@@ -183,7 +274,7 @@ export const mockWeather = {
 
 */
 
- export const mockHourlyForecast = [
+export const mockHourlyForecast = [
   {
     hora: '09h',
     localTime: '09:00',
@@ -193,6 +284,7 @@ export const mockWeather = {
     icon: '01d',
     vento: 10,
     chuva: false,
+    rainMM: 0,          // NEW
   },
   {
     hora: '12h',
@@ -203,6 +295,7 @@ export const mockWeather = {
     icon: '02d',
     vento: 12,
     chuva: false,
+    rainMM: 0,          // NEW
   },
   {
     hora: '15h',
@@ -213,6 +306,7 @@ export const mockWeather = {
     icon: '10d',
     vento: 18,
     chuva: true,
+    rainMM: 1.2,        // NEW -> ativa rain_1+ nos cards
   },
   {
     hora: '18h',
@@ -223,6 +317,7 @@ export const mockWeather = {
     icon: '04d',
     vento: 15,
     chuva: false,
+    rainMM: 0,          // NEW
   },
   {
     hora: '21h',
@@ -233,16 +328,18 @@ export const mockWeather = {
     icon: '01n',
     vento: 11,
     chuva: false,
+    rainMM: 0,          // NEW
   },
   {
     hora: '00h',
     localTime: '00:00',
     temperatura: '17°C',
-    condicao: 'chuva leve',
+    condicao: 'chuva forte',
     descricao: 'Rain',
     icon: '10n',
     vento: 10,
     chuva: true,
+    rainMM: 5.0,        // NEW -> ativa rain_5+ nos cards
   },
   {
     hora: '03h',
@@ -253,6 +350,7 @@ export const mockWeather = {
     icon: '50n',
     vento: 8,
     chuva: false,
+    rainMM: 0,          // NEW
   },
   {
     hora: '06h',
@@ -263,5 +361,6 @@ export const mockWeather = {
     icon: '01d',
     vento: 7,
     chuva: false,
+    rainMM: 0,          // NEW
   },
 ];
