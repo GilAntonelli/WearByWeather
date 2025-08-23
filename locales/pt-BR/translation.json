@@ -1083,31 +1083,59 @@
     "overlays": {
         "rain": {
             "rain_1+": {
-                "description": "Chuva leve (≥ 1mm): incluir guarda-chuva."
+                "description": " Chuva leve (≥ 1mm): incluir guarda-chuva.",
+                "accessories": [
+                    "umbrella"
+                ]
             },
             "rain_3+": {
-                "description": "Chuva moderada (≥ 3mm): usar capa de chuva. Se vento ≥ 20km/h, substituir por capa impermeável."
+                "description": " Chuva moderada (≥ 3mm): usar capa de chuva. Se vento ≥ 20km/h, substituir por capa impermeável.",
+                "accessories": [
+                    "umbrella",
+                    "raincoat"
+                ]
             },
             "rain_5+": {
-                "description": "Chuva forte (≥ 5mm): adicionar bota impermeável."
+                "description": " Chuva forte (≥ 5mm): adicionar bota impermeável.",
+                "accessories": [
+                    "umbrella",
+                    "raincoat",
+                    "rain_boots"
+                ]
             }
         },
         "wind": {
             "wind_30_45": {
-                "description": "Vento moderado (30–45 km/h): adicionar corta-vento, gorro ajustado e elástico de cabelo."
+                "description": " Vento moderado (30–45 km/h): adicionar corta-vento, gorro ajustado e elástico de cabelo.",
+                "accessories": [
+                    "windbreaker"                
+                ]
             },
             "wind_45+": {
-                "description": "Vento forte (> 45 km/h): adicionar corta-vento, cachecol reforçado, luvas leves e elástico de cabelo."
+                "description": " Vento forte (> 45 km/h): adicionar corta-vento, cachecol reforçado, luvas leves e elástico de cabelo.",
+                "accessories": [
+                    "windbreaker",
+                    "scarfMedium",
+                    "gloves"
+                ]
             }
         },
         "windandrain": {
             "wind_20+_and_rain_3+": {
-                "description": "Chuva com vento (chuva ≥ 3mm e vento ≥ 20 km/h): substituir capa comum por capa impermeável (windproof)."
+                "description": " Chuva com vento (chuva ≥ 3mm e vento ≥ 20 km/h): substituir capa comum por capa impermeável (windproof).",
+                "accessories": [
+                    "lined_raincoat",
+                    "gloves",
+                    "rain_boots"
+                ]
             }
         },
         "windandwarm": {
             "temp_23+_and_wind_30+": {
-                "description": "Vento com calor (temp > 23°C e vento > 30 km/h): substituir peças esvoaçantes por coladas e adicionar controle capilar."
+                "description": " Vento com calor (temp > 23°C e vento > 30 km/h): substituir peças esvoaçantes por coladas e adicionar controle capilar.",
+                "accessories": [
+                    "windbreaker"
+                ]
             }
         }
     },

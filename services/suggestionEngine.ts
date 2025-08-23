@@ -281,12 +281,9 @@ export function getOverlays(
 ): OverlaysJson {
 
   let overlays: OverlaysJson = {
-    description: ''
+    description: '', 
+    accessories: []
   }
-  console.log('chuva:', chuva);
-  console.log('vento:', vento);
-  console.log('tempAjustada:', tempAjustada);
-  console.log('rainMM:', rainMM);
 
   if (chuva) {
     if (vento >= 20) {
