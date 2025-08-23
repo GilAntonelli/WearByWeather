@@ -920,10 +920,6 @@ export const globalStyles = StyleSheet.create({
     marginBottom: 20,
   },
 
-  gearIcon: {
-    fontSize: 24,
-    color: theme.colors.textDark,
-  },
 
   modalOverlay: {
     flex: 1,

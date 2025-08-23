@@ -19,10 +19,10 @@ export interface WeatherContext {
 export interface LookSuggestion {
   roupaSuperior: string;
   roupaInferior?: string;
-  acessórios: string[]; // <-- agora obrigatório
+  acessórios: string[]; 
   shoes?: string;
   recommendation?: string;
-  image: ImageSourcePropType; // mantém como está no teu projeto
+  image: ImageSourcePropType; 
 }
 export interface LookSuggestionJson {
   isSinglePiece: boolean;
@@ -36,7 +36,7 @@ export interface LookSuggestionJson {
 
 export interface OverlaysJson {
   description: string;
-  accessories?: string[]; // optional overlay accessories merged into the final output
+  accessories?: string[]; 
 }
 
 export type TemperatureRange =
@@ -47,7 +47,7 @@ export type TemperatureRange =
   | 'comfortable'
   | 'warm'
   | 'hot'
-  | 'extreme_heat'; // cuidado: você usava "extremely_hot", mas o correto no projeto é "extreme_heat"
+  | 'extreme_heat'; 
 
 export type ComfortLevel = 'feel_cold' | 'neutral' | 'feel_hot';
 
@@ -59,7 +59,7 @@ export type GenderAny = GenderPT | GenderEN;
 export type ComfortPT = 'frio' | 'neutro' | 'calor';
 export type ComfortAny = ComfortPT | ComfortLevel;
 
-// --- Minimal input that the suggestion engine actually needs ---
+
 export type SuggestionInput = {
   temperatura: number;
   sensacaoTermica: number;
@@ -68,6 +68,5 @@ export type SuggestionInput = {
   genero: GenderAny;
   conforto: ComfortAny;
   t: TFunction;
-  // Optional rain volume (mm) to drive rain_1+/3+/5+ overlays in tests and real data
   rainMM?: number;
 };
