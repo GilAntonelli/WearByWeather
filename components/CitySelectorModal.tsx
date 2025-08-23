@@ -30,6 +30,7 @@ interface CitySelectorModalProps {
   visible: boolean;
   onClose: () => void;
   onSelect: (city: string) => void;
+  showCancel?: boolean;
 }
 
 interface Suggestion {
@@ -39,47 +40,49 @@ interface Suggestion {
   apiName?: string;       // canonical name for API (usually English)
   id?: string;            // optional stable id (e.g., 'lisbon')
 }
+
 export const CitySelectorModal = ({
   visible,
   onClose,
   onSelect,
+  showCancel = true,
 }: CitySelectorModalProps) => {
   const [search, setSearch] = useState('');
   const [results, setResults] = useState<Suggestion[]>([]);
   const [loading, setLoading] = useState(false);
   const { t } = useTranslation();
 
-// Canonical static cities (stable ids + API names)
-type StaticCity = { id: string; apiName: string };
-const STATIC_CITIES: StaticCity[] = [
-  { id: 'lisbon',      apiName: 'Lisbon' },
-  { id: 'porto',       apiName: 'Porto' },
-  { id: 'madrid',      apiName: 'Madrid' },
-  { id: 'barcelona',   apiName: 'Barcelona' },
-  { id: 'paris',       apiName: 'Paris' },
-  { id: 'london',      apiName: 'London' },
-  { id: 'berlin',      apiName: 'Berlin' },
-  { id: 'rome',        apiName: 'Rome' },
-  { id: 'brussels',    apiName: 'Brussels' },
-  { id: 'amsterdam',   apiName: 'Amsterdam' },
-  { id: 'sao_paulo',   apiName: 'Sao Paulo' },
-  { id: 'rio',         apiName: 'Rio de Janeiro' },
-];
-// Build localized suggestions for UI
-const buildLocalizedStaticList = (): Suggestion[] =>
-  STATIC_CITIES.map((c) => ({
-    id: c.id,
-    apiName: c.apiName,
-    name: t(`cities.${c.id}.name`) as string,
-    state: t(`cities.${c.id}.state`) as string,
-    country: t(`cities.${c.id}.country`) as string,
-  }));
+  // Canonical static cities (stable ids + API names)
+  type StaticCity = { id: string; apiName: string };
+  const STATIC_CITIES: StaticCity[] = [
+    { id: 'lisbon', apiName: 'Lisbon' },
+    { id: 'porto', apiName: 'Porto' },
+    { id: 'madrid', apiName: 'Madrid' },
+    { id: 'barcelona', apiName: 'Barcelona' },
+    { id: 'paris', apiName: 'Paris' },
+    { id: 'london', apiName: 'London' },
+    { id: 'berlin', apiName: 'Berlin' },
+    { id: 'rome', apiName: 'Rome' },
+    { id: 'brussels', apiName: 'Brussels' },
+    { id: 'amsterdam', apiName: 'Amsterdam' },
+    { id: 'sao_paulo', apiName: 'Sao Paulo' },
+    { id: 'rio', apiName: 'Rio de Janeiro' },
+  ];
+  // Build localized suggestions for UI
+  const buildLocalizedStaticList = (): Suggestion[] =>
+    STATIC_CITIES.map((c) => ({
+      id: c.id,
+      apiName: c.apiName,
+      name: t(`cities.${c.id}.name`) as string,
+      state: t(`cities.${c.id}.state`) as string,
+      country: t(`cities.${c.id}.country`) as string,
+    }));
 
-// Always prepend the sentinel ("Use current location")
-const fullCityList: Suggestion[] = [
-  { id: ':current', name: t('cityModal.currentLocation') as string },
-  ...buildLocalizedStaticList(),
-];
+  // Always prepend the sentinel ("Use current location")
+  const fullCityList: Suggestion[] = [
+    { id: ':current', name: t('cityModal.currentLocation') as string },
+    ...buildLocalizedStaticList(),
+  ];
 
   // Debounced search against OpenWeather Geocoding
   useEffect(() => {
@@ -97,10 +100,10 @@ const fullCityList: Suggestion[] = [
         const data = (await response.json()) as any[];
         const mapped: Suggestion[] = Array.isArray(data)
           ? data.map((d) => ({
-              name: d?.name,
-              state: d?.state,
-              country: d?.country,
-            }))
+            name: d?.name,
+            state: d?.state,
+            country: d?.country,
+          }))
           : [];
         setResults(mapped);
       } catch {
@@ -181,10 +184,10 @@ const fullCityList: Suggestion[] = [
         }
       } else {
         // Static/searched city
-const displayName = getPreferredCityName(selectedItem);
-label = formatLocationName(displayName, selectedItem.state, selectedItem.country);
-// Use canonical apiName if present; fallback to name
-nomeParaApi = selectedItem.apiName || selectedItem.name;
+        const displayName = getPreferredCityName(selectedItem);
+        label = formatLocationName(displayName, selectedItem.state, selectedItem.country);
+        // Use canonical apiName if present; fallback to name
+        nomeParaApi = selectedItem.apiName || selectedItem.name;
       }
 
       // Validate city by fetching its weather (guard against throws)
@@ -246,25 +249,26 @@ nomeParaApi = selectedItem.apiName || selectedItem.name;
                   </TouchableOpacity>
                 )}
               </View>
-
-              <TouchableOpacity
-                onPress={onClose}
-                style={{ marginLeft: 4, height: 18, justifyContent: 'center', paddingHorizontal: 4 }}
-              >
-                <Text
-                  style={{
-                    color: theme.colors.textLight,
-                    fontSize: 16,
-                    fontWeight: '500',
-                    lineHeight: 15,
-                    paddingVertical: 13,
-                    includeFontPadding: false,
-                    textAlignVertical: 'center',
-                  }}
+              {showCancel && (
+                <TouchableOpacity
+                  onPress={onClose}
+                  style={{ marginLeft: 4, height: 18, justifyContent: 'center', paddingHorizontal: 4 }}
                 >
-                  {t('alerts.cancelbutton')}
-                </Text>
-              </TouchableOpacity>
+                  <Text
+                    style={{
+                      color: theme.colors.textLight,
+                      fontSize: 16,
+                      fontWeight: '500',
+                      lineHeight: 15,
+                      paddingVertical: 13,
+                      includeFontPadding: false,
+                      textAlignVertical: 'center',
+                    }}
+                  >
+                    {t('alerts.cancelbutton')}
+                  </Text>
+                </TouchableOpacity>
+              )}
             </View>
           </View>
 

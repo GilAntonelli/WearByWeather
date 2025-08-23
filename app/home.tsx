@@ -33,19 +33,17 @@ import {
   HomePrefetchData,
 } from '../services/homePrefetch';
 
-const resetApp = async () => {
-  await AsyncStorage.clear();
-  router.replace('/'); // back to WelcomeScreen
-};
-
 const screenHeight = Dimensions.get('window').height;
 
 export default function HomeScreen() {
   const isLoadingRef = useRef<boolean>(false);
   const router = useRouter();
+  const cachedAtMount = getCachedHomeData();
   const [city, setSelectedCity] = useState<string>('Lisboa');
   const [modalVisible, setModalVisible] = useState(false);
-  const [suggestion, setSuggestion] = useState<LookSuggestion | null>(null);
+  const [suggestion, setSuggestion] = useState<LookSuggestion | null>(
+    () => cachedAtMount?.suggestion ?? null
+  );
   const [weatherData, setWeatherData] = useState<{
     temperatura: number;
     sensacaoTermica: number;
@@ -56,9 +54,9 @@ export default function HomeScreen() {
     tempMin?: number;
     tempMax?: number;
     id?: number;
-  } | null>(null);
+  } | null>(() => cachedAtMount?.weather ?? null);
 
-  const [isCityReady, setIsCityReady] = useState(false);
+  const [isCityReady, setIsCityReady] = useState<boolean>(() => !!cachedAtMount);
   const [isDetectedLocation, setIsDetectedLocation] = useState(false);
   const [userPreferences, setUserPreferences] = useState<UserPreferences>({
     name: '',
@@ -128,7 +126,7 @@ export default function HomeScreen() {
 
     return false;
   };
-  
+
 
   useEffect(() => {
     const loadPreferences = async () => {
@@ -186,9 +184,9 @@ export default function HomeScreen() {
           { gender: userPreferences.gender, comfort: userPreferences.comfort },
           t
         );
-        
+
         applyPrefetchResult(result);
-        
+
         try {
           const savedCity = await AsyncStorage.getItem('lastCity');
           let label = rawOrLabelCity;
@@ -214,6 +212,7 @@ export default function HomeScreen() {
 
   useEffect(() => {
     const init = async () => {
+      if (isCityReady) return;
       const granted = await detectCityFromLocation();
       if (!granted) {
         setModalVisible(true);
@@ -234,6 +233,7 @@ export default function HomeScreen() {
     await runPrefetch(city);
   }, [runPrefetch, city]);
 
+  console.log('Rendering HomeScreen, isCityReady:', isCityReady, 'city:', city);
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
       <ScrollView
@@ -347,6 +347,7 @@ export default function HomeScreen() {
             setModalVisible(false);
             setIsCityReady(true);
           }}
+          showCancel={isCityReady}
         />
       </ScrollView>
 

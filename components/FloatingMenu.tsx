@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Menu, Divider } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
 import { globalStyles } from '../styles/global';
+import { clearCachedHomeData } from '../services/homePrefetch';
 
 interface Props {
   reloadWeather: () => void;
@@ -74,6 +75,7 @@ export default function FloatingMenu({ reloadWeather }: Props) {
                 text: t('alerts.resetbutton'),
                 style: 'destructive',
                 onPress: async () => {
+                  clearCachedHomeData();
                   await AsyncStorage.clear();
                   router.replace('/');
                 },

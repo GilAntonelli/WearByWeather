@@ -216,8 +216,8 @@ export default function ForecastScreen() {
           <TouchableOpacity
             style={globalStyles.bottomButton}
             onPress={async () => {
-              await prefetchForHome();
-              router.push('/home');
+              await prefetchForHome();              
+              router.back(); 
             }}
           >
             <Ionicons name="arrow-back" size={16} color={theme.colors.textDark} />

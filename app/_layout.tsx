@@ -1,6 +1,6 @@
 import { DarkTheme, DefaultTheme as NavigationTheme, ThemeProvider as NavigationThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Slot } from 'expo-router';
+import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 import { PaperProvider } from 'react-native-paper';
@@ -57,7 +57,26 @@ export default function RootLayout() {
       <NavigationThemeProvider value={colorScheme === 'dark' ? DarkTheme : NavigationTheme}>
         <StyledThemeProvider theme={theme}>
           <SafeAreaProvider>
-            <Slot />
+            <Stack
+              screenOptions={{
+                headerShown: false,
+                // Keep screens mounted but prevent re-renders when not focused:
+                freezeOnBlur: true,
+                gestureEnabled: false,
+                fullScreenGestureEnabled: false,
+              }}
+            >
+              <Stack.Screen name="index" />
+              <Stack.Screen name="home" />
+              <Stack.Screen name="preferences" />
+              <Stack.Screen
+                name="forecast"
+                options={{
+                  gestureEnabled: true,
+                  fullScreenGestureEnabled: true, // optional: allow drag from anywhere
+                }}
+              />
+            </Stack>
             <StatusBar style="auto" />
           </SafeAreaProvider>
         </StyledThemeProvider>
