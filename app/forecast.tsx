@@ -140,6 +140,8 @@ export default function ForecastScreen() {
               temperature={`${weather?.temperatura ?? '--'}°C`}
               condition={weather?.condicao ?? t('Forecast.condition')}
               smartPhrase={frase ?? ''}
+              id={weather.id}
+              iconCode={weather.icon}   
               icon={
                 <Image
                   source={{
@@ -148,7 +150,7 @@ export default function ForecastScreen() {
                   style={{ width: 64, height: 64 }}
                 />
               }
-              id={weather?.id ?? 0}
+              
               localTime={weather?.localTime}
             />
 
@@ -216,8 +218,8 @@ export default function ForecastScreen() {
           <TouchableOpacity
             style={globalStyles.bottomButton}
             onPress={async () => {
-              await prefetchForHome();              
-              router.back(); 
+              await prefetchForHome();
+              router.back();
             }}
           >
             <Ionicons name="arrow-back" size={16} color={theme.colors.textDark} />

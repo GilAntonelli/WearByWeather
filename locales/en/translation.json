@@ -57,6 +57,10 @@
         "reset": "Reset",
         "refreshWeather": "Update Weather"
     },
+    "WeatherSummaryCard": {
+        "feelsLike": "Feels like: {{value}}°",
+        "maxMin": "Max: {{max}}°  Min: {{min}}°"
+    },
     "Forecast": {
         "condition": "Loading...",
         "sectionTitle": "Next 24h (3h intervals)",
@@ -86,11 +90,11 @@
         "temperature10-": "Chilly (< 10°C). A sweater or light jacket helps.",
         "clearSkyCold5-": "Clear skies, but very cold (≤ 5°C). Dress warmly.",
         "cloudsTemperature15-": "Cloudy and cool (< 15°C).",
-        "clouds": "Cloudy skies.",
+    "clouds": "Cloudy skies. Light layers or a thin jacket.",
         "fog": "Low visibility (fog/mist). Drive carefully.",
         "humidity30-": "Dry air (≤ 30%). Stay hydrated and moisturize.",
         "humidity90+": "Very humid (≥ 90%). Prefer breathable fabrics.",
-        "clearSky": "Clear skies.",
+    "clearSky": "Clear skies. Choose breathable, lightweight fabrics.",
         "fallback": "Weather may vary. See details below.",
         "mist": "Light mist. It may feel damp in the morning."
     },

@@ -57,6 +57,10 @@
         "reset": "Repor",
         "refreshWeather": "Atualizar tempo"
     },
+    "WeatherSummaryCard": {
+        "feelsLike": "Sensação térmica: {{value}}°",
+        "maxMin": "Máx.: {{max}}°  Mín.: {{min}}°"
+    },
     "Forecast": {
         "condition": "A carregar...",
         "sectionTitle": "Próximas 24h (intervalos de 3h)",
@@ -86,11 +90,11 @@
         "temperature10-": "Tempo fresco (< 10°C). Um casaco ou camisola leve ajuda.",
         "clearSkyCold5-": "Céu limpo, porém muito frio (≤ 5°C). Agasalha-te bem.",
         "cloudsTemperature15-": "Tempo nublado e fresco (< 15°C).",
-        "clouds": "Céu nublado.",
+        "clouds": "Céu nublado. Opta por camadas leves ou casaco fino.",
         "fog": "Visibilidade reduzida (nevoeiro/névoa). Conduz com cuidado.",
         "humidity30-": "Ar seco (≤ 30%). Hidrata-te e usa creme.",
         "humidity90+": "Humidade elevada (≥ 90%). Prefere tecidos respiráveis.",
-        "clearSky": "Céu limpo.",
+        "clearSky": "Céu limpo. Usa tecidos leves e respiráveis.",
         "fallback": "O tempo pode variar. Vê os detalhes abaixo.",
         "mist": "Névoa ligeira. Pode ser desconfortável de manhã."
     },

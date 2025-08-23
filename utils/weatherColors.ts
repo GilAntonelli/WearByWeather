@@ -1,26 +1,3 @@
-
-// services/mockWeather.ts
-
-/*
-| `main`       | `description` (condicao)       |
-| ------------ | ------------------------------ |
-| Clear        | céu limpo                      |
-| Clouds       | nublado / parcialmente nublado |
-| Rain         | chuva leve / chuva moderada    |
-| Thunderstorm | trovoadas                      |
-| Snow         | neve                           |
-| Mist         | névoa                          |
-| Drizzle      | garoa                          |
-| Haze         | névoa seca                     |
-| Fog          | nevoeiro                       |
-| Dust         | poeira                         |
-| Tornado      | tornado                        |
-
-*/
-
-
-
-
 // utils/weatherColors.ts
 
 const conditionColorMap: Record<string, string> = {
@@ -58,13 +35,16 @@ export function getWeatherBackgroundColor(id: number): string {
   if (id >= 210 && id <= 221) return '#495866'; // Trovoadas locais
   if (id >= 230 && id <= 232) return '#3D4C5C'; // Tempestades com chuva forte
 
-  if (id >= 300 && id <= 302) return '#B5C7D3'; // Garoa leve a moderada
-  if (id >= 310 && id <= 321) return '#A1BBD4'; // Garoa com chuva
+if (id >= 300 && id <= 302) return '#B3C7D8'; // light to moderate drizzle
+if (id >= 310 && id <= 321) return '#A3B9CE'; // drizzle w/ rain
 
-  if (id === 500) return '#A1BBD4';             // Chuva leve
-  if (id === 501) return '#90AEC7';             // Chuva moderada
-  if (id >= 502 && id <= 504) return '#5F7C99'; // Chuva forte a extrema
-  if (id >= 511 && id <= 531) return '#7FA1BF'; // Chuva congelante e irregular
+  if (id === 500) return '#A1BBD4';             // light rain
+  if (id === 501) return '#90AEC7';             // moderate rain
+  if (id >= 502 && id <= 504) return '#5F7C99'; // heavy to very heavy rain
+  if (id === 511) return '#A4C7E8';             // freezing rain (icier tone)
+  if (id >= 520 && id <= 531) return '#7FA1BF'; // shower rain (irregular)
+
+
 
   if (id >= 600 && id <= 602) return '#E0F7FA'; // Neve leve a forte
   if (id >= 611 && id <= 622) return '#E0F7FA'; // Neve com garoa, irregular
@@ -79,17 +59,65 @@ export function getWeatherBackgroundColor(id: number): string {
   if (id === 771) return '#4A5968';             // Rajadas de vento (squall)
   if (id === 781) return '#4D4D4D';             // Tornado
 
-  if (id === 800) return '#A4D4FF';             // Céu limpo
+  if (id === 800) return '#2F80ED';           // Céu limpo
 
-  if (id === 801) return '#C3D9F3';             // Poucas nuvens
-  if (id === 802) return '#D6E0EB';             // Nuvens dispersas
-  if (id === 803) return '#BFC8D1';             // Nuvens parcialmente nubladas
-  if (id === 804) return '#BFC8D1';             // Nuvens encobertas
+if (id === 801) return '#C3D9F3';             // few clouds
+if (id === 802) return '#D0DAE6';             // scattered clouds
+if (id === 803) return '#B3BEC8';             // broken clouds
+if (id === 804) return '#9CA7B2';             // overcast clouds (darker for contrast)
 
   return DEFAULT_COLOR; // fallback
 }
 
+// --- Overlay utilities: choose opacity by base color luminance ---
+function hexToRgb(hex: string): { r: number; g: number; b: number } {
+  const h = hex.replace('#', '');
+  const bigint = parseInt(h.length === 6 ? h : h.slice(0, 6), 16);
+  return { r: (bigint >> 16) & 255, g: (bigint >> 8) & 255, b: bigint & 255 };
+}
+
+function relativeLuminance(hex: string): number {
+  const { r, g, b } = hexToRgb(hex);
+  const srgb = [r, g, b].map((v) => v / 255).map((c) =>
+    c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)
+  );
+  return 0.2126 * srgb[0] + 0.7152 * srgb[1] + 0.0722 * srgb[2];
+}
+
+function pickOverlayForBase(baseHex: string, isNight: boolean): string {
+  // Luminance: 0 (black) .. 1 (white)
+  const L = relativeLuminance(baseHex);
+
+  // Daytime baseline by brightness
+  let overlay = '#00000066'; // ~40%
+  if (L > 0.85) overlay = '#000000A6';    // very light base -> stronger overlay
+  else if (L > 0.75) overlay = '#00000080';
+  else if (L < 0.25) overlay = '#0000004D'; // very dark base -> softer overlay
+
+  // Night boost
+  if (isNight) {
+    // increase opacity one step
+    if (overlay === '#0000004D') overlay = '#00000066';
+    else if (overlay === '#00000066') overlay = '#00000080';
+    else overlay = '#00000099';
+  }
+  return overlay;
+}
+
 export function getWeatherGradientColors(id: number): [string, string] {
   const base = getWeatherBackgroundColor(id);
-  return [base, '#00000077']; // degrade com branco translúcido
+  return [base, '#00000066']; // static translucent black overlay for readability
+}
+ 
+export function getWeatherGradientColorsByIcon(id: number, icon?: string): [string, string] {
+  const base = getWeatherBackgroundColor(id);
+  const isNight = (icon ?? '').endsWith('n');
+  const overlay = pickOverlayForBase(base, isNight); // adaptive overlay
+if (__DEV__) {
+
+    console.log('[weatherColors]', { id, icon, isNight, base, overlay });
+  }
+
+
+  return [base, overlay];
 }

@@ -1,10 +1,15 @@
+// components/WeatherSummaryCard.tsx
+
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { getWeatherGradientColors } from '../utils/weatherColors';
+ 
+import { getWeatherGradientColors, getWeatherGradientColorsByIcon } from '../utils/weatherColors';
+
 import { capitalizeFirstLetter } from '../utils/stringUtils';
 import { TouchableOpacity } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 interface WeatherSummaryCardProps {
   city: string;
@@ -15,6 +20,7 @@ interface WeatherSummaryCardProps {
   tempMin: number;
   tempMax: number;
   id: number;
+  icon: string;
   onPress?: () => void;
 }
 
@@ -27,13 +33,22 @@ export default function WeatherSummaryCard({
   tempMin,
   tempMax,
   id,
+  icon,
   onPress
 }: WeatherSummaryCardProps) {
-  const gradientColors = getWeatherGradientColors(id);
+  const { t } = useTranslation();
+ const gradientColors = icon
+  ? getWeatherGradientColorsByIcon(id, icon)
+  : getWeatherGradientColors(id);
 
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.85}>
-      <LinearGradient colors={gradientColors} style={styles.card}>
+      <LinearGradient
+        colors={gradientColors}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
+        locations={[0, 0.92]}   // push overlay to the bottom (12% of card)
+        style={styles.card}>
         <View style={styles.headerRow}>
           <View style={styles.leftColumn}>
             <Text style={styles.cityText}>{city}</Text>
@@ -42,7 +57,11 @@ export default function WeatherSummaryCard({
               {capitalizeFirstLetter(condicao)}
             </Text>
             <Text style={styles.minMaxText}>
-              Máx.: {Math.round(tempMax)}°  Mín.: {Math.round(tempMin)}°
+              {t('WeatherSummaryCard.maxMin', { max: Math.round(tempMax), min: Math.round(tempMin) })}
+            </Text>
+
+            <Text style={styles.feelsLikeText}>
+              {t('WeatherSummaryCard.feelsLike', { value: Math.round(sensacaoTermica) })}
             </Text>
           </View>
           <Text style={styles.tempText}>{Math.round(temperatura)}°</Text>
@@ -102,5 +121,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFF',
     marginLeft: 8,
+  },
+  feelsLikeText: {
+    fontSize: 12,
+    color: '#FFF',
+    marginTop: 4,
+    opacity: 0.95,
   },
 });

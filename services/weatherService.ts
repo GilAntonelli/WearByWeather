@@ -1,3 +1,4 @@
+// services/weatherService.ts
 import axios from 'axios';
 import { API_KEY, BASE_URL, GEO_URL } from '../config/apiConfig';
 import { mockWeather, mockHourlyForecast } from './mockWeather'; // ✅ mock importado
@@ -33,7 +34,7 @@ function fallbackRainMmFromWeatherId(id: number): number {
 const WEATHER_CACHE_KEY = 'cached_weather';
 const WEATHER_CACHE_TTL = 15 * 60 * 1000; // 15 minutos
 const USE_MOCK = false; // ✅ Altere para false para usar a API real
-const lang = mapLanguageToOpenWeather(i18n.language);
+ 
 
 async function resolveCityToCoords(city: string) {
   const nomeParaApi = city;
@@ -247,13 +248,15 @@ export async function searchCitiesByName(name: string) {
   }
 }
 
-export function mapLanguageToOpenWeather(lang: string): string {
-  switch (lang) {
-    case 'pt-BR':
-    case 'pt-PT':
-      return 'pt';
-    case 'en':
-    default:
-      return 'en';
-  }
+  export function mapLanguageToOpenWeather(lang: string): string {
+  const normalized = (lang || '').toLowerCase();
+
+  // Handle common variants: 'pt', 'pt-pt', 'pt-PT'
+  if (normalized === 'pt' || normalized.startsWith('pt-pt')) return 'pt';
+
+  // Brazilian Portuguese must be 'pt_br' for OpenWeather
+  if (normalized.startsWith('pt-br') || normalized === 'pt_br') return 'pt_br';
+
+  // English fallback (covers en, en-US, en-GB, etc.)
+  return 'en';
 }

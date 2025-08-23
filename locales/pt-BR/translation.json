@@ -57,6 +57,10 @@
         "reset": "Redefinir",
         "refreshWeather": "Atualizar clima"
     },
+    "WeatherSummaryCard": {
+        "feelsLike": "Sensação térmica: {{value}}°",
+        "maxMin": "Máx.: {{max}}°  Mín.: {{min}}°"
+    },
     "Forecast": {
         "condition": "Carregando...",
         "sectionTitle": "Próximas 24h (intervalos de 3h)",
@@ -86,12 +90,12 @@
         "temperature10-": "Temperaturas baixas. Vista-se com camadas quentes.",
         "clearSkyCold5-": "Céu limpo, porém muito frio (≤ 5°C). Agasalhe-se bem.",
         "cloudsTemperature15-": "Tempo nublado e frio. Um casaco vai bem.",
-        "clouds": "Céu nublado.",
+        "clouds": "Céu nublado. Prefira camadas leves ou jaqueta fina.",
         "fog": "Nevoeiro no ar. Atenção à visibilidade.",
         "humidity30-": "Ar seco hoje. Hidrate-se e evite exposição prolongada.",
         "humidity90+": "Umidade muito alta. Pode causar desconforto.",
-        "clearSky": "Céu limpo e clima estável. Bom dia para atividades ao ar livre.",
-        "fallback": "Clima estável hoje. Fique de olho nas variações ao longo do dia."
+        "clearSky": "Céu limpo. Bom dia para atividades ao ar livre.",
+        "fallback": "Fique de olho nas variações de clima ao longo do dia."
     },
     "cities": {
         "lisbon": {

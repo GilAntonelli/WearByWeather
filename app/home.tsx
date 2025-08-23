@@ -291,6 +291,8 @@ export default function HomeScreen() {
                 tempMax={weatherData.tempMax ?? 0}
                 condicao={weatherData.condicao || ''}
                 id={weatherData.id || 0}
+                icon={weatherData.icon ?? '01d'}
+
                 onPress={() => router.push('/forecast')}
               />
             )}

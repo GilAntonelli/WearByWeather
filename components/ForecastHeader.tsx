@@ -3,7 +3,8 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { capitalizeFirstLetter } from '../utils/stringUtils';
-import { getWeatherGradientColors } from '../utils/weatherColors';
+import { getWeatherGradientColors, getWeatherGradientColorsByIcon } from '../utils/weatherColors';
+
 import { useTranslation } from 'react-i18next';
 
 type Props = {
@@ -13,22 +14,33 @@ type Props = {
   smartPhrase: string;
   icon?: React.ReactNode;
   id: number;
+  iconCode?: string;
   localTime?: string;
 };
 
 export default function ForecastHeader({
   city,
-
   temperature,
   condition,
   smartPhrase,
   icon,
-  id, localTime,
+  id,
+  iconCode,
+  localTime,
+
 }: Props) {
-  const gradientColors = getWeatherGradientColors(id);
+  const gradientColors = iconCode
+    ? getWeatherGradientColorsByIcon(id, iconCode)
+    : getWeatherGradientColors(id);
   const { t } = useTranslation();
   return (
-    <LinearGradient colors={gradientColors} style={styles.container}>
+    <LinearGradient colors={gradientColors} 
+ 
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
+        locations={[0, 0.92]} 
+    
+    style={styles.container}>
       {/* <View style={styles.locationRow}>
         <Ionicons name="location-outline" size={16} color="#FFF" />
         <Text style={styles.city}>{city}</Text>
