@@ -66,24 +66,17 @@ export default function HomeScreen() {
   const { t } = useTranslation();
 
   const detectCityFromLocation = async (): Promise<boolean> => {
-    const savedCity = await AsyncStorage.getItem('lastCity');
-    if (savedCity) {
-      try {
+    try {
+      const savedCity = await AsyncStorage.getItem('lastCity');
+
+      if (savedCity) {
         const parsed = JSON.parse(savedCity);
         const label = parsed.label || parsed;
         setSelectedCity(label);
-      } catch {
-        setSelectedCity(savedCity);
-      }
-    }
-    try {
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      const saved = await AsyncStorage.getItem('lastCity');
-
-      if (saved) {
-        setSelectedCity(saved);
         return true;
       }
+
+      const { status } = await Location.requestForegroundPermissionsAsync();
 
       if (status !== 'granted') {
         console.log('Location permission denied');
@@ -106,6 +99,7 @@ export default function HomeScreen() {
   };
 
   const handleLocationPermissionRetry = async () => {
+    if (isCityReady) return;
     const { status, canAskAgain } = await Location.getForegroundPermissionsAsync();
 
     if (status === 'granted') return true;

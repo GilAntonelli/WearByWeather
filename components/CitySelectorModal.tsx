@@ -292,7 +292,7 @@ export const CitySelectorModal = ({
                   item.name === (t('cityModal.currentLocation') as string)
                     ? item.name
                     : isFromSearch
-                      ? `${getPreferredCityName(item)}, ${item.state ?? ''}, ${item.country ?? ''}`
+                      ? `${[getPreferredCityName(item), item.state, item.country].map(p => (p ?? '').trim()).filter(Boolean).join(', ')}`
                       : formatLocationName(getPreferredCityName(item), item.state, item.country);
 
                 return (
