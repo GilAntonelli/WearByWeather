@@ -22,7 +22,7 @@ import { theme } from '../styles/theme';
 import WeatherDetailCard from '../components/WeatherDetailCard';
 import HourlyForecastCard from '../components/HourlyForecastCard';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import i18n from 'i18next';
+import { BackButton } from '../components/ui/BackButton';
 
 import { prefetchHomeData } from '../services/homePrefetch';
 
@@ -76,7 +76,7 @@ export default function ForecastScreen() {
       try {
         const clima = await getWeatherByCity(raw);
         const horas = await getHourlyForecastByCity(raw);
-
+  
         setWeather(clima);
         setHourlyData(horas);
 
@@ -114,10 +114,18 @@ export default function ForecastScreen() {
 
   if (hasError) {
     return (
-      <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: theme.colors.background }}>
-        <Text style={[globalStyles.errorText, { textAlign: 'center', marginBottom: 16 }]}>
-          {t('Forecast.errorMessage')}
-        </Text>
+      <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
+        <View style={{ paddingHorizontal: 20, paddingTop: 24 }}>
+          <BackButton />
+        </View>
+
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 20 }}>
+          <Text
+            style={[globalStyles.errorText, { textAlign: 'center', marginBottom: 16 }]}
+          >
+            {t('Forecast.errorMessage')}
+          </Text>
+        </View>
 
         <TouchableOpacity
           onPress={() => router.replace('/forecast')}
@@ -141,7 +149,7 @@ export default function ForecastScreen() {
               condition={weather?.condicao ?? t('Forecast.condition')}
               smartPhrase={frase ?? ''}
               id={weather.id}
-              iconCode={weather.icon}   
+              iconCode={weather.icon}
               icon={
                 <Image
                   source={{
@@ -150,7 +158,7 @@ export default function ForecastScreen() {
                   style={{ width: 64, height: 64 }}
                 />
               }
-              
+
               localTime={weather?.localTime}
             />
 
