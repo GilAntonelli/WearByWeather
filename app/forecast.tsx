@@ -1,4 +1,7 @@
 // app/forecast.tsx
+import { resolveInitialCity } from '../services/cityStorage';
+ import  {CitySelectorModal}  from '../components/CitySelectorModal';
+
 import { Feather, Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
@@ -33,50 +36,42 @@ export default function ForecastScreen() {
   const [hourlyData, setHourlyData] = useState<any[]>([]);
   const { t } = useTranslation();
   const [hasError, setHasError] = useState(false);
+  const [cityModalVisible, setCityModalVisible] = useState(false);
 
   const prefetchForHome = React.useCallback(async () => {
     try {
       const prefsRaw = await AsyncStorage.getItem('@user_preferences');
       const prefs = prefsRaw ? JSON.parse(prefsRaw) : { gender: 'male', comfort: 'neutral' };
 
-      const saved = await AsyncStorage.getItem('lastCity');
-      let rawCity = city || 'Lisboa';
-      if (saved) {
-        try {
-          const parsed = JSON.parse(saved);
-          rawCity = parsed.raw || parsed.label || saved;
-        } catch {
-          rawCity = saved;
-        }
-      }
+      const { raw } = await resolveInitialCity({
+        preferDetection: true,
+        fallback: { raw: 'Lisbon', label: 'Lisboa' },
+      });
 
-      await prefetchHomeData(rawCity, { gender: prefs.gender, comfort: prefs.comfort }, t);
+      await prefetchHomeData(raw, { gender: prefs.gender, comfort: prefs.comfort }, t);
     } catch (e) {
       console.warn('prefetchForHome failed:', e);
     }
-  }, [city, t]);
+  }, [t]);
 
   useEffect(() => {
     const load = async () => {
-      const saved = await AsyncStorage.getItem('lastCity');
-      let raw = 'Lisboa';
-      let label = 'Lisboa';
-      if (saved) {
-        try {
-          const parsed = JSON.parse(saved);
-          raw = parsed.raw || parsed;
-          label = parsed.label || parsed;
-        } catch {
-          raw = saved;
-          label = saved;
-        }
-      }
+      const { raw, label, source } = await resolveInitialCity({
+        preferDetection: true,
+        fallback: { raw: 'Lisbon', label: 'Lisboa' },
+      });
       setCity(label);
+
+      if (source === 'fallback') {
+        setCityModalVisible(true);
+        return; 
+      }
+
 
       try {
         const clima = await getWeatherByCity(raw);
         const horas = await getHourlyForecastByCity(raw);
-  
+
         setWeather(clima);
         setHourlyData(horas);
 
@@ -97,12 +92,11 @@ export default function ForecastScreen() {
     getFraseClimatica(t, {
       temperatura: weather.temperatura,
       condicao: weather.condicao,
-      descricao: weather.descricao,   // <— novo
+      descricao: weather.descricao,   
 
       chuva: weather.chuva,
       vento: weather.vento,
-      umidade: weather.umidade,       // <— novo
-
+      umidade: weather.umidade,       
     });
 
   function formatCompactLabel(name: string, state?: string, country?: string): string {
@@ -127,6 +121,7 @@ export default function ForecastScreen() {
           </Text>
         </View>
 
+
         <TouchableOpacity
           onPress={() => router.replace('/forecast')}
           style={globalStyles.bottomButton}
@@ -137,6 +132,33 @@ export default function ForecastScreen() {
       </SafeAreaView>
     );
   }
+
+const handleCitySelected = async (label: string) => {
+  // O modal já salvou { raw, label } em AsyncStorage antes de chamar onSelect(label)
+  setHasError(false);
+  setCity(label);
+  setCityModalVisible(false);
+
+  try {
+    // re-lê o 'raw' salvo pelo modal
+    const { raw } = await resolveInitialCity({
+      preferDetection: false, // já temos a cidade escolhida
+      fallback: { raw: 'Lisbon', label: 'Lisboa' },
+    });
+
+    const clima = await getWeatherByCity(raw);
+    const horas = await getHourlyForecastByCity(raw);
+    setWeather(clima);
+    setHourlyData(horas);
+    await prefetchForHome();
+  } catch (e) {
+    console.error('Erro ao buscar clima ou previsão horária:', e);
+    setHasError(true);
+    setWeather(null);
+    setHourlyData([]);
+  }
+};
+
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
@@ -177,7 +199,6 @@ export default function ForecastScreen() {
                     time={item.hora}
                     icon={item.icon}
                     temperature={item.temperatura}
-                    // NEW: show rain volume & flag on hourly cards
                     rainMM={item?.rainMM}
                     willRain={item?.chuva === true}
                   // Optional: if later you add forecast POP in the service:
@@ -234,7 +255,14 @@ export default function ForecastScreen() {
             <Text style={globalStyles.bottomButtonText}>{t('Forecast.backButton')}</Text>
           </TouchableOpacity>
         </View>
+
       )}
+      <CitySelectorModal
+        visible={cityModalVisible}          // se o seu modal usa "isVisible", troque o nome da prop aqui
+        onClose={() => setCityModalVisible(false)}
+        onSelect={handleCitySelected}       // callback que você já implementou acima
+      />
+
     </SafeAreaView>
   );
 }

@@ -21,7 +21,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getWeatherByCity } from '../services/weatherService';
 import { API_KEY, GEO_URL } from '../config/apiConfig';
 import { getPreferredCityName } from '../utils/getPreferredCityName';
-import { getdetectedCity } from '../services/LocationService';
+import { getDetectedCity } from '../services/LocationService';;
 import { formatLocationName } from '../utils/formatLocation';
 import { useTranslation } from 'react-i18next';
 import * as Location from 'expo-location';
@@ -34,11 +34,11 @@ interface CitySelectorModalProps {
 }
 
 interface Suggestion {
-  name: string;           // localized label for UI
-  country?: string;       // localized
-  state?: string;         // localized
-  apiName?: string;       // canonical name for API (usually English)
-  id?: string;            // optional stable id (e.g., 'lisbon')
+  name: string;
+  country?: string;
+  state?: string;
+  apiName?: string;
+  id?: string;
 }
 
 export const CitySelectorModal = ({
@@ -127,8 +127,7 @@ export const CitySelectorModal = ({
       const FALLBACK_SENTINEL = '__WW_UNKNOWN_CITY__'; // fixed sentinel to avoid i18n coupling
 
       if (selectedItem.name === sentinelLabel) {
-        // Detect location; if permission is denied, service returns the sentinel
-        const detectedCity = await getdetectedCity({
+        const detectedCity = await getDetectedCity({
           fallbackLabel: FALLBACK_SENTINEL,
           preferLocal: true,
           desiredAccuracyMeters: 30,
@@ -136,13 +135,11 @@ export const CitySelectorModal = ({
           forceFresh: false,
         });
 
-        // If fallback (permission denied / no coords), decide which alert to show under alerts.*
         if (detectedCity === FALLBACK_SENTINEL) {
           const perm = await Location.getForegroundPermissionsAsync();
           const servicesOn = await Location.hasServicesEnabledAsync();
 
           if (perm.status !== Location.PermissionStatus.GRANTED) {
-            // Permission denied → show "typePermission" + "detectCityAlert" with a button to open settings
             Alert.alert(
               t('alerts.typePermission'),
               t('alerts.detectCityAlert'),
@@ -162,7 +159,6 @@ export const CitySelectorModal = ({
           return;
         }
 
-        // Resolve detectedCity via geocoding (to normalize state/country)
         try {
           const response = await fetch(
             `${GEO_URL}/direct?q=${encodeURIComponent(detectedCity)}&limit=1&appid=${API_KEY}`
@@ -183,14 +179,11 @@ export const CitySelectorModal = ({
           return;
         }
       } else {
-        // Static/searched city
         const displayName = getPreferredCityName(selectedItem);
         label = formatLocationName(displayName, selectedItem.state, selectedItem.country);
-        // Use canonical apiName if present; fallback to name
         nomeParaApi = selectedItem.apiName || selectedItem.name;
       }
 
-      // Validate city by fetching its weather (guard against throws)
       let weather: any = null;
       try {
         weather = await getWeatherByCity(nomeParaApi);
