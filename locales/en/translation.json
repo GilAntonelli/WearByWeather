@@ -90,13 +90,18 @@
         "temperature10-": "Chilly (< 10°C). A sweater or light jacket helps.",
         "clearSkyCold5-": "Clear skies, but very cold (≤ 5°C). Dress warmly.",
         "cloudsTemperature15-": "Cloudy and cool (< 15°C).",
-    "clouds": "Cloudy skies. Light layers or a thin jacket.",
+        "clouds": "Cloudy skies. Light layers or a thin jacket.",
         "fog": "Low visibility (fog/mist). Drive carefully.",
         "humidity30-": "Dry air (≤ 30%). Stay hydrated and moisturize.",
         "humidity90+": "Very humid (≥ 90%). Prefer breathable fabrics.",
-    "clearSky": "Clear skies. Choose breathable, lightweight fabrics.",
+        "clearSky": "Clear skies. Choose breathable, lightweight fabrics.",
         "fallback": "Weather may vary. See details below.",
         "mist": "Light mist. It may feel damp in the morning."
+    },
+    "CitySelector": {
+        "recentTitle": "Recent searches",
+        "clearRecents": "Clear",
+        "clearRecentsA11y": "Clear recent searches"
     },
     "cities": {
         "lisbon": {
@@ -1107,7 +1112,7 @@
             "wind_30_45": {
                 "description": "Moderate wind (30–45 km/h): add windbreaker, fitted beanie, and hair_tie.",
                 "accessories": [
-                    "windbreaker"                
+                    "windbreaker"
                 ]
             },
             "wind_45+": {

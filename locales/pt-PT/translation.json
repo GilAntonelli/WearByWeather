@@ -98,6 +98,11 @@
         "fallback": "O tempo pode variar. Vê os detalhes abaixo.",
         "mist": "Névoa ligeira. Pode ser desconfortável de manhã."
     },
+    "CitySelector": {
+        "recentTitle": "Pesquisas recentes",
+        "clearRecents": "Limpar",
+        "clearRecentsA11y": "Limpar pesquisas recentes"
+    },
     "cities": {
         "lisbon": {
             "name": "Lisboa",
@@ -1108,7 +1113,7 @@
             "wind_30_45": {
                 "description": "Vento moderado (30–45 km/h): adicionar corta-vento, gorro ajustado e elástico para cabelo.",
                 "accessories": [
-                    "windbreaker"                
+                    "windbreaker"
                 ]
             },
             "wind_45+": {

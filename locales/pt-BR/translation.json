@@ -97,6 +97,11 @@
         "clearSky": "Céu limpo. Bom dia para atividades ao ar livre.",
         "fallback": "Fique de olho nas variações de clima ao longo do dia."
     },
+    "CitySelector": {
+        "recentTitle": "Buscas recentes",
+        "clearRecents": "Limpar",
+        "clearRecentsA11y": "Limpar buscas recentes"
+    },
     "cities": {
         "lisbon": {
             "name": "Lisboa",
@@ -1108,7 +1113,7 @@
             "wind_30_45": {
                 "description": " Vento moderado (30–45 km/h): adicionar corta-vento, gorro ajustado e elástico de cabelo.",
                 "accessories": [
-                    "windbreaker"                
+                    "windbreaker"
                 ]
             },
             "wind_45+": {
