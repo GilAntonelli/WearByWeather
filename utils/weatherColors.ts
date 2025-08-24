@@ -29,14 +29,50 @@ const conditionColorMap: Record<string, string> = {
 };
 
 const DEFAULT_COLOR = '#A4D4FF';
+// --- Color utils to build same-hue gradients ---
+function mix(hex1: string, hex2: string, w: number): string {
+  // clamp weight
+  const weight = Math.min(1, Math.max(0, w));
+
+  // normalize to 6-digit hex
+  const normalize = (h: string) => {
+    let x = h.replace('#', '').trim();
+    if (x.length === 3) x = x.split('').map((c) => c + c).join('');
+    return x.slice(0, 6);
+  };
+
+  const h1 = normalize(hex1);
+  const h2 = normalize(hex2);
+
+  const r1 = parseInt(h1.slice(0, 2), 16);
+  const g1 = parseInt(h1.slice(2, 4), 16);
+  const b1 = parseInt(h1.slice(4, 6), 16);
+
+  const r2 = parseInt(h2.slice(0, 2), 16);
+  const g2 = parseInt(h2.slice(2, 4), 16);
+  const b2 = parseInt(h2.slice(4, 6), 16);
+
+  const r = Math.round(r1 * (1 - weight) + r2 * weight);
+  const g = Math.round(g1 * (1 - weight) + g2 * weight); // <- aqui faltava o *
+  const b = Math.round(b1 * (1 - weight) + b2 * weight);
+
+  const toHex = (n: number) => n.toString(16).padStart(2, '0');
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+}
+
+
+
+function lighten(hex: string, amt: number) { return mix(hex, '#FFFFFF', amt); }
+function darken(hex: string, amt: number) { return mix(hex, '#000000', amt); }
+
 
 export function getWeatherBackgroundColor(id: number): string {
   if (id >= 200 && id <= 202) return '#495866'; // Trovoadas leves a moderadas
   if (id >= 210 && id <= 221) return '#495866'; // Trovoadas locais
   if (id >= 230 && id <= 232) return '#3D4C5C'; // Tempestades com chuva forte
 
-if (id >= 300 && id <= 302) return '#B3C7D8'; // light to moderate drizzle
-if (id >= 310 && id <= 321) return '#A3B9CE'; // drizzle w/ rain
+  if (id >= 300 && id <= 302) return '#B3C7D8'; // light to moderate drizzle
+  if (id >= 310 && id <= 321) return '#A3B9CE'; // drizzle w/ rain
 
   if (id === 500) return '#A1BBD4';             // light rain
   if (id === 501) return '#90AEC7';             // moderate rain
@@ -61,10 +97,10 @@ if (id >= 310 && id <= 321) return '#A3B9CE'; // drizzle w/ rain
 
   if (id === 800) return '#2F80ED';           // Céu limpo
 
-if (id === 801) return '#C3D9F3';             // few clouds
-if (id === 802) return '#D0DAE6';             // scattered clouds
+if (id === 801) return '#D8E6F7';             // few clouds (lightest)
+if (id === 802) return '#C7D7E6';             // scattered clouds
 if (id === 803) return '#B3BEC8';             // broken clouds
-if (id === 804) return '#9CA7B2';             // overcast clouds (darker for contrast)
+if (id === 804) return '#9CA7B2';             // overcast clouds (darkest)
 
   return DEFAULT_COLOR; // fallback
 }
@@ -106,18 +142,21 @@ function pickOverlayForBase(baseHex: string, isNight: boolean): string {
 
 export function getWeatherGradientColors(id: number): [string, string] {
   const base = getWeatherBackgroundColor(id);
-  return [base, '#00000066']; // static translucent black overlay for readability
+  // same-hue gradient: darker top -> lighter bottom
+  const top = darken(base, 0.18);
+  const bottom = lighten(base, 0.08);
+  return [top, bottom];
 }
- 
+
 export function getWeatherGradientColorsByIcon(id: number, icon?: string): [string, string] {
+  if (!icon) return getWeatherGradientColors(id); // same as daytime when no icon
+
   const base = getWeatherBackgroundColor(id);
-  const isNight = (icon ?? '').endsWith('n');
-  const overlay = pickOverlayForBase(base, isNight); // adaptive overlay
-if (__DEV__) {
+  const isNight = icon.endsWith('n');
 
-    console.log('[weatherColors]', { id, icon, isNight, base, overlay });
-  }
+  // night = deeper; day = lighter, but always same hue
+  const top = isNight ? darken(base, 0.28) : darken(base, 0.18);
+  const bottom = isNight ? darken(base, 0.04) : lighten(base, 0.08);
 
-
-  return [base, overlay];
+  return [top, bottom];
 }
